@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="deep learning,python,neutral network," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Linear Classifier  The image above shows the simple 2D classifier, use a straight line y &#x3D; Ax to classify two bugs by measuring length and width. Train the linear classifier version 1   1234E &#x3D; t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Make Your Own Neural Network Chapter 1">
+<meta property="og:url" content="http://yoursite.com/2020/01/10/Make-Your-Own-Neural-Network-Chapter-1/index.html">
+<meta property="og:site_name" content="Tech Dustdojo">
+<meta property="og:description" content="Linear Classifier  The image above shows the simple 2D classifier, use a straight line y &#x3D; Ax to classify two bugs by measuring length and width. Train the linear classifier version 1   1234E &#x3D; t">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/2D-Classifier.png">
+<meta property="og:image" content="http://yoursite.com/images/How-to-train-a-linear-classifier.png">
+<meta property="og:image" content="http://yoursite.com/images/Problem-of-version-1.png">
+<meta property="og:image" content="http://yoursite.com/images/Problem-of-single-linear-classifier.png">
+<meta property="og:image" content="http://yoursite.com/images/multi-classifier.png">
+<meta property="og:image" content="http://yoursite.com/images/neuron.png">
+<meta property="og:image" content="http://yoursite.com/images/neural-network.png">
+<meta property="og:image" content="http://yoursite.com/images/How-to-calculate-the-output-of-a-neural.png">
+<meta property="og:image" content="http://yoursite.com/images/Error-of-a-neuron.png">
+<meta property="og:image" content="http://yoursite.com/images/Error-of-the-hidden-layer.png">
+<meta property="og:image" content="http://yoursite.com/images/Derive-the-error-of-hidden-layer.png">
+<meta property="og:image" content="http://yoursite.com/images/Matrix-Calculation-of-the-hidden-layer-error.png">
+<meta property="og:image" content="http://yoursite.com/images/simpliflied-matrix-for-calcution-of-hidden-layer-error.png">
+<meta property="og:image" content="http://yoursite.com/images/Devrive-the-gradient-descent-method.jpeg">
+<meta property="og:image" content="http://yoursite.com/images/Example-of-update-a-weight.png">
+<meta property="article:published_time" content="2020-01-10T08:51:08.000Z">
+<meta property="article:modified_time" content="2020-01-18T09:24:43.000Z">
+<meta property="article:author" content="Tech Dustdojo">
+<meta property="article:tag" content="deep learning">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="neutral network">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/2D-Classifier.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/01/10/Make-Your-Own-Neural-Network-Chapter-1/"/>
+
+
+
+
+
+  <title>Make Your Own Neural Network Chapter 1 | Tech Dustdojo</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tech Dustdojo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+<script>
+function category_js () {
+  $("<div class='display' style='float: left'> &nbsp>&nbsp </div>").prependTo(".category-list-item");
+  $(".category-list-child").css("display","none");
+  // .posts-expand .post-body ul li
+
+  // $(".posts-expand .post-body ul  li .category-list-link ").first().css("font-weight","bold");
+  $(".posts-expand .post-body ul .category-list-item ").first().children(".category-list-link").css("font-weight","bold");
+  $(".posts-expand .post-body ul .category-list-item ").first().siblings("li").children(".category-list-link").css("font-weight","bold");
+  // $(".category-list-child").css("list-style-type","none");
+  // $(".category-list-item").css("list-style-type","none");
+  $(".posts-expand .post-body ul li ").css("list-style-type", "none");
+  $(".category-list-link ").css("border-bottom", "none");
+
+  $(".display").click(function () {
+  // $(this).siblings(".category-list-child").css("display")=="none"?
+  // $(this).siblings(".category-list-child").css("display","block"):$(this).siblings(".category-list-child").css("display","none");
+  $(this).siblings(".category-list-child").slideToggle();
+  // $(this).siblings(".category-list-child").fadeToggle();
+  
+  })
+}
+</script>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/10/Make-Your-Own-Neural-Network-Chapter-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Dustdojo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Make Your Own Neural Network Chapter 1</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-10T16:51:08+08:00">
+                2020-01-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/" itemprop="url" rel="index">
+                    <span itemprop="name">Book</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/Deep-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/Deep-Learning/Make-Your-Own-Neural-Network/" itemprop="url" rel="index">
+                    <span itemprop="name">Make Your Own Neural Network</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Linear-Classifier"><a href="#Linear-Classifier" class="headerlink" title="Linear Classifier"></a>Linear Classifier</h2><img src="/images/2D-Classifier.png" class="" width="600" height="600" title="2D Classifier">
+
+<p>The image above shows the simple 2D classifier, use a straight line y = Ax to classify two bugs by measuring length and width.</p>
+<h2 id="Train-the-linear-classifier-version-1"><a href="#Train-the-linear-classifier-version-1" class="headerlink" title="Train the linear classifier version 1"></a>Train the linear classifier version 1</h2><img src="/images/How-to-train-a-linear-classifier.png" class="" width="600" height="600" title="How to train a linear classifier">
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">E &#x3D; t - y &#x3D; (A + ΔA)x - Ax</span><br><span class="line">E &#x3D; (A + ΔA)x - Ax</span><br><span class="line">E &#x3D; (ΔA)x</span><br><span class="line">ΔA &#x3D; E&#x2F;x</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>imagine the t = (A + ΔA)x is the grand true classifier for this problem and t = Ax is our first trial classifier</li>
+<li>the distance between the grand true classifier and our first trial is E (Error)</li>
+<li>we can obtain the true classifier by change the adding small amount of A (ΔA) to A</li>
+<li>form the above, the ΔA can be derive by the Error divid by x</li>
+</ul>
+<h3 id="Problem-of-version-1"><a href="#Problem-of-version-1" class="headerlink" title="Problem of version 1"></a>Problem of version 1</h3><img src="/images/Problem-of-version-1.png" class="" width="600" height="600" title="Problem of version 1">
+
+<ul>
+<li>if we keep applying the method derive from above, the final classifier is not as expect as the grand true classifier</li>
+<li>this is because version 1 method do not have memory</li>
+<li>when applying the method, the training is consider as a new process, it forget the previous training</li>
+</ul>
+<h3 id="Solve-the-problem-of-version-1"><a href="#Solve-the-problem-of-version-1" class="headerlink" title="Solve the problem of version 1"></a>Solve the problem of version 1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ΔA &#x3D; L(E&#x2F;x)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Add a new parameter L as learning rate</li>
+<li>to slow down the training process</li>
+</ul>
+<h2 id="Problem-of-single-linear-classifier"><a href="#Problem-of-single-linear-classifier" class="headerlink" title="Problem of single linear classifier"></a>Problem of single linear classifier</h2><img src="/images/Problem-of-single-linear-classifier.png" class="" width="600" height="600" title="Problem of single linear classifier">
+
+<ul>
+<li>some model cannot be solve by the single classifier</li>
+<li>eg AND OR XOR</li>
+</ul>
+<h3 id="Two-ways-to-solve-this-kind-of-problem"><a href="#Two-ways-to-solve-this-kind-of-problem" class="headerlink" title="Two ways to solve this kind of problem"></a>Two ways to solve this kind of problem</h3><img src="/images/multi-classifier.png" class="" width="600" height="600" title="muti classifier.png">
+
+<ul>
+<li>use multi classifiers </li>
+</ul>
+<p>-Or deep learning</p>
+<h2 id="Deep-Learning"><a href="#Deep-Learning" class="headerlink" title="Deep Learning"></a>Deep Learning</h2><h3 id="Concept-of-neuron"><a href="#Concept-of-neuron" class="headerlink" title="Concept of neuron"></a>Concept of neuron</h3><img src="/images/neuron.png" class="" width="600" height="600" title="Neuron">
+
+<ul>
+<li>a neuron recive different input signal from different neuron</li>
+<li>when the signal is big enough to pass the threshold (sigmoid function)</li>
+<li>it will general output</li>
+</ul>
+<img src="/images/neural-network.png" class="" width="600" height="600" title="Neural Network">
+
+<ul>
+<li>neural network is a network of neuron connect by different Weigth</li>
+</ul>
+<h3 id="How-calculate-the-output-of-a-neuron"><a href="#How-calculate-the-output-of-a-neuron" class="headerlink" title="How calculate the output of a neuron"></a>How calculate the output of a neuron</h3><ul>
+<li>Method 1</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Sigmoid(Σ(input * weight))</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Method 2 </li>
+</ul>
+<img src="/images/How-to-calculate-the-output-of-a-neural.png" class="" width="600" height="600" title="How to calculate the output of a neural">
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Sigmoid(matrix(W) • matrix(I))</span><br></pre></td></tr></table></figure>
+<ul>
+<li>computer are good at matrix calculation</li>
+</ul>
+<h2 id="Error-of-a-neuron"><a href="#Error-of-a-neuron" class="headerlink" title="Error of a neuron"></a>Error of a neuron</h2><img src="/images/Error-of-a-neuron.png" class="" width="600" height="600" title="Error of a neuron">
+
+<ul>
+<li>The error of a neuron depends on the weighting of the input, higher weighting contributes more error than the lower one</li>
+</ul>
+<h2 id="Error-of-the-hidden-layer"><a href="#Error-of-the-hidden-layer" class="headerlink" title="Error of the hidden layer"></a>Error of the hidden layer</h2><img src="/images/Error-of-the-hidden-layer.png" class="" width="600" height="600" title="Error of the hidden layer">
+
+<ul>
+<li><p>since the traning data only tells the ans of the final layer, we can only calculate the error of the final layer directly</p>
+</li>
+<li><p>but from the above, we can see the error of the hiddden layer are contributes to the nodes in final layer</p>
+</li>
+<li><p>so we can calculate the error of the hidden layer inplicily implicitly</p>
+</li>
+</ul>
+<h2 id="Derive-the-error-of-hidden-layer"><a href="#Derive-the-error-of-hidden-layer" class="headerlink" title="Derive the error of hidden layer"></a>Derive the error of hidden layer</h2><img src="/images/Derive-the-error-of-hidden-layer.png" class="" width="600" height="600" title="Derive the error of hidden layer">
+
+<ul>
+<li>The error of hidden layer node E(hidden,1), is the sum of error of W(1,1) and W(1,2)</li>
+<li>so we should find out W(1,1) and W(1,2)</li>
+<li>for the error of W(1,1), it only contributes a part of the error of E(output,1)</li>
+<li>∴ the error of W(1,1) = E(output,1) *(W(1,1)/(W(1,1)+ W(2,1)))</li>
+<li>same for the error of W(1,2), it only contributes a part of the error of E(output,2)</li>
+<li>∴ the error of W(1,2) = E(output,2) *(W(1,2)/(W(1,2)+ W(2,2)))</li>
+</ul>
+<h2 id="Matrix-Calculation-of-the-hidden-layer-error"><a href="#Matrix-Calculation-of-the-hidden-layer-error" class="headerlink" title="Matrix Calculation of the hidden layer error"></a>Matrix Calculation of the hidden layer error</h2><ul>
+<li>The above calculation can be written as matrix form</li>
+</ul>
+<img src="/images/Matrix-Calculation-of-the-hidden-layer-error.png" class="" width="600" height="600" title="Matrix Calculation of the hidden layer error">
+
+
+<ul>
+<li>since the Denominator part of the weight are only the normalise factor</li>
+<li>we only care the value of the weight</li>
+<li>the matrix can be simplifly as below</li>
+</ul>
+<img src="/images/simpliflied-matrix-for-calcution-of-hidden-layer-error.png" class="" width="600" height="600" title="simpliflied matrix for calcution of hidden layer error">
+
+
+<h2 id="Update-the-Weighting-of-a-neuron"><a href="#Update-the-Weighting-of-a-neuron" class="headerlink" title="Update the Weighting of a neuron"></a>Update the Weighting of a neuron</h2><ul>
+<li>since we want to have accurate output of the neural network</li>
+<li>which means we want to minimize the error of the output</li>
+<li>so we can update the weight to minimize the error</li>
+<li>There are two method to update the weight</li>
+</ul>
+<ol>
+<li>by use algebra to calculate the exact value of each weighting in the network</li>
+</ol>
+<ul>
+<li>but this method is nearly impossible to done</li>
+<li>since the neural network has  many combinations of weights and bias in the network </li>
+</ul>
+<ol start="2">
+<li>Gradient descent</li>
+</ol>
+<ul>
+<li>try to apply random inital value to the error function</li>
+<li>find the gradient of the function</li>
+<li>update the Weight by a small amount (learning rate)</li>
+<li>repeate the procee until it reach the lowerst point(the Weight do not change anymore)</li>
+</ul>
+<h3 id="The-problem-of-gradient-descent-is"><a href="#The-problem-of-gradient-descent-is" class="headerlink" title="The problem of gradient descent is"></a>The problem of gradient descent is</h3><ul>
+<li>the final weight may not be the real gobal minimum of the error function</li>
+<li>different learning rate and initial value may vary the result</li>
+</ul>
+<h2 id="Devrive-the-gradient-descent-method-for-updating-a-Weighting-W-j-k"><a href="#Devrive-the-gradient-descent-method-for-updating-a-Weighting-W-j-k" class="headerlink" title="Devrive the gradient descent method for updating a Weighting W(j,k)"></a>Devrive the gradient descent method for updating a Weighting W(j,k)</h2><img src="/images/Devrive-the-gradient-descent-method.jpeg" class="" width="600" height="1200" title="Devrive the gradient descent method">
+
+
+
+<h2 id="Example-of-update-a-weight"><a href="#Example-of-update-a-weight" class="headerlink" title="Example of update a weight"></a>Example of update a weight</h2><img src="/images/Example-of-update-a-weight.png" class="" width="600" height="1200" title="Example of update a weight">
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/deep-learning/" rel="tag"># deep learning</a>
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/neutral-network/" rel="tag"># neutral network</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/01/03/Head-First-Java-Chapter-14-Serialization-and-File-I-O/" rel="next" title="Head First Java Chapter 14 Serialization and File I/O">
+                <i class="fa fa-chevron-left"></i> Head First Java Chapter 14 Serialization and File I/O
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/01/27/Deep-Learning-from-Scratch-Chapter-1/" rel="prev" title="Deep Learning from Scratch Chapter 1">
+                Deep Learning from Scratch Chapter 1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Tech Dustdojo</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-Classifier"><span class="nav-number">1.</span> <span class="nav-text">Linear Classifier</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Train-the-linear-classifier-version-1"><span class="nav-number">2.</span> <span class="nav-text">Train the linear classifier version 1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Problem-of-version-1"><span class="nav-number">2.1.</span> <span class="nav-text">Problem of version 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solve-the-problem-of-version-1"><span class="nav-number">2.2.</span> <span class="nav-text">Solve the problem of version 1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-of-single-linear-classifier"><span class="nav-number">3.</span> <span class="nav-text">Problem of single linear classifier</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Two-ways-to-solve-this-kind-of-problem"><span class="nav-number">3.1.</span> <span class="nav-text">Two ways to solve this kind of problem</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deep-Learning"><span class="nav-number">4.</span> <span class="nav-text">Deep Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Concept-of-neuron"><span class="nav-number">4.1.</span> <span class="nav-text">Concept of neuron</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-calculate-the-output-of-a-neuron"><span class="nav-number">4.2.</span> <span class="nav-text">How calculate the output of a neuron</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Error-of-a-neuron"><span class="nav-number">5.</span> <span class="nav-text">Error of a neuron</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Error-of-the-hidden-layer"><span class="nav-number">6.</span> <span class="nav-text">Error of the hidden layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Derive-the-error-of-hidden-layer"><span class="nav-number">7.</span> <span class="nav-text">Derive the error of hidden layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Matrix-Calculation-of-the-hidden-layer-error"><span class="nav-number">8.</span> <span class="nav-text">Matrix Calculation of the hidden layer error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Update-the-Weighting-of-a-neuron"><span class="nav-number">9.</span> <span class="nav-text">Update the Weighting of a neuron</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#The-problem-of-gradient-descent-is"><span class="nav-number">9.1.</span> <span class="nav-text">The problem of gradient descent is</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Devrive-the-gradient-descent-method-for-updating-a-Weighting-W-j-k"><span class="nav-number">10.</span> <span class="nav-text">Devrive the gradient descent method for updating a Weighting W(j,k)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-of-update-a-weight"><span class="nav-number">11.</span> <span class="nav-text">Example of update a weight</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tech Dustdojo</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
