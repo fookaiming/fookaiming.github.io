@@ -271,7 +271,7 @@ function category_js () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/30/JavaWeb-04-JavaScript-II/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/19/MyBookStore-01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tech Dustdojo">
@@ -290,7 +290,7 @@ function category_js () {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/06/30/JavaWeb-04-JavaScript-II/" itemprop="url">JavaWeb 04 JavaScript-II</a></h1>
+                <a class="post-title-link" href="/2020/09/19/MyBookStore-01/" itemprop="url">MyBookStore 01 Sign Up page Verification</a></h1>
         
 
         <div class="post-meta">
@@ -302,8 +302,8 @@ function category_js () {
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-30T15:27:05+08:00">
-                2020-06-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-19T16:54:46+08:00">
+                2020-09-19
               </time>
             
 
@@ -325,8 +325,8 @@ function category_js () {
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaWeb</span>
+                  <a href="/categories/Project/" itemprop="url" rel="index">
+                    <span itemprop="name">Project</span>
                   </a>
                 </span>
 
@@ -336,8 +336,8 @@ function category_js () {
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaWeb/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/Project/MybookStore/" itemprop="url" rel="index">
+                    <span itemprop="name">MybookStore</span>
                   </a>
                 </span>
 
@@ -375,789 +375,199 @@ function category_js () {
       
         
           
-            <h1 id="JavaScript-II"><a href="#JavaScript-II" class="headerlink" title="JavaScript II"></a>JavaScript II</h1><hr>
-<h2 id="Js-Event"><a href="#Js-Event" class="headerlink" title="Js Event"></a>Js Event</h2><h3 id="Common-event"><a href="#Common-event" class="headerlink" title="Common event"></a>Common event</h3><ul>
-<li><p>onload</p>
-</li>
-<li><p>onclick</p>
-</li>
-<li><p>onblur</p>
-</li>
-<li><p>onchange</p>
-</li>
-<li><p>onsubmit</p>
-<h2 id="Event-attachment-on-HTML-elements"><a href="#Event-attachment-on-HTML-elements" class="headerlink" title="Event attachment on HTML elements"></a>Event attachment on HTML elements</h2></li>
-<li><p>What is event attachment?</p>
-<ul>
-<li>tell the broswer what to do when an event happen</li>
+            <h1 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h1><ul>
+<li>Verify the info in sign up page</li>
+<li>select the html element by jQuery and then verify, show error msg if error occurs</li>
 </ul>
-<h3 id="Static-Method"><a href="#Static-Method" class="headerlink" title="Static Method"></a>Static Method</h3><ul>
-<li>attache on the html tag’s attr.</li>
-<li>see exp below<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"onclickFunction();"</span> &gt;</span>Button<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- js --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">onclickFunction</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">    alert(<span class="string">"clicked"</span>)</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+<h1 id="Technique"><a href="#Technique" class="headerlink" title="Technique"></a>Technique</h1><ul>
+<li>jQuery select different element<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"content"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"login_form"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"login_box"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tit"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Register<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"errorMsg"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"regist_success.html"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">label</span>&gt;</span>Username：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"itxt"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">“Enter</span> <span class="attr">Username</span>" <span class="attr">autocomplete</span>=<span class="string">"off"</span> <span class="attr">tabindex</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">                           <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">id</span>=<span class="string">"username"</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">label</span>&gt;</span>Password：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"itxt"</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">“Enter</span> <span class="attr">Password</span>" <span class="attr">autocomplete</span>=<span class="string">"off"</span> <span class="attr">tabindex</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">                           <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">id</span>=<span class="string">"password"</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">label</span>&gt;</span>Confirm：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"itxt"</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">“Enter</span> <span class="attr">Password</span> <span class="attr">Again</span>" <span class="attr">autocomplete</span>=<span class="string">"off"</span> <span class="attr">tabindex</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">                           <span class="attr">name</span>=<span class="string">"repwd"</span> <span class="attr">id</span>=<span class="string">"repwd"</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">label</span>&gt;</span>Email：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"itxt"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">“Enter</span> <span class="attr">Email</span>" <span class="attr">autocomplete</span>=<span class="string">"off"</span> <span class="attr">tabindex</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">                           <span class="attr">name</span>=<span class="string">"email"</span> <span class="attr">id</span>=<span class="string">"email"</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">label</span>&gt;</span>Code：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"itxt"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">style</span>=<span class="string">"width: 150px;"</span> <span class="attr">id</span>=<span class="string">"code"</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">img</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">src</span>=<span class="string">"../../static/img/code.bmp"</span> <span class="attr">style</span>=<span class="string">"float: right; margin-right: 40px"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">“Submit</span>" <span class="attr">id</span>=<span class="string">"sub_btn"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Userinput Verification</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    $(<span class="string">"#sub_btn"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// verify username, password, confirm password, email, verification code</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> usernameText = $(<span class="string">"#username"</span>).val();</span><br><span class="line">        <span class="comment">//word, number, _ and length between 5-12</span></span><br><span class="line">        <span class="keyword">var</span> usernamePatt = <span class="regexp">/^\w&#123;5,12&#125;$/</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!usernamePatt.test(usernameText)) &#123;</span><br><span class="line">            $(<span class="string">"span.errorMsg"</span>).text(<span class="string">"Invalid Username! "</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> passwordText = $(<span class="string">"#password"</span>).val();</span><br><span class="line">        <span class="keyword">if</span> (!usernamePatt.test(passwordText)) &#123;</span><br><span class="line">            $(<span class="string">"span.errorMsg"</span>).text(<span class="string">"Invalid Password! "</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> repwText = $(<span class="string">"#repwd"</span>).val();</span><br><span class="line">        <span class="keyword">if</span> (repwText != passwordText) &#123;</span><br><span class="line">            $(<span class="string">"span.errorMsg"</span>).text(<span class="string">"Incorrect Confirmed Password! "</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> emailText = $(<span class="string">"#email"</span>).val();</span><br><span class="line">        <span class="keyword">var</span> emailPatt = <span class="regexp">/^(([^&lt;&gt;()\[\]\\.,;:\s@"]+(\.[^&lt;&gt;()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]&#123;1,3&#125;\.[0-9]&#123;1,3&#125;\.[0-9]&#123;1,3&#125;\.[0-9]&#123;1,3&#125;])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]&#123;2,&#125;))$/</span>;</span><br><span class="line">        <span class="keyword">if</span> (!emailPatt.test(emailText))&#123;</span><br><span class="line">            $(<span class="string">"span.errorMsg"</span>).text(<span class="string">"Invalid Email! "</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// only verify if verification code is not null</span></span><br><span class="line">        <span class="keyword">var</span> codeText = $(<span class="string">"#code"</span>).val();</span><br><span class="line">        <span class="keyword">if</span> (codeText == <span class="string">""</span>)&#123;</span><br><span class="line">            $(<span class="string">"span.errorMsg"</span>).text(<span class="string">"Invalid Verification Code! "</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="comment">//clean all error msg</span></span><br><span class="line">        $(<span class="string">"span.errorMsg"</span>).text(<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-</li>
-</ul>
-<h3 id="dynamic-Method"><a href="#dynamic-Method" class="headerlink" title="dynamic Method"></a>dynamic Method</h3><ul>
-<li><p>use the js to dom obj and them bind function on it</p>
-</li>
-<li><p>Steps</p>
-</li>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/17/JSP-03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Dustdojo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/09/17/JSP-03/" itemprop="url">JSP 03 9 jsp implicit objects</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-17T16:27:15+08:00">
+                2020-09-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JSP/" itemprop="url" rel="index">
+                    <span itemprop="name">JSP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="9-jsp-implicit-objects"><a href="#9-jsp-implicit-objects" class="headerlink" title="9 jsp implicit objects"></a>9 jsp implicit objects</h1><ul>
+<li>after tomcat translation, it will automatically create 9 obj<br>including</li>
 </ul>
 <ol>
-<li><p>use windos.onload to make sure the js exe after dom is created</p>
-</li>
-<li><p>get the tag obj</p>
-</li>
-<li><p>attache the funtion to the obj</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn01"</span>&gt;</span>Button<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- js --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">//   Step 1: use windos.onload to make sure the js exe after dom is created</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onload =<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">//    Step 2:</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> btn01Obj = <span class="built_in">document</span>.getElementById(<span class="string">"btn01"</span>);</span></span><br><span class="line">        </span><br><span class="line"><span class="actionscript">        <span class="comment">// Step 3:</span></span></span><br><span class="line"><span class="actionscript">        btn01Obj.onclick = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">            alert(<span class="string">"clicked"</span>);</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li>request</li>
+<li>response</li>
+<li>pageContext</li>
+<li>session</li>
+<li>application (ServletContext obj)</li>
+<li>config (ServletConfig obj)</li>
+<li>out</li>
+<li>page</li>
+<li>exception</li>
 </ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/30/JavaWeb-05-DOM/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/30/JavaWeb-05-DOM/" itemprop="url">JavaWeb 05 DOM</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-30T15:27:05+08:00">
-                2020-06-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaWeb</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaWeb/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><hr>
-<img src="/images/dom-structure.gif" class="" width="600" height="600" title="DOM Structure">
-<ul>
-<li><p>Document obj can manage all the content of inside HTML</p>
-</li>
-<li><p>tree structure</p>
-</li>
-<li><p>all tree nodes can consider as an obj</p>
-</li>
-<li><p>Common method</p>
-</li>
-<li><p>getElementById()</p>
-</li>
-<li><p>getElementByName()</p>
-</li>
-<li><p>getElementByTagName()</p>
-</li>
-<li><p>createElement()</p>
-</li>
-<li><p><b>remember to use above method on window.onload, to make sure the obj is created.</b></p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/29/JavaWeb-03-JavaScript/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/29/JavaWeb-03-JavaScript/" itemprop="url">JavaWeb 03 JavaScript</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-29T15:07:53+08:00">
-                2020-06-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaWeb</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaWeb/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><ul>
-<li>cannot read from hard disk</li>
-<li>Use script tag to link js file on html<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"1.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- wronge one tag can only serve one purpose --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"1.js"</span>&gt;</span></span><br><span class="line">    alert();</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="5-Variable-type"><a href="#5-Variable-type" class="headerlink" title="5 Variable type"></a>5 Variable type</h2></li>
-<li>number</li>
-<li>string</li>
-<li>object</li>
-<li>boolean</li>
-<li>function</li>
-</ul>
-<h3 id="special-value"><a href="#special-value" class="headerlink" title="special value"></a>special value</h3><ul>
-<li>undefined (not initialised)   eg. var i;</li>
-<li>null</li>
-<li>NaN (not a number)<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="string">"abc"</span>;</span><br><span class="line">alert(a*b); <span class="comment">//NaN</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="and"><a href="#and" class="headerlink" title="== and ==="></a>== and ===</h3><p> == will compare the literal value<br> === compare the value and type</p>
-<h2 id="：logical-operator"><a href="#：logical-operator" class="headerlink" title="：logical operator"></a>：logical operator</h2><ul>
-<li><p>all variables can be used as boolean</p>
-</li>
-<li><p>0 、null、 undefined、’’ are interrupt as false</p>
-<h3 id="amp-amp"><a href="#amp-amp" class="headerlink" title="&amp;&amp;"></a>&amp;&amp;</h3></li>
-<li><p>return the obj which ends the comparetor<br>when the expression is true, return the last obj in the expression<br>when the expression is false,return the first false obj.</p>
-<h3 id=""><a href="#" class="headerlink" title="||"></a>||</h3></li>
-<li><p>return the obj which ends the comparetor<br>when the expression is true, return the first true obj in the expression<br>when the expression is false, return the last obj in the expression</p>
-<h3 id="both-amp-amp-and-are-shortcut-operator-ie-reaming-calculation-will-not-be-calculated-when-it-got-the-answer"><a href="#both-amp-amp-and-are-shortcut-operator-ie-reaming-calculation-will-not-be-calculated-when-it-got-the-answer" class="headerlink" title="both &amp;&amp; and || are shortcut operator ie. reaming calculation will not be calculated when it got the answer."></a>both &amp;&amp; and || are shortcut operator ie. reaming calculation will not be calculated when it got the answer.</h3><h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2></li>
-<li><p>Array can used to story diff. types of obj</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="string">'ad'</span>,<span class="literal">true</span>];</span><br></pre></td></tr></table></figure>
-<ul>
-<li>array will automatically increase the size<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr[]; <span class="comment">//length = 0</span></span><br><span class="line">arr[<span class="number">4</span>] = <span class="number">1</span>;</span><br><span class="line">alter(arr.length) <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
-<h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2></li>
-</ul>
-</li>
-<li><p>Two ways to define a function</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">nameOfFunction</span>(<span class="params">a,b</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">nameOfFunction(a,b);</span><br></pre></td></tr></table></figure>
-<p>or</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nameOfFunction = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">nameOfFunction(a,b);</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="Overload"><a href="#Overload" class="headerlink" title="Overload"></a>Overload</h3><ul>
-<li>overload of a function is not allowed</li>
-<li>overload of a function will override the original one</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fun = <span class="function"><span class="keyword">function</span> (<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a - b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fun = <span class="function"><span class="keyword">function</span> (<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">alert(fun(<span class="number">100</span>,<span class="number">200</span>)) <span class="comment">//300</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Implicit-Argument"><a href="#Implicit-Argument" class="headerlink" title="Implicit Argument"></a>Implicit Argument</h3><ul>
-<li>all function have implicit argument even the function do not specify any argument in the decoration</li>
-<li>Implicit Argument act like the Vargrs in Java</li>
-<li>implicit aruments is an array, it can be access by arguments variable eg. arguments.length, arguments[0]<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">arguments</span>[<span class="number">0</span>] + <span class="built_in">arguments</span>[<span class="number">1</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="keyword">var</span> ans = funName(<span class="number">100</span>,<span class="number">200</span>) <span class="comment">//300</span></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><h3 id="define-Object-set-attr-define-function"><a href="#define-Object-set-attr-define-function" class="headerlink" title="define Object, set attr. , define function"></a>define Object, set attr. , define function</h3><ul>
-<li>keyword this can be used to access the attr. inside the obj<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// method 1:</span></span><br><span class="line"><span class="keyword">var</span> objName = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">objName.age = <span class="number">10</span>;</span><br><span class="line">objName.playMusic() = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// method 2: key-value pairs</span></span><br><span class="line"><span class="keyword">var</span> objName =&#123;</span><br><span class="line">    age : <span class="number">10</span>,</span><br><span class="line">    functionName : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;       <span class="comment">//no "," at last term</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
-<h3 id="Access-attr-function"><a href="#Access-attr-function" class="headerlink" title="Access attr. , function"></a>Access attr. , function</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = objName.age;</span><br><span class="line"><span class="keyword">var</span> name = obJName.playMusic();</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/28/JavaWeb-02-CSS/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/28/JavaWeb-02-CSS/" itemprop="url">JavaWeb 02 CSS</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-28T15:45:40+08:00">
-                2020-06-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaWeb</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaWeb/CSS/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><hr>
-<ul>
-<li>Use link tag to link css file on html<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"/style.css"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="Selector"><a href="#Selector" class="headerlink" title="Selector"></a>Selector</h2><h3 id="tag-selector"><a href="#tag-selector" class="headerlink" title="tag selector"></a>tag selector</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="id-selector"><a href="#id-selector" class="headerlink" title="id selector"></a>id selector</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#myid</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="class-selector"><a href="#class-selector" class="headerlink" title="class selector"></a>class selector</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.myclass</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="combine-selector"><a href="#combine-selector" class="headerlink" title="combine selector"></a>combine selector</h3><ul>
-<li>choose elements that fullfill at lease one selector<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.myclass</span> <span class="selector-id">#myid</span> <span class="selector-tag">span</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/28/JavaWeb-01-HTML/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/28/JavaWeb-01-HTML/" itemprop="url">JavaWeb 01 HTML</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-28T12:54:29+08:00">
-                2020-06-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaWeb</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaWeb/Html/" itemprop="url" rel="index">
-                    <span itemprop="name">Html</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><hr>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Single Tag --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Double Tag --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Nested tag is not allowed --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>Correct<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>Wrong<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="Common-Tag"><a href="#Common-Tag" class="headerlink" title="Common Tag"></a>Common Tag</h2><h3 id="a-tag"><a href="#a-tag" class="headerlink" title="a tag"></a>a tag</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.google.com"</span>&gt;</span>Go to Google<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Open in current same as above (default) --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.google.com"</span> <span class="attr">target</span>=<span class="string">"_self"</span>&gt;</span>Go to Google _self<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- open in new page --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.google.com"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>Go to Google _blank<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="li-tag"><a href="#li-tag" class="headerlink" title="li tag"></a>li tag</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>a<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>b<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- type attribute can used to change the icon on ul --&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="img-tag"><a href="#img-tag" class="headerlink" title="img tag"></a>img tag</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/img/1.jpg"</span> <span class="attr">alt</span>=<span class="string">"/img/imgNotFound.jpg"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- attributes eg. width, height, border can be used on img tag--&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="table"><a href="#table" class="headerlink" title="table"></a>table</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span> <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">需求1:做一个 带表头的 ，三行，三列的表格，并显示边框 需求 2:修改表格的宽度，高度，表格的对齐方式，单元格间距。</span></span><br><span class="line"><span class="comment">table 标签是表格标签</span></span><br><span class="line"><span class="comment">border 设置表格标签</span></span><br><span class="line"><span class="comment">width 设置表格宽度</span></span><br><span class="line"><span class="comment">height 设置表格高度</span></span><br><span class="line"><span class="comment">align 设置表格相对于页面的对齐方式</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment">cellspacing 设置单元格间距</span></span><br><span class="line"><span class="comment">tr 是行标签</span></span><br><span class="line"><span class="comment">th 是表头标签</span></span><br><span class="line"><span class="comment">td 是单元格标签</span></span><br><span class="line"><span class="comment">align 设置单元格文本对齐方式</span></span><br><span class="line"><span class="comment">b 是加粗标签 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">align</span>=<span class="string">"center"</span> <span class="attr">border</span>=<span class="string">"1"</span> <span class="attr">width</span>=<span class="string">"300"</span> <span class="attr">height</span>=<span class="string">"300"</span> <span class="attr">cellspacing</span>=<span class="string">"0"</span>&gt;</span> <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span>1.1<span class="tag">&lt;/<span class="name">th</span>&gt;</span> <span class="tag">&lt;<span class="name">th</span>&gt;</span>1.2<span class="tag">&lt;/<span class="name">th</span>&gt;</span> <span class="tag">&lt;<span class="name">th</span>&gt;</span>1.3<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span> <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>2.1<span class="tag">&lt;/<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">td</span>&gt;</span>2.2<span class="tag">&lt;/<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">td</span>&gt;</span>2.3<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span> <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>3.1<span class="tag">&lt;/<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">td</span>&gt;</span>3.2<span class="tag">&lt;/<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">td</span>&gt;</span>3.3<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span> <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Merge-table-element"><a href="#Merge-table-element" class="headerlink" title="Merge table element"></a>Merge table element</h3><img src="/images/merge-table-element.png" class="" width="300" height="300" title="Merge table element.png">
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">"1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span>a<span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span>b<span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span>c<span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span>d<span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span>e<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">"2"</span>&gt;</span>1.1<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>1.3<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>1.4<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">rowspan</span>=<span class="string">"2"</span>&gt;</span>1.5<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>2.1<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">"2"</span> <span class="attr">rowspan</span>=<span class="string">"2"</span>&gt;</span>2.2<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>2.4<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>3.1<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>3.4<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="iframe"><a href="#iframe" class="headerlink" title="iframe"></a>iframe</h2><ul>
-<li>iframe can show individual page inside html<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"https://www.google.com/"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="combine-with-a-tag"><a href="#combine-with-a-tag" class="headerlink" title="combine with a tag"></a>combine with a tag</h3></li>
-<li>show the page on iframe</li>
+<h2 id="4-domian-obj"><a href="#4-domian-obj" class="headerlink" title="4 domian obj"></a>4 domian obj</h2><ul>
+<li>domain obj is used to save and read data</li>
+<li>the usage of 4 domain obj is the same</li>
+<li>only the scope is different</li>
 </ul>
 <ol>
-<li>set the name att. in iframe</li>
-<li>set the target att at a tag same as the name att. at iframe<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"https://www.google.com/"</span> <span class="attr">name</span>=<span class="string">"abc"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.google.com"</span> <span class="attr">target</span>=<span class="string">"abc"</span>&gt;</span>Go to Google <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-</li>
+<li>pageContext (current jsp page)</li>
+<li>request     (current request)</li>
+<li>session     (current session, until browser is close)</li>
+<li>application  (current web module, until it stop)</li>
 </ol>
-<h2 id="form"><a href="#form" class="headerlink" title="form"></a>form</h2><ul>
-<li>fomat with table</li>
-</ul>
-<img src="/images/form.png" class="" width="600" height="600" title="Form fomat with table">
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">form 标签是表单标签</span></span><br><span class="line"><span class="comment">action 属性设置提交的服务器地址</span></span><br><span class="line"><span class="comment">method 属性设置提交的方式 GET(默认值)或 POST</span></span><br><span class="line"><span class="comment">表单提交的时候，数据没有发送给服务器的三种情况:</span></span><br><span class="line"><span class="comment">1、表单项没有 name 属性值</span></span><br><span class="line"><span class="comment">2、单选、复选(下拉列表中的 option 标签)都需要添加 value 属性，以便发送给服务器 </span></span><br><span class="line"><span class="comment">3、表单项不在提交的 form 标签中</span></span><br><span class="line"><span class="comment">GET 请求的特点是:</span></span><br><span class="line"><span class="comment">1、浏览器地址栏中的地址是:action 属性[+?+请求参数]</span></span><br><span class="line"><span class="comment">请求参数的格式是:name=value&amp;name=value 2、不安全</span></span><br><span class="line"><span class="comment">3、它有数据长度的限制</span></span><br><span class="line"><span class="comment">POST 请求的特点是: 1、浏览器地址栏中只有 action 属性值 2、相对于 GET 请求要安全 3、理论上没有数据长度的限制</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"https://localhost:8080"</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Sign Up for free<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>Username: <span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>Password: <span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>Confirm: <span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        </span><br><span class="line"><span class="comment">&lt;!--        use name attr. to disable multi select on radio buttion--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>Sex: <span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"sex"</span>&gt;</span>Male <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"sex"</span>&gt;</span>Female<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>Programming language: <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>&gt;</span>C++</span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>&gt;</span>Java</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--                use checked attri. to check the box by default--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">checked</span>=<span class="string">"checked"</span>&gt;</span>Js</span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>&gt;</span>Python</span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>Region<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"region"</span> <span class="attr">id</span>=<span class="string">"region"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Select"</span>&gt;</span>Select<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--                use selected attri. to check the box by default--&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"HK"</span> <span class="attr">selected</span>=<span class="string">"selected"</span>&gt;</span>HK<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"US"</span>&gt;</span>US<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"JP"</span>&gt;</span>JP<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>What do you Learn?<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">"message"</span> <span class="attr">id</span>=<span class="string">"message"</span> <span class="attr">cols</span>=<span class="string">"30"</span> <span class="attr">rows</span>=<span class="string">"10"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"reset"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  example: write to 4 domain obj</span></span><br><span class="line">    &lt;%</span><br><span class="line">        pageContext.setAttribute(<span class="string">"key"</span>, <span class="string">"pageContext"</span>);</span><br><span class="line">        request.setAttribute(<span class="string">"key"</span>, <span class="string">"request"</span>);</span><br><span class="line">        session.setAttribute(<span class="string">"key"</span>, <span class="string">"session"</span>);</span><br><span class="line">        application.setAttribute(<span class="string">"key"</span>, <span class="string">"application"</span>);</span><br><span class="line">    %&gt;</span><br><span class="line">    pageContext ：&lt;%=pageContext.getAttribute(<span class="string">"key"</span>)%&gt; &lt;br&gt;</span><br><span class="line">    request：&lt;%=request.getAttribute(<span class="string">"key"</span>)%&gt; &lt;br&gt;</span><br><span class="line">    session：&lt;%=session.getAttribute(<span class="string">"key"</span>)%&gt; &lt;br&gt;</span><br><span class="line">    application：&lt;%=application.getAttribute(<span class="string">"key"</span>)%&gt; &lt;br&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="div-span-p"><a href="#div-span-p" class="headerlink" title="div span p"></a>div span p</h2><ul>
-<li>div block element</li>
-<li>span line element</li>
-<li>p leave a line above, if the line is already there p tag will be ignore</li>
+<hr>
+<h2 id="Difference-between-out-and-response-getwriter"><a href="#Difference-between-out-and-response-getwriter" class="headerlink" title="Difference between out and response.getwriter()"></a>Difference between out and response.getwriter()</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">out.write(<span class="string">"write"</span>);</span><br><span class="line">response.getwriter().write(<span class="string">"response"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// output：</span></span><br><span class="line">response</span><br><span class="line">write</span><br></pre></td></tr></table></figure>
+<ul>
+<li>response will output first</li>
+<li>because both out and response will write to its own buffer</li>
+<li>when writing to output, the programme will first execute out.flush()</li>
+<li>which will flush all the element inside out’s buffer to the response’s buffer</li>
+<li>and then output all element in response’s buffer</li>
+<li>since the jsp use out for output</li>
+<li>so out is recommend</li>
+</ul>
+<h2 id="out-write-and-out-print"><a href="#out-write-and-out-print" class="headerlink" title="out.write() and out.print()"></a>out.write() and out.print()</h2><ul>
+<li>write() can only output string</li>
+<li>print() will change other class to string and then call write()</li>
+<li>recommend use print()</li>
 </ul>
 
           
@@ -1207,7 +617,7 @@ function category_js () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/23/Head-First-Java-Chapter-15-Socket-and-thread/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/17/JSP-04/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tech Dustdojo">
@@ -1226,7 +636,7 @@ function category_js () {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/06/23/Head-First-Java-Chapter-15-Socket-and-thread/" itemprop="url">Head First Java Chapter 15 Network Socket and Thread</a></h1>
+                <a class="post-title-link" href="/2020/09/17/JSP-04/" itemprop="url">JSP 04 JSP include</a></h1>
         
 
         <div class="post-meta">
@@ -1238,8 +648,8 @@ function category_js () {
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-23T14:24:45+08:00">
-                2020-06-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-17T16:27:15+08:00">
+                2020-09-17
               </time>
             
 
@@ -1261,19 +671,8 @@ function category_js () {
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/" itemprop="url" rel="index">
-                    <span itemprop="name">Book</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/Head-First-Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Head First Java</span>
+                  <a href="/categories/JSP/" itemprop="url" rel="index">
+                    <span itemprop="name">JSP</span>
                   </a>
                 </span>
 
@@ -1311,34 +710,20 @@ function category_js () {
       
         
           
-            <h1 id="Network-Socket"><a href="#Network-Socket" class="headerlink" title="Network Socket"></a>Network Socket</h1><h2 id="Client-Side"><a href="#Client-Side" class="headerlink" title="Client Side"></a>Client Side</h2><h3 id="make-socket-connection"><a href="#make-socket-connection" class="headerlink" title="make socket connection"></a>make socket connection</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Socket chatSocket = <span class="keyword">new</span> Socket(<span class="string">"192.168.1.1"</span>,<span class="number">8080</span>) <span class="comment">//ip and port</span></span><br></pre></td></tr></table></figure>
-
-
-<h3 id="Write-String-to-socket"><a href="#Write-String-to-socket" class="headerlink" title="Write String to socket"></a>Write String to socket</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PrintWriter writer = <span class="keyword">new</span> PrintWriter(chatSocket.getOutputStream);</span><br><span class="line">writer.println(<span class="string">"writing"</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="read-String-from-socket"><a href="#read-String-from-socket" class="headerlink" title="read String from socket"></a>read String from socket</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">InputStreamReader stream = <span class="keyword">new</span> InputStreamReader(chatSocket.getInputStream);</span><br><span class="line"></span><br><span class="line">BufferedReader reader = <span class="keyword">new</span> BufferReader(stream);</span><br><span class="line">String message = reader.readLine();</span><br><span class="line">reader.close()</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="Server-Side"><a href="#Server-Side" class="headerlink" title="Server Side"></a>Server Side</h2><h3 id="Accept-connection"><a href="#Accept-connection" class="headerlink" title="Accept connection"></a>Accept connection</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ServerSocket serverSocket = <span class="keyword">new</span> ServerSocket(<span class="number">8080</span>); <span class="comment">// listen port 8080</span></span><br><span class="line">Socket socket = serverSocket.accept(); </span><br><span class="line"><span class="comment">//read below explanation</span></span><br></pre></td></tr></table></figure>
-
+            <h1 id="static-include"><a href="#static-include" class="headerlink" title="static include"></a>static include</h1><p>syntax</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ include file=<span class="string">"/include/footer.jsp"</span>%&gt;--%&gt;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>When the serverSocket accept the connection</li>
-<li>it will return another port to for the communication</li>
-<li>the serverSocket will become idle to wait for other connection<img src="/images/accepting-socket-connection.png" class="" width="600" height="600" title="Accepting Socket Connection.png">
-</li>
+<li>static include will not translate the included jsp to java class</li>
+<li>it will only copy the file to included place and output</li>
+<li>it is usually used for static html page</li>
 </ul>
 <hr>
-<h1 id="Thread"><a href="#Thread" class="headerlink" title="Thread"></a>Thread</h1><ul>
-<li>Two ways to implenment thread</li>
+<h1 id="dynamic-include"><a href="#dynamic-include" class="headerlink" title="dynamic include"></a>dynamic include</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:include page="/include/footer.jsp"&gt;&lt;/jsp:include&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>dynamic include will translate the included jsp to java class</li>
 </ul>
-<ol>
-<li>Implement runnable interface</li>
-<li>extend thread class</li>
-</ol>
-<h2 id="Implenment-runnable-interface"><a href="#Implenment-runnable-interface" class="headerlink" title="Implenment runnable interface"></a>Implenment runnable interface</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Duck</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// only one method run need to be implenemented</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        go();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHi</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        hi();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">Class DuckTestDriver &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Runnable job = <span class="keyword">new</span> Duck();</span><br><span class="line">        Thread myThread = <span class="keyword">new</span> Thread(job);</span><br><span class="line">        myThread.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="Extend-thread-class"><a href="#Extend-thread-class" class="headerlink" title="Extend thread class"></a>Extend thread class</h2><h2 id="Use-Keyword-synchronized-to-lock-resource-it-only-lock-the-access-method-not-the-resource-itself"><a href="#Use-Keyword-synchronized-to-lock-resource-it-only-lock-the-access-method-not-the-resource-itself" class="headerlink" title="Use Keyword synchronized to lock resource ( it only lock the access method, not the resource itself )"></a>Use Keyword synchronized to lock resource ( it only lock the access method, not the resource itself )</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// lock the method</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">spendMoney</span><span class="params">(<span class="keyword">int</span> amount)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// lock the critical procedure</span></span><br><span class="line"><span class="keyword">synchronized</span>&#123;</span><br><span class="line"><span class="comment">//    critical process</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="request-redirect"><a href="#request-redirect" class="headerlink" title="request redirect"></a>request redirect</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:forward page="/page2.jsp"&gt;&lt;/jsp:forward&gt;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -1386,7 +771,7 @@ function category_js () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/09/Head-First-Java-Chapter-10-II/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/17/JSP-05/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tech Dustdojo">
@@ -1405,7 +790,7 @@ function category_js () {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/06/09/Head-First-Java-Chapter-10-II/" itemprop="url">Head First Java Chapter 10 II</a></h1>
+                <a class="post-title-link" href="/2020/09/17/JSP-05/" itemprop="url">JSP 05 EL</a></h1>
         
 
         <div class="post-meta">
@@ -1417,8 +802,8 @@ function category_js () {
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-09T13:48:57+08:00">
-                2020-06-09
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-17T16:27:15+08:00">
+                2020-09-17
               </time>
             
 
@@ -1440,19 +825,8 @@ function category_js () {
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/" itemprop="url" rel="index">
-                    <span itemprop="name">Book</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/Head-First-Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Head First Java</span>
+                  <a href="/categories/JSP/" itemprop="url" rel="index">
+                    <span itemprop="name">JSP</span>
                   </a>
                 </span>
 
@@ -1490,427 +864,22 @@ function category_js () {
       
         
           
-            <h1 id="String-Formatting"><a href="#String-Formatting" class="headerlink" title="String Formatting"></a>String Formatting</h1><ul>
-<li>formatting consists of two main parts</li>
-<li><ol>
-<li>Formatting instructions</li>
-</ol>
+            <h1 id="EL"><a href="#EL" class="headerlink" title="EL"></a>EL</h1><ul>
+<li>it is used to output the domain obj in jsp</li>
+<li>It is design for replacing expression tag in jsp<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// example: difference between EL and expression tag</span></span><br><span class="line">    &lt;%</span><br><span class="line">        request.setAttribute(<span class="string">"key1"</span>,<span class="string">"value1"</span>);</span><br><span class="line">    %&gt;</span><br><span class="line">    expression tag：&lt;%=request.getAttribute(<span class="string">"key2"</span>))%&gt;&lt;br/&gt;</span><br><span class="line">    EL ：$&#123;key1&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// output:</span></span><br><span class="line"> expression tag：<span class="keyword">null</span></span><br><span class="line"> EL ： <span class="comment">//nothing will output will the value is null</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><ol start="2">
-<li>The argument to be formatted</li>
-</ol>
-</li>
-</ul>
-<img src="/images/string-formatting.png" class="" width="600" height="600" title="String Formatting.png">
-
-<img src="/images/string-formatting-2.png" class="" width="600" height="600" title="String Formatting.png">
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String s = String.format(<span class="string">"%,d"</span>,<span class="number">1000000000</span>);</span><br><span class="line">sout(s);</span><br><span class="line"><span class="comment">// use , to display the decimal number</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line">output:</span><br><span class="line"><span class="number">1</span>,<span class="number">000</span>,<span class="number">000</span>,<span class="number">000</span></span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/08/Head-First-Java-Chapter-10/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/08/Head-First-Java-Chapter-10/" itemprop="url">Head First Java Chapter 10</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-08T15:27:09+08:00">
-                2020-06-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/" itemprop="url" rel="index">
-                    <span itemprop="name">Book</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/Head-First-Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Head First Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Static-method"><a href="#Static-method" class="headerlink" title="Static method"></a>Static method</h1><ul>
-<li><p>static method do not rely on obj instance</p>
-</li>
-<li><p>class name is used to call the method</p>
-</li>
-<li><p>if a class containing only static method, we set the constructor to private to prevent creating instance obj from the class</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Math.min(a,b);</span><br><span class="line"><span class="comment">// Math is the class name, not an obj</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>static method cannot use the non static variable inside the class</p>
-</li>
-<li><p>see exp. below</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Duck</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> size;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(“Size of duck is “ + size); </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// wrong, size is not accessable</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>static method cannot call the non static method</p>
-</li>
-<li><p>see exp. below</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Duck</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> size;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(“Size of duck is “ + getSize()); </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getSize</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> size;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// wrong</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h1 id="Static-Variable"><a href="#Static-Variable" class="headerlink" title="Static Variable"></a>Static Variable</h1><ul>
-<li>Obj of the same class maintain the same static variable (only one copy)</li>
-<li>see exp. below</li>
-</ul>
-<img src="/images/static-variable.png" class="" width="600" height="600" title="Static Variable">
-
-<ul>
-<li>each duck has its own size, but all ducks maintain the same duckCount</li>
-</ul>
-<h1 id="Static-final-Constant"><a href="#Static-final-Constant" class="headerlink" title="Static final (Constant)"></a>Static final (Constant)</h1><ul>
-<li>eg Math.PI</li>
-<li>usually use of Capital letter and _ for naming</li>
-</ul>
-<h1 id="Static-initializer"><a href="#Static-initializer" class="headerlink" title="Static initializer"></a>Static initializer</h1><ul>
-<li>only run once (when the class is loaded by the JVM)</li>
-<li>construct can run many times as long as obj is created</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Program</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Static Block"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    Program()&#123;</span><br><span class="line">        System.out.println(<span class="string">"Constructor"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Program"</span>);</span><br><span class="line">        Program p1 = <span class="keyword">new</span> Program();</span><br><span class="line">        Program p2 = <span class="keyword">new</span> Program();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Output:</span></span><br><span class="line">Static Block</span><br><span class="line">Program</span><br><span class="line">Constructor</span><br><span class="line">Constructor</span><br><span class="line"></span><br><span class="line"><span class="comment">// Static initializer -&gt; Main -&gt; Constructor</span></span><br><span class="line"><span class="comment">//the initializer is run before the main, since the main is inside the Program class</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Program</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Program"</span>);</span><br><span class="line">        Program p3 = <span class="keyword">new</span> Program();</span><br><span class="line">        Program p4 = <span class="keyword">new</span> Program();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Output:</span></span><br><span class="line">Program</span><br><span class="line">Static Block</span><br><span class="line">Constructor</span><br><span class="line">Constructor</span><br><span class="line"></span><br><span class="line"><span class="comment">// Main -&gt; Static initializer -&gt; Constructor</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="final"><a href="#final" class="headerlink" title="final"></a>final</h1><ul>
-<li>final on non static variable means non changable</li>
-<li>final on method means cannot override</li>
-<li>final on class means cannot inherit</li>
-<li>all method inside final class are final method</li>
-</ul>
-<h1 id="Type-Convert"><a href="#Type-Convert" class="headerlink" title="Type Convert"></a>Type Convert</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// String to primitive</span></span><br><span class="line"></span><br><span class="line">String s = “<span class="number">2</span>”;</span><br><span class="line"><span class="keyword">int</span> x = Integer.parseInt(s);</span><br><span class="line"><span class="keyword">double</span> d = Double.parseDouble(“<span class="number">420.24</span>”);</span><br><span class="line"><span class="keyword">boolean</span> b = <span class="keyword">new</span> Boolean(“<span class="keyword">true</span>”).booleanValue();</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Primitive to String</span></span><br><span class="line"></span><br><span class="line">String s = “<span class="number">2</span>”;</span><br><span class="line"><span class="keyword">int</span> x = Integer.parseInt(s);</span><br><span class="line"><span class="keyword">double</span> d = Double.parseDouble(“<span class="number">420.24</span>”);</span><br><span class="line"><span class="keyword">boolean</span> b = <span class="keyword">new</span> Boolean(“<span class="keyword">true</span>”).booleanValue();</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/Head-First-Java-Chapter-9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/07/Head-First-Java-Chapter-9/" itemprop="url">Head First Java Chapter 9</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-07T20:06:00+08:00">
-                2020-06-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/" itemprop="url" rel="index">
-                    <span itemprop="name">Book</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/Head-First-Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Head First Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Constructor-and-Garbage-collector"><a href="#Constructor-and-Garbage-collector" class="headerlink" title="Constructor and Garbage collector"></a>Constructor and Garbage collector</h1><hr>
-<h2 id="heap-and-stack"><a href="#heap-and-stack" class="headerlink" title="heap and stack"></a>heap and stack</h2><ul>
-<li>objects live in heap (where the garbage collector work)</li>
-<li>method invocations and local variables live in stack</li>
-</ul>
-<h3 id="Instance-Variables-declared-inside-the-class"><a href="#Instance-Variables-declared-inside-the-class" class="headerlink" title="Instance Variables (declared inside the class)"></a>Instance Variables (declared inside the class)</h3><ul>
-<li>live in heap</li>
-</ul>
-<h3 id="Local-Variables-declared-inside-the-method"><a href="#Local-Variables-declared-inside-the-method" class="headerlink" title="Local Variables (declared inside the method)"></a>Local Variables (declared inside the method)</h3><ul>
-<li>live in stack</li>
-<li>live cycle until the method finish execution</li>
-</ul>
-</br>
-see below exp.
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Animal a = <span class="keyword">new</span> Animal();        </span><br><span class="line">        <span class="comment">// ref. a live in stack whild new Animal() live in heap</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>if a instantce variable contain a ref of another obj</li>
-<li>only the ref size will be maintain in the heap, if the ref do not relate the any concrete obj</li>
-<li>see below exp.<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Animal dog; <span class="comment">// only maintain the ref. size in the heap</span></span><br><span class="line"><span class="keyword">public</span> Animal dog = <span class="keyword">new</span> Dog(); <span class="comment">// dog obj will also be maintain in the heap</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="Constructor"><a href="#Constructor" class="headerlink" title="Constructor"></a>Constructor</h2><ul>
-<li>name of the constructoe is same as the class name</li>
-<li>constructor should not return anything</li>
-<li>a class can have mutiple constructor by having diff. parameter</li>
-<li>complier will not create a constructor when no any constructor is created</li>
-<li>if there is a constructor, complier will not create constructor for you</li>
-<li>constructor can be public, private or non assigned</li>
 </ul>
 <hr>
-<ul>
-<li>When newing a new obj, the constrcutor will call its parent’s construct until the object class constructor.<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> class <span class="title">Animal</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Animal</span><span class="params">()</span></span>&#123;</span><br><span class="line">        sout(<span class="string">"Making Animal...."</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> class <span class="title">Hippo</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Hippo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        sout(<span class="string">"Making Hippo...."</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Hippo a = <span class="keyword">new</span> Hippo();</span><br><span class="line"></span><br><span class="line"><span class="comment">// sout("Making Animal....")</span></span><br><span class="line"><span class="comment">// sout("Making Hippo....")</span></span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
-<img src="/images/obj-construction.png" class="" width="600" height="600" title="Obj Construction">
-
-<h2 id="This"><a href="#This" class="headerlink" title="This"></a>This</h2><ul>
-<li>Use this() to call a constructor from another overloaded constructor in the same class.</li>
-<li>The call to this() can be used only in a constructor, and must be the first statement in a constructor.</li>
-<li>A constructor can have a call to super() OR this(), but never both!<img src="/images/keyword-this.png" class="" width="600" height="600" title="Keyword this">
+<h2 id="Output-domain-obj"><a href="#Output-domain-obj" class="headerlink" title="Output domain obj"></a>Output domain obj</h2><ul>
+<li>when 4 domain obj have the same key</li>
+<li>it will output the obj with smallest scope<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">   </span><br><span class="line">    request.setAttribute(<span class="string">"key"</span>, <span class="string">"request"</span>);</span><br><span class="line">    session.setAttribute(<span class="string">"key"</span>, <span class="string">"session"</span>);</span><br><span class="line">    application.setAttribute(<span class="string">"key"</span>, <span class="string">"application"</span>);</span><br><span class="line">    pageContext.setAttribute(<span class="string">"key"</span>, <span class="string">"pageContext"</span>);</span><br><span class="line">%&gt;</span><br><span class="line">$&#123; key &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// output:</span></span><br><span class="line"><span class="comment">// request</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h2 id="kill-obj"><a href="#kill-obj" class="headerlink" title="kill obj"></a>kill obj</h2><ul>
-<li>when no ref. relate to an obj, it will be collect by the garbage collector</li>
-<li>when memory is insufficient, GC will collect all collectable obj at once</li>
-</ul>
-<h3 id="3-ways-to-kill-obj"><a href="#3-ways-to-kill-obj" class="headerlink" title="3 ways to kill obj"></a>3 ways to kill obj</h3><ul>
-<li>when the obj is create inside a method, obj is killed when the method ends</li>
-<li>the last ref. of an obj is assigned to another obj</li>
-<li>set the last ref. of an obj to null</li>
+<hr>
+<h2 id="Output-Bean-obj"><a href="#Output-Bean-obj" class="headerlink" title="Output Bean obj"></a>Output Bean obj</h2><ul>
+<li>EL will use the getter method in bean class to get the value of that attr.</li>
+<li>it will be shown if the getter method is provided, even the bean class do not contain that attr. <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">  &lt;%</span><br><span class="line">        Person person = <span class="keyword">new</span> Person();</span><br><span class="line">        person.setName(<span class="string">"ken！"</span>);</span><br><span class="line">        person.setPhones(<span class="keyword">new</span> String[]&#123;<span class="string">"18610541354"</span>,<span class="string">"18688886666"</span>,<span class="string">"18699998888"</span>&#125;);</span><br><span class="line"></span><br><span class="line">        List&lt;String&gt; cities = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        cities.add(<span class="string">"hk"</span>);</span><br><span class="line">        cities.add(<span class="string">"ny"</span>);</span><br><span class="line">        cities.add(<span class="string">"ca"</span>);</span><br><span class="line">        person.setCities(cities);</span><br><span class="line"></span><br><span class="line">        Map&lt;String,Object&gt;map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">"key1"</span>,<span class="string">"value1"</span>);</span><br><span class="line">        map.put(<span class="string">"key2"</span>,<span class="string">"value2"</span>);</span><br><span class="line">        map.put(<span class="string">"key3"</span>,<span class="string">"value3"</span>);</span><br><span class="line">        person.setMap(map);</span><br><span class="line"></span><br><span class="line">        pageContext.setAttribute(<span class="string">"p"</span>, person);</span><br><span class="line">    %&gt;</span><br><span class="line"></span><br><span class="line">    output Person：$&#123; p &#125;&lt;br/&gt;</span><br><span class="line">    output Person‘s name：$&#123;p.name&#125; &lt;br&gt;</span><br><span class="line">    output Person‘s phones array：$&#123;p.phones[<span class="number">2</span>]&#125; &lt;br&gt;</span><br><span class="line">    output Person‘s cities list：$&#123;p.cities&#125; &lt;br&gt;</span><br><span class="line">    output element inside a cities List：$&#123;p.cities[<span class="number">2</span>]&#125; &lt;br&gt;</span><br><span class="line">    output Person‘s Map: $&#123;p.map&#125; &lt;br&gt;</span><br><span class="line">    output element inside map: $&#123;p.map.key3&#125; &lt;br&gt;</span><br><span class="line">    output Person‘s age：$&#123;p.age&#125; &lt;br&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// output:</span></span><br><span class="line">output Person：：Person&#123;name=ken！, phones=[<span class="number">18610541354</span>, <span class="number">18688886666</span>, <span class="number">18699998888</span>], cities=[hk, ny, ca], map=&#123;key1=value1, key2=value2, key3=value3&#125;&#125;</span><br><span class="line">output Person‘s name：ken！</span><br><span class="line">output Person‘s phones array：<span class="number">18699998888</span></span><br><span class="line">output Person‘s cities list：[hk, ny, ca]</span><br><span class="line">output element inside a cities List：ca</span><br><span class="line">output Person‘s Map: &#123;key1=value1, key2=value2, key3=value3&#125;</span><br><span class="line">output element inside map: value3</span><br><span class="line">output Person‘s age：<span class="number">18</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 
           
@@ -1960,7 +929,7 @@ see below exp.
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/Head-First-Java-Chapter-8/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/17/JSP-02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tech Dustdojo">
@@ -1979,7 +948,7 @@ see below exp.
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/06/07/Head-First-Java-Chapter-8/" itemprop="url">Head First Java Chapter 8</a></h1>
+                <a class="post-title-link" href="/2020/09/17/JSP-02/" itemprop="url">JSP 02 Scriptlet Tag</a></h1>
         
 
         <div class="post-meta">
@@ -1991,8 +960,8 @@ see below exp.
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-07T12:19:28+08:00">
-                2020-06-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-17T15:41:47+08:00">
+                2020-09-17
               </time>
             
 
@@ -2014,19 +983,8 @@ see below exp.
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/" itemprop="url" rel="index">
-                    <span itemprop="name">Book</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/Head-First-Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Head First Java</span>
+                  <a href="/categories/JSP/" itemprop="url" rel="index">
+                    <span itemprop="name">JSP</span>
                   </a>
                 </span>
 
@@ -2064,42 +1022,975 @@ see below exp.
       
         
           
-            <h1 id="More-about-polymorphism"><a href="#More-about-polymorphism" class="headerlink" title="More about polymorphism"></a>More about polymorphism</h1><hr>
-<p>Be careful to the diff between Abstract class, Abstract method, interface.</p>
-<hr>
-<h2 id="Abstract-class"><a href="#Abstract-class" class="headerlink" title="Abstract class"></a>Abstract class</h2><ul>
-<li>Some classes are not suitable to create a instance eg. Animal, because we dont know what should a animal obj look like.</li>
-<li>Abstract class help to prevent it being created as a instance obj.</li>
-<li>The first concrete class must implement all the abstract methods in the class.</li>
-<li>Abstract class have abstract method and non abstract method</li>
-</ul>
-<ul>
-<li>see the exp below<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Animal c; </span><br><span class="line">c = <span class="keyword">new</span> Dog();   <span class="comment">//legal, because we can assign it to child class</span></span><br><span class="line"></span><br><span class="line">Animal c = <span class="keyword">new</span> Animal(); <span class="comment">// illegal  Abstract class cannot be new</span></span><br></pre></td></tr></table></figure>
+            <h1 id="JSP-Scriptlet-Element"><a href="#JSP-Scriptlet-Element" class="headerlink" title="JSP Scriptlet Element"></a>JSP Scriptlet Element</h1><hr>
+<h2 id="JSP-Declaration-Tag"><a href="#JSP-Declaration-Tag" class="headerlink" title="JSP Declaration Tag"></a>JSP Declaration Tag</h2><ul>
+<li>syntax<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%!  %&gt;</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h2 id="Abstract-methood"><a href="#Abstract-methood" class="headerlink" title="Abstract methood"></a>Abstract methood</h2><ul>
-<li>class contain any abstract method should declare as abstract class</li>
-<li>ie. Non Abstract class CANNOT have Abstract method</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>; <span class="comment">//abstract method do not contain implementation</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// it ends with ;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- Declaration Tag can be used to declarate </span><br><span class="line">1. field</span><br><span class="line">2.  static code block</span><br><span class="line">3. inner class</span><br><span class="line">4. method</span><br></pre></td></tr></table></figure>
+
+
 
 <hr>
-<h2 id="Object-class"><a href="#Object-class" class="headerlink" title="Object class"></a>Object class</h2><ul>
-<li>all class extends object class</li>
-<li>exp. method in obj class<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- equals()</span><br><span class="line">- hashCode()</span><br><span class="line">- toString()</span><br><span class="line"></span><br><span class="line">&lt;!-- above three method are recommand to overrided --&gt;</span><br><span class="line"></span><br><span class="line">- getClass()</span><br></pre></td></tr></table></figure>
-<h3 id="equals-and"><a href="#equals-and" class="headerlink" title=".equals() and =="></a>.equals() and ==</h3></li>
-<li>both compare if two refferece relate to the same obj</li>
-<li>.equals() will usually be override to compare actual meaning of equality base on the obj.</li>
+<h2 id="JSP-expression-tag"><a href="#JSP-expression-tag" class="headerlink" title="JSP expression tag"></a>JSP expression tag</h2><ul>
+<li><p>syntax</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%=   %&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">it is used for writing data to the page</span><br><span class="line">eg: </span><br><span class="line">Integer</span><br><span class="line">Double&#x2F;Float</span><br><span class="line">String</span><br><span class="line">Obj inside _jspService() method</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>all element inside expression tag will be translate to out.print(Elenment)</p>
+</li>
+</ul>
+<ul>
+<li>example<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;%=<span class="number">12</span> %&gt; &lt;br&gt;   <span class="comment">// translate to out.print(12);</span></span><br><span class="line">&lt;%=<span class="number">12.12</span> %&gt; &lt;br&gt;   <span class="comment">// translate to out.print(12.12);</span></span><br><span class="line">&lt;%=<span class="string">"I am a String"</span> %&gt; &lt;br&gt;   <span class="comment">// translate to out.print("I am a String");</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// request obj is inside the _jspService() method</span></span><br><span class="line">&lt;%= request.getParameter(<span class="string">"username"</span>)%&gt;    </span><br><span class="line"><span class="comment">// translate to out.print(request.getParameter("username"));</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <hr>
-<h2 id="interface"><a href="#interface" class="headerlink" title="interface"></a>interface</h2><ul>
-<li>all methods are abstract</li>
-<li>think interface as a contract, any class implement the interface are granteed to implenment the abstract methods</li>
-<li>class can implement multiple interface</li>
-<li>but can only extends from one class<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Pet</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>&#123;&#125;;    <span class="comment">//abstract method only</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;&#125;; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">pulbilc <span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span> <span class="title">implenments</span> <span class="title">Pet</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">// implenmentation</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="comment">// implenmentation</span></span><br><span class="line">    &#125;; </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
+<h2 id="JSP-Scripting-tag"><a href="#JSP-Scripting-tag" class="headerlink" title="JSP Scripting tag"></a>JSP Scripting tag</h2><ul>
+<li>syntax<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%   %&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Usage:</span><br><span class="line">- writing java code in jsp</span><br><span class="line">- translated code will put inside _jspService() method</span><br><span class="line">- all obj inside _jspService() method is allow to use in &lt;% %&gt;</span><br><span class="line">- mutiple tag (can also combine with expression tag)can be combine</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// example: output a table in html by combine the scripting tag and expression tag</span></span><br><span class="line"></span><br><span class="line">    &lt;table border=<span class="string">"1"</span> cellspacing=<span class="string">"0"</span>&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">10</span>; j++) &#123;</span><br><span class="line">    %&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;第 &lt;%=j + 1%&gt;行&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;%</span><br><span class="line">        &#125;</span><br><span class="line">    %&gt;</span><br><span class="line">    &lt;/table&gt;</span><br></pre></td></tr></table></figure>
 
+
+</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/17/JSP-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Dustdojo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/09/17/JSP-01/" itemprop="url">JSP 01</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-17T14:14:57+08:00">
+                2020-09-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JSP/" itemprop="url" rel="index">
+                    <span itemprop="name">JSP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="What-is-JSP"><a href="#What-is-JSP" class="headerlink" title="What is JSP"></a>What is JSP</h1><ul>
+<li>JSP Programme(replace servlet) to send html page to browser</li>
+<li>Because using servlet to send html page is clumsy  </li>
+<li>below example shows using servlet to send html page</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">    resp.setContentType(<span class="string">"text/html; charset=UTF-8"</span>);</span><br><span class="line">    PrintWriter writer = resp.getWriter();</span><br><span class="line">    writer.write(<span class="string">"&lt;!DOCTYPE html&gt;\r\n"</span>);</span><br><span class="line">    writer.write(<span class="string">"  &lt;html lang=\"en\"&gt;\r\n"</span>);</span><br><span class="line">    writer.write(<span class="string">"  &lt;head&gt;\r\n"</span>);</span><br><span class="line">    writer.write(<span class="string">"      &lt;meta charset=\"UTF-8\"&gt;\r\n"</span>);</span><br><span class="line">    writer.write(<span class="string">"      &lt;title&gt;Title&lt;/title&gt;\r\n"</span>);</span><br><span class="line">    writer.write(<span class="string">"  &lt;/head&gt;\r\n"</span>);</span><br><span class="line">    writer.write(<span class="string">" &lt;body&gt;\r\n"</span>);</span><br><span class="line">    writer.write(<span class="string">"    This is a html page \r\n"</span>);</span><br><span class="line">    writer.write(<span class="string">"  &lt;/body&gt;\r\n"</span>);</span><br><span class="line">    writer.write(<span class="string">"&lt;/html&gt;\r\n"</span>);</span><br><span class="line">    writer.write(<span class="string">"\r\n"</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="access-Jsp-page"><a href="#access-Jsp-page" class="headerlink" title="access Jsp page"></a>access Jsp page</h2><ul>
+<li>jsp store under web directory</li>
+<li>access jsp page is same as html page</li>
+<li>JSP is actually a servlet programme</li>
+</ul>
+<h3 id="translation"><a href="#translation" class="headerlink" title="translation"></a>translation</h3><ul>
+<li>when accessing jsp page at first time, tomcat will translate the jsp page to a .java file and .class file.</li>
+<li>by looking at the .java file we can see it is a class extends HttpSevlet</li>
+<li>the translated java class is more or less the same as the exp. above (using writer to send html page to browser)</li>
+</ul>
+<img src="/images/actual-jsp-programme.png" class="" width="600" height="600" title="Actual jsp programme">
+
+<hr>
+<h1 id="JSP-header"><a href="#JSP-header" class="headerlink" title="JSP header"></a>JSP header</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=UTF-8"</span> language=<span class="string">"java"</span> %&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="attributes-in-the-header"><a href="#attributes-in-the-header" class="headerlink" title="attributes in the header"></a>attributes in the header</h2><ul>
+<li>language (only java is allowed)</li>
+<li>contentType</li>
+<li>pageEncoding</li>
+<li>import (import java class)</li>
+<li>autoFlush (for the writer in jsp)</li>
+<li>buffer (for the writer in jsp)</li>
+<li>errorPage (when error occurs forward to erroPage)</li>
+<li>isErrorPage</li>
+<li>session (true if need to create a HttpSession obj)</li>
+<li>extends (what class need to be extends for the jsp)</li>
+</ul>
+<hr>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/29/JavaWeb-10-HttpServlet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Dustdojo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/08/29/JavaWeb-10-HttpServlet/" itemprop="url">JavaWeb 08 HttpServletRequest, HttpServletResponse</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-29T14:41:54+08:00">
+                2020-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Server/" itemprop="url" rel="index">
+                    <span itemprop="name">Server</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Server/Servlet/" itemprop="url" rel="index">
+                    <span itemprop="name">Servlet</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="HttpServletRequest"><a href="#HttpServletRequest" class="headerlink" title="HttpServletRequest"></a>HttpServletRequest</h1><ul>
+<li>whenever a request access the tomcat server, it will parse the request to a Request obj and pass it to the service() method(doGet/ doPost), we can cast it to HttpRequest to get the infos about the request</li>
+</ul>
+<h2 id="Common-API"><a href="#Common-API" class="headerlink" title="Common API"></a>Common API</h2><ul>
+<li>getRequestURI()</li>
+<li>getRequestURL()</li>
+<li>getRemoteHost()</li>
+<li>getHeader()</li>
+<li>getParameter()</li>
+<li>getParameterValues()</li>
+<li>getMethod()</li>
+<li>setAttribute(key, value)</li>
+<li>getAttribute(key, value)</li>
+<li>getRequestDispatcher</li>
+</ul>
+<h2 id="Encoding"><a href="#Encoding" class="headerlink" title="Encoding"></a>Encoding</h2><ul>
+<li>post request may causes encoding problem</li>
+<li>use req.setCharacterEncoding(“UFT-8”) to solve the problem</li>
+<li>it must be use before accessing any parameters</li>
+</ul>
+<h2 id="Redirect"><a href="#Redirect" class="headerlink" title="Redirect"></a>Redirect</h2><hr>
+<h1 id="HttpServletResponse"><a href="#HttpServletResponse" class="headerlink" title="HttpServletResponse"></a>HttpServletResponse</h1><ul>
+<li>whenever a request access the tomcat server, it will parse the request to a Response obj and pass it to the service() method(doGet/ doPost), we can cast it to HttpRequest to get the infos about the request</li>
+</ul>
+<h2 id="Common-API-1"><a href="#Common-API-1" class="headerlink" title="Common API"></a>Common API</h2><ul>
+<li><p>getOutputStream()</p>
+</li>
+<li><p>getWriter()</p>
+</li>
+<li><p><b>the above two method can either choose one to use</b></p>
+</li>
+</ul>
+<h2 id="Encoding-1"><a href="#Encoding-1" class="headerlink" title="Encoding"></a>Encoding</h2><ul>
+<li>use resp.setCharacterEncoding(“UFT-8”) to set the server encoding</li>
+<li>and use resp.setHeader(“Content-Type”,”text/html; charset=UTF-8”) to set the browser encoding<br>or</li>
+<li>use resp.setContentType(“Content-Type”,”text/html; charset=UTF-8”) to set both server and browser encoding</li>
+<li>this method must be use before getWriter()</li>
+</ul>
+<h2 id="Redirect-1"><a href="#Redirect-1" class="headerlink" title="Redirect"></a>Redirect</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/29/JavaWeb-11-Cookie-And-Session/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Dustdojo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/08/29/JavaWeb-11-Cookie-And-Session/" itemprop="url">JavaWeb 08 HttpServletRequest, HttpServletResponse</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-29T14:41:54+08:00">
+                2020-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Server/" itemprop="url" rel="index">
+                    <span itemprop="name">Server</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Server/Servlet/" itemprop="url" rel="index">
+                    <span itemprop="name">Servlet</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="HttpServletRequest"><a href="#HttpServletRequest" class="headerlink" title="HttpServletRequest"></a>HttpServletRequest</h1><ul>
+<li>whenever a request access the tomcat server, it will parse the request to a Request obj and pass it to the service() method(doGet/ doPost), we can cast it to HttpRequest to get the infos about the request</li>
+</ul>
+<h2 id="Common-API"><a href="#Common-API" class="headerlink" title="Common API"></a>Common API</h2><ul>
+<li>getRequestURI()</li>
+<li>getRequestURL()</li>
+<li>getRemoteHost()</li>
+<li>getHeader()</li>
+<li>getParameter()</li>
+<li>getParameterValues()</li>
+<li>getMethod()</li>
+<li>setAttribute(key, value)</li>
+<li>getAttribute(key, value)</li>
+<li>getRequestDispatcher</li>
+</ul>
+<h2 id="Encoding"><a href="#Encoding" class="headerlink" title="Encoding"></a>Encoding</h2><ul>
+<li>post request may causes encoding problem</li>
+<li>use req.setCharacterEncoding(“UFT-8”) to solve the problem</li>
+<li>it must be use before accessing any parameters</li>
+</ul>
+<h2 id="Redirect"><a href="#Redirect" class="headerlink" title="Redirect"></a>Redirect</h2><hr>
+<h1 id="HttpServletResponse"><a href="#HttpServletResponse" class="headerlink" title="HttpServletResponse"></a>HttpServletResponse</h1><ul>
+<li>whenever a request access the tomcat server, it will parse the request to a Response obj and pass it to the service() method(doGet/ doPost), we can cast it to HttpRequest to get the infos about the request</li>
+</ul>
+<h2 id="Common-API-1"><a href="#Common-API-1" class="headerlink" title="Common API"></a>Common API</h2><ul>
+<li><p>getOutputStream()</p>
+</li>
+<li><p>getWriter()</p>
+</li>
+<li><p><b>the above two method can either choose one to use</b></p>
+</li>
+</ul>
+<h2 id="Encoding-1"><a href="#Encoding-1" class="headerlink" title="Encoding"></a>Encoding</h2><ul>
+<li>use resp.setCharacterEncoding(“UFT-8”) to set the server encoding</li>
+<li>and use resp.setHeader(“Content-Type”,”text/html; charset=UTF-8”) to set the browser encoding<br>or</li>
+<li>use resp.setContentType(“Content-Type”,”text/html; charset=UTF-8”) to set both server and browser encoding</li>
+<li>this method must be use before getWriter()</li>
+</ul>
+<h2 id="Redirect-1"><a href="#Redirect-1" class="headerlink" title="Redirect"></a>Redirect</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/29/JavaWeb-12-Filter/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Dustdojo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/08/29/JavaWeb-12-Filter/" itemprop="url">JavaWeb 08 HttpServletRequest, HttpServletResponse</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-29T14:41:54+08:00">
+                2020-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Server/" itemprop="url" rel="index">
+                    <span itemprop="name">Server</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Server/Servlet/" itemprop="url" rel="index">
+                    <span itemprop="name">Servlet</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="HttpServletRequest"><a href="#HttpServletRequest" class="headerlink" title="HttpServletRequest"></a>HttpServletRequest</h1><ul>
+<li>whenever a request access the tomcat server, it will parse the request to a Request obj and pass it to the service() method(doGet/ doPost), we can cast it to HttpRequest to get the infos about the request</li>
+</ul>
+<h2 id="Common-API"><a href="#Common-API" class="headerlink" title="Common API"></a>Common API</h2><ul>
+<li>getRequestURI()</li>
+<li>getRequestURL()</li>
+<li>getRemoteHost()</li>
+<li>getHeader()</li>
+<li>getParameter()</li>
+<li>getParameterValues()</li>
+<li>getMethod()</li>
+<li>setAttribute(key, value)</li>
+<li>getAttribute(key, value)</li>
+<li>getRequestDispatcher</li>
+</ul>
+<h2 id="Encoding"><a href="#Encoding" class="headerlink" title="Encoding"></a>Encoding</h2><ul>
+<li>post request may causes encoding problem</li>
+<li>use req.setCharacterEncoding(“UFT-8”) to solve the problem</li>
+<li>it must be use before accessing any parameters</li>
+</ul>
+<h2 id="Redirect"><a href="#Redirect" class="headerlink" title="Redirect"></a>Redirect</h2><hr>
+<h1 id="HttpServletResponse"><a href="#HttpServletResponse" class="headerlink" title="HttpServletResponse"></a>HttpServletResponse</h1><ul>
+<li>whenever a request access the tomcat server, it will parse the request to a Response obj and pass it to the service() method(doGet/ doPost), we can cast it to HttpRequest to get the infos about the request</li>
+</ul>
+<h2 id="Common-API-1"><a href="#Common-API-1" class="headerlink" title="Common API"></a>Common API</h2><ul>
+<li><p>getOutputStream()</p>
+</li>
+<li><p>getWriter()</p>
+</li>
+<li><p><b>the above two method can either choose one to use</b></p>
+</li>
+</ul>
+<h2 id="Encoding-1"><a href="#Encoding-1" class="headerlink" title="Encoding"></a>Encoding</h2><ul>
+<li>use resp.setCharacterEncoding(“UFT-8”) to set the server encoding</li>
+<li>and use resp.setHeader(“Content-Type”,”text/html; charset=UTF-8”) to set the browser encoding<br>or</li>
+<li>use resp.setContentType(“Content-Type”,”text/html; charset=UTF-8”) to set both server and browser encoding</li>
+<li>this method must be use before getWriter()</li>
+</ul>
+<h2 id="Redirect-1"><a href="#Redirect-1" class="headerlink" title="Redirect"></a>Redirect</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/29/JavaWeb-13-Ajax/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Dustdojo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/08/29/JavaWeb-13-Ajax/" itemprop="url">JavaWeb 08 HttpServletRequest, HttpServletResponse</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-29T14:41:54+08:00">
+                2020-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Server/" itemprop="url" rel="index">
+                    <span itemprop="name">Server</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Server/Servlet/" itemprop="url" rel="index">
+                    <span itemprop="name">Servlet</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="HttpServletRequest"><a href="#HttpServletRequest" class="headerlink" title="HttpServletRequest"></a>HttpServletRequest</h1><ul>
+<li>whenever a request access the tomcat server, it will parse the request to a Request obj and pass it to the service() method(doGet/ doPost), we can cast it to HttpRequest to get the infos about the request</li>
+</ul>
+<h2 id="Common-API"><a href="#Common-API" class="headerlink" title="Common API"></a>Common API</h2><ul>
+<li>getRequestURI()</li>
+<li>getRequestURL()</li>
+<li>getRemoteHost()</li>
+<li>getHeader()</li>
+<li>getParameter()</li>
+<li>getParameterValues()</li>
+<li>getMethod()</li>
+<li>setAttribute(key, value)</li>
+<li>getAttribute(key, value)</li>
+<li>getRequestDispatcher</li>
+</ul>
+<h2 id="Encoding"><a href="#Encoding" class="headerlink" title="Encoding"></a>Encoding</h2><ul>
+<li>post request may causes encoding problem</li>
+<li>use req.setCharacterEncoding(“UFT-8”) to solve the problem</li>
+<li>it must be use before accessing any parameters</li>
+</ul>
+<h2 id="Redirect"><a href="#Redirect" class="headerlink" title="Redirect"></a>Redirect</h2><hr>
+<h1 id="HttpServletResponse"><a href="#HttpServletResponse" class="headerlink" title="HttpServletResponse"></a>HttpServletResponse</h1><ul>
+<li>whenever a request access the tomcat server, it will parse the request to a Response obj and pass it to the service() method(doGet/ doPost), we can cast it to HttpRequest to get the infos about the request</li>
+</ul>
+<h2 id="Common-API-1"><a href="#Common-API-1" class="headerlink" title="Common API"></a>Common API</h2><ul>
+<li><p>getOutputStream()</p>
+</li>
+<li><p>getWriter()</p>
+</li>
+<li><p><b>the above two method can either choose one to use</b></p>
+</li>
+</ul>
+<h2 id="Encoding-1"><a href="#Encoding-1" class="headerlink" title="Encoding"></a>Encoding</h2><ul>
+<li>use resp.setCharacterEncoding(“UFT-8”) to set the server encoding</li>
+<li>and use resp.setHeader(“Content-Type”,”text/html; charset=UTF-8”) to set the browser encoding<br>or</li>
+<li>use resp.setContentType(“Content-Type”,”text/html; charset=UTF-8”) to set both server and browser encoding</li>
+<li>this method must be use before getWriter()</li>
+</ul>
+<h2 id="Redirect-1"><a href="#Redirect-1" class="headerlink" title="Redirect"></a>Redirect</h2>
           
         
       
@@ -2138,7 +2029,7 @@ see below exp.
 
   
  <nav class="pagination">
-   <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="accessibility.next_page"></i></a>
+   <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="accessibility.next_page"></i></a>
  </nav>
 
 
@@ -2183,7 +2074,7 @@ see below exp.
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">74</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2194,7 +2085,7 @@ see below exp.
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2205,7 +2096,7 @@ see below exp.
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

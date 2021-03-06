@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JSP," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Objective   change the static html page to jsp page, for dynamically show information from server    eg. show error message in login page   combine the two servlet to one servlet  change the if else t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MyBookStore 03">
+<meta property="og:url" content="http://yoursite.com/2020/09/30/MyBookStore-03/index.html">
+<meta property="og:site_name" content="Tech Dustdojo">
+<meta property="og:description" content="Objective   change the static html page to jsp page, for dynamically show information from server    eg. show error message in login page   combine the two servlet to one servlet  change the if else t">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/MyBookStore_P3_Objective1.png">
+<meta property="og:image" content="http://yoursite.com/images/MyBookStore_P3_Objective2.png">
+<meta property="og:image" content="http://yoursite.com/images/MyBookStore_P3_Objective3.png">
+<meta property="og:image" content="http://yoursite.com/images/MyBookStore_P3_Objective4.png">
+<meta property="og:image" content="http://yoursite.com/images/MyBookStore_P3_Objective5.png">
+<meta property="og:image" content="http://yoursite.com/images/resource-include-problem-in-jsp.png">
+<meta property="article:published_time" content="2020-09-30T03:34:27.000Z">
+<meta property="article:modified_time" content="2021-03-06T14:56:17.504Z">
+<meta property="article:author" content="Tech Dustdojo">
+<meta property="article:tag" content="JSP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/MyBookStore_P3_Objective1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/09/30/MyBookStore-03/"/>
+
+
+
+
+
+  <title>MyBookStore 03 | Tech Dustdojo</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tech Dustdojo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+<script>
+function category_js () {
+  $("<div class='display' style='float: left'> &nbsp>&nbsp </div>").prependTo(".category-list-item");
+  $(".category-list-child").css("display","none");
+  // .posts-expand .post-body ul li
+
+  // $(".posts-expand .post-body ul  li .category-list-link ").first().css("font-weight","bold");
+  $(".posts-expand .post-body ul .category-list-item ").first().children(".category-list-link").css("font-weight","bold");
+  $(".posts-expand .post-body ul .category-list-item ").first().siblings("li").children(".category-list-link").css("font-weight","bold");
+  // $(".category-list-child").css("list-style-type","none");
+  // $(".category-list-item").css("list-style-type","none");
+  $(".posts-expand .post-body ul li ").css("list-style-type", "none");
+  $(".category-list-link ").css("border-bottom", "none");
+
+  $(".display").click(function () {
+  // $(this).siblings(".category-list-child").css("display")=="none"?
+  // $(this).siblings(".category-list-child").css("display","block"):$(this).siblings(".category-list-child").css("display","none");
+  $(this).siblings(".category-list-child").slideToggle();
+  // $(this).siblings(".category-list-child").fadeToggle();
+  
+  })
+}
+</script>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/30/MyBookStore-03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Dustdojo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">MyBookStore 03</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-30T11:34:27+08:00">
+                2020-09-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Project/" itemprop="url" rel="index">
+                    <span itemprop="name">Project</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Project/MybookStore/" itemprop="url" rel="index">
+                    <span itemprop="name">MybookStore</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h1><img src="/images/MyBookStore_P3_Objective1.png" class="" width="800" height="800" title="MyBookStore_P3 Objective 1"> 
+<ol>
+<li>change the static html page to jsp page, for dynamically show information from server </li>
+</ol>
+<ul>
+<li>eg. show error message in login page</li>
+</ul>
+<ol start="2">
+<li>combine the two servlet to one servlet<img src="/images/MyBookStore_P3_Objective2.png" class="" width="800" height="800" title="MyBookStore_P3 Objective 2"> </li>
+<li>change the if else to reflection<img src="/images/MyBookStore_P3_Objective3.png" class="" width="800" height="800" title="MyBookStore_P3 Objective 3"> </li>
+<li>imp an abstract BaseServlet for different Servlet class<img src="/images/MyBookStore_P3_Objective4.png" class="" width="800" height="800" title="MyBookStore_P3 Objective 4"> </li>
+<li>use BeanUtils to inject params to replace manully injection<img src="/images/MyBookStore_P3_Objective5.png" class="" width="800" height="800" title="MyBookStore_P3 Objective 5"> </li>
+<li>keep the user inputed infos in login page<h1 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h1><h2 id="Objective-1"><a href="#Objective-1" class="headerlink" title="Objective 1"></a>Objective 1</h2></li>
+<li>add &lt;%@ page contentType=”text/html;charset=UTF-8” language=”java” %&gt; in the html</li>
+<li>change the .html to .jsp</li>
+<li>use idea (cmd + shift + r) to search .htm for entire directory</li>
+<li>change the static base tag to dynamic base tag</li>
+<li>In web layer, save the errMsg and user’s input in request attribute</li>
+<li>In jsp, show the errMsg and user’s input <h2 id="Objective-2"><a href="#Objective-2" class="headerlink" title="Objective 2"></a>Objective 2</h2></li>
+<li>add an hidden input in jsp</li>
+<li>create and impl the UserServlet class<h2 id="Objective-3"><a href="#Objective-3" class="headerlink" title="Objective 3"></a>Objective 3</h2></li>
+<li>getDeclaredMethod</li>
+<li>invoke<h2 id="Objective-5"><a href="#Objective-5" class="headerlink" title="Objective 5"></a>Objective 5</h2></li>
+<li>Create a WebUtils and imp the injectBean() method<h1 id="Technique"><a href="#Technique" class="headerlink" title="Technique"></a>Technique</h1><h2 id="Objective-1-1"><a href="#Objective-1-1" class="headerlink" title="Objective 1"></a>Objective 1</h2></li>
+</ol>
+<ul>
+<li>save the infos in request attribute</li>
+<li>in jsp, retirve the infos from request attribute<h2 id="Objective-2-1"><a href="#Objective-2-1" class="headerlink" title="Objective 2"></a>Objective 2</h2></li>
+<li>use hidden input to send the “action” to server </li>
+<li>server can determinate which method to call by the “action”<h2 id="Objective-3-1"><a href="#Objective-3-1" class="headerlink" title="Objective 3"></a>Objective 3</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String action = req.getParameter(<span class="string">"action"</span>);</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    Method method = <span class="keyword">this</span>.getClass().getDeclaredMethod(action, HttpServletRequest<span class="class">.<span class="keyword">class</span>, <span class="title">HttpServletResponse</span>.<span class="title">class</span>)</span>;</span><br><span class="line">    method.invoke(<span class="keyword">this</span>, req, resp);</span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Objective-5-1"><a href="#Objective-5-1" class="headerlink" title="Objective 5"></a>Objective 5</h2></li>
+<li>BeanUtils injects the obj by getter and setter</li>
+<li>request properties can get by req.getParameterMap()<h1 id="Problem-Encountered"><a href="#Problem-Encountered" class="headerlink" title="Problem Encountered"></a>Problem Encountered</h1><img src="/images/resource-include-problem-in-jsp.png" class="" width="800" height="800" title="Resource Include Problem In Jsp"> </li>
+</ul>
+<ol>
+<li>resource eg css, img not working</li>
+</ol>
+<ul>
+<li>since base tag is linked to localhost, when user request the url it cannot get the resource in his own localhost<br></li>
+</ul>
+<ol start="2">
+<li>java.lang.IllegalStateException: Cannot forward after response has been committe</li>
+</ol>
+<ul>
+<li>this is beacuse no return statement after request redirection<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1></li>
+</ul>
+<ol>
+<li>change the base tag to dynamically link the resource<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">    &lt;%</span><br><span class="line">        String baseUrl = request.getScheme()</span><br><span class="line">                + <span class="string">"://"</span></span><br><span class="line">                + request.getServerName()</span><br><span class="line">                + <span class="string">":"</span></span><br><span class="line">                + request.getServerPort()</span><br><span class="line">                + request.getContextPath()</span><br><span class="line">                + <span class="string">"/"</span>;</span><br><span class="line">    %&gt;</span><br><span class="line">&lt;%--    &lt;base href=<span class="string">"http://localhost:8080/MyBookStore_P3/"</span>&gt;--%&gt;</span><br><span class="line">&lt;%--    change the <span class="keyword">static</span> base to dynamic base--%&gt;</span><br><span class="line">    &lt;base href=<span class="string">"&lt;%=baseUrl%&gt;"</span>&gt;</span><br></pre></td></tr></table></figure></li>
+<li>add return statement after every redirection<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// add return statement after every redirection</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">login</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">    String username = req.getParameter(<span class="string">"username"</span>);</span><br><span class="line">    String password = req.getParameter(<span class="string">"password"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">boolean</span> isLogin = userService.login(<span class="keyword">new</span> User(username, password));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (isLogin) &#123;</span><br><span class="line">        req.getRequestDispatcher(<span class="string">"/page/user/login_success.jsp"</span>).forward(req, resp);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        req.setAttribute(<span class="string">"errMsg"</span>, <span class="string">"Wrong Username or Password"</span>);</span><br><span class="line">        req.setAttribute(<span class="string">"usename"</span>, username);</span><br><span class="line">        req.getRequestDispatcher(<span class="string">"page/user/login.jsp"</span>).forward(req, resp);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JSP/" rel="tag"># JSP</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/09/20/MyBookStore-02/" rel="next" title="MyBookStore 02">
+                <i class="fa fa-chevron-left"></i> MyBookStore 02
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/09/30/MyBookStore-04/" rel="prev" title="MyBookStore 04">
+                MyBookStore 04 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Tech Dustdojo</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">74</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Objective"><span class="nav-number">1.</span> <span class="nav-text">Objective</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Workflow"><span class="nav-number">2.</span> <span class="nav-text">Workflow</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective-1"><span class="nav-number">2.1.</span> <span class="nav-text">Objective 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective-2"><span class="nav-number">2.2.</span> <span class="nav-text">Objective 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective-3"><span class="nav-number">2.3.</span> <span class="nav-text">Objective 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective-5"><span class="nav-number">2.4.</span> <span class="nav-text">Objective 5</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Technique"><span class="nav-number">3.</span> <span class="nav-text">Technique</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective-1-1"><span class="nav-number">3.1.</span> <span class="nav-text">Objective 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective-2-1"><span class="nav-number">3.2.</span> <span class="nav-text">Objective 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective-3-1"><span class="nav-number">3.3.</span> <span class="nav-text">Objective 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective-5-1"><span class="nav-number">3.4.</span> <span class="nav-text">Objective 5</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Problem-Encountered"><span class="nav-number">4.</span> <span class="nav-text">Problem Encountered</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution"><span class="nav-number">5.</span> <span class="nav-text">Solution</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tech Dustdojo</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

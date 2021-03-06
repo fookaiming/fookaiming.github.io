@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JSP," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Objective use static include to inculde the header(css, js file and dynameic base tag), footer, manager_menu imp book dao, book service (bean, dao) impl Web(BookServlet list() )  impl Web(BookServlet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MyBookStore 04">
+<meta property="og:url" content="http://yoursite.com/2020/09/30/MyBookStore-04/index.html">
+<meta property="og:site_name" content="Tech Dustdojo">
+<meta property="og:description" content="Objective use static include to inculde the header(css, js file and dynameic base tag), footer, manager_menu imp book dao, book service (bean, dao) impl Web(BookServlet list() )  impl Web(BookServlet">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/MyBookStore_P4_Objective3.png">
+<meta property="og:image" content="http://yoursite.com/images/MyBookStore_P4_Objective7.png">
+<meta property="og:image" content="http://yoursite.com/images/MyBookStore_P4_Objective8.png">
+<meta property="og:image" content="http://yoursite.com/images/MyBookStore_P4_Objective9.png">
+<meta property="og:image" content="http://yoursite.com/images/MyBookStore_P4_Objective9.png">
+<meta property="article:published_time" content="2020-09-30T06:35:57.000Z">
+<meta property="article:modified_time" content="2021-03-06T14:55:33.583Z">
+<meta property="article:author" content="Tech Dustdojo">
+<meta property="article:tag" content="JSP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/MyBookStore_P4_Objective3.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/09/30/MyBookStore-04/"/>
+
+
+
+
+
+  <title>MyBookStore 04 | Tech Dustdojo</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tech Dustdojo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+<script>
+function category_js () {
+  $("<div class='display' style='float: left'> &nbsp>&nbsp </div>").prependTo(".category-list-item");
+  $(".category-list-child").css("display","none");
+  // .posts-expand .post-body ul li
+
+  // $(".posts-expand .post-body ul  li .category-list-link ").first().css("font-weight","bold");
+  $(".posts-expand .post-body ul .category-list-item ").first().children(".category-list-link").css("font-weight","bold");
+  $(".posts-expand .post-body ul .category-list-item ").first().siblings("li").children(".category-list-link").css("font-weight","bold");
+  // $(".category-list-child").css("list-style-type","none");
+  // $(".category-list-item").css("list-style-type","none");
+  $(".posts-expand .post-body ul li ").css("list-style-type", "none");
+  $(".category-list-link ").css("border-bottom", "none");
+
+  $(".display").click(function () {
+  // $(this).siblings(".category-list-child").css("display")=="none"?
+  // $(this).siblings(".category-list-child").css("display","block"):$(this).siblings(".category-list-child").css("display","none");
+  $(this).siblings(".category-list-child").slideToggle();
+  // $(this).siblings(".category-list-child").fadeToggle();
+  
+  })
+}
+</script>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/30/MyBookStore-04/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Dustdojo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">MyBookStore 04</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-30T14:35:57+08:00">
+                2020-09-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Project/" itemprop="url" rel="index">
+                    <span itemprop="name">Project</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Project/MybookStore/" itemprop="url" rel="index">
+                    <span itemprop="name">MybookStore</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h1><ol>
+<li>use static include to inculde the header(css, js file and dynameic base tag), footer, manager_menu</li>
+<li>imp book dao, book service (bean, dao)</li>
+<li>impl Web(BookServlet list() )<img src="/images/MyBookStore_P4_Objective3.png" class="" width="800" height="800" title="MyBookStore_P4 Objective 3"> </li>
+<li>impl Web(BookServlet add() )</li>
+<li>impl Web(BookServlet delete() )</li>
+<li>add a js for delete confirmation</li>
+<li>display book info in edit page<img src="/images/MyBookStore_P4_Objective7.png" class="" width="800" height="800" title="MyBookStore_P4 Objective 7"> </li>
+<li>impl Web(BookServlet edit() )<img src="/images/MyBookStore_P4_Objective8.png" class="" width="800" height="800" title="MyBookStore_P4 Objective 8"> </li>
+<li>solve the conflict between “Add A New Book” and “Edit”<img src="/images/MyBookStore_P4_Objective9.png" class="" width="800" height="800" title="MyBookStore_P4 Objective 9"> 
+
+
+</li>
+</ol>
+<h1 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h1><h2 id="Objective-1"><a href="#Objective-1" class="headerlink" title="Objective 1"></a>Objective 1</h2><ol>
+<li><p>create a common header.jsp footer.jsp, manager_menu.jsp</p>
+</li>
+<li><p>use static include to inculde the common header.jsp in different jsp page</p>
+<h2 id="Objective-2"><a href="#Objective-2" class="headerlink" title="Objective 2"></a>Objective 2</h2></li>
+<li><p>create table for book</p>
+</li>
+<li><p>create bean class(Book)</p>
+</li>
+<li><p>book Dao</p>
+</li>
+<li><p>book service</p>
+<h2 id="Objective-3"><a href="#Objective-3" class="headerlink" title="Objective 3"></a>Objective 3</h2></li>
+<li><p>BookServlet: list() method</p>
+</li>
+<li><p>link manager.jsp to bookServlet, map servlet url</p>
+</li>
+<li><p>display data in book_manager.jsp</p>
+<h2 id="Objective-4"><a href="#Objective-4" class="headerlink" title="Objective 4"></a>Objective 4</h2></li>
+<li><p>BookServlet: add() method</p>
+<h2 id="Objective-5"><a href="#Objective-5" class="headerlink" title="Objective 5"></a>Objective 5</h2></li>
+<li><p>BookServlet: delete() method</p>
+</li>
+<li><p>send book id to servlet when delete button is pressed</p>
+<h2 id="Objective-6"><a href="#Objective-6" class="headerlink" title="Objective 6"></a>Objective 6</h2></li>
+<li><p>imp js for add delete confirmation</p>
+<h2 id="Objective-7"><a href="#Objective-7" class="headerlink" title="Objective 7"></a>Objective 7</h2></li>
+<li><p>imp querybook()</p>
+</li>
+<li><p>display on jsp</p>
+<h2 id="Objective-8"><a href="#Objective-8" class="headerlink" title="Objective 8"></a>Objective 8</h2><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">12</span>.</span><br><span class="line">        &lt;%--        <span class="function">sd id to servlet <span class="keyword">if</span> it is a <span class="title">edit</span><span class="params">()</span> operation--%&gt;</span></span><br><span class="line"><span class="function">        &lt;input type</span>=<span class="string">"hidden"</span> name=<span class="string">"id"</span> value=$&#123;requestScope.book.id&#125;&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="Technique"><a href="#Technique" class="headerlink" title="Technique"></a>Technique</h1><h2 id="Objective-1-1"><a href="#Objective-1-1" class="headerlink" title="Objective 1"></a>Objective 1</h2><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="meta">@include</span> file=<span class="string">"/page/common/header.jsp"</span> %&gt;</span><br><span class="line"></span><br><span class="line">&lt;%<span class="meta">@include</span> file=<span class="string">"/page/common/manager_menu.jsp"</span> %&gt;</span><br><span class="line"></span><br><span class="line">&lt;%<span class="meta">@include</span> file=<span class="string">"/page/common/footer.jsp"</span> %&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Objective-5-1"><a href="#Objective-5-1" class="headerlink" title="Objective 5"></a>Objective 5</h2></li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- use $&#123;boo.id&#125; to get the book id from req.param and send it to the servlet --&gt;</span><br><span class="line">                &lt;td&gt;&lt;a class="delete" href="manager/bookServlet?action=delete&amp;id=$&#123;book.id&#125;"&gt;Delete&lt;/a&gt;&lt;/td&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Problem-Encountered"><a href="#Problem-Encountered" class="headerlink" title="Problem Encountered"></a>Problem Encountered</h1><h2 id="Objective-4-1"><a href="#Objective-4-1" class="headerlink" title="Objective 4"></a>Objective 4</h2><ul>
+<li>when clicking f5 after add a book, it will re-add the same book to database<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="Objective-9"><a href="#Objective-9" class="headerlink" title="Objective 9"></a>Objective 9</h2><img src="/images/MyBookStore_P4_Objective9.png" class="" width="800" height="800" title="MyBookStore_P4 Objective 9"> 
+
+
+</li>
+</ul>
+<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><h2 id="Objective-4-2"><a href="#Objective-4-2" class="headerlink" title="Objective 4"></a>Objective 4</h2><ul>
+<li>it is because the browser will automatically save the last request, when F5 is pressed, the last add request will resend to the server<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// use resp.sendRedirect instead of req.getRequestDispatcher</span></span><br><span class="line"><span class="comment">// resp.sendRedirect() will separate the request to two request, so the browser will only</span></span><br><span class="line"><span class="comment">// save the last request("/manager/bookServlet?action=list")</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//      req.getRequestDispatcher("/manager/bookServlet?action=list").forward(req, resp);</span></span><br><span class="line">        resp.sendRedirect(req.getContextPath() + <span class="string">"/manager/bookServlet?action=list"</span>);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h2 id="Objective-9-1"><a href="#Objective-9-1" class="headerlink" title="Objective 9"></a>Objective 9</h2><p>method one </p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- book_manager.jsp --&gt;</span><br><span class="line">&lt;!-- add method param. at url to determinate which method should be called --&gt;</span><br><span class="line">         &lt;td&gt;&lt;a href="manager/bookServlet?action=querybook&amp;id=$&#123;book.id&#125;&amp;method=edit"&gt;Edit&lt;/a&gt;&lt;/td&gt;</span><br><span class="line">         &lt;td&gt;&lt;a href="page/manager/book_edit.jsp?method=add"&gt;Add new a book&lt;/a&gt;&lt;/td&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- book_edit.jsp --&gt;</span><br><span class="line">        &lt;input type=<span class="string">"hidden"</span> name=<span class="string">"action"</span> value=$&#123;param.method&#125;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>method two </p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- book_edit.jsp --&gt;</span><br><span class="line">&lt;!-- determinate <span class="keyword">if</span> there are id param  in req param.--&gt;</span><br><span class="line"> &lt;!-- <span class="function">since id is only needed in <span class="title">edit</span><span class="params">()</span> --&gt; </span></span><br><span class="line"><span class="function"> &lt;input type</span>=<span class="string">"hidden"</span> name=<span class="string">"action"</span> value=$&#123;empty param.id ? <span class="string">"add"</span> : <span class="string">"edit"</span>&#125;&gt;</span><br></pre></td></tr></table></figure>
+<p>method three </p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- determinate <span class="keyword">if</span> there are book obj in requestScope--&gt;</span><br><span class="line"> &lt;!-- <span class="function">since id is only needed in <span class="title">edit</span><span class="params">()</span> --&gt; </span></span><br><span class="line"><span class="function"> &lt;input type</span>=<span class="string">"hidden"</span> name=<span class="string">"action"</span> value=$&#123;empty requestScope.book ? <span class="string">"add"</span> : <span class="string">"edit"</span>&#125;&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JSP/" rel="tag"># JSP</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/09/30/MyBookStore-03/" rel="next" title="MyBookStore 03">
+                <i class="fa fa-chevron-left"></i> MyBookStore 03
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/10/07/MyBookStore-05/" rel="prev" title="MyBookStore 05">
+                MyBookStore 05 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Tech Dustdojo</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">74</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Objective"><span class="nav-number">1.</span> <span class="nav-text">Objective</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Workflow"><span class="nav-number">2.</span> <span class="nav-text">Workflow</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective-1"><span class="nav-number">2.1.</span> <span class="nav-text">Objective 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective-2"><span class="nav-number">2.2.</span> <span class="nav-text">Objective 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective-3"><span class="nav-number">2.3.</span> <span class="nav-text">Objective 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective-4"><span class="nav-number">2.4.</span> <span class="nav-text">Objective 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective-5"><span class="nav-number">2.5.</span> <span class="nav-text">Objective 5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective-6"><span class="nav-number">2.6.</span> <span class="nav-text">Objective 6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective-7"><span class="nav-number">2.7.</span> <span class="nav-text">Objective 7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective-8"><span class="nav-number">2.8.</span> <span class="nav-text">Objective 8</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Technique"><span class="nav-number">3.</span> <span class="nav-text">Technique</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective-1-1"><span class="nav-number">3.1.</span> <span class="nav-text">Objective 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective-5-1"><span class="nav-number">3.2.</span> <span class="nav-text">Objective 5</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Problem-Encountered"><span class="nav-number">4.</span> <span class="nav-text">Problem Encountered</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective-4-1"><span class="nav-number">4.1.</span> <span class="nav-text">Objective 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective-9"><span class="nav-number">4.2.</span> <span class="nav-text">Objective 9</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solution"><span class="nav-number">5.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective-4-2"><span class="nav-number">5.1.</span> <span class="nav-text">Objective 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective-9-1"><span class="nav-number">5.2.</span> <span class="nav-text">Objective 9</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tech Dustdojo</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
