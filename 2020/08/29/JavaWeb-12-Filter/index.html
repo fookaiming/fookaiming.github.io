@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="HttpServletRequest whenever a request access the tomcat server, it will parse the request to a Request obj and pass it to the service() method(doGet&#x2F; doPost), we can cast it to HttpRequest to get the">
+<meta name="description" content="FilterWhat is Filter It is a interface under JavaEE it can be used to intercept requests, filter response common useage: Permission check, log, transcation management  Life cycle contructor and init()">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaWeb 12 Filter">
 <meta property="og:url" content="http://yoursite.com/2020/08/29/JavaWeb-12-Filter/index.html">
 <meta property="og:site_name" content="Tech Dustdojo">
-<meta property="og:description" content="HttpServletRequest whenever a request access the tomcat server, it will parse the request to a Request obj and pass it to the service() method(doGet&#x2F; doPost), we can cast it to HttpRequest to get the">
+<meta property="og:description" content="FilterWhat is Filter It is a interface under JavaEE it can be used to intercept requests, filter response common useage: Permission check, log, transcation management  Life cycle contructor and init()">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/FilterChain.png">
 <meta property="article:published_time" content="2020-08-29T10:14:24.000Z">
-<meta property="article:modified_time" content="2021-03-08T04:41:27.242Z">
+<meta property="article:modified_time" content="2021-03-08T06:34:40.741Z">
 <meta property="article:author" content="Tech Dustdojo">
 <meta property="article:tag" content="Servlet">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/FilterChain.png">
 
 
 
@@ -375,45 +377,34 @@ function category_js () {
       
 
       
-        <h1 id="HttpServletRequest"><a href="#HttpServletRequest" class="headerlink" title="HttpServletRequest"></a>HttpServletRequest</h1><ul>
-<li>whenever a request access the tomcat server, it will parse the request to a Request obj and pass it to the service() method(doGet/ doPost), we can cast it to HttpRequest to get the infos about the request</li>
+        <h1 id="Filter"><a href="#Filter" class="headerlink" title="Filter"></a>Filter</h1><h2 id="What-is-Filter"><a href="#What-is-Filter" class="headerlink" title="What is Filter"></a>What is Filter</h2><ul>
+<li>It is a interface under JavaEE</li>
+<li>it can be used to intercept requests, filter response</li>
+<li>common useage: Permission check, log, transcation management</li>
 </ul>
-<h2 id="Common-API"><a href="#Common-API" class="headerlink" title="Common API"></a>Common API</h2><ul>
-<li>getRequestURI()</li>
-<li>getRequestURL()</li>
-<li>getRemoteHost()</li>
-<li>getHeader()</li>
-<li>getParameter()</li>
-<li>getParameterValues()</li>
-<li>getMethod()</li>
-<li>setAttribute(key, value)</li>
-<li>getAttribute(key, value)</li>
-<li>getRequestDispatcher</li>
+<h2 id="Life-cycle"><a href="#Life-cycle" class="headerlink" title="Life cycle"></a>Life cycle</h2><ul>
+<li>contructor and init() start when web project starts</li>
+<li>doFilter() exe when any request matches the url pattern</li>
+<li>destroy() exe when web project ends</li>
 </ul>
-<h2 id="Encoding"><a href="#Encoding" class="headerlink" title="Encoding"></a>Encoding</h2><ul>
-<li>post request may causes encoding problem</li>
-<li>use req.setCharacterEncoding(“UFT-8”) to solve the problem</li>
-<li>it must be use before accessing any parameters</li>
+<h2 id="FilterConfig"><a href="#FilterConfig" class="headerlink" title="FilterConfig"></a>FilterConfig</h2><ul>
+<li>FilterConfig obj can used to get filter-name, init-param and servletContext<h2 id="How-to-implement-Filer"><a href="#How-to-implement-Filer" class="headerlink" title="How to implement Filer"></a>How to implement Filer</h2></li>
+<li>write a class implement Filter</li>
+<li>impl doFilter()</li>
+<li>config filter tag in web.xml</li>
 </ul>
-<h2 id="Redirect"><a href="#Redirect" class="headerlink" title="Redirect"></a>Redirect</h2><hr>
-<h1 id="HttpServletResponse"><a href="#HttpServletResponse" class="headerlink" title="HttpServletResponse"></a>HttpServletResponse</h1><ul>
-<li>whenever a request access the tomcat server, it will parse the request to a Response obj and pass it to the service() method(doGet/ doPost), we can cast it to HttpRequest to get the infos about the request</li>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ManagerFilter</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(FilterConfig filterConfig)</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">        HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;</span><br><span class="line"></span><br><span class="line">        Object user = httpServletRequest.getSession().getAttribute(<span class="string">"user"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (user == <span class="keyword">null</span>) &#123;</span><br><span class="line">            httpServletRequest.getRequestDispatcher(<span class="string">"/pages/user/login.jsp"</span>).forward(servletRequest,servletResponse);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// go to next filter</span></span><br><span class="line">            filterChain.doFilter(servletRequest,servletResponse);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>ManagerFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>com.devepkm.filter.ManagerFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>ManagerFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/pages/manager/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/manager/bookServlet<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="FilterChain"><a href="#FilterChain" class="headerlink" title="FilterChain"></a>FilterChain</h1><img src="/images/FilterChain.png" class="" width="600" height="600" title="FilterChain">
+
+<ul>
+<li>the prority of different filter depends on the writting position in web.xml</li>
+<li>multiplt filters use the same thread and request obj in default</li>
 </ul>
-<h2 id="Common-API-1"><a href="#Common-API-1" class="headerlink" title="Common API"></a>Common API</h2><ul>
-<li><p>getOutputStream()</p>
-</li>
-<li><p>getWriter()</p>
-</li>
-<li><p><b>the above two method can either choose one to use</b></p>
-</li>
-</ul>
-<h2 id="Encoding-1"><a href="#Encoding-1" class="headerlink" title="Encoding"></a>Encoding</h2><ul>
-<li>use resp.setCharacterEncoding(“UFT-8”) to set the server encoding</li>
-<li>and use resp.setHeader(“Content-Type”,”text/html; charset=UTF-8”) to set the browser encoding<br>or</li>
-<li>use resp.setContentType(“Content-Type”,”text/html; charset=UTF-8”) to set both server and browser encoding</li>
-<li>this method must be use before getWriter()</li>
-</ul>
-<h2 id="Redirect-1"><a href="#Redirect-1" class="headerlink" title="Redirect"></a>Redirect</h2>
+
       
     </div>
     
@@ -587,7 +578,7 @@ function category_js () {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HttpServletRequest"><span class="nav-number">1.</span> <span class="nav-text">HttpServletRequest</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Common-API"><span class="nav-number">1.1.</span> <span class="nav-text">Common API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Encoding"><span class="nav-number">1.2.</span> <span class="nav-text">Encoding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redirect"><span class="nav-number">1.3.</span> <span class="nav-text">Redirect</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HttpServletResponse"><span class="nav-number">2.</span> <span class="nav-text">HttpServletResponse</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Common-API-1"><span class="nav-number">2.1.</span> <span class="nav-text">Common API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Encoding-1"><span class="nav-number">2.2.</span> <span class="nav-text">Encoding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redirect-1"><span class="nav-number">2.3.</span> <span class="nav-text">Redirect</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Filter"><span class="nav-number">1.</span> <span class="nav-text">Filter</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-Filter"><span class="nav-number">1.1.</span> <span class="nav-text">What is Filter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Life-cycle"><span class="nav-number">1.2.</span> <span class="nav-text">Life cycle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FilterConfig"><span class="nav-number">1.3.</span> <span class="nav-text">FilterConfig</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-implement-Filer"><span class="nav-number">1.4.</span> <span class="nav-text">How to implement Filer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Example"><span class="nav-number">1.4.1.</span> <span class="nav-text">Example</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FilterChain"><span class="nav-number">2.</span> <span class="nav-text">FilterChain</span></a></li></ol></div>
             
 
           </div>
