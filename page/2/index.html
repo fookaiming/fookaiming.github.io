@@ -271,6 +271,210 @@ function category_js () {
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/20/MyBookStore-02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Dustdojo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/09/20/MyBookStore-02/" itemprop="url">MyBookStore 02</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-20T16:11:41+08:00">
+                2020-09-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Project/" itemprop="url" rel="index">
+                    <span itemprop="name">Project</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Project/MybookStore/" itemprop="url" rel="index">
+                    <span itemprop="name">MybookStore</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Project-Structure"><a href="#Project-Structure" class="headerlink" title="Project Structure"></a>Project Structure</h1><img src="/images/Web_Project_Structure.png" class="" width="800" height="800" title="Web Project Structure">
+
+<h1 id="Package-Structure"><a href="#Package-Structure" class="headerlink" title="Package Structure"></a>Package Structure</h1> <img src="/images/Package_Structure.png" class="" width="800" height="800" title="Package Structure">
+
+<h1 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h1><ul>
+<li>implement the backend service of login and register page  </li>
+</ul>
+<h1 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h1><ol>
+<li>Create db table</li>
+<li>bean: User.java</li>
+<li>utils:  JdbcUtils.java </li>
+</ol>
+<ul>
+<li>getConnection()</li>
+<li>close()</li>
+</ul>
+<ol start="4">
+<li>dao: basedao, userdao userdaoimp</li>
+<li>service: userService userServiceImp</li>
+</ol>
+<ul>
+<li>login()</li>
+<li>signUp()</li>
+<li>isUsernameExits()</li>
+</ul>
+<ol start="6">
+<li>servlet: RegsitServlet LoginServlet</li>
+</ol>
+<ul>
+<li>doPost()</li>
+</ul>
+<ol start="7">
+<li>web.xml</li>
+</ol>
+<ul>
+<li>config servlet mapping</li>
+</ul>
+<h1 id="Technique"><a href="#Technique" class="headerlink" title="Technique"></a>Technique</h1><h2 id="Project-Structure-1"><a href="#Project-Structure-1" class="headerlink" title="Project Structure"></a>Project Structure</h2><img src="/images/Web_Project_Structure.png" class="" width="800" height="800" title="Web Project Structure">
+<ul>
+<li>The entire servlet process should be hierarchy. </li>
+<li>Servlet class is initiate by the http request</li>
+<li>Web layer should be initiated Servlet layer</li>
+<li>Dao layer should be initiated Web layer</li>
+</ul>
+<h1 id="Problem-Encountered"><a href="#Problem-Encountered" class="headerlink" title="Problem Encountered"></a>Problem Encountered</h1><ul>
+<li>tomcat noclassdeffounderror</li>
+<li>status 500</li>
+<li>it is because tomcat cannot find the class at start up</li>
+</ul>
+<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><ul>
+<li>Add all dependencies and libraries in project structure</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/19/MyBookStore-01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -384,6 +588,164 @@ function category_js () {
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Userinput Verification</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    $(<span class="string">"#sub_btn"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// verify username, password, confirm password, email, verification code</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> usernameText = $(<span class="string">"#username"</span>).val();</span><br><span class="line">        <span class="comment">//word, number, _ and length between 5-12</span></span><br><span class="line">        <span class="keyword">var</span> usernamePatt = <span class="regexp">/^\w&#123;5,12&#125;$/</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!usernamePatt.test(usernameText)) &#123;</span><br><span class="line">            $(<span class="string">"span.errorMsg"</span>).text(<span class="string">"Invalid Username! "</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> passwordText = $(<span class="string">"#password"</span>).val();</span><br><span class="line">        <span class="keyword">if</span> (!usernamePatt.test(passwordText)) &#123;</span><br><span class="line">            $(<span class="string">"span.errorMsg"</span>).text(<span class="string">"Invalid Password! "</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> repwText = $(<span class="string">"#repwd"</span>).val();</span><br><span class="line">        <span class="keyword">if</span> (repwText != passwordText) &#123;</span><br><span class="line">            $(<span class="string">"span.errorMsg"</span>).text(<span class="string">"Incorrect Confirmed Password! "</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> emailText = $(<span class="string">"#email"</span>).val();</span><br><span class="line">        <span class="keyword">var</span> emailPatt = <span class="regexp">/^(([^&lt;&gt;()\[\]\\.,;:\s@"]+(\.[^&lt;&gt;()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]&#123;1,3&#125;\.[0-9]&#123;1,3&#125;\.[0-9]&#123;1,3&#125;\.[0-9]&#123;1,3&#125;])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]&#123;2,&#125;))$/</span>;</span><br><span class="line">        <span class="keyword">if</span> (!emailPatt.test(emailText))&#123;</span><br><span class="line">            $(<span class="string">"span.errorMsg"</span>).text(<span class="string">"Invalid Email! "</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// only verify if verification code is not null</span></span><br><span class="line">        <span class="keyword">var</span> codeText = $(<span class="string">"#code"</span>).val();</span><br><span class="line">        <span class="keyword">if</span> (codeText == <span class="string">""</span>)&#123;</span><br><span class="line">            $(<span class="string">"span.errorMsg"</span>).text(<span class="string">"Invalid Verification Code! "</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="comment">//clean all error msg</span></span><br><span class="line">        $(<span class="string">"span.errorMsg"</span>).text(<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 </li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/17/JSP-05/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Dustdojo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/09/17/JSP-05/" itemprop="url">JSP 05 EL</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-17T16:27:15+08:00">
+                2020-09-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JSP/" itemprop="url" rel="index">
+                    <span itemprop="name">JSP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="EL"><a href="#EL" class="headerlink" title="EL"></a>EL</h1><ul>
+<li>it is used to output the domain obj in jsp</li>
+<li>It is design for replacing expression tag in jsp<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// example: difference between EL and expression tag</span></span><br><span class="line">    &lt;%</span><br><span class="line">        request.setAttribute(<span class="string">"key1"</span>,<span class="string">"value1"</span>);</span><br><span class="line">    %&gt;</span><br><span class="line">    expression tag：&lt;%=request.getAttribute(<span class="string">"key2"</span>))%&gt;&lt;br/&gt;</span><br><span class="line">    EL ：$&#123;key1&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// output:</span></span><br><span class="line"> expression tag：<span class="keyword">null</span></span><br><span class="line"> EL ： <span class="comment">//nothing will output will the value is null</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="Output-domain-obj"><a href="#Output-domain-obj" class="headerlink" title="Output domain obj"></a>Output domain obj</h2><ul>
+<li>when 4 domain obj have the same key</li>
+<li>it will output the obj with smallest scope<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">   </span><br><span class="line">    request.setAttribute(<span class="string">"key"</span>, <span class="string">"request"</span>);</span><br><span class="line">    session.setAttribute(<span class="string">"key"</span>, <span class="string">"session"</span>);</span><br><span class="line">    application.setAttribute(<span class="string">"key"</span>, <span class="string">"application"</span>);</span><br><span class="line">    pageContext.setAttribute(<span class="string">"key"</span>, <span class="string">"pageContext"</span>);</span><br><span class="line">%&gt;</span><br><span class="line">$&#123; key &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// output:</span></span><br><span class="line"><span class="comment">// request</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<h2 id="Output-Bean-obj"><a href="#Output-Bean-obj" class="headerlink" title="Output Bean obj"></a>Output Bean obj</h2><ul>
+<li>EL will use the getter method in bean class to get the value of that attr.</li>
+<li>it will be shown if the getter method is provided, even the bean class do not contain that attr. <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">  &lt;%</span><br><span class="line">        Person person = <span class="keyword">new</span> Person();</span><br><span class="line">        person.setName(<span class="string">"ken！"</span>);</span><br><span class="line">        person.setPhones(<span class="keyword">new</span> String[]&#123;<span class="string">"18610541354"</span>,<span class="string">"18688886666"</span>,<span class="string">"18699998888"</span>&#125;);</span><br><span class="line"></span><br><span class="line">        List&lt;String&gt; cities = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        cities.add(<span class="string">"hk"</span>);</span><br><span class="line">        cities.add(<span class="string">"ny"</span>);</span><br><span class="line">        cities.add(<span class="string">"ca"</span>);</span><br><span class="line">        person.setCities(cities);</span><br><span class="line"></span><br><span class="line">        Map&lt;String,Object&gt;map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">"key1"</span>,<span class="string">"value1"</span>);</span><br><span class="line">        map.put(<span class="string">"key2"</span>,<span class="string">"value2"</span>);</span><br><span class="line">        map.put(<span class="string">"key3"</span>,<span class="string">"value3"</span>);</span><br><span class="line">        person.setMap(map);</span><br><span class="line"></span><br><span class="line">        pageContext.setAttribute(<span class="string">"p"</span>, person);</span><br><span class="line">    %&gt;</span><br><span class="line"></span><br><span class="line">    output Person：$&#123; p &#125;&lt;br/&gt;</span><br><span class="line">    output Person‘s name：$&#123;p.name&#125; &lt;br&gt;</span><br><span class="line">    output Person‘s phones array：$&#123;p.phones[<span class="number">2</span>]&#125; &lt;br&gt;</span><br><span class="line">    output Person‘s cities list：$&#123;p.cities&#125; &lt;br&gt;</span><br><span class="line">    output element inside a cities List：$&#123;p.cities[<span class="number">2</span>]&#125; &lt;br&gt;</span><br><span class="line">    output Person‘s Map: $&#123;p.map&#125; &lt;br&gt;</span><br><span class="line">    output element inside map: $&#123;p.map.key3&#125; &lt;br&gt;</span><br><span class="line">    output Person‘s age：$&#123;p.age&#125; &lt;br&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// output:</span></span><br><span class="line">output Person：：Person&#123;name=ken！, phones=[<span class="number">18610541354</span>, <span class="number">18688886666</span>, <span class="number">18699998888</span>], cities=[hk, ny, ca], map=&#123;key1=value1, key2=value2, key3=value3&#125;&#125;</span><br><span class="line">output Person‘s name：ken！</span><br><span class="line">output Person‘s phones array：<span class="number">18699998888</span></span><br><span class="line">output Person‘s cities list：[hk, ny, ca]</span><br><span class="line">output element inside a cities List：ca</span><br><span class="line">output Person‘s Map: &#123;key1=value1, key2=value2, key3=value3&#125;</span><br><span class="line">output element inside map: value3</span><br><span class="line">output Person‘s age：<span class="number">18</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 
           
@@ -724,164 +1086,6 @@ function category_js () {
 </ul>
 <hr>
 <h1 id="request-redirect"><a href="#request-redirect" class="headerlink" title="request redirect"></a>request redirect</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:forward page="/page2.jsp"&gt;&lt;/jsp:forward&gt;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/17/JSP-05/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/09/17/JSP-05/" itemprop="url">JSP 05 EL</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-17T16:27:15+08:00">
-                2020-09-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JSP/" itemprop="url" rel="index">
-                    <span itemprop="name">JSP</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="EL"><a href="#EL" class="headerlink" title="EL"></a>EL</h1><ul>
-<li>it is used to output the domain obj in jsp</li>
-<li>It is design for replacing expression tag in jsp<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// example: difference between EL and expression tag</span></span><br><span class="line">    &lt;%</span><br><span class="line">        request.setAttribute(<span class="string">"key1"</span>,<span class="string">"value1"</span>);</span><br><span class="line">    %&gt;</span><br><span class="line">    expression tag：&lt;%=request.getAttribute(<span class="string">"key2"</span>))%&gt;&lt;br/&gt;</span><br><span class="line">    EL ：$&#123;key1&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// output:</span></span><br><span class="line"> expression tag：<span class="keyword">null</span></span><br><span class="line"> EL ： <span class="comment">//nothing will output will the value is null</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<h2 id="Output-domain-obj"><a href="#Output-domain-obj" class="headerlink" title="Output domain obj"></a>Output domain obj</h2><ul>
-<li>when 4 domain obj have the same key</li>
-<li>it will output the obj with smallest scope<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">   </span><br><span class="line">    request.setAttribute(<span class="string">"key"</span>, <span class="string">"request"</span>);</span><br><span class="line">    session.setAttribute(<span class="string">"key"</span>, <span class="string">"session"</span>);</span><br><span class="line">    application.setAttribute(<span class="string">"key"</span>, <span class="string">"application"</span>);</span><br><span class="line">    pageContext.setAttribute(<span class="string">"key"</span>, <span class="string">"pageContext"</span>);</span><br><span class="line">%&gt;</span><br><span class="line">$&#123; key &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// output:</span></span><br><span class="line"><span class="comment">// request</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<hr>
-<h2 id="Output-Bean-obj"><a href="#Output-Bean-obj" class="headerlink" title="Output Bean obj"></a>Output Bean obj</h2><ul>
-<li>EL will use the getter method in bean class to get the value of that attr.</li>
-<li>it will be shown if the getter method is provided, even the bean class do not contain that attr. <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">  &lt;%</span><br><span class="line">        Person person = <span class="keyword">new</span> Person();</span><br><span class="line">        person.setName(<span class="string">"ken！"</span>);</span><br><span class="line">        person.setPhones(<span class="keyword">new</span> String[]&#123;<span class="string">"18610541354"</span>,<span class="string">"18688886666"</span>,<span class="string">"18699998888"</span>&#125;);</span><br><span class="line"></span><br><span class="line">        List&lt;String&gt; cities = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        cities.add(<span class="string">"hk"</span>);</span><br><span class="line">        cities.add(<span class="string">"ny"</span>);</span><br><span class="line">        cities.add(<span class="string">"ca"</span>);</span><br><span class="line">        person.setCities(cities);</span><br><span class="line"></span><br><span class="line">        Map&lt;String,Object&gt;map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">"key1"</span>,<span class="string">"value1"</span>);</span><br><span class="line">        map.put(<span class="string">"key2"</span>,<span class="string">"value2"</span>);</span><br><span class="line">        map.put(<span class="string">"key3"</span>,<span class="string">"value3"</span>);</span><br><span class="line">        person.setMap(map);</span><br><span class="line"></span><br><span class="line">        pageContext.setAttribute(<span class="string">"p"</span>, person);</span><br><span class="line">    %&gt;</span><br><span class="line"></span><br><span class="line">    output Person：$&#123; p &#125;&lt;br/&gt;</span><br><span class="line">    output Person‘s name：$&#123;p.name&#125; &lt;br&gt;</span><br><span class="line">    output Person‘s phones array：$&#123;p.phones[<span class="number">2</span>]&#125; &lt;br&gt;</span><br><span class="line">    output Person‘s cities list：$&#123;p.cities&#125; &lt;br&gt;</span><br><span class="line">    output element inside a cities List：$&#123;p.cities[<span class="number">2</span>]&#125; &lt;br&gt;</span><br><span class="line">    output Person‘s Map: $&#123;p.map&#125; &lt;br&gt;</span><br><span class="line">    output element inside map: $&#123;p.map.key3&#125; &lt;br&gt;</span><br><span class="line">    output Person‘s age：$&#123;p.age&#125; &lt;br&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// output:</span></span><br><span class="line">output Person：：Person&#123;name=ken！, phones=[<span class="number">18610541354</span>, <span class="number">18688886666</span>, <span class="number">18699998888</span>], cities=[hk, ny, ca], map=&#123;key1=value1, key2=value2, key3=value3&#125;&#125;</span><br><span class="line">output Person‘s name：ken！</span><br><span class="line">output Person‘s phones array：<span class="number">18699998888</span></span><br><span class="line">output Person‘s cities list：[hk, ny, ca]</span><br><span class="line">output element inside a cities List：ca</span><br><span class="line">output Person‘s Map: &#123;key1=value1, key2=value2, key3=value3&#125;</span><br><span class="line">output element inside map: value3</span><br><span class="line">output Person‘s age：<span class="number">18</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-
           
         
       
@@ -1824,196 +2028,6 @@ function category_js () {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/29/JavaWeb-10-HttpServlet/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/08/29/JavaWeb-10-HttpServlet/" itemprop="url">JavaWeb 10 HttpServletRequest, HttpServletResponse</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-29T14:41:54+08:00">
-                2020-08-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Server/" itemprop="url" rel="index">
-                    <span itemprop="name">Server</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Server/Servlet/" itemprop="url" rel="index">
-                    <span itemprop="name">Servlet</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="HttpServletRequest"><a href="#HttpServletRequest" class="headerlink" title="HttpServletRequest"></a>HttpServletRequest</h1><ul>
-<li>whenever a request access the tomcat server, it will parse the request to a Request obj and pass it to the service() method(doGet/ doPost), we can cast it to HttpRequest to get the infos about the request</li>
-</ul>
-<h2 id="Common-API"><a href="#Common-API" class="headerlink" title="Common API"></a>Common API</h2><ul>
-<li>getRequestURI()</li>
-<li>getRequestURL()</li>
-<li>getRemoteHost()</li>
-<li>getHeader()</li>
-<li>getParameter()</li>
-<li>getParameterValues()</li>
-<li>getMethod()</li>
-<li>setAttribute(key, value)</li>
-<li>getAttribute(key, value)</li>
-<li>getRequestDispatcher</li>
-</ul>
-<h2 id="Encoding"><a href="#Encoding" class="headerlink" title="Encoding"></a>Encoding</h2><ul>
-<li>post request may causes encoding problem</li>
-<li>use req.setCharacterEncoding(“UFT-8”) to solve the problem</li>
-<li>it must be use before accessing any parameters</li>
-</ul>
-<h2 id="Redirect"><a href="#Redirect" class="headerlink" title="Redirect"></a>Redirect</h2><hr>
-<h1 id="HttpServletResponse"><a href="#HttpServletResponse" class="headerlink" title="HttpServletResponse"></a>HttpServletResponse</h1><ul>
-<li>whenever a request access the tomcat server, it will parse the request to a Response obj and pass it to the service() method(doGet/ doPost), we can cast it to HttpRequest to get the infos about the request</li>
-</ul>
-<h2 id="Common-API-1"><a href="#Common-API-1" class="headerlink" title="Common API"></a>Common API</h2><ul>
-<li><p>getOutputStream()</p>
-</li>
-<li><p>getWriter()</p>
-</li>
-<li><p><b>the above two method can either choose one to use</b></p>
-</li>
-</ul>
-<h2 id="Encoding-1"><a href="#Encoding-1" class="headerlink" title="Encoding"></a>Encoding</h2><ul>
-<li>use resp.setCharacterEncoding(“UFT-8”) to set the server encoding</li>
-<li>and use resp.setHeader(“Content-Type”,”text/html; charset=UTF-8”) to set the browser encoding<br>or</li>
-<li>use resp.setContentType(“Content-Type”,”text/html; charset=UTF-8”) to set both server and browser encoding</li>
-<li>this method must be use before getWriter()</li>
-</ul>
-<h2 id="Redirect-1"><a href="#Redirect-1" class="headerlink" title="Redirect"></a>Redirect</h2>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2063,7 +2077,7 @@ function category_js () {
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">74</span>
+                  <span class="site-state-item-count">75</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2074,7 +2088,7 @@ function category_js () {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2085,7 +2099,7 @@ function category_js () {
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

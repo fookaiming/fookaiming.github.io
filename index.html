@@ -271,6 +271,162 @@ function category_js () {
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/10/Depoly-in-GCP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Dustdojo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/03/10/Depoly-in-GCP/" itemprop="url">Depoly in GCP</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-03-10T11:46:10+08:00">
+                2021-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Depolyment/" itemprop="url" rel="index">
+                    <span itemprop="name">Depolyment</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Depolyment/GCP/" itemprop="url" rel="index">
+                    <span itemprop="name">GCP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Reserve-staic-external-ip"><a href="#Reserve-staic-external-ip" class="headerlink" title="Reserve staic external ip"></a>Reserve staic external ip</h1><img src="/images/deployment/gcp/Reserve-staic-external-ip.png" class="" width="800" height="800" title="Reserve staic external ip"> 
+
+<h1 id="Config-firewall-rules"><a href="#Config-firewall-rules" class="headerlink" title="Config firewall rules"></a>Config firewall rules</h1><img src="/images/deployment/gcp/config-firewall-rules.png" class="" width="800" height="800" title="Config firewall rules"> 
+
+<h1 id="allow-Centos-firewall"><a href="#allow-Centos-firewall" class="headerlink" title="allow Centos firewall"></a>allow Centos firewall</h1><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- check firewall status --&gt;</span><br><span class="line">sudo firewall-<span class="built_in">cmd</span> --state</span><br><span class="line"></span><br><span class="line">&lt;!-- <span class="keyword">if</span> <span class="keyword">not</span> running  --&gt;</span><br><span class="line">sudo systemctl <span class="built_in">start</span> firewalld.service</span><br><span class="line"></span><br><span class="line">&lt;!-- open port --&gt;</span><br><span class="line">sudo firewall-<span class="built_in">cmd</span> --zone=public --add-port=<span class="number">8080</span>/tcp --permanent</span><br><span class="line"></span><br><span class="line">&lt;!-- restart firewall --&gt;</span><br><span class="line">sudo systemctl restart firewalld.service</span><br><span class="line"></span><br><span class="line">&lt;!-- reload config --&gt;</span><br><span class="line">sudo firewall-<span class="built_in">cmd</span> --reload</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/18/MyForum-05-Interceptor/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1846,210 +2002,6 @@ function category_js () {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/20/MyBookStore-02/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/09/20/MyBookStore-02/" itemprop="url">MyBookStore 02</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-20T16:11:41+08:00">
-                2020-09-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Project/" itemprop="url" rel="index">
-                    <span itemprop="name">Project</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Project/MybookStore/" itemprop="url" rel="index">
-                    <span itemprop="name">MybookStore</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Project-Structure"><a href="#Project-Structure" class="headerlink" title="Project Structure"></a>Project Structure</h1><img src="/images/Web_Project_Structure.png" class="" width="800" height="800" title="Web Project Structure">
-
-<h1 id="Package-Structure"><a href="#Package-Structure" class="headerlink" title="Package Structure"></a>Package Structure</h1> <img src="/images/Package_Structure.png" class="" width="800" height="800" title="Package Structure">
-
-<h1 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h1><ul>
-<li>implement the backend service of login and register page  </li>
-</ul>
-<h1 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h1><ol>
-<li>Create db table</li>
-<li>bean: User.java</li>
-<li>utils:  JdbcUtils.java </li>
-</ol>
-<ul>
-<li>getConnection()</li>
-<li>close()</li>
-</ul>
-<ol start="4">
-<li>dao: basedao, userdao userdaoimp</li>
-<li>service: userService userServiceImp</li>
-</ol>
-<ul>
-<li>login()</li>
-<li>signUp()</li>
-<li>isUsernameExits()</li>
-</ul>
-<ol start="6">
-<li>servlet: RegsitServlet LoginServlet</li>
-</ol>
-<ul>
-<li>doPost()</li>
-</ul>
-<ol start="7">
-<li>web.xml</li>
-</ol>
-<ul>
-<li>config servlet mapping</li>
-</ul>
-<h1 id="Technique"><a href="#Technique" class="headerlink" title="Technique"></a>Technique</h1><h2 id="Project-Structure-1"><a href="#Project-Structure-1" class="headerlink" title="Project Structure"></a>Project Structure</h2><img src="/images/Web_Project_Structure.png" class="" width="800" height="800" title="Web Project Structure">
-<ul>
-<li>The entire servlet process should be hierarchy. </li>
-<li>Servlet class is initiate by the http request</li>
-<li>Web layer should be initiated Servlet layer</li>
-<li>Dao layer should be initiated Web layer</li>
-</ul>
-<h1 id="Problem-Encountered"><a href="#Problem-Encountered" class="headerlink" title="Problem Encountered"></a>Problem Encountered</h1><ul>
-<li>tomcat noclassdeffounderror</li>
-<li>status 500</li>
-<li>it is because tomcat cannot find the class at start up</li>
-</ul>
-<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><ul>
-<li>Add all dependencies and libraries in project structure</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2099,7 +2051,7 @@ function category_js () {
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">74</span>
+                  <span class="site-state-item-count">75</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2110,7 +2062,7 @@ function category_js () {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2121,7 +2073,7 @@ function category_js () {
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>

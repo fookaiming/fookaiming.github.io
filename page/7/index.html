@@ -271,6 +271,160 @@ function category_js () {
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/30/Thread-Lock-in-java/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tech Dustdojo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/30/Thread-Lock-in-java/" itemprop="url">Thread Lock in  java</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-30T17:45:49+08:00">
+                2019-12-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaSE/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaSE</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Use-lock-to-solve-the-data-integrity-problem-due-to-muti-thread-data-sharing-problem"><a href="#Use-lock-to-solve-the-data-integrity-problem-due-to-muti-thread-data-sharing-problem" class="headerlink" title="Use lock to solve the data integrity problem due to muti-thread data sharing problem"></a>Use lock to solve the data integrity problem due to muti-thread data sharing problem</h2><ol>
+<li>create a lock obj</li>
+<li>put the operation in try finally block</li>
+<li>lock.lock in the try block</li>
+<li>lock.unlock in finally block<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> ReentrantLock lock = <span class="keyword">new</span> ReentrantLock();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(ture)&#123;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            lock.lock();</span><br><span class="line">            <span class="comment">// operation</span></span><br><span class="line">        &#125;<span class="keyword">final</span>&#123;</span><br><span class="line">            lock.unlock();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<hr>
+<h2 id="Difference-between-synchronized-method-and-lock-method"><a href="#Difference-between-synchronized-method-and-lock-method" class="headerlink" title="Difference between synchronized method and lock method"></a>Difference between synchronized method and lock method</h2><ul>
+<li>synchronized method will automatically release the lock </li>
+<li>lock method need to release the lock manully</li>
+</ul>
+<img src="/images/Workflow-to-solve-muti-thread-problem.png" class="" width="600" height="600" title="Workflow to solve mutithread-problem">
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/30/Thread-synchronization-in-java/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1760,194 +1914,6 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/25/Data-type/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/25/Data-type/" itemprop="url">Data type</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-25T20:28:44+08:00">
-                2019-12-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaSE/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaSE</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Data-type"><a href="#Data-type" class="headerlink" title="Data type"></a>Data type</h2><table>
-<thead>
-<tr>
-<th>Data type</th>
-<th align="center">Size(byte)</th>
-<th align="right">Range</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>byte</td>
-<td align="center">1</td>
-<td align="right">-128 ~ 127</td>
-</tr>
-<tr>
-<td>short</td>
-<td align="center">2</td>
-<td align="right">~ ±32000</td>
-</tr>
-<tr>
-<td>int</td>
-<td align="center">4</td>
-<td align="right">~ ±21亿</td>
-</tr>
-<tr>
-<td>long</td>
-<td align="center">8</td>
-<td align="right">~ ±2^63</td>
-</tr>
-<tr>
-<td>float</td>
-<td align="center">4</td>
-<td align="right">~ ±3^38</td>
-</tr>
-<tr>
-<td>double</td>
-<td align="center">8</td>
-<td align="right">~ ±1^308</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="Data-decoration"><a href="#Data-decoration" class="headerlink" title="Data decoration"></a>Data decoration</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">15</span>;</span><br><span class="line"><span class="keyword">int</span> b = <span class="number">015</span>;    <span class="comment">//oct</span></span><br><span class="line"><span class="keyword">int</span> c = <span class="number">0x15</span>;   <span class="comment">//hex</span></span><br><span class="line">ind d = <span class="number">0b1101</span>; <span class="comment">//bin</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> e = <span class="number">74L</span>;   <span class="comment">// change int to long</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">float</span> f = <span class="number">3.14F</span>;<span class="comment">//change double to float</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> g = <span class="number">3.14</span>;</span><br></pre></td></tr></table></figure>
-<hr>
-<ul>
-<li>Do not compare floating-point number since it is not accurate</li>
-<li>use BigDecimal instead</li>
-</ul>
-<hr>
-<h2 id="Arithmetic-Operation"><a href="#Arithmetic-Operation" class="headerlink" title="Arithmetic Operation"></a>Arithmetic Operation</h2><img src="/images/df.png" class="" width="600" height="600" title="整數運算">
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1997,7 +1963,7 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">74</span>
+                  <span class="site-state-item-count">75</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2008,7 +1974,7 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2019,7 +1985,7 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
