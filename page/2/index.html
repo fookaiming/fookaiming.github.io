@@ -545,6 +545,160 @@ function category_js () {
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/03/SpringBoot-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/01/03/SpringBoot-01/" itemprop="url">SpringBoot-01</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-03T12:32:12+08:00">
+                2021-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Spring’s-managed-components"><a href="#Spring’s-managed-components" class="headerlink" title="Spring’s managed components"></a>Spring’s managed components</h1><img src="/images/Spring-managed-components.png" class="" width="800" height="800" title="Spring" alt="s managed components"> 
+<ul>
+<li>Above annotation is used to declare that the class is a Spring bean and should be created and maintained by Spring ApplicationContext</li>
+<li>Spring will scan the above annoatation during initial process and managed those class</li>
+</ul>
+<h1 id="How-to-get-the-Spring-container-ApplicationContext"><a href="#How-to-get-the-Spring-container-ApplicationContext" class="headerlink" title="How to get the Spring container (ApplicationContext)"></a>How to get the Spring container (ApplicationContext)</h1><ul>
+<li>impl ApplicationContextAware interface</li>
+<li>inject the applicationContext to local variable <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">temp</span> <span class="keyword">implements</span> <span class="title">ApplicationContextAware</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> ApplicationContext applicationContext;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setApplicationContext</span><span class="params">(ApplicationContext applicationContext)</span> <span class="keyword">throws</span> BeansException </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.applicationContext = applicationContext;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Primary"><a href="#Primary" class="headerlink" title="@Primary"></a>@Primary</h1></li>
+<li>scope: class</li>
+<li>when getting bean by interface, multiple class may impl the same interface, @Primary are used to set up the default bean class.</li>
+</ul>
+<h1 id="Qualifier"><a href="#Qualifier" class="headerlink" title="@Qualifier"></a>@Qualifier</h1><ul>
+<li>scope: class</li>
+<li>specify which bean should be inject when you dont want to inject the default(@primary) one</li>
+<li><h1 id="Assign-alias-to-Bean-class"><a href="#Assign-alias-to-Bean-class" class="headerlink" title="Assign alias to Bean class"></a>Assign alias to Bean class</h1></li>
+<li>@Componment(“aliasName”)</li>
+<li>@Controller(“aliasName”)</li>
+<li>@Service(“aliasName”)</li>
+<li>@Repositry(“aliasName”)<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">applicationContext.getBean(<span class="string">"aliasName"</span>,Interface<span class="class">.<span class="keyword">class</span>)</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="PostConstruct-PreDestroy"><a href="#PostConstruct-PreDestroy" class="headerlink" title="@PostConstruct, @PreDestroy"></a>@PostConstruct, @PreDestroy</h1><ul>
+<li>scope: method</li>
+<li>apply method before construction and before destory</li>
+</ul>
+<h1 id="Scope-“prototype”"><a href="#Scope-“prototype”" class="headerlink" title="@Scope(“prototype”)"></a>@Scope(“prototype”)</h1><ul>
+<li>scopr: class</li>
+<li>default bean managed by spring is singlton</li>
+</ul>
+<h1 id="How-to-declare-third-party-class-to-spring-obj-Manage-by-spring"><a href="#How-to-declare-third-party-class-to-spring-obj-Manage-by-spring" class="headerlink" title="How to declare third party class to spring obj(Manage by spring)"></a>How to declare third party class to spring obj(Manage by spring)</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThridPartyClass</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">// the method name will be used as the name of the Spring Bean obj</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ThridPartyBean <span class="title">thridPartyClass</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ThridPartyBean();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">        applicationContext.getBean(<span class="string">"thridPartyClass"</span>,ThridPartyBean<span class="class">.<span class="keyword">class</span>) </span></span><br><span class="line"><span class="class">    &#125;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">&#125;</span></span><br></pre></td></tr></table></figure>
+<h1 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h1><ul>
+<li>inject the Spring Obj to local varibe</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/03/SpringBoot-AOP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -841,135 +995,6 @@ function category_js () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/03/SpringBoot-Redis/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Max Foo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Max Foo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/01/03/SpringBoot-Redis/" itemprop="url">SpringBoot Redis</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-03T12:32:12+08:00">
-                2021-01-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Config-Redis"><a href="#Config-Redis" class="headerlink" title="Config Redis"></a>Config Redis</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- application.properties --&gt;</span></span><br><span class="line">#Redis</span><br><span class="line">spring.redis.database=0</span><br><span class="line">spring.redis.host=localhost</span><br><span class="line">spring.redis.port=6379</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// RedisConfig.java</span></span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.connection.RedisConnectionFactory;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.core.RedisTemplate;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.serializer.RedisSerializer;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RedisConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//  inject RedisConnectionFactory</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> RedisTemplate&lt;String,Object&gt; <span class="title">redisTemplate</span><span class="params">(RedisConnectionFactory factory)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        RedisTemplate&lt;String,Object&gt; template = <span class="keyword">new</span> RedisTemplate&lt;&gt;();</span><br><span class="line">        template.setConnectionFactory(factory);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        set setKeySerializer for key</span></span><br><span class="line">        template.setKeySerializer(RedisSerializer.string());</span><br><span class="line"><span class="comment">//        set setKeySerializer for value</span></span><br><span class="line">        template.setValueSerializer(RedisSerializer.json());</span><br><span class="line"></span><br><span class="line"><span class="comment">//        set setKeySerializer for HashMap key</span></span><br><span class="line">        template.setHashKeySerializer(RedisSerializer.string());</span><br><span class="line"></span><br><span class="line"><span class="comment">//        set setKeySerializer for HashMap value</span></span><br><span class="line">        template.setHashValueSerializer(RedisSerializer.json());</span><br><span class="line"></span><br><span class="line">        template.afterPropertiesSet();</span><br><span class="line">        <span class="keyword">return</span> template;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Exapmle"><a href="#Exapmle" class="headerlink" title="Exapmle"></a>Exapmle</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line"><span class="keyword">import</span> org.springframework.dao.DataAccessException;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.core.BoundValueOperations;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.core.RedisOperations;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.core.RedisTemplate;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.core.SessionCallback;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.ContextConfiguration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.TimeUnit;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RunWith</span>(SpringRunner<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">@<span class="title">SpringBootTest</span></span></span><br><span class="line"><span class="class">@<span class="title">ContextConfiguration</span>(<span class="title">classes</span> </span>= CommunityApplication<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class"><span class="title">public</span> <span class="title">class</span> <span class="title">RedisTests</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> RedisTemplate redisTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testStrings</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        String redisKey = <span class="string">"test:count"</span>;</span><br><span class="line"></span><br><span class="line">        redisTemplate.opsForValue().set(redisKey, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(redisTemplate.opsForValue().get(redisKey));</span><br><span class="line">        System.out.println(redisTemplate.opsForValue().increment(redisKey));</span><br><span class="line">        System.out.println(redisTemplate.opsForValue().decrement(redisKey));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testHashes</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        String redisKey = <span class="string">"test:user"</span>;</span><br><span class="line"></span><br><span class="line">        redisTemplate.opsForHash().put(redisKey, <span class="string">"id"</span>, <span class="number">1</span>);</span><br><span class="line">        redisTemplate.opsForHash().put(redisKey, <span class="string">"username"</span>, <span class="string">"zhangsan"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(redisTemplate.opsForHash().get(redisKey, <span class="string">"id"</span>));</span><br><span class="line">        System.out.println(redisTemplate.opsForHash().get(redisKey, <span class="string">"username"</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testLists</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        String redisKey = <span class="string">"test:ids"</span>;</span><br><span class="line"></span><br><span class="line">        redisTemplate.opsForList().leftPush(redisKey, <span class="number">101</span>);</span><br><span class="line">        redisTemplate.opsForList().leftPush(redisKey, <span class="number">102</span>);</span><br><span class="line">        redisTemplate.opsForList().leftPush(redisKey, <span class="number">103</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(redisTemplate.opsForList().size(redisKey));</span><br><span class="line">        System.out.println(redisTemplate.opsForList().index(redisKey, <span class="number">0</span>));</span><br><span class="line">        System.out.println(redisTemplate.opsForList().range(redisKey, <span class="number">0</span>, <span class="number">2</span>));</span><br><span class="line"></span><br><span class="line">        System.out.println(redisTemplate.opsForList().leftPop(redisKey));</span><br><span class="line">        System.out.println(redisTemplate.opsForList().leftPop(redisKey));</span><br><span class="line">        System.out.println(redisTemplate.opsForList().leftPop(redisKey));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSets</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        String redisKey = <span class="string">"test:teachers"</span>;</span><br><span class="line"></span><br><span class="line">        redisTemplate.opsForSet().add(redisKey, <span class="string">"ken"</span>, <span class="string">"andy"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(redisTemplate.opsForSet().size(redisKey));</span><br><span class="line">        System.out.println(redisTemplate.opsForSet().pop(redisKey));</span><br><span class="line">        System.out.println(redisTemplate.opsForSet().members(redisKey));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSortedSets</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        String redisKey = <span class="string">"test:students"</span>;</span><br><span class="line"></span><br><span class="line">        redisTemplate.opsForZSet().add(redisKey, <span class="string">"ken"</span>, <span class="number">80</span>);</span><br><span class="line">        redisTemplate.opsForZSet().add(redisKey, <span class="string">"andy"</span>, <span class="number">90</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(redisTemplate.opsForZSet().zCard(redisKey));</span><br><span class="line">        System.out.println(redisTemplate.opsForZSet().score(redisKey, <span class="string">"ken"</span>));</span><br><span class="line">        System.out.println(redisTemplate.opsForZSet().reverseRank(redisKey, <span class="string">"andy"</span>));</span><br><span class="line">        System.out.println(redisTemplate.opsForZSet().reverseRange(redisKey, <span class="number">0</span>, <span class="number">2</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testKeys</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        redisTemplate.delete(<span class="string">"test:user"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(redisTemplate.hasKey(<span class="string">"test:user"</span>));</span><br><span class="line"></span><br><span class="line">        redisTemplate.expire(<span class="string">"test:students"</span>, <span class="number">10</span>, TimeUnit.SECONDS);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testBoundOperations</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        String redisKey = <span class="string">"test:count"</span>;</span><br><span class="line">        BoundValueOperations operations = redisTemplate.boundValueOps(redisKey);</span><br><span class="line">        operations.increment();</span><br><span class="line">        operations.increment();</span><br><span class="line">        operations.increment();</span><br><span class="line">        operations.increment();</span><br><span class="line">        operations.increment();</span><br><span class="line">        System.out.println(operations.get());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="Transcation"><a href="#Transcation" class="headerlink" title="Transcation"></a>Transcation</h1><h2 id="Two-ways-of-Transaction-Management"><a href="#Two-ways-of-Transaction-Management" class="headerlink" title="Two ways of Transaction Management"></a>Two ways of Transaction Management</h2><ul>
-<li>Declarative Transaction Management</li>
-<li>Programmatic Transaction Management</li>
-<li>selection operation cannot be use inside transaction</li>
-</ul>
-<h2 id="Example-of-Programmatic-Transaction-Management"><a href="#Example-of-Programmatic-Transaction-Management" class="headerlink" title="Example of Programmatic Transaction Management"></a>Example of Programmatic Transaction Management</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testTransactional</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Object obj = redisTemplate.execute(<span class="keyword">new</span> SessionCallback() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> Object <span class="title">execute</span><span class="params">(RedisOperations operations)</span> <span class="keyword">throws</span> DataAccessException </span>&#123;</span><br><span class="line">                String redisKey = <span class="string">"test:tx"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//          start transcation</span></span><br><span class="line">                operations.multi();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                operations.opsForSet().add(redisKey, <span class="string">"ken"</span>);</span><br><span class="line">                operations.opsForSet().add(redisKey, <span class="string">"andy"</span>);</span><br><span class="line">                operations.opsForSet().add(redisKey, <span class="string">"km"</span>);</span><br><span class="line"></span><br><span class="line">                System.out.println(operations.opsForSet().members(redisKey));</span><br><span class="line"></span><br><span class="line"><span class="comment">//          submit transcation</span></span><br><span class="line">                <span class="keyword">return</span> operations.exec();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        System.out.println(obj);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/03/SpringBoot-Unified-Exception-Handling/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1108,7 +1133,7 @@ function category_js () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/03/SpringBoot-Unified-Log/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/03/SpringBoot-Redis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Max Foo">
@@ -1127,7 +1152,7 @@ function category_js () {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2021/01/03/SpringBoot-Unified-Log/" itemprop="url">SpringBoot Unified Log Handling</a></h1>
+                <a class="post-title-link" href="/2021/01/03/SpringBoot-Redis/" itemprop="url">SpringBoot Redis</a></h1>
         
 
         <div class="post-meta">
@@ -1179,7 +1204,17 @@ function category_js () {
       
         
           
-            <h1 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.JoinPoint;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.Aspect;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.Before;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.Pointcut;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.context.request.RequestAttributes;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.context.request.RequestContextHolder;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.context.request.ServletRequestAttributes;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ServiceLogAspect</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger looger = LoggerFactory.getLogger(ServiceLogAspect<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Pointcut</span>(<span class="string">"execution(* com.devepkm.MyForum.Service.*.*(..))"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pointcut</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// inject JoinPoint to get Target method</span></span><br><span class="line">    <span class="meta">@Before</span>(<span class="string">"pointcut()"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">before</span><span class="params">(JoinPoint joinPoint)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//       log format: user[xxx.xxx.xx], visit com.devepkm.MyForum.Service.xxx in 2020.10.10</span></span><br><span class="line">        ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();</span><br><span class="line">        HttpServletRequest request = requestAttributes.getRequest();</span><br><span class="line">        String ip = request.getRemoteHost();</span><br><span class="line">        String date = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>).format(<span class="keyword">new</span> Date());</span><br><span class="line">        String method = joinPoint.getSignature().getDeclaringTypeName() + <span class="string">"."</span> + joinPoint.getSignature().getName();</span><br><span class="line">        looger.info(String.format(<span class="string">"user[%s], visit %s in %s"</span>, ip,method,date));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h1 id="Config-Redis"><a href="#Config-Redis" class="headerlink" title="Config Redis"></a>Config Redis</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- application.properties --&gt;</span></span><br><span class="line">#Redis</span><br><span class="line">spring.redis.database=0</span><br><span class="line">spring.redis.host=localhost</span><br><span class="line">spring.redis.port=6379</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// RedisConfig.java</span></span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.connection.RedisConnectionFactory;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.core.RedisTemplate;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.serializer.RedisSerializer;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RedisConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//  inject RedisConnectionFactory</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> RedisTemplate&lt;String,Object&gt; <span class="title">redisTemplate</span><span class="params">(RedisConnectionFactory factory)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        RedisTemplate&lt;String,Object&gt; template = <span class="keyword">new</span> RedisTemplate&lt;&gt;();</span><br><span class="line">        template.setConnectionFactory(factory);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        set setKeySerializer for key</span></span><br><span class="line">        template.setKeySerializer(RedisSerializer.string());</span><br><span class="line"><span class="comment">//        set setKeySerializer for value</span></span><br><span class="line">        template.setValueSerializer(RedisSerializer.json());</span><br><span class="line"></span><br><span class="line"><span class="comment">//        set setKeySerializer for HashMap key</span></span><br><span class="line">        template.setHashKeySerializer(RedisSerializer.string());</span><br><span class="line"></span><br><span class="line"><span class="comment">//        set setKeySerializer for HashMap value</span></span><br><span class="line">        template.setHashValueSerializer(RedisSerializer.json());</span><br><span class="line"></span><br><span class="line">        template.afterPropertiesSet();</span><br><span class="line">        <span class="keyword">return</span> template;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Exapmle"><a href="#Exapmle" class="headerlink" title="Exapmle"></a>Exapmle</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line"><span class="keyword">import</span> org.springframework.dao.DataAccessException;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.core.BoundValueOperations;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.core.RedisOperations;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.core.RedisTemplate;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.core.SessionCallback;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.ContextConfiguration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.TimeUnit;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RunWith</span>(SpringRunner<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">@<span class="title">SpringBootTest</span></span></span><br><span class="line"><span class="class">@<span class="title">ContextConfiguration</span>(<span class="title">classes</span> </span>= CommunityApplication<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class"><span class="title">public</span> <span class="title">class</span> <span class="title">RedisTests</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> RedisTemplate redisTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testStrings</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        String redisKey = <span class="string">"test:count"</span>;</span><br><span class="line"></span><br><span class="line">        redisTemplate.opsForValue().set(redisKey, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(redisTemplate.opsForValue().get(redisKey));</span><br><span class="line">        System.out.println(redisTemplate.opsForValue().increment(redisKey));</span><br><span class="line">        System.out.println(redisTemplate.opsForValue().decrement(redisKey));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testHashes</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        String redisKey = <span class="string">"test:user"</span>;</span><br><span class="line"></span><br><span class="line">        redisTemplate.opsForHash().put(redisKey, <span class="string">"id"</span>, <span class="number">1</span>);</span><br><span class="line">        redisTemplate.opsForHash().put(redisKey, <span class="string">"username"</span>, <span class="string">"zhangsan"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(redisTemplate.opsForHash().get(redisKey, <span class="string">"id"</span>));</span><br><span class="line">        System.out.println(redisTemplate.opsForHash().get(redisKey, <span class="string">"username"</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testLists</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        String redisKey = <span class="string">"test:ids"</span>;</span><br><span class="line"></span><br><span class="line">        redisTemplate.opsForList().leftPush(redisKey, <span class="number">101</span>);</span><br><span class="line">        redisTemplate.opsForList().leftPush(redisKey, <span class="number">102</span>);</span><br><span class="line">        redisTemplate.opsForList().leftPush(redisKey, <span class="number">103</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(redisTemplate.opsForList().size(redisKey));</span><br><span class="line">        System.out.println(redisTemplate.opsForList().index(redisKey, <span class="number">0</span>));</span><br><span class="line">        System.out.println(redisTemplate.opsForList().range(redisKey, <span class="number">0</span>, <span class="number">2</span>));</span><br><span class="line"></span><br><span class="line">        System.out.println(redisTemplate.opsForList().leftPop(redisKey));</span><br><span class="line">        System.out.println(redisTemplate.opsForList().leftPop(redisKey));</span><br><span class="line">        System.out.println(redisTemplate.opsForList().leftPop(redisKey));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSets</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        String redisKey = <span class="string">"test:teachers"</span>;</span><br><span class="line"></span><br><span class="line">        redisTemplate.opsForSet().add(redisKey, <span class="string">"ken"</span>, <span class="string">"andy"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(redisTemplate.opsForSet().size(redisKey));</span><br><span class="line">        System.out.println(redisTemplate.opsForSet().pop(redisKey));</span><br><span class="line">        System.out.println(redisTemplate.opsForSet().members(redisKey));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSortedSets</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        String redisKey = <span class="string">"test:students"</span>;</span><br><span class="line"></span><br><span class="line">        redisTemplate.opsForZSet().add(redisKey, <span class="string">"ken"</span>, <span class="number">80</span>);</span><br><span class="line">        redisTemplate.opsForZSet().add(redisKey, <span class="string">"andy"</span>, <span class="number">90</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(redisTemplate.opsForZSet().zCard(redisKey));</span><br><span class="line">        System.out.println(redisTemplate.opsForZSet().score(redisKey, <span class="string">"ken"</span>));</span><br><span class="line">        System.out.println(redisTemplate.opsForZSet().reverseRank(redisKey, <span class="string">"andy"</span>));</span><br><span class="line">        System.out.println(redisTemplate.opsForZSet().reverseRange(redisKey, <span class="number">0</span>, <span class="number">2</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testKeys</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        redisTemplate.delete(<span class="string">"test:user"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(redisTemplate.hasKey(<span class="string">"test:user"</span>));</span><br><span class="line"></span><br><span class="line">        redisTemplate.expire(<span class="string">"test:students"</span>, <span class="number">10</span>, TimeUnit.SECONDS);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testBoundOperations</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        String redisKey = <span class="string">"test:count"</span>;</span><br><span class="line">        BoundValueOperations operations = redisTemplate.boundValueOps(redisKey);</span><br><span class="line">        operations.increment();</span><br><span class="line">        operations.increment();</span><br><span class="line">        operations.increment();</span><br><span class="line">        operations.increment();</span><br><span class="line">        operations.increment();</span><br><span class="line">        System.out.println(operations.get());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Transcation"><a href="#Transcation" class="headerlink" title="Transcation"></a>Transcation</h1><h2 id="Two-ways-of-Transaction-Management"><a href="#Two-ways-of-Transaction-Management" class="headerlink" title="Two ways of Transaction Management"></a>Two ways of Transaction Management</h2><ul>
+<li>Declarative Transaction Management</li>
+<li>Programmatic Transaction Management</li>
+<li>selection operation cannot be use inside transaction</li>
+</ul>
+<h2 id="Example-of-Programmatic-Transaction-Management"><a href="#Example-of-Programmatic-Transaction-Management" class="headerlink" title="Example of Programmatic Transaction Management"></a>Example of Programmatic Transaction Management</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testTransactional</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Object obj = redisTemplate.execute(<span class="keyword">new</span> SessionCallback() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> Object <span class="title">execute</span><span class="params">(RedisOperations operations)</span> <span class="keyword">throws</span> DataAccessException </span>&#123;</span><br><span class="line">                String redisKey = <span class="string">"test:tx"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//          start transcation</span></span><br><span class="line">                operations.multi();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                operations.opsForSet().add(redisKey, <span class="string">"ken"</span>);</span><br><span class="line">                operations.opsForSet().add(redisKey, <span class="string">"andy"</span>);</span><br><span class="line">                operations.opsForSet().add(redisKey, <span class="string">"km"</span>);</span><br><span class="line"></span><br><span class="line">                System.out.println(operations.opsForSet().members(redisKey));</span><br><span class="line"></span><br><span class="line"><span class="comment">//          submit transcation</span></span><br><span class="line">                <span class="keyword">return</span> operations.exec();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        System.out.println(obj);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -1227,7 +1262,7 @@ function category_js () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/03/SpringBoot-01/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/03/SpringMail/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Max Foo">
@@ -1246,7 +1281,7 @@ function category_js () {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2021/01/03/SpringBoot-01/" itemprop="url">SpringBoot-01</a></h1>
+                <a class="post-title-link" href="/2021/01/03/SpringMail/" itemprop="url">SpringMail</a></h1>
         
 
         <div class="post-meta">
@@ -1298,40 +1333,20 @@ function category_js () {
       
         
           
-            <h1 id="Spring’s-managed-components"><a href="#Spring’s-managed-components" class="headerlink" title="Spring’s managed components"></a>Spring’s managed components</h1><img src="/images/Spring-managed-components.png" class="" width="800" height="800" title="Spring" alt="s managed components"> 
-<ul>
-<li>Above annotation is used to declare that the class is a Spring bean and should be created and maintained by Spring ApplicationContext</li>
-<li>Spring will scan the above annoatation during initial process and managed those class</li>
-</ul>
-<h1 id="How-to-get-the-Spring-container-ApplicationContext"><a href="#How-to-get-the-Spring-container-ApplicationContext" class="headerlink" title="How to get the Spring container (ApplicationContext)"></a>How to get the Spring container (ApplicationContext)</h1><ul>
-<li>impl ApplicationContextAware interface</li>
-<li>inject the applicationContext to local variable <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">temp</span> <span class="keyword">implements</span> <span class="title">ApplicationContextAware</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> ApplicationContext applicationContext;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setApplicationContext</span><span class="params">(ApplicationContext applicationContext)</span> <span class="keyword">throws</span> BeansException </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.applicationContext = applicationContext;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="Primary"><a href="#Primary" class="headerlink" title="@Primary"></a>@Primary</h1></li>
-<li>scope: class</li>
-<li>when getting bean by interface, multiple class may impl the same interface, @Primary are used to set up the default bean class.</li>
-</ul>
-<h1 id="Qualifier"><a href="#Qualifier" class="headerlink" title="@Qualifier"></a>@Qualifier</h1><ul>
-<li>scope: class</li>
-<li>specify which bean should be inject when you dont want to inject the default(@primary) one</li>
-<li><h1 id="Assign-alias-to-Bean-class"><a href="#Assign-alias-to-Bean-class" class="headerlink" title="Assign alias to Bean class"></a>Assign alias to Bean class</h1></li>
-<li>@Componment(“aliasName”)</li>
-<li>@Controller(“aliasName”)</li>
-<li>@Service(“aliasName”)</li>
-<li>@Repositry(“aliasName”)<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">applicationContext.getBean(<span class="string">"aliasName"</span>,Interface<span class="class">.<span class="keyword">class</span>)</span></span><br></pre></td></tr></table></figure>
+            <h1 id="Logging-level"><a href="#Logging-level" class="headerlink" title="Logging level"></a>Logging level</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">TRACE 	</span><br><span class="line">DEBUG</span><br><span class="line">INFO </span><br><span class="line">WARN </span><br><span class="line">ERROR</span><br></pre></td></tr></table></figure>
 
-</li>
+<h1 id="Set-up-STMP-in-Gmai"><a href="#Set-up-STMP-in-Gmai" class="headerlink" title="Set up STMP in Gmai"></a>Set up STMP in Gmai</h1><ul>
+<li>enable less secure app access</li>
+<li>set up app password</li>
 </ul>
-<h1 id="PostConstruct-PreDestroy"><a href="#PostConstruct-PreDestroy" class="headerlink" title="@PostConstruct, @PreDestroy"></a>@PostConstruct, @PreDestroy</h1><ul>
-<li>scope: method</li>
-<li>apply method before construction and before destory</li>
-</ul>
-<h1 id="Scope-“prototype”"><a href="#Scope-“prototype”" class="headerlink" title="@Scope(“prototype”)"></a>@Scope(“prototype”)</h1><ul>
-<li>scopr: class</li>
-<li>default bean managed by spring is singlton</li>
-</ul>
-<h1 id="How-to-declare-third-party-class-to-spring-obj-Manage-by-spring"><a href="#How-to-declare-third-party-class-to-spring-obj-Manage-by-spring" class="headerlink" title="How to declare third party class to spring obj(Manage by spring)"></a>How to declare third party class to spring obj(Manage by spring)</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThridPartyClass</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">// the method name will be used as the name of the Spring Bean obj</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ThridPartyBean <span class="title">thridPartyClass</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ThridPartyBean();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span>&#123;</span><br><span class="line">        applicationContext.getBean(<span class="string">"thridPartyClass"</span>,ThridPartyBean<span class="class">.<span class="keyword">class</span>) </span></span><br><span class="line"><span class="class">    &#125;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">&#125;</span></span><br></pre></td></tr></table></figure>
-<h1 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h1><ul>
-<li>inject the Spring Obj to local varibe</li>
+<h1 id="conf-in-springboot"><a href="#conf-in-springboot" class="headerlink" title="conf. in springboot"></a>conf. in springboot</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Spring mail</span><br><span class="line">spring.mail.host=smtp.gmail.com</span><br><span class="line">spring.mail.port=465</span><br><span class="line">spring.mail.username=abc@gmail.com</span><br><span class="line">spring.mail.password=abc</span><br><span class="line">spring.mail.protocol=smtp</span><br><span class="line">spring.mail.properties.mail.smtp.ssl.enable=true</span><br></pre></td></tr></table></figure>
+<h1 id="create-mail-client"><a href="#create-mail-client" class="headerlink" title="create mail client"></a>create mail client</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.devepkm.MyForum.Utils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Value;</span><br><span class="line"><span class="keyword">import</span> org.springframework.mail.javamail.JavaMailSender;</span><br><span class="line"><span class="keyword">import</span> org.springframework.mail.javamail.MimeMessageHelper;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.mail.MessagingException;</span><br><span class="line"><span class="keyword">import</span> javax.mail.internet.MimeMessage;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>:</span></span><br><span class="line"><span class="comment"> * setup logger and sending email</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MailClient</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger logger = LoggerFactory.getLogger(MailClient<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> JavaMailSender mailSender;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$(spring.mail.username)"</span>)</span><br><span class="line">    <span class="keyword">private</span> String from;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendEmail</span><span class="params">(String to, String subject, String content)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line">            MimeMessage message = mailSender.createMimeMessage();</span><br><span class="line">            MimeMessageHelper helper = <span class="keyword">new</span> MimeMessageHelper(message, <span class="keyword">true</span>, <span class="string">"UTF-8"</span>);</span><br><span class="line">            helper.setFrom(from);</span><br><span class="line">            helper.setTo(to);</span><br><span class="line">            helper.setSubject(subject);</span><br><span class="line">            helper.setText(content, <span class="keyword">true</span>);</span><br><span class="line">            mailSender.send(message);</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (MessagingException e) &#123;</span><br><span class="line">            logger.error(e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Send-email-with-Thymeleaf"><a href="#Send-email-with-Thymeleaf" class="headerlink" title="Send email with Thymeleaf"></a>Send email with Thymeleaf</h1><ul>
+<li>inject TemplateEngine</li>
+<li>inject data to template</li>
+<li>use process() to create html string</li>
+<li>send by MailClient<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.thymeleaf.TemplateEngine;</span><br><span class="line"><span class="keyword">import</span> org.thymeleaf.context.Context;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> TemplateEngine templateEngine;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testHtmlMail</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Context context = <span class="keyword">new</span> Context();</span><br><span class="line">        context.setVariable(<span class="string">"username"</span>, <span class="string">"sunday"</span>);</span><br><span class="line"></span><br><span class="line">        String content = templateEngine.process(<span class="string">"/mail/demo"</span>, context);</span><br><span class="line">        System.out.println(content);</span><br><span class="line"></span><br><span class="line">        mailClient.sendMail(<span class="string">"xxx@xxxx.com"</span>, <span class="string">"HTML"</span>, content);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 
           
@@ -1511,7 +1526,7 @@ function category_js () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/03/SpringMail/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/03/Thymeleaf-01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Max Foo">
@@ -1530,7 +1545,7 @@ function category_js () {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2021/01/03/SpringMail/" itemprop="url">SpringMail</a></h1>
+                <a class="post-title-link" href="/2021/01/03/Thymeleaf-01/" itemprop="url">Thymeleaf</a></h1>
         
 
         <div class="post-meta">
@@ -1552,6 +1567,28 @@ function category_js () {
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Thymeleaf/" itemprop="url" rel="index">
+                    <span itemprop="name">Thymeleaf</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1582,21 +1619,35 @@ function category_js () {
       
         
           
-            <h1 id="Logging-level"><a href="#Logging-level" class="headerlink" title="Logging level"></a>Logging level</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">TRACE 	</span><br><span class="line">DEBUG</span><br><span class="line">INFO </span><br><span class="line">WARN </span><br><span class="line">ERROR</span><br></pre></td></tr></table></figure>
-
-<h1 id="Set-up-STMP-in-Gmai"><a href="#Set-up-STMP-in-Gmai" class="headerlink" title="Set up STMP in Gmai"></a>Set up STMP in Gmai</h1><ul>
-<li>enable less secure app access</li>
-<li>set up app password</li>
+            <h1 id="Thymeleaf"><a href="#Thymeleaf" class="headerlink" title="Thymeleaf"></a>Thymeleaf</h1><h2 id="What-is-Thymeleaf"><a href="#What-is-Thymeleaf" class="headerlink" title="What is Thymeleaf"></a>What is Thymeleaf</h2><ul>
+<li>a template engine</li>
 </ul>
-<h1 id="conf-in-springboot"><a href="#conf-in-springboot" class="headerlink" title="conf. in springboot"></a>conf. in springboot</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Spring mail</span><br><span class="line">spring.mail.host=smtp.gmail.com</span><br><span class="line">spring.mail.port=465</span><br><span class="line">spring.mail.username=abc@gmail.com</span><br><span class="line">spring.mail.password=abc</span><br><span class="line">spring.mail.protocol=smtp</span><br><span class="line">spring.mail.properties.mail.smtp.ssl.enable=true</span><br></pre></td></tr></table></figure>
-<h1 id="create-mail-client"><a href="#create-mail-client" class="headerlink" title="create mail client"></a>create mail client</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.devepkm.MyForum.Utils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Value;</span><br><span class="line"><span class="keyword">import</span> org.springframework.mail.javamail.JavaMailSender;</span><br><span class="line"><span class="keyword">import</span> org.springframework.mail.javamail.MimeMessageHelper;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.mail.MessagingException;</span><br><span class="line"><span class="keyword">import</span> javax.mail.internet.MimeMessage;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>:</span></span><br><span class="line"><span class="comment"> * setup logger and sending email</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MailClient</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger logger = LoggerFactory.getLogger(MailClient<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> JavaMailSender mailSender;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$(spring.mail.username)"</span>)</span><br><span class="line">    <span class="keyword">private</span> String from;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendEmail</span><span class="params">(String to, String subject, String content)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line">            MimeMessage message = mailSender.createMimeMessage();</span><br><span class="line">            MimeMessageHelper helper = <span class="keyword">new</span> MimeMessageHelper(message, <span class="keyword">true</span>, <span class="string">"UTF-8"</span>);</span><br><span class="line">            helper.setFrom(from);</span><br><span class="line">            helper.setTo(to);</span><br><span class="line">            helper.setSubject(subject);</span><br><span class="line">            helper.setText(content, <span class="keyword">true</span>);</span><br><span class="line">            mailSender.send(message);</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (MessagingException e) &#123;</span><br><span class="line">            logger.error(e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Integrate-with-spring"><a href="#Integrate-with-spring" class="headerlink" title="Integrate with spring"></a>Integrate with spring</h2><h3 id="turn-off-cache-in-devpe-for-hot-deployment"><a href="#turn-off-cache-in-devpe-for-hot-deployment" class="headerlink" title="turn off cache in devpe for hot deployment"></a>turn off cache in devpe for hot deployment</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//application.xml</span><br><span class="line">spring.thymeleaf.cache=false</span><br></pre></td></tr></table></figure>
+<h1 id="Dynamic-path-in-thymeleaf"><a href="#Dynamic-path-in-thymeleaf" class="headerlink" title="Dynamic path in thymeleaf"></a>Dynamic path in thymeleaf</h1><ul>
+<li>@{} -&gt; under /resource/static<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- example --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">th:href</span>=<span class="string">"@&#123;/css/global.css&#125;"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h1 id="Send-email-with-Thymeleaf"><a href="#Send-email-with-Thymeleaf" class="headerlink" title="Send email with Thymeleaf"></a>Send email with Thymeleaf</h1><ul>
-<li>inject TemplateEngine</li>
-<li>inject data to template</li>
-<li>use process() to create html string</li>
-<li>send by MailClient<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.thymeleaf.TemplateEngine;</span><br><span class="line"><span class="keyword">import</span> org.thymeleaf.context.Context;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> TemplateEngine templateEngine;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testHtmlMail</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Context context = <span class="keyword">new</span> Context();</span><br><span class="line">        context.setVariable(<span class="string">"username"</span>, <span class="string">"sunday"</span>);</span><br><span class="line"></span><br><span class="line">        String content = templateEngine.process(<span class="string">"/mail/demo"</span>, context);</span><br><span class="line">        System.out.println(content);</span><br><span class="line"></span><br><span class="line">        mailClient.sendMail(<span class="string">"xxx@xxxx.com"</span>, <span class="string">"HTML"</span>, content);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+</li>
 </ul>
+<h1 id="looping-in-Thymeleaf"><a href="#looping-in-Thymeleaf" class="headerlink" title="looping in Thymeleaf"></a>looping in Thymeleaf</h1><ul>
+<li>th:each=”$ item:${iterateItems}”<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span> <span class="attr">th:each</span>=<span class="string">"item:$&#123;iterateItems&#125;"</span>&gt;</span></span><br><span class="line">					</span><br><span class="line">	<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="Condition"><a href="#Condition" class="headerlink" title="Condition"></a>Condition</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">th:if</span>=<span class="string">"$&#123;map.post.type == 1&#125;"</span>&gt;</span>Pinned<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="th-text-and-th-utext"><a href="#th-text-and-th-utext" class="headerlink" title="th:text and th:utext"></a>th:text and th:utext</h1></li>
+<li>utext can used to parse html tag</li>
+</ul>
+<h1 id="Common-function"><a href="#Common-function" class="headerlink" title="Common function"></a>Common function</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- format time --&gt;</span></span><br><span class="line">th:text="$&#123;#dates.format(map.post.createTime,'yyyy-MM-dd HH:mm:ss')&#125;"</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- get a sequence of number from 5 to 8 --&gt;</span></span><br><span class="line">th:each="i : $&#123;#numbers.sequence(5,8)&#125;"</span><br></pre></td></tr></table></figure>
+
+<h1 id="How-to-combine-static-class-and-thymeleaf-expression"><a href="#How-to-combine-static-class-and-thymeleaf-expression" class="headerlink" title="How to combine static class and thymeleaf expression"></a>How to combine static class and thymeleaf expression</h1><ul>
+<li>use ||<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- page-item is static but disabled is dynamic --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">th:class</span>=<span class="string">"|page-item $&#123;page.pageNo==1?'disabled':''&#125;|"</span>&gt;</span> <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="How-to-add-Param-in-url"><a href="#How-to-add-Param-in-url" class="headerlink" title="How to add Param in url"></a>How to add Param in url</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">th:href</span>=<span class="string">"@&#123;/order/details(id=3)&#125;"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">output: /order/details?id=3</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="How-to-reuse-html-code-block"><a href="#How-to-reuse-html-code-block" class="headerlink" title="How to reuse html code block"></a>How to reuse html code block</h1><p>eg reuse the header, footer, nav</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- use fragment --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- index.html --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">header</span> <span class="attr">class</span>=<span class="string">"bg-dark sticky-top"</span> <span class="attr">th:fragment</span>=<span class="string">"header"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- use replace --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- login.html --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 						location::fragmentName --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">header</span> <span class="attr">th:replace</span>=<span class="string">"index :: header"</span>&gt;</span><span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
 
           
         
