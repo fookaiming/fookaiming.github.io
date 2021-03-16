@@ -80,11 +80,11 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Tech Dustdojo">
+<meta property="og:title" content="Max Foo">
 <meta property="og:url" content="http://yoursite.com/page/5/index.html">
-<meta property="og:site_name" content="Tech Dustdojo">
+<meta property="og:site_name" content="Max Foo">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="Tech Dustdojo">
+<meta property="article:author" content="Max Foo">
 <meta name="twitter:card" content="summary">
 
 
@@ -121,7 +121,7 @@
 
 
 
-  <title>Tech Dustdojo</title>
+  <title>Max Foo</title>
   
 
 
@@ -152,7 +152,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Tech Dustdojo</span>
+        <span class="site-title">Max Foo</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -271,16 +271,16 @@ function category_js () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/04/MySQL-Crash-Course-Chapt-6/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/30/JavaWeb-05-DOM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
     </span>
 
     
@@ -290,7 +290,7 @@ function category_js () {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/06/04/MySQL-Crash-Course-Chapt-6/" itemprop="url">MySQL Crash Course Chapt 6</a></h1>
+                <a class="post-title-link" href="/2020/06/30/JavaWeb-05-DOM/" itemprop="url">JavaWeb 05 DOM</a></h1>
         
 
         <div class="post-meta">
@@ -302,8 +302,8 @@ function category_js () {
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-04T10:09:13+08:00">
-                2020-06-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-30T15:27:05+08:00">
+                2020-06-30
               </time>
             
 
@@ -325,8 +325,19 @@ function category_js () {
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Database/" itemprop="url" rel="index">
-                    <span itemprop="name">Database</span>
+                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaWeb</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -364,16 +375,27 @@ function category_js () {
       
         
           
-            <h1 id="Filtering"><a href="#Filtering" class="headerlink" title="Filtering"></a>Filtering</h1><img src="/images/where-clause-operators.png" class="" width="600" height="600" title="Where clause operators.png">
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> product_name</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">WHERE</span> price &lt; <span class="number">10</span></span><br></pre></td></tr></table></figure>
-
+            <h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><hr>
+<img src="/images/dom-structure.gif" class="" width="600" height="600" title="DOM Structure">
 <ul>
-<li><p>BETWEEN</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> product_id</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">WHERE</span> product_id <span class="keyword">BETWEEN</span> <span class="number">2</span> <span class="keyword">AND</span> <span class="number">4</span>;</span><br><span class="line"><span class="comment">-- ID 2,3,4 are selected</span></span><br></pre></td></tr></table></figure>
+<li><p>Document obj can manage all the content of inside HTML</p>
 </li>
-<li><p>IS NULL</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> email</span><br><span class="line"><span class="keyword">FROM</span> emails</span><br><span class="line"><span class="keyword">WHERE</span> phone <span class="keyword">IS</span> <span class="literal">NULL</span>;</span><br><span class="line"><span class="comment">-- select the email where it have null value in phone</span></span><br></pre></td></tr></table></figure></li>
+<li><p>tree structure</p>
+</li>
+<li><p>all tree nodes can consider as an obj</p>
+</li>
+<li><p>Common method</p>
+</li>
+<li><p>getElementById()</p>
+</li>
+<li><p>getElementByName()</p>
+</li>
+<li><p>getElementByTagName()</p>
+</li>
+<li><p>createElement()</p>
+</li>
+<li><p><b>remember to use above method on window.onload, to make sure the obj is created.</b></p>
+</li>
 </ul>
 
           
@@ -423,16 +445,16 @@ function category_js () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/04/MySQL-Crash-Course-Chapt-5/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/30/JavaWeb-04-JavaScript-II/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
     </span>
 
     
@@ -442,7 +464,7 @@ function category_js () {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/06/04/MySQL-Crash-Course-Chapt-5/" itemprop="url">MySQL Crash Course Chapt 4</a></h1>
+                <a class="post-title-link" href="/2020/06/30/JavaWeb-04-JavaScript-II/" itemprop="url">JavaWeb 04 JavaScript-II</a></h1>
         
 
         <div class="post-meta">
@@ -454,8 +476,8 @@ function category_js () {
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-04T09:45:23+08:00">
-                2020-06-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-30T15:27:05+08:00">
+                2020-06-30
               </time>
             
 
@@ -477,8 +499,19 @@ function category_js () {
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Database/" itemprop="url" rel="index">
-                    <span itemprop="name">Database</span>
+                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaWeb</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -516,34 +549,426 @@ function category_js () {
       
         
           
-            <h1 id="Sorting"><a href="#Sorting" class="headerlink" title="Sorting"></a>Sorting</h1><h2 id="ORDER-BY"><a href="#ORDER-BY" class="headerlink" title="ORDER BY"></a>ORDER BY</h2><ul>
-<li><p>it can apply to the selected column and the non selected column. see exp. below</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> product_name</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> product_name;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> product_name</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> product_id;</span><br></pre></td></tr></table></figure>
+            <h1 id="JavaScript-II"><a href="#JavaScript-II" class="headerlink" title="JavaScript II"></a>JavaScript II</h1><hr>
+<h2 id="Js-Event"><a href="#Js-Event" class="headerlink" title="Js Event"></a>Js Event</h2><h3 id="Common-event"><a href="#Common-event" class="headerlink" title="Common event"></a>Common event</h3><ul>
+<li><p>onload</p>
 </li>
-<li><p>apply to mutiple column (sort by the first column, if the same, sort by the next columns)</p>
+<li><p>onclick</p>
 </li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> product_name</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> product_price, product_name;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- if two items have same price, then sort by the name</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="DESC-reverse-order-descending"><a href="#DESC-reverse-order-descending" class="headerlink" title="DESC (reverse order, descending)"></a>DESC (reverse order, descending)</h2><ul>
-<li>DESC is only apply to its precedence column<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> product_name</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> product_price <span class="keyword">DESC</span>, product_name;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- sort by the reversed price</span></span><br></pre></td></tr></table></figure>
-
+<li><p>onblur</p>
 </li>
-</ul>
-<h2 id="ASC-ascending"><a href="#ASC-ascending" class="headerlink" title="ASC (ascending)"></a>ASC (ascending)</h2><ul>
-<li>default sorting</li>
-<li>not vert useful</li>
-</ul>
-<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><ul>
-<li>find maximum or minimum by ORDER BY and LIMIT</li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> product_name</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> product_price <span class="keyword">DESC</span></span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-
-
-
+<li><p>onchange</p>
+</li>
+<li><p>onsubmit</p>
+<h2 id="Event-attachment-on-HTML-elements"><a href="#Event-attachment-on-HTML-elements" class="headerlink" title="Event attachment on HTML elements"></a>Event attachment on HTML elements</h2></li>
+<li><p>What is event attachment?</p>
 <ul>
-<li>Position of ORDER BY Clause When specifying an ORDER BY clause, be sure that it is after the FROM clause. If LIMIT is used, it must come after ORDER BY. Using clauses out of order will generate an error message.</li>
+<li>tell the broswer what to do when an event happen</li>
+</ul>
+<h3 id="Static-Method"><a href="#Static-Method" class="headerlink" title="Static Method"></a>Static Method</h3><ul>
+<li>attache on the html tag’s attr.</li>
+<li>see exp below<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"onclickFunction();"</span> &gt;</span>Button<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- js --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript"><span class="function"><span class="keyword">function</span> <span class="title">onclickFunction</span><span class="params">()</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">    alert(<span class="string">"clicked"</span>)</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="dynamic-Method"><a href="#dynamic-Method" class="headerlink" title="dynamic Method"></a>dynamic Method</h3><ul>
+<li><p>use the js to dom obj and them bind function on it</p>
+</li>
+<li><p>Steps</p>
+</li>
+</ul>
+<ol>
+<li><p>use windos.onload to make sure the js exe after dom is created</p>
+</li>
+<li><p>get the tag obj</p>
+</li>
+<li><p>attache the funtion to the obj</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn01"</span>&gt;</span>Button<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- js --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">//   Step 1: use windos.onload to make sure the js exe after dom is created</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onload =<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">//    Step 2:</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> btn01Obj = <span class="built_in">document</span>.getElementById(<span class="string">"btn01"</span>);</span></span><br><span class="line">        </span><br><span class="line"><span class="actionscript">        <span class="comment">// Step 3:</span></span></span><br><span class="line"><span class="actionscript">        btn01Obj.onclick = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">            alert(<span class="string">"clicked"</span>);</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/29/JavaWeb-03-JavaScript/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/29/JavaWeb-03-JavaScript/" itemprop="url">JavaWeb 03 JavaScript</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-29T15:07:53+08:00">
+                2020-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaWeb</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h1><ul>
+<li>cannot read from hard disk</li>
+<li>Use script tag to link js file on html<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"1.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- wronge one tag can only serve one purpose --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"1.js"</span>&gt;</span></span><br><span class="line">    alert();</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="5-Variable-type"><a href="#5-Variable-type" class="headerlink" title="5 Variable type"></a>5 Variable type</h2></li>
+<li>number</li>
+<li>string</li>
+<li>object</li>
+<li>boolean</li>
+<li>function</li>
+</ul>
+<h3 id="special-value"><a href="#special-value" class="headerlink" title="special value"></a>special value</h3><ul>
+<li>undefined (not initialised)   eg. var i;</li>
+<li>null</li>
+<li>NaN (not a number)<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="string">"abc"</span>;</span><br><span class="line">alert(a*b); <span class="comment">//NaN</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="and"><a href="#and" class="headerlink" title="== and ==="></a>== and ===</h3><p> == will compare the literal value<br> === compare the value and type</p>
+<h2 id="：logical-operator"><a href="#：logical-operator" class="headerlink" title="：logical operator"></a>：logical operator</h2><ul>
+<li><p>all variables can be used as boolean</p>
+</li>
+<li><p>0 、null、 undefined、’’ are interrupt as false</p>
+<h3 id="amp-amp"><a href="#amp-amp" class="headerlink" title="&amp;&amp;"></a>&amp;&amp;</h3></li>
+<li><p>return the obj which ends the comparetor<br>when the expression is true, return the last obj in the expression<br>when the expression is false,return the first false obj.</p>
+<h3 id=""><a href="#" class="headerlink" title="||"></a>||</h3></li>
+<li><p>return the obj which ends the comparetor<br>when the expression is true, return the first true obj in the expression<br>when the expression is false, return the last obj in the expression</p>
+<h3 id="both-amp-amp-and-are-shortcut-operator-ie-reaming-calculation-will-not-be-calculated-when-it-got-the-answer"><a href="#both-amp-amp-and-are-shortcut-operator-ie-reaming-calculation-will-not-be-calculated-when-it-got-the-answer" class="headerlink" title="both &amp;&amp; and || are shortcut operator ie. reaming calculation will not be calculated when it got the answer."></a>both &amp;&amp; and || are shortcut operator ie. reaming calculation will not be calculated when it got the answer.</h3><h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2></li>
+<li><p>Array can used to story diff. types of obj</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="string">'ad'</span>,<span class="literal">true</span>];</span><br></pre></td></tr></table></figure>
+<ul>
+<li>array will automatically increase the size<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr[]; <span class="comment">//length = 0</span></span><br><span class="line">arr[<span class="number">4</span>] = <span class="number">1</span>;</span><br><span class="line">alter(arr.length) <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+<h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2></li>
+</ul>
+</li>
+<li><p>Two ways to define a function</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">nameOfFunction</span>(<span class="params">a,b</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">nameOfFunction(a,b);</span><br></pre></td></tr></table></figure>
+<p>or</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nameOfFunction = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">nameOfFunction(a,b);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="Overload"><a href="#Overload" class="headerlink" title="Overload"></a>Overload</h3><ul>
+<li>overload of a function is not allowed</li>
+<li>overload of a function will override the original one</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fun = <span class="function"><span class="keyword">function</span> (<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a - b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fun = <span class="function"><span class="keyword">function</span> (<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">alert(fun(<span class="number">100</span>,<span class="number">200</span>)) <span class="comment">//300</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Implicit-Argument"><a href="#Implicit-Argument" class="headerlink" title="Implicit Argument"></a>Implicit Argument</h3><ul>
+<li>all function have implicit argument even the function do not specify any argument in the decoration</li>
+<li>Implicit Argument act like the Vargrs in Java</li>
+<li>implicit aruments is an array, it can be access by arguments variable eg. arguments.length, arguments[0]<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> funName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">arguments</span>[<span class="number">0</span>] + <span class="built_in">arguments</span>[<span class="number">1</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="keyword">var</span> ans = funName(<span class="number">100</span>,<span class="number">200</span>) <span class="comment">//300</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><h3 id="define-Object-set-attr-define-function"><a href="#define-Object-set-attr-define-function" class="headerlink" title="define Object, set attr. , define function"></a>define Object, set attr. , define function</h3><ul>
+<li>keyword this can be used to access the attr. inside the obj<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// method 1:</span></span><br><span class="line"><span class="keyword">var</span> objName = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">objName.age = <span class="number">10</span>;</span><br><span class="line">objName.playMusic() = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// method 2: key-value pairs</span></span><br><span class="line"><span class="keyword">var</span> objName =&#123;</span><br><span class="line">    age : <span class="number">10</span>,</span><br><span class="line">    functionName : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;       <span class="comment">//no "," at last term</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h3 id="Access-attr-function"><a href="#Access-attr-function" class="headerlink" title="Access attr. , function"></a>Access attr. , function</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = objName.age;</span><br><span class="line"><span class="keyword">var</span> name = obJName.playMusic();</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/28/JavaWeb-02-CSS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/28/JavaWeb-02-CSS/" itemprop="url">JavaWeb 02 CSS</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-28T15:45:40+08:00">
+                2020-06-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaWeb</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h1><hr>
+<ul>
+<li>Use link tag to link css file on html<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"/style.css"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Selector"><a href="#Selector" class="headerlink" title="Selector"></a>Selector</h2><h3 id="tag-selector"><a href="#tag-selector" class="headerlink" title="tag selector"></a>tag selector</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="id-selector"><a href="#id-selector" class="headerlink" title="id selector"></a>id selector</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#myid</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="class-selector"><a href="#class-selector" class="headerlink" title="class selector"></a>class selector</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.myclass</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="combine-selector"><a href="#combine-selector" class="headerlink" title="combine selector"></a>combine selector</h3><ul>
+<li>choose elements that fullfill at lease one selector<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.myclass</span> <span class="selector-id">#myid</span> <span class="selector-tag">span</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
 </ul>
 
           
@@ -593,16 +1018,16 @@ function category_js () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/03/Sams-teach-yourself-regular-expression-in-10-minutes-chapt-1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/28/JavaWeb-01-HTML/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
     </span>
 
     
@@ -612,7 +1037,7 @@ function category_js () {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/06/03/Sams-teach-yourself-regular-expression-in-10-minutes-chapt-1/" itemprop="url">Sams teach yourself regular expression in 10 minutes chapt 1</a></h1>
+                <a class="post-title-link" href="/2020/06/28/JavaWeb-01-HTML/" itemprop="url">JavaWeb 01 HTML</a></h1>
         
 
         <div class="post-meta">
@@ -624,8 +1049,197 @@ function category_js () {
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-03T23:27:17+08:00">
-                2020-06-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-28T12:54:29+08:00">
+                2020-06-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaWeb</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb/Html/" itemprop="url" rel="index">
+                    <span itemprop="name">Html</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><hr>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Single Tag --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Double Tag --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Nested tag is not allowed --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>Correct<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>Wrong<span class="tag">&lt;/<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Common-Tag"><a href="#Common-Tag" class="headerlink" title="Common Tag"></a>Common Tag</h2><h3 id="a-tag"><a href="#a-tag" class="headerlink" title="a tag"></a>a tag</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.google.com"</span>&gt;</span>Go to Google<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- Open in current same as above (default) --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.google.com"</span> <span class="attr">target</span>=<span class="string">"_self"</span>&gt;</span>Go to Google _self<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- open in new page --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.google.com"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>Go to Google _blank<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="li-tag"><a href="#li-tag" class="headerlink" title="li tag"></a>li tag</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>a<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>b<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- type attribute can used to change the icon on ul --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="img-tag"><a href="#img-tag" class="headerlink" title="img tag"></a>img tag</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/img/1.jpg"</span> <span class="attr">alt</span>=<span class="string">"/img/imgNotFound.jpg"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- attributes eg. width, height, border can be used on img tag--&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="table"><a href="#table" class="headerlink" title="table"></a>table</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span> <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">需求1:做一个 带表头的 ，三行，三列的表格，并显示边框 需求 2:修改表格的宽度，高度，表格的对齐方式，单元格间距。</span></span><br><span class="line"><span class="comment">table 标签是表格标签</span></span><br><span class="line"><span class="comment">border 设置表格标签</span></span><br><span class="line"><span class="comment">width 设置表格宽度</span></span><br><span class="line"><span class="comment">height 设置表格高度</span></span><br><span class="line"><span class="comment">align 设置表格相对于页面的对齐方式</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment">cellspacing 设置单元格间距</span></span><br><span class="line"><span class="comment">tr 是行标签</span></span><br><span class="line"><span class="comment">th 是表头标签</span></span><br><span class="line"><span class="comment">td 是单元格标签</span></span><br><span class="line"><span class="comment">align 设置单元格文本对齐方式</span></span><br><span class="line"><span class="comment">b 是加粗标签 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">align</span>=<span class="string">"center"</span> <span class="attr">border</span>=<span class="string">"1"</span> <span class="attr">width</span>=<span class="string">"300"</span> <span class="attr">height</span>=<span class="string">"300"</span> <span class="attr">cellspacing</span>=<span class="string">"0"</span>&gt;</span> <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span>1.1<span class="tag">&lt;/<span class="name">th</span>&gt;</span> <span class="tag">&lt;<span class="name">th</span>&gt;</span>1.2<span class="tag">&lt;/<span class="name">th</span>&gt;</span> <span class="tag">&lt;<span class="name">th</span>&gt;</span>1.3<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span> <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>2.1<span class="tag">&lt;/<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">td</span>&gt;</span>2.2<span class="tag">&lt;/<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">td</span>&gt;</span>2.3<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span> <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span>3.1<span class="tag">&lt;/<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">td</span>&gt;</span>3.2<span class="tag">&lt;/<span class="name">td</span>&gt;</span> <span class="tag">&lt;<span class="name">td</span>&gt;</span>3.3<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">tr</span>&gt;</span> <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Merge-table-element"><a href="#Merge-table-element" class="headerlink" title="Merge table element"></a>Merge table element</h3><img src="/images/merge-table-element.png" class="" width="300" height="300" title="Merge table element.png">
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">"1"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span>a<span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span>b<span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span>c<span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span>d<span class="tag">&lt;/<span class="name">th</span>&gt;</span><span class="tag">&lt;<span class="name">th</span>&gt;</span>e<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">"2"</span>&gt;</span>1.1<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>1.3<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>1.4<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">rowspan</span>=<span class="string">"2"</span>&gt;</span>1.5<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>2.1<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span> <span class="attr">colspan</span>=<span class="string">"2"</span> <span class="attr">rowspan</span>=<span class="string">"2"</span>&gt;</span>2.2<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>2.4<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>3.1<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>3.4<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="iframe"><a href="#iframe" class="headerlink" title="iframe"></a>iframe</h2><ul>
+<li>iframe can show individual page inside html<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"https://www.google.com/"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="combine-with-a-tag"><a href="#combine-with-a-tag" class="headerlink" title="combine with a tag"></a>combine with a tag</h3></li>
+<li>show the page on iframe</li>
+</ul>
+<ol>
+<li>set the name att. in iframe</li>
+<li>set the target att at a tag same as the name att. at iframe<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"https://www.google.com/"</span> <span class="attr">name</span>=<span class="string">"abc"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"https://www.google.com"</span> <span class="attr">target</span>=<span class="string">"abc"</span>&gt;</span>Go to Google <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="form"><a href="#form" class="headerlink" title="form"></a>form</h2><ul>
+<li>fomat with table</li>
+</ul>
+<img src="/images/form.png" class="" width="600" height="600" title="Form fomat with table">
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">form 标签是表单标签</span></span><br><span class="line"><span class="comment">action 属性设置提交的服务器地址</span></span><br><span class="line"><span class="comment">method 属性设置提交的方式 GET(默认值)或 POST</span></span><br><span class="line"><span class="comment">表单提交的时候，数据没有发送给服务器的三种情况:</span></span><br><span class="line"><span class="comment">1、表单项没有 name 属性值</span></span><br><span class="line"><span class="comment">2、单选、复选(下拉列表中的 option 标签)都需要添加 value 属性，以便发送给服务器 </span></span><br><span class="line"><span class="comment">3、表单项不在提交的 form 标签中</span></span><br><span class="line"><span class="comment">GET 请求的特点是:</span></span><br><span class="line"><span class="comment">1、浏览器地址栏中的地址是:action 属性[+?+请求参数]</span></span><br><span class="line"><span class="comment">请求参数的格式是:name=value&amp;name=value 2、不安全</span></span><br><span class="line"><span class="comment">3、它有数据长度的限制</span></span><br><span class="line"><span class="comment">POST 请求的特点是: 1、浏览器地址栏中只有 action 属性值 2、相对于 GET 请求要安全 3、理论上没有数据长度的限制</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"https://localhost:8080"</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Sign Up for free<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>Username: <span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>Password: <span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>Confirm: <span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"password"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        </span><br><span class="line"><span class="comment">&lt;!--        use name attr. to disable multi select on radio buttion--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>Sex: <span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"sex"</span>&gt;</span>Male <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"sex"</span>&gt;</span>Female<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>Programming language: <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>&gt;</span>C++</span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>&gt;</span>Java</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--                use checked attri. to check the box by default--&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">checked</span>=<span class="string">"checked"</span>&gt;</span>Js</span><br><span class="line"></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span>&gt;</span>Python</span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>Region<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">"region"</span> <span class="attr">id</span>=<span class="string">"region"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Select"</span>&gt;</span>Select<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--                use selected attri. to check the box by default--&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"HK"</span> <span class="attr">selected</span>=<span class="string">"selected"</span>&gt;</span>HK<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"US"</span>&gt;</span>US<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"JP"</span>&gt;</span>JP<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span>What do you Learn?<span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">"message"</span> <span class="attr">id</span>=<span class="string">"message"</span> <span class="attr">cols</span>=<span class="string">"30"</span> <span class="attr">rows</span>=<span class="string">"10"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"reset"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="div-span-p"><a href="#div-span-p" class="headerlink" title="div span p"></a>div span p</h2><ul>
+<li>div block element</li>
+<li>span line element</li>
+<li>p leave a line above, if the line is already there p tag will be ignore</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/23/Head-First-Java-Chapter-15-Socket-and-thread/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/23/Head-First-Java-Chapter-15-Socket-and-thread/" itemprop="url">Head First Java Chapter 15 Network Socket and Thread</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-23T14:24:45+08:00">
+                2020-06-23
               </time>
             
 
@@ -658,8 +1272,8 @@ function category_js () {
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/Sams-teach-yourself-regular-expression-in-10-minutes/" itemprop="url" rel="index">
-                    <span itemprop="name">Sams teach yourself regular expression in 10 minutes</span>
+                  <a href="/categories/Book/Head-First-Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Head First Java</span>
                   </a>
                 </span>
 
@@ -697,506 +1311,201 @@ function category_js () {
       
         
           
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
+            <h1 id="Network-Socket"><a href="#Network-Socket" class="headerlink" title="Network Socket"></a>Network Socket</h1><h2 id="Client-Side"><a href="#Client-Side" class="headerlink" title="Client Side"></a>Client Side</h2><h3 id="make-socket-connection"><a href="#make-socket-connection" class="headerlink" title="make socket connection"></a>make socket connection</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Socket chatSocket = <span class="keyword">new</span> Socket(<span class="string">"192.168.1.1"</span>,<span class="number">8080</span>) <span class="comment">//ip and port</span></span><br></pre></td></tr></table></figure>
 
 
-    
-      
+<h3 id="Write-String-to-socket"><a href="#Write-String-to-socket" class="headerlink" title="Write String to socket"></a>Write String to socket</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PrintWriter writer = <span class="keyword">new</span> PrintWriter(chatSocket.getOutputStream);</span><br><span class="line">writer.println(<span class="string">"writing"</span>);</span><br></pre></td></tr></table></figure>
 
-  
+<h3 id="read-String-from-socket"><a href="#read-String-from-socket" class="headerlink" title="read String from socket"></a>read String from socket</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">InputStreamReader stream = <span class="keyword">new</span> InputStreamReader(chatSocket.getInputStream);</span><br><span class="line"></span><br><span class="line">BufferedReader reader = <span class="keyword">new</span> BufferReader(stream);</span><br><span class="line">String message = reader.readLine();</span><br><span class="line">reader.close()</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Server-Side"><a href="#Server-Side" class="headerlink" title="Server Side"></a>Server Side</h2><h3 id="Accept-connection"><a href="#Accept-connection" class="headerlink" title="Accept connection"></a>Accept connection</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ServerSocket serverSocket = <span class="keyword">new</span> ServerSocket(<span class="number">8080</span>); <span class="comment">// listen port 8080</span></span><br><span class="line">Socket socket = serverSocket.accept(); </span><br><span class="line"><span class="comment">//read below explanation</span></span><br></pre></td></tr></table></figure>
 
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/03/MySQL-Crash-Course-Chapt-4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/03/MySQL-Crash-Course-Chapt-4/" itemprop="url">MySQL Crash Course Chapt 4</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-03T00:04:46+08:00">
-                2020-06-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Database/" itemprop="url" rel="index">
-                    <span itemprop="name">Database</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="SELECT"><a href="#SELECT" class="headerlink" title="SELECT"></a>SELECT</h1><ul>
-<li><p>use select keyword to query data from table</br></p>
-</li>
-<li><p>the result is ramdom if no sorting is specify</p>
+<ul>
+<li>When the serverSocket accept the connection</li>
+<li>it will return another port to for the communication</li>
+<li>the serverSocket will become idle to wait for other connection<img src="/images/accepting-socket-connection.png" class="" width="600" height="600" title="Accepting Socket Connection.png">
 </li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> product_name, product_id <span class="comment">-- columns</span></span><br><span class="line"><span class="keyword">FROM</span> products; <span class="comment">-- table</span></span><br></pre></td></tr></table></figure>
-
-
-<h2 id="SELECT-DISTINCT"><a href="#SELECT-DISTINCT" class="headerlink" title="SELECT DISTINCT"></a>SELECT DISTINCT</h2><ul>
-<li>filter out the item having same value</li>
-<li>imp. <space> <space> DISTINCT is applied to all columns</li>
-</ul>
-<h2 id="LIMIT"><a href="#LIMIT" class="headerlink" title="LIMIT"></a>LIMIT</h2><ul>
-<li>rows start from index 0</li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> product_name, product_id <span class="comment">-- columns</span></span><br><span class="line"><span class="keyword">FROM</span> products; <span class="comment">-- table</span></span><br><span class="line">LIMIT 5;</span><br><span class="line"><span class="comment">-- limit to 5 results</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> product_name, product_id <span class="comment">-- columns</span></span><br><span class="line"><span class="keyword">FROM</span> products; <span class="comment">-- table</span></span><br><span class="line">LIMIT 3,5;</span><br><span class="line"><span class="comment">-- return from row 3 and limit to 5 results</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- same as below</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> product_name, product_id <span class="comment">-- columns</span></span><br><span class="line"><span class="keyword">FROM</span> products; <span class="comment">-- table</span></span><br><span class="line">LIMIT 5 OFFSET 3;</span><br><span class="line"><span class="comment">-- return from row 3 and limit to 5 results</span></span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/MySQL-Crash-Course-Chapt-2-and-3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/02/MySQL-Crash-Course-Chapt-2-and-3/" itemprop="url">MySQL-Crash-Course-2-and-3</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-02T23:27:55+08:00">
-                2020-06-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Database/" itemprop="url" rel="index">
-                    <span itemprop="name">Database</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li><p>sql cmd end up with ; in practice</p>
-</li>
-<li><p>mysql use 3306 as default port number</p>
-</li>
-<li><p>mysql use table to store user information</p>
-</li>
-</ul>
-<h2 id="SHOW-and-USE-cmd"><a href="#SHOW-and-USE-cmd" class="headerlink" title="- SHOW and USE cmd"></a>- SHOW and USE cmd</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SHOW</span> <span class="keyword">DATABASES</span>; <span class="comment">-- show all databases</span></span><br><span class="line"><span class="keyword">USE</span> sampletable; <span class="comment">-- chose database</span></span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">TABLES</span>; <span class="comment">-- show tables in sampletable</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">COLUMNS</span> <span class="keyword">FROM</span> sampletable; <span class="comment">-- show the column property same as DESCRIBE</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">DESCRIBE</span> sampletable;</span><br></pre></td></tr></table></figure>
-</br>
-- More cmd
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SHOW</span> <span class="keyword">STATUS</span>;</span><br><span class="line"><span class="comment">-- shows the server status</span></span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">CREATE</span> <span class="keyword">DATABASE</span>;</span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">CREATE</span> <span class="keyword">TABLE</span>;</span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">GRANTS</span>;</span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">ERRORS</span>;</span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">WARNINGS</span>;</span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/27/MySQL-Crash-Course-Chapt-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/05/27/MySQL-Crash-Course-Chapt-1/" itemprop="url">MySQL Crash Course Chapt 1</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-27T23:53:33+08:00">
-                2020-05-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Database/" itemprop="url" rel="index">
-                    <span itemprop="name">Database</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Chapter-1"><a href="#Chapter-1" class="headerlink" title="Chapter 1"></a>Chapter 1</h1><ul>
-<li>Schema </li>
+<hr>
+<h1 id="Thread"><a href="#Thread" class="headerlink" title="Thread"></a>Thread</h1><ul>
+<li>Two ways to implenment thread</li>
 </ul>
 <ol>
-<li>sometimes used as a synonym for database</li>
-<li>it is the information about database and table layout and properties.</li>
+<li>Implement runnable interface</li>
+<li>extend thread class</li>
 </ol>
-<ul>
-<li><p>Breaking Up Data <br/> </p>
-</li>
+<h2 id="Implenment-runnable-interface"><a href="#Implenment-runnable-interface" class="headerlink" title="Implenment runnable interface"></a>Implenment runnable interface</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Duck</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// only one method run need to be implenemented</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        go();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sayHi</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        hi();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">Class DuckTestDriver &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        Runnable job = <span class="keyword">new</span> Duck();</span><br><span class="line">        Thread myThread = <span class="keyword">new</span> Thread(job);</span><br><span class="line">        myThread.start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Extend-thread-class"><a href="#Extend-thread-class" class="headerlink" title="Extend thread class"></a>Extend thread class</h2><h2 id="Use-Keyword-synchronized-to-lock-resource-it-only-lock-the-access-method-not-the-resource-itself"><a href="#Use-Keyword-synchronized-to-lock-resource-it-only-lock-the-access-method-not-the-resource-itself" class="headerlink" title="Use Keyword synchronized to lock resource ( it only lock the access method, not the resource itself )"></a>Use Keyword synchronized to lock resource ( it only lock the access method, not the resource itself )</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// lock the method</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">spendMoney</span><span class="params">(<span class="keyword">int</span> amount)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// lock the critical procedure</span></span><br><span class="line"><span class="keyword">synchronized</span>&#123;</span><br><span class="line"><span class="comment">//    critical process</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/09/Head-First-Java-Chapter-10-II/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/09/Head-First-Java-Chapter-10-II/" itemprop="url">Head First Java Chapter 10 II</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-09T13:48:57+08:00">
+                2020-06-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/" itemprop="url" rel="index">
+                    <span itemprop="name">Book</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/Head-First-Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Head First Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="String-Formatting"><a href="#String-Formatting" class="headerlink" title="String Formatting"></a>String Formatting</h1><ul>
+<li>formatting consists of two main parts</li>
 <li><ol>
-<li>important to break data into multiple columns correctly. <br/> <br/> </li>
+<li>Formatting instructions</li>
 </ol>
 </li>
 <li><ol start="2">
-<li>For example, city, state, and ZIP Code should always be separate columns. By breaking these out, it becomes possible to sort or filter data by specific columns (for example, to find all customers in a particular state or in a particular city)</li>
-</ol>
-</li>
-<li><p>data type</p>
-</li>
-</ul>
-<img src="/images/sql-data-type-string.png" class="" width="600" height="600" title="String">
-<br/> 
-<img src="/images/sql-data-type-numeric.png" class="" width="600" height="600" title="Numeric">
-<br/> 
-<img src="/images/sql-data-type-date-and-time.png" class="" width="600" height="600" title="Date and time">
-
-
-<ul>
-<li>Perimary Key</li>
-</ul>
-<ol>
-<li>uniquely identify a row among the table</li>
-<li>not null</li>
-<li>can form by mutiple column (the combination should be unique)</li>
-</ol>
-<ul>
-<li>Tips<ol>
-<li>• Don’t update values in primary key columns.</li>
-<li>• Don’t reuse values in primary key columns.</li>
-<li>• Don’t use values that might change in primary key columns. (For example, when<br>you use a name as a primary key to identify a supplier, you would have to change the primary key when the supplier merges and changes its name.)</li>
+<li>The argument to be formatted</li>
 </ol>
 </li>
 </ul>
+<img src="/images/string-formatting.png" class="" width="600" height="600" title="String Formatting.png">
 
+<img src="/images/string-formatting-2.png" class="" width="600" height="600" title="String Formatting.png">
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String s = String.format(<span class="string">"%,d"</span>,<span class="number">1000000000</span>);</span><br><span class="line">sout(s);</span><br><span class="line"><span class="comment">// use , to display the decimal number</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line">output:</span><br><span class="line"><span class="number">1</span>,<span class="number">000</span>,<span class="number">000</span>,<span class="number">000</span></span><br></pre></td></tr></table></figure>
           
         
       
@@ -1244,16 +1553,16 @@ function category_js () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/27/Version-control-Git-and-Github/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/08/Head-First-Java-Chapter-10/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
     </span>
 
     
@@ -1263,7 +1572,7 @@ function category_js () {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/05/27/Version-control-Git-and-Github/" itemprop="url">Version control(Git and Github)</a></h1>
+                <a class="post-title-link" href="/2020/06/08/Head-First-Java-Chapter-10/" itemprop="url">Head First Java Chapter 10</a></h1>
         
 
         <div class="post-meta">
@@ -1275,8 +1584,8 @@ function category_js () {
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-27T21:12:07+08:00">
-                2020-05-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-08T15:27:09+08:00">
+                2020-06-08
               </time>
             
 
@@ -1298,8 +1607,19 @@ function category_js () {
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Version-control/" itemprop="url" rel="index">
-                    <span itemprop="name">Version control</span>
+                  <a href="/categories/Book/" itemprop="url" rel="index">
+                    <span itemprop="name">Book</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/Head-First-Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Head First Java</span>
                   </a>
                 </span>
 
@@ -1337,64 +1657,261 @@ function category_js () {
       
         
           
-            <h1 id="Set-up"><a href="#Set-up" class="headerlink" title="Set up"></a>Set up</h1><h2 id="Step-1-Generate-ssh-key"><a href="#Step-1-Generate-ssh-key" class="headerlink" title="Step 1 Generate ssh key"></a>Step 1 Generate ssh key</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">"your github email"</span></span><br></pre></td></tr></table></figure>
-<br/> 
+            <h1 id="Static-method"><a href="#Static-method" class="headerlink" title="Static method"></a>Static method</h1><ul>
+<li><p>static method do not rely on obj instance</p>
+</li>
+<li><p>class name is used to call the method</p>
+</li>
+<li><p>if a class containing only static method, we set the constructor to private to prevent creating instance obj from the class</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Math.min(a,b);</span><br><span class="line"><span class="comment">// Math is the class name, not an obj</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>static method cannot use the non static variable inside the class</p>
+</li>
+<li><p>see exp. below</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Duck</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> size;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(“Size of duck is “ + size); </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// wrong, size is not accessable</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>static method cannot call the non static method</p>
+</li>
+<li><p>see exp. below</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Duck</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> size;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(“Size of duck is “ + getSize()); </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getSize</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> size;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// wrong</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="Step-2-add-the-pub-file-in-github-setting"><a href="#Step-2-add-the-pub-file-in-github-setting" class="headerlink" title="Step 2 add the .pub file in github setting"></a>Step 2 add the .pub file in github setting</h2><br/> 
+</li>
+</ul>
+<h1 id="Static-Variable"><a href="#Static-Variable" class="headerlink" title="Static Variable"></a>Static Variable</h1><ul>
+<li>Obj of the same class maintain the same static variable (only one copy)</li>
+<li>see exp. below</li>
+</ul>
+<img src="/images/static-variable.png" class="" width="600" height="600" title="Static Variable">
+
+<ul>
+<li>each duck has its own size, but all ducks maintain the same duckCount</li>
+</ul>
+<h1 id="Static-final-Constant"><a href="#Static-final-Constant" class="headerlink" title="Static final (Constant)"></a>Static final (Constant)</h1><ul>
+<li>eg Math.PI</li>
+<li>usually use of Capital letter and _ for naming</li>
+</ul>
+<h1 id="Static-initializer"><a href="#Static-initializer" class="headerlink" title="Static initializer"></a>Static initializer</h1><ul>
+<li>only run once (when the class is loaded by the JVM)</li>
+<li>construct can run many times as long as obj is created</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Program</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Static Block"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    Program()&#123;</span><br><span class="line">        System.out.println(<span class="string">"Constructor"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Program"</span>);</span><br><span class="line">        Program p1 = <span class="keyword">new</span> Program();</span><br><span class="line">        Program p2 = <span class="keyword">new</span> Program();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Output:</span></span><br><span class="line">Static Block</span><br><span class="line">Program</span><br><span class="line">Constructor</span><br><span class="line">Constructor</span><br><span class="line"></span><br><span class="line"><span class="comment">// Static initializer -&gt; Main -&gt; Constructor</span></span><br><span class="line"><span class="comment">//the initializer is run before the main, since the main is inside the Program class</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Program</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Program"</span>);</span><br><span class="line">        Program p3 = <span class="keyword">new</span> Program();</span><br><span class="line">        Program p4 = <span class="keyword">new</span> Program();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Output:</span></span><br><span class="line">Program</span><br><span class="line">Static Block</span><br><span class="line">Constructor</span><br><span class="line">Constructor</span><br><span class="line"></span><br><span class="line"><span class="comment">// Main -&gt; Static initializer -&gt; Constructor</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="final"><a href="#final" class="headerlink" title="final"></a>final</h1><ul>
+<li>final on non static variable means non changable</li>
+<li>final on method means cannot override</li>
+<li>final on class means cannot inherit</li>
+<li>all method inside final class are final method</li>
+</ul>
+<h1 id="Type-Convert"><a href="#Type-Convert" class="headerlink" title="Type Convert"></a>Type Convert</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// String to primitive</span></span><br><span class="line"></span><br><span class="line">String s = “<span class="number">2</span>”;</span><br><span class="line"><span class="keyword">int</span> x = Integer.parseInt(s);</span><br><span class="line"><span class="keyword">double</span> d = Double.parseDouble(“<span class="number">420.24</span>”);</span><br><span class="line"><span class="keyword">boolean</span> b = <span class="keyword">new</span> Boolean(“<span class="keyword">true</span>”).booleanValue();</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Primitive to String</span></span><br><span class="line"></span><br><span class="line">String s = “<span class="number">2</span>”;</span><br><span class="line"><span class="keyword">int</span> x = Integer.parseInt(s);</span><br><span class="line"><span class="keyword">double</span> d = Double.parseDouble(“<span class="number">420.24</span>”);</span><br><span class="line"><span class="keyword">boolean</span> b = <span class="keyword">new</span> Boolean(“<span class="keyword">true</span>”).booleanValue();</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-<h2 id="Step-3-Test-the-connection"><a href="#Step-3-Test-the-connection" class="headerlink" title="Step 3  Test the connection"></a>Step 3  Test the connection</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/Head-First-Java-Chapter-9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/07/Head-First-Java-Chapter-9/" itemprop="url">Head First Java Chapter 9</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-07T20:06:00+08:00">
+                2020-06-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/" itemprop="url" rel="index">
+                    <span itemprop="name">Book</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/Head-First-Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Head First Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Constructor-and-Garbage-collector"><a href="#Constructor-and-Garbage-collector" class="headerlink" title="Constructor and Garbage collector"></a>Constructor and Garbage collector</h1><hr>
+<h2 id="heap-and-stack"><a href="#heap-and-stack" class="headerlink" title="heap and stack"></a>heap and stack</h2><ul>
+<li>objects live in heap (where the garbage collector work)</li>
+<li>method invocations and local variables live in stack</li>
+</ul>
+<h3 id="Instance-Variables-declared-inside-the-class"><a href="#Instance-Variables-declared-inside-the-class" class="headerlink" title="Instance Variables (declared inside the class)"></a>Instance Variables (declared inside the class)</h3><ul>
+<li>live in heap</li>
+</ul>
+<h3 id="Local-Variables-declared-inside-the-method"><a href="#Local-Variables-declared-inside-the-method" class="headerlink" title="Local Variables (declared inside the method)"></a>Local Variables (declared inside the method)</h3><ul>
+<li>live in stack</li>
+<li>live cycle until the method finish execution</li>
+</ul>
+</br>
+see below exp.
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Animal a = <span class="keyword">new</span> Animal();        </span><br><span class="line">        <span class="comment">// ref. a live in stack whild new Animal() live in heap</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>if a instantce variable contain a ref of another obj</li>
+<li>only the ref size will be maintain in the heap, if the ref do not relate the any concrete obj</li>
+<li>see below exp.<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Animal dog; <span class="comment">// only maintain the ref. size in the heap</span></span><br><span class="line"><span class="keyword">public</span> Animal dog = <span class="keyword">new</span> Dog(); <span class="comment">// dog obj will also be maintain in the heap</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="Constructor"><a href="#Constructor" class="headerlink" title="Constructor"></a>Constructor</h2><ul>
+<li>name of the constructoe is same as the class name</li>
+<li>constructor should not return anything</li>
+<li>a class can have mutiple constructor by having diff. parameter</li>
+<li>complier will not create a constructor when no any constructor is created</li>
+<li>if there is a constructor, complier will not create constructor for you</li>
+<li>constructor can be public, private or non assigned</li>
+</ul>
 <hr>
-<h2 id="Version-Control"><a href="#Version-Control" class="headerlink" title="Version Control"></a>Version Control</h2><h3 id="Initialize"><a href="#Initialize" class="headerlink" title="Initialize"></a>Initialize</h3><h4 id="Method-one"><a href="#Method-one" class="headerlink" title="Method one:"></a>Method one:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">git init <span class="comment"># add .git folder</span></span><br></pre></td></tr></table></figure>
-
-
-<h4 id="Method-two"><a href="#Method-two" class="headerlink" title="Method two:"></a>Method two:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> ssh_url <span class="comment"># add .git folder and remote</span></span><br></pre></td></tr></table></figure>
-<h3 id="Git-Structure"><a href="#Git-Structure" class="headerlink" title="Git Structure"></a>Git Structure</h3><img src="/images/git-structure.png" class="" width="600" height="600" title="Git Structure">
-
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git add filename.html</span><br><span class="line"></span><br><span class="line">git commit -m <span class="string">"added filename"</span></span><br><span class="line"></span><br><span class="line">git diff <span class="comment"># show changes</span></span><br><span class="line"></span><br><span class="line">git push <span class="comment"># push to online repository</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="Branches"><a href="#Branches" class="headerlink" title="Branches"></a>Branches</h3><img src="/images/git-branches.png" class="" width="600" height="600" title="Git Branches">
-
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git branch feature_a <span class="comment"># create new branch</span></span><br><span class="line"></span><br><span class="line">git checkout feature_a <span class="comment"># switch to feature_a</span></span><br><span class="line"></span><br><span class="line">git checkout -b feature_a <span class="comment">#create and switch to feature_a</span></span><br></pre></td></tr></table></figure>
-
 <ul>
-<li><h3 id="use-the-following-cmd-to-push-if-the-repository-do-not-contain-the-new-branch"><a href="#use-the-following-cmd-to-push-if-the-repository-do-not-contain-the-new-branch" class="headerlink" title="use the following cmd to push if the repository do not contain the new branch"></a>use the following cmd to push if the repository do not contain the new branch</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push --<span class="built_in">set</span>-upstream origin branch_name</span><br></pre></td></tr></table></figure>
+<li>When newing a new obj, the constrcutor will call its parent’s construct until the object class constructor.<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> class <span class="title">Animal</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Animal</span><span class="params">()</span></span>&#123;</span><br><span class="line">        sout(<span class="string">"Making Animal...."</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> class <span class="title">Hippo</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Hippo</span><span class="params">()</span></span>&#123;</span><br><span class="line">        sout(<span class="string">"Making Hippo...."</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Hippo a = <span class="keyword">new</span> Hippo();</span><br><span class="line"></span><br><span class="line"><span class="comment">// sout("Making Animal....")</span></span><br><span class="line"><span class="comment">// sout("Making Hippo....")</span></span><br></pre></td></tr></table></figure>
 
 
 </li>
 </ul>
-<h3 id="Merge"><a href="#Merge" class="headerlink" title="Merge"></a>Merge</h3><img src="/images/git-merge.png" class="" width="600" height="600" title="Git Merge">
+<img src="/images/obj-construction.png" class="" width="600" height="600" title="Obj Construction">
 
-
-<ul>
-<li><h3 id="switch-to-master-branch-first"><a href="#switch-to-master-branch-first" class="headerlink" title="switch to master branch first"></a>switch to master branch first</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge branche_name <span class="comment">#merge the branch to master</span></span><br></pre></td></tr></table></figure>
+<h2 id="This"><a href="#This" class="headerlink" title="This"></a>This</h2><ul>
+<li>Use this() to call a constructor from another overloaded constructor in the same class.</li>
+<li>The call to this() can be used only in a constructor, and must be the first statement in a constructor.</li>
+<li>A constructor can have a call to super() OR this(), but never both!<img src="/images/keyword-this.png" class="" width="600" height="600" title="Keyword this">
 
 </li>
 </ul>
-<h3 id="Conflict"><a href="#Conflict" class="headerlink" title="Conflict"></a>Conflict</h3><img src="/images/git-conflict.png" class="" width="600" height="600" title="Git Conflict">
-
-<ul>
-<li><h3 id="if-conflict-occurs-when-merging-two-file"><a href="#if-conflict-occurs-when-merging-two-file" class="headerlink" title="if conflict occurs when merging two file"></a>if conflict occurs when merging two file</h3></li>
+<h2 id="kill-obj"><a href="#kill-obj" class="headerlink" title="kill obj"></a>kill obj</h2><ul>
+<li>when no ref. relate to an obj, it will be collect by the garbage collector</li>
+<li>when memory is insufficient, GC will collect all collectable obj at once</li>
 </ul>
-<img src="/images/git-conflict-solution.png" class="" width="600" height="600" title="Git Conflict Solution">
-
-<ul>
-<li><h3 id="delete-the-unnessary-code-as-following"><a href="#delete-the-unnessary-code-as-following" class="headerlink" title="delete the unnessary code as following"></a>delete the unnessary code as following</h3></li>
-<li><h3 id="then-add-commit-push"><a href="#then-add-commit-push" class="headerlink" title="then add, commit, push"></a>then add, commit, push</h3></li>
+<h3 id="3-ways-to-kill-obj"><a href="#3-ways-to-kill-obj" class="headerlink" title="3 ways to kill obj"></a>3 ways to kill obj</h3><ul>
+<li>when the obj is create inside a method, obj is killed when the method ends</li>
+<li>the last ref. of an obj is assigned to another obj</li>
+<li>set the last ref. of an obj to null</li>
 </ul>
-<h3 id="Git-pull"><a href="#Git-pull" class="headerlink" title="Git pull"></a>Git pull</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git pull </span><br><span class="line"></span><br><span class="line"><span class="comment"># get the update from GitHub repository</span></span><br></pre></td></tr></table></figure>
-
-
-<h3 id="Other-cmd"><a href="#Other-cmd" class="headerlink" title="Other cmd"></a>Other cmd</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status <span class="comment">#show current branch</span></span><br></pre></td></tr></table></figure>
-<br/> 
-<br/> 
----
-
-<p>Reference<br><br/><br>Introduction to Web Development || Setup || Part 1 -  Web Dev Simplified<br><a href="https://www.youtube.com/watch?v=HfTXHrWMGVY&amp;t" target="_blank" rel="noopener">https://www.youtube.com/watch?v=HfTXHrWMGVY&amp;t</a><br><br/><br>Learn Git in 20 Minutes -  Web Dev Simplified<br><a href="https://www.youtube.com/watch?v=IHaTbJPdB-s" target="_blank" rel="noopener">https://www.youtube.com/watch?v=IHaTbJPdB-s</a><br><br/></p>
 
           
         
@@ -1443,16 +1960,16 @@ function category_js () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/04/Deep-Learning-from-Scratch-Chapter-5-III/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/Head-First-Java-Chapter-8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
     </span>
 
     
@@ -1462,7 +1979,7 @@ function category_js () {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/02/04/Deep-Learning-from-Scratch-Chapter-5-III/" itemprop="url">Deep Learning from Scratch Chapter 5 III</a></h1>
+                <a class="post-title-link" href="/2020/06/07/Head-First-Java-Chapter-8/" itemprop="url">Head First Java Chapter 8</a></h1>
         
 
         <div class="post-meta">
@@ -1474,8 +1991,8 @@ function category_js () {
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-04T18:29:39+08:00">
-                2020-02-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-07T12:19:28+08:00">
+                2020-06-07
               </time>
             
 
@@ -1508,19 +2025,8 @@ function category_js () {
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/Deep-Learning/" itemprop="url" rel="index">
-                    <span itemprop="name">Deep Learning</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/Deep-Learning/Deep-Learning-from-Scratch/" itemprop="url" rel="index">
-                    <span itemprop="name">Deep Learning from Scratch</span>
+                  <a href="/categories/Book/Head-First-Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Head First Java</span>
                   </a>
                 </span>
 
@@ -1558,369 +2064,40 @@ function category_js () {
       
         
           
-            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Affine</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, W, b)</span>:</span></span><br><span class="line">        self.W =W</span><br><span class="line">        self.b = b</span><br><span class="line">        </span><br><span class="line">        self.x = <span class="literal">None</span></span><br><span class="line">        self.original_x_shape = <span class="literal">None</span></span><br><span class="line">        <span class="comment"># 权重和偏置参数的导数</span></span><br><span class="line">        self.dW = <span class="literal">None</span></span><br><span class="line">        self.db = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        <span class="comment"># 对应张量</span></span><br><span class="line">        self.original_x_shape = x.shape</span><br><span class="line">        x = x.reshape(x.shape[<span class="number">0</span>], <span class="number">-1</span>)</span><br><span class="line">        self.x = x</span><br><span class="line"></span><br><span class="line">        out = np.dot(self.x, self.W) + self.b</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> out</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">backward</span><span class="params">(self, dout)</span>:</span></span><br><span class="line">        dx = np.dot(dout, self.W.T)</span><br><span class="line">        self.dW = np.dot(self.x.T, dout)</span><br><span class="line">        self.db = np.sum(dout, axis=<span class="number">0</span>)</span><br><span class="line">        </span><br><span class="line">        dx = dx.reshape(*self.original_x_shape)  <span class="comment"># 还原输入数据的形状（对应张量）</span></span><br><span class="line">        <span class="keyword">return</span> dx</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"><span class="keyword">import</span> sys, os</span><br><span class="line">sys.path.append(os.pardir)  <span class="comment"># 为了导入父目录的文件而进行的设定</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> common.layers <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> common.gradient <span class="keyword">import</span> numerical_gradient</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> OrderedDict</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TwoLayerNet</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, input_size, hidden_size, output_size, weight_init_std = <span class="number">0.01</span>)</span>:</span></span><br><span class="line">        <span class="comment"># 初始化权重</span></span><br><span class="line">        self.params = &#123;&#125;</span><br><span class="line">        self.params[<span class="string">'W1'</span>] = weight_init_std * np.random.randn(input_size, hidden_size)</span><br><span class="line">        self.params[<span class="string">'b1'</span>] = np.zeros(hidden_size)</span><br><span class="line">        self.params[<span class="string">'W2'</span>] = weight_init_std * np.random.randn(hidden_size, output_size) </span><br><span class="line">        self.params[<span class="string">'b2'</span>] = np.zeros(output_size)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 生成层</span></span><br><span class="line">        self.layers = OrderedDict()</span><br><span class="line">        self.layers[<span class="string">'Affine1'</span>] = Affine(self.params[<span class="string">'W1'</span>], self.params[<span class="string">'b1'</span>])</span><br><span class="line">        self.layers[<span class="string">'Relu1'</span>] = Relu()</span><br><span class="line">        self.layers[<span class="string">'Affine2'</span>] = Affine(self.params[<span class="string">'W2'</span>], self.params[<span class="string">'b2'</span>])</span><br><span class="line"></span><br><span class="line">        self.lastLayer = SoftmaxWithLoss()</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">predict</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> layer <span class="keyword">in</span> self.layers.values():</span><br><span class="line">            x = layer.forward(x)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line">        </span><br><span class="line">    <span class="comment"># x:输入数据, t:监督数据</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">loss</span><span class="params">(self, x, t)</span>:</span></span><br><span class="line">        y = self.predict(x)</span><br><span class="line">        <span class="keyword">return</span> self.lastLayer.forward(y, t)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">accuracy</span><span class="params">(self, x, t)</span>:</span></span><br><span class="line">        y = self.predict(x)</span><br><span class="line">        y = np.argmax(y, axis=<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span> t.ndim != <span class="number">1</span> : t = np.argmax(t, axis=<span class="number">1</span>)</span><br><span class="line">        </span><br><span class="line">        accuracy = np.sum(y == t) / float(x.shape[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">return</span> accuracy</span><br><span class="line">        </span><br><span class="line">    <span class="comment"># x:输入数据, t:监督数据</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">numerical_gradient</span><span class="params">(self, x, t)</span>:</span></span><br><span class="line">        loss_W = <span class="keyword">lambda</span> W: self.loss(x, t)</span><br><span class="line">        </span><br><span class="line">        grads = &#123;&#125;</span><br><span class="line">        grads[<span class="string">'W1'</span>] = numerical_gradient(loss_W, self.params[<span class="string">'W1'</span>])</span><br><span class="line">        grads[<span class="string">'b1'</span>] = numerical_gradient(loss_W, self.params[<span class="string">'b1'</span>])</span><br><span class="line">        grads[<span class="string">'W2'</span>] = numerical_gradient(loss_W, self.params[<span class="string">'W2'</span>])</span><br><span class="line">        grads[<span class="string">'b2'</span>] = numerical_gradient(loss_W, self.params[<span class="string">'b2'</span>])</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> grads</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">gradient</span><span class="params">(self, x, t)</span>:</span></span><br><span class="line">        <span class="comment"># forward</span></span><br><span class="line">        self.loss(x, t)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># backward</span></span><br><span class="line">        dout = <span class="number">1</span></span><br><span class="line">        dout = self.lastLayer.backward(dout)</span><br><span class="line">        </span><br><span class="line">        layers = list(self.layers.values())</span><br><span class="line">        layers.reverse()</span><br><span class="line">        <span class="keyword">for</span> layer <span class="keyword">in</span> layers:</span><br><span class="line">            dout = layer.backward(dout)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 设定</span></span><br><span class="line">        grads = &#123;&#125;</span><br><span class="line">        grads[<span class="string">'W1'</span>], grads[<span class="string">'b1'</span>] = self.layers[<span class="string">'Affine1'</span>].dW, self.layers[<span class="string">'Affine1'</span>].db</span><br><span class="line">        grads[<span class="string">'W2'</span>], grads[<span class="string">'b2'</span>] = self.layers[<span class="string">'Affine2'</span>].dW, self.layers[<span class="string">'Affine2'</span>].db</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> grads</span><br></pre></td></tr></table></figure>
-
-
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"><span class="keyword">import</span> sys, os</span><br><span class="line">sys.path.append(os.pardir)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> dataset.mnist <span class="keyword">import</span> load_mnist</span><br><span class="line"><span class="keyword">from</span> two_layer_net <span class="keyword">import</span> TwoLayerNet</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读入数据</span></span><br><span class="line">(x_train, t_train), (x_test, t_test) = load_mnist(normalize=<span class="literal">True</span>, one_hot_label=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">network = TwoLayerNet(input_size=<span class="number">784</span>, hidden_size=<span class="number">50</span>, output_size=<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">iters_num = <span class="number">10000</span></span><br><span class="line">train_size = x_train.shape[<span class="number">0</span>]</span><br><span class="line">batch_size = <span class="number">100</span></span><br><span class="line">learning_rate = <span class="number">0.1</span></span><br><span class="line"></span><br><span class="line">train_loss_list = []</span><br><span class="line">train_acc_list = []</span><br><span class="line">test_acc_list = []</span><br><span class="line"></span><br><span class="line">iter_per_epoch = max(train_size / batch_size, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(iters_num):</span><br><span class="line">    batch_mask = np.random.choice(train_size, batch_size)</span><br><span class="line">    x_batch = x_train[batch_mask]</span><br><span class="line">    t_batch = t_train[batch_mask]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 梯度</span></span><br><span class="line">    <span class="comment">#grad = network.numerical_gradient(x_batch, t_batch)</span></span><br><span class="line">    grad = network.gradient(x_batch, t_batch)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 更新</span></span><br><span class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> (<span class="string">'W1'</span>, <span class="string">'b1'</span>, <span class="string">'W2'</span>, <span class="string">'b2'</span>):</span><br><span class="line">        network.params[key] -= learning_rate * grad[key]</span><br><span class="line">    </span><br><span class="line">    loss = network.loss(x_batch, t_batch)</span><br><span class="line">    train_loss_list.append(loss)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> i % iter_per_epoch == <span class="number">0</span>:</span><br><span class="line">        train_acc = network.accuracy(x_train, t_train)</span><br><span class="line">        test_acc = network.accuracy(x_test, t_test)</span><br><span class="line">        train_acc_list.append(train_acc)</span><br><span class="line">        test_acc_list.append(test_acc)</span><br><span class="line">        print(train_acc, test_acc)</span><br></pre></td></tr></table></figure>
-
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/03/Deep-Learning-from-Scratch-Chapter-5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/03/Deep-Learning-from-Scratch-Chapter-5/" itemprop="url">Deep Learning from Scratch Chapter 5</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-03T14:40:00+08:00">
-                2020-02-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/" itemprop="url" rel="index">
-                    <span itemprop="name">Book</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/Deep-Learning/" itemprop="url" rel="index">
-                    <span itemprop="name">Deep Learning</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/Deep-Learning/Deep-Learning-from-Scratch/" itemprop="url" rel="index">
-                    <span itemprop="name">Deep Learning from Scratch</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Backpropagation"><a href="#Backpropagation" class="headerlink" title="Backpropagation"></a>Backpropagation</h2><h2 id="computational-graph"><a href="#computational-graph" class="headerlink" title="computational graph"></a>computational graph</h2><img src="/images/computational-graph.png" class="" width="600" height="600" title="Example of a Computational graph">
-
-
-<h3 id="Backpropagation-of-addition-layer"><a href="#Backpropagation-of-addition-layer" class="headerlink" title="Backpropagation of addition layer"></a>Backpropagation of addition layer</h3><img src="/images/Backpropagation-of-addition-layer.png" class="" width="600" height="600" title="Backpropagation of addition layer">
-
-
-<h3 id="Backpropagation-of-multiplication-layer"><a href="#Backpropagation-of-multiplication-layer" class="headerlink" title="Backpropagation of multiplication layer"></a>Backpropagation of multiplication layer</h3><img src="/images/Backpropagation-of-multiplication-layer.png" class="" width="600" height="600" title="Backpropagation of multiplication layer">
-
-
-<h3 id="Example-of-backpropagation"><a href="#Example-of-backpropagation" class="headerlink" title="Example of backpropagation"></a>Example of backpropagation</h3><img src="/images/Example-of-backpropagation.png" class="" width="600" height="600" title="Example of backpropagation">
-
-
-<h2 id="implementation-of-the-multiplication-layer-and-addition-layer"><a href="#implementation-of-the-multiplication-layer-and-addition-layer" class="headerlink" title="implementation of the multiplication layer and addition layer"></a>implementation of the multiplication layer and addition layer</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MulLayer</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.x = <span class="literal">None</span></span><br><span class="line">        self.y = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x, y)</span>:</span></span><br><span class="line">        self.x = x</span><br><span class="line">        self.y = y                </span><br><span class="line">        out = x * y</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> out</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">backward</span><span class="params">(self, dout)</span>:</span></span><br><span class="line">        dx = dout * self.y</span><br><span class="line">        dy = dout * self.x</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dx, dy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AddLayer</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x, y)</span>:</span></span><br><span class="line">        out = x + y</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> out</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">backward</span><span class="params">(self, dout)</span>:</span></span><br><span class="line">        dx = dout * <span class="number">1</span></span><br><span class="line">        dy = dout * <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dx, dy</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>implementation of the Example of backpropagation</li>
+            <h1 id="More-about-polymorphism"><a href="#More-about-polymorphism" class="headerlink" title="More about polymorphism"></a>More about polymorphism</h1><hr>
+<p>Be careful to the diff between Abstract class, Abstract method, interface.</p>
+<hr>
+<h2 id="Abstract-class"><a href="#Abstract-class" class="headerlink" title="Abstract class"></a>Abstract class</h2><ul>
+<li>Some classes are not suitable to create a instance eg. Animal, because we dont know what should a animal obj look like.</li>
+<li>Abstract class help to prevent it being created as a instance obj.</li>
+<li>The first concrete class must implement all the abstract methods in the class.</li>
+<li>Abstract class have abstract method and non abstract method</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"><span class="keyword">from</span> layer_naive <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">apple = <span class="number">100</span></span><br><span class="line">apple_num = <span class="number">2</span></span><br><span class="line">orange = <span class="number">150</span></span><br><span class="line">orange_num = <span class="number">3</span></span><br><span class="line">tax = <span class="number">1.1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># layer</span></span><br><span class="line">mul_apple_layer = MulLayer()</span><br><span class="line">mul_orange_layer = MulLayer()</span><br><span class="line">add_apple_orange_layer = AddLayer()</span><br><span class="line">mul_tax_layer = MulLayer()</span><br><span class="line"></span><br><span class="line"><span class="comment"># forward</span></span><br><span class="line">apple_price = mul_apple_layer.forward(apple, apple_num)  <span class="comment"># (1)</span></span><br><span class="line">orange_price = mul_orange_layer.forward(orange, orange_num)  <span class="comment"># (2)</span></span><br><span class="line">all_price = add_apple_orange_layer.forward(apple_price, orange_price)  <span class="comment"># (3)</span></span><br><span class="line">price = mul_tax_layer.forward(all_price, tax)  <span class="comment"># (4)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># backward</span></span><br><span class="line">dprice = <span class="number">1</span></span><br><span class="line">dall_price, dtax = mul_tax_layer.backward(dprice)  <span class="comment"># (4)</span></span><br><span class="line">dapple_price, dorange_price = add_apple_orange_layer.backward(dall_price)  <span class="comment"># (3)</span></span><br><span class="line">dorange, dorange_num = mul_orange_layer.backward(dorange_price)  <span class="comment"># (2)</span></span><br><span class="line">dapple, dapple_num = mul_apple_layer.backward(dapple_price)  <span class="comment"># (1)</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">"price:"</span>, int(price))</span><br><span class="line">print(<span class="string">"dApple:"</span>, dapple)</span><br><span class="line">print(<span class="string">"dApple_num:"</span>, int(dapple_num))</span><br><span class="line">print(<span class="string">"dOrange:"</span>, dorange)</span><br><span class="line">print(<span class="string">"dOrange_num:"</span>, int(dorange_num))</span><br><span class="line">print(<span class="string">"dTax:"</span>, dtax)</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/03/Deep-Learning-from-Scratch-Chapter-4-III/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/03/Deep-Learning-from-Scratch-Chapter-4-III/" itemprop="url">Deep Learning from Scratch Chapter 4 III</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-03T10:03:25+08:00">
-                2020-02-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/" itemprop="url" rel="index">
-                    <span itemprop="name">Book</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/Deep-Learning/" itemprop="url" rel="index">
-                    <span itemprop="name">Deep Learning</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/Deep-Learning/Deep-Learning-from-Scratch/" itemprop="url" rel="index">
-                    <span itemprop="name">Deep Learning from Scratch</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<h2 id="simple-2-layer-network-implementation"><a href="#simple-2-layer-network-implementation" class="headerlink" title="simple 2 layer network implementation"></a>simple 2 layer network implementation</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"><span class="keyword">import</span> sys, os</span><br><span class="line">sys.path.append(os.pardir)  <span class="comment"># 为了导入父目录的文件而进行的设定</span></span><br><span class="line"><span class="keyword">from</span> common.functions <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> common.gradient <span class="keyword">import</span> numerical_gradient</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TwoLayerNet</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, input_size, hidden_size, output_size, weight_init_std=<span class="number">0.01</span>)</span>:</span></span><br><span class="line">        <span class="comment"># 初始化权重</span></span><br><span class="line">        self.params = &#123;&#125;</span><br><span class="line">        self.params[<span class="string">'W1'</span>] = weight_init_std * np.random.randn(input_size, hidden_size)</span><br><span class="line">        self.params[<span class="string">'b1'</span>] = np.zeros(hidden_size)</span><br><span class="line">        self.params[<span class="string">'W2'</span>] = weight_init_std * np.random.randn(hidden_size, output_size)</span><br><span class="line">        self.params[<span class="string">'b2'</span>] = np.zeros(output_size)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">predict</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        W1, W2 = self.params[<span class="string">'W1'</span>], self.params[<span class="string">'W2'</span>]</span><br><span class="line">        b1, b2 = self.params[<span class="string">'b1'</span>], self.params[<span class="string">'b2'</span>]</span><br><span class="line">    </span><br><span class="line">        a1 = np.dot(x, W1) + b1</span><br><span class="line">        z1 = sigmoid(a1)</span><br><span class="line">        a2 = np.dot(z1, W2) + b2</span><br><span class="line">        y = softmax(a2)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> y</span><br><span class="line">        </span><br><span class="line">    <span class="comment"># x:输入数据, t:监督数据</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">loss</span><span class="params">(self, x, t)</span>:</span></span><br><span class="line">        y = self.predict(x)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> cross_entropy_error(y, t)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">accuracy</span><span class="params">(self, x, t)</span>:</span></span><br><span class="line">        y = self.predict(x)</span><br><span class="line">        y = np.argmax(y, axis=<span class="number">1</span>)</span><br><span class="line">        t = np.argmax(t, axis=<span class="number">1</span>)</span><br><span class="line">        </span><br><span class="line">        accuracy = np.sum(y == t) / float(x.shape[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">return</span> accuracy</span><br><span class="line">        </span><br><span class="line">    <span class="comment"># x:输入数据, t:监督数据</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">numerical_gradient</span><span class="params">(self, x, t)</span>:</span></span><br><span class="line">        loss_W = <span class="keyword">lambda</span> W: self.loss(x, t)</span><br><span class="line">        </span><br><span class="line">        grads = &#123;&#125;</span><br><span class="line">        grads[<span class="string">'W1'</span>] = numerical_gradient(loss_W, self.params[<span class="string">'W1'</span>])</span><br><span class="line">        grads[<span class="string">'b1'</span>] = numerical_gradient(loss_W, self.params[<span class="string">'b1'</span>])</span><br><span class="line">        grads[<span class="string">'W2'</span>] = numerical_gradient(loss_W, self.params[<span class="string">'W2'</span>])</span><br><span class="line">        grads[<span class="string">'b2'</span>] = numerical_gradient(loss_W, self.params[<span class="string">'b2'</span>])</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> grads</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">gradient</span><span class="params">(self, x, t)</span>:</span></span><br><span class="line">        W1, W2 = self.params[<span class="string">'W1'</span>], self.params[<span class="string">'W2'</span>]</span><br><span class="line">        b1, b2 = self.params[<span class="string">'b1'</span>], self.params[<span class="string">'b2'</span>]</span><br><span class="line">        grads = &#123;&#125;</span><br><span class="line">        </span><br><span class="line">        batch_num = x.shape[<span class="number">0</span>]</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># forward</span></span><br><span class="line">        a1 = np.dot(x, W1) + b1</span><br><span class="line">        z1 = sigmoid(a1)</span><br><span class="line">        a2 = np.dot(z1, W2) + b2</span><br><span class="line">        y = softmax(a2)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># backward</span></span><br><span class="line">        dy = (y - t) / batch_num</span><br><span class="line">        grads[<span class="string">'W2'</span>] = np.dot(z1.T, dy)</span><br><span class="line">        grads[<span class="string">'b2'</span>] = np.sum(dy, axis=<span class="number">0</span>)</span><br><span class="line">        </span><br><span class="line">        da1 = np.dot(dy, W2.T)</span><br><span class="line">        dz1 = sigmoid_grad(a1) * da1</span><br><span class="line">        grads[<span class="string">'W1'</span>] = np.dot(x.T, dz1)</span><br><span class="line">        grads[<span class="string">'b1'</span>] = np.sum(dz1, axis=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> grads</span><br></pre></td></tr></table></figure>
-
-
-
-
 <ul>
-<li>train<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"><span class="keyword">import</span> sys, os</span><br><span class="line">sys.path.append(os.pardir)  <span class="comment"># 为了导入父目录的文件而进行的设定</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> dataset.mnist <span class="keyword">import</span> load_mnist</span><br><span class="line"><span class="keyword">from</span> two_layer_net <span class="keyword">import</span> TwoLayerNet</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读入数据</span></span><br><span class="line">(x_train, t_train), (x_test, t_test) = load_mnist(normalize=<span class="literal">True</span>, one_hot_label=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">network = TwoLayerNet(input_size=<span class="number">784</span>, hidden_size=<span class="number">50</span>, output_size=<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">iters_num = <span class="number">10000</span>  <span class="comment"># 适当设定循环的次数</span></span><br><span class="line">train_size = x_train.shape[<span class="number">0</span>]</span><br><span class="line">batch_size = <span class="number">100</span>        <span class="comment">#feed 100 data to the network each time to update the weight</span></span><br><span class="line">learning_rate = <span class="number">0.1</span></span><br><span class="line"></span><br><span class="line">train_loss_list = []</span><br><span class="line">train_acc_list = []</span><br><span class="line">test_acc_list = []</span><br><span class="line"></span><br><span class="line">iter_per_epoch = max(train_size / batch_size, <span class="number">1</span>)        <span class="comment"># how many batch of data among all training data</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(iters_num):</span><br><span class="line">    batch_mask = np.random.choice(train_size, batch_size)</span><br><span class="line">    x_batch = x_train[batch_mask]</span><br><span class="line">    t_batch = t_train[batch_mask]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 计算梯度</span></span><br><span class="line">    <span class="comment">#grad = network.numerical_gradient(x_batch, t_batch)</span></span><br><span class="line">    grad = network.gradient(x_batch, t_batch)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 更新参数</span></span><br><span class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> (<span class="string">'W1'</span>, <span class="string">'b1'</span>, <span class="string">'W2'</span>, <span class="string">'b2'</span>):</span><br><span class="line">        network.params[key] -= learning_rate * grad[key]</span><br><span class="line">    </span><br><span class="line">    loss = network.loss(x_batch, t_batch)</span><br><span class="line">    train_loss_list.append(loss)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> i % iter_per_epoch == <span class="number">0</span>:             <span class="comment">#cal the acc every time it has train for a epoch -&gt; all training data has been trained</span></span><br><span class="line">        train_acc = network.accuracy(x_train, t_train)</span><br><span class="line">        test_acc = network.accuracy(x_test, t_test)</span><br><span class="line">        train_acc_list.append(train_acc)</span><br><span class="line">        test_acc_list.append(test_acc)</span><br><span class="line">        print(<span class="string">"train acc, test acc | "</span> + str(train_acc) + <span class="string">", "</span> + str(test_acc))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制图形</span></span><br><span class="line">markers = &#123;<span class="string">'train'</span>: <span class="string">'o'</span>, <span class="string">'test'</span>: <span class="string">'s'</span>&#125;</span><br><span class="line">x = np.arange(len(train_acc_list))</span><br><span class="line">plt.plot(x, train_acc_list, label=<span class="string">'train acc'</span>)</span><br><span class="line">plt.plot(x, test_acc_list, label=<span class="string">'test acc'</span>, linestyle=<span class="string">'--'</span>)</span><br><span class="line">plt.xlabel(<span class="string">"epochs"</span>)</span><br><span class="line">plt.ylabel(<span class="string">"accuracy"</span>)</span><br><span class="line">plt.ylim(<span class="number">0</span>, <span class="number">1.0</span>)</span><br><span class="line">plt.legend(loc=<span class="string">'lower right'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure></li>
+<li>see the exp below<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Animal c; </span><br><span class="line">c = <span class="keyword">new</span> Dog();   <span class="comment">//legal, because we can assign it to child class</span></span><br><span class="line"></span><br><span class="line">Animal c = <span class="keyword">new</span> Animal(); <span class="comment">// illegal  Abstract class cannot be new</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="Abstract-methood"><a href="#Abstract-methood" class="headerlink" title="Abstract methood"></a>Abstract methood</h2><ul>
+<li>class contain any abstract method should declare as abstract class</li>
+<li>ie. Non Abstract class CANNOT have Abstract method</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>; <span class="comment">//abstract method do not contain implementation</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// it ends with ;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Object-class"><a href="#Object-class" class="headerlink" title="Object class"></a>Object class</h2><ul>
+<li>all class extends object class</li>
+<li>exp. method in obj class<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- equals()</span><br><span class="line">- hashCode()</span><br><span class="line">- toString()</span><br><span class="line"></span><br><span class="line">&lt;!-- above three method are recommand to overrided --&gt;</span><br><span class="line"></span><br><span class="line">- getClass()</span><br></pre></td></tr></table></figure>
+<h3 id="equals-and"><a href="#equals-and" class="headerlink" title=".equals() and =="></a>.equals() and ==</h3></li>
+<li>both compare if two refferece relate to the same obj</li>
+<li>.equals() will usually be override to compare actual meaning of equality base on the obj.</li>
+</ul>
+<hr>
+<h2 id="interface"><a href="#interface" class="headerlink" title="interface"></a>interface</h2><ul>
+<li>all methods are abstract</li>
+<li>think interface as a contract, any class implement the interface are granteed to implenment the abstract methods</li>
+<li>class can implement multiple interface</li>
+<li>but can only extends from one class<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Pet</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>&#123;&#125;;    <span class="comment">//abstract method only</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;&#125;; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">pulbilc <span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span> <span class="title">implenments</span> <span class="title">Pet</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">// implenmentation</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="comment">// implenmentation</span></span><br><span class="line">    &#125;; </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 
           
@@ -1961,7 +2138,7 @@ function category_js () {
 
   
  <nav class="pagination">
-   <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="accessibility.next_page"></i></a>
+   <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="accessibility.next_page"></i></a>
  </nav>
 
 
@@ -1995,7 +2172,7 @@ function category_js () {
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">Tech Dustdojo</p>
+              <p class="site-author-name" itemprop="name">Max Foo</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -2006,7 +2183,7 @@ function category_js () {
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">75</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2017,7 +2194,7 @@ function category_js () {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2028,7 +2205,7 @@ function category_js () {
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -2069,7 +2246,7 @@ function category_js () {
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Tech Dustdojo</span>
+  <span class="author" itemprop="copyrightHolder">Max Foo</span>
 
   
 </div>

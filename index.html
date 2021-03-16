@@ -80,11 +80,11 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Tech Dustdojo">
+<meta property="og:title" content="Max Foo">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Tech Dustdojo">
+<meta property="og:site_name" content="Max Foo">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="Tech Dustdojo">
+<meta property="article:author" content="Max Foo">
 <meta name="twitter:card" content="summary">
 
 
@@ -121,7 +121,7 @@
 
 
 
-  <title>Tech Dustdojo</title>
+  <title>Max Foo</title>
   
 
 
@@ -152,7 +152,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Tech Dustdojo</span>
+        <span class="site-title">Max Foo</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -274,13 +274,13 @@ function category_js () {
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/03/10/Depoly-in-GCP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
     </span>
 
     
@@ -379,7 +379,7 @@ function category_js () {
 
 <h1 id="Config-firewall-rules"><a href="#Config-firewall-rules" class="headerlink" title="Config firewall rules"></a>Config firewall rules</h1><img src="/images/deployment/gcp/config-firewall-rules.png" class="" width="800" height="800" title="Config firewall rules"> 
 
-<h1 id="allow-Centos-firewall"><a href="#allow-Centos-firewall" class="headerlink" title="allow Centos firewall"></a>allow Centos firewall</h1><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- check firewall status --&gt;</span><br><span class="line">sudo firewall-<span class="built_in">cmd</span> --state</span><br><span class="line"></span><br><span class="line">&lt;!-- <span class="keyword">if</span> <span class="keyword">not</span> running  --&gt;</span><br><span class="line">sudo systemctl <span class="built_in">start</span> firewalld.service</span><br><span class="line"></span><br><span class="line">&lt;!-- open port --&gt;</span><br><span class="line">sudo firewall-<span class="built_in">cmd</span> --zone=public --add-port=<span class="number">8080</span>/tcp --permanent</span><br><span class="line"></span><br><span class="line">&lt;!-- restart firewall --&gt;</span><br><span class="line">sudo systemctl restart firewalld.service</span><br><span class="line"></span><br><span class="line">&lt;!-- reload config --&gt;</span><br><span class="line">sudo firewall-<span class="built_in">cmd</span> --reload</span><br></pre></td></tr></table></figure>
+<h1 id="Config-Centos-firewall"><a href="#Config-Centos-firewall" class="headerlink" title="Config Centos firewall"></a>Config Centos firewall</h1><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- check firewall status --&gt;</span><br><span class="line">sudo firewall-<span class="built_in">cmd</span> --state</span><br><span class="line"></span><br><span class="line">&lt;!-- <span class="keyword">if</span> <span class="keyword">not</span> running  --&gt;</span><br><span class="line">sudo systemctl <span class="built_in">start</span> firewalld.service</span><br><span class="line"></span><br><span class="line">&lt;!-- open port --&gt;</span><br><span class="line">sudo firewall-<span class="built_in">cmd</span> --zone=public --add-port=<span class="number">8080</span>/tcp --permanent</span><br><span class="line"></span><br><span class="line">&lt;!-- restart firewall --&gt;</span><br><span class="line">sudo systemctl restart firewalld.service</span><br><span class="line"></span><br><span class="line">&lt;!-- reload config --&gt;</span><br><span class="line">sudo firewall-<span class="built_in">cmd</span> --reload</span><br></pre></td></tr></table></figure>
           
         
       
@@ -427,16 +427,16 @@ function category_js () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/18/MyForum-05-Interceptor/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/02/19/SpringBoot-Transaction/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
     </span>
 
     
@@ -446,7 +446,7 @@ function category_js () {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2021/01/18/MyForum-05-Interceptor/" itemprop="url">MyForum 05 Interceptor</a></h1>
+                <a class="post-title-link" href="/2021/02/19/SpringBoot-Transaction/" itemprop="url">SpringBoot Transcation</a></h1>
         
 
         <div class="post-meta">
@@ -458,8 +458,174 @@ function category_js () {
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-18T10:12:27+08:00">
-                2021-01-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-02-19T12:32:12+08:00">
+                2021-02-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Spring-Boot/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring Boot</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Isolation-level"><a href="#Isolation-level" class="headerlink" title="Isolation level"></a>Isolation level</h1><img src="/images/myforum/isolation-level.png" class="" width="800" height="800" title="Isolation Level"> 
+
+
+<h1 id="Two-ways-of-Transaction-Management"><a href="#Two-ways-of-Transaction-Management" class="headerlink" title="Two ways of Transaction Management"></a>Two ways of Transaction Management</h1><ul>
+<li>Declarative Transaction Management</li>
+<li>Programmatic Transaction Management</li>
+</ul>
+<h1 id="Declarative-Transaction-Management-for-entire-method"><a href="#Declarative-Transaction-Management-for-entire-method" class="headerlink" title="Declarative Transaction Management (for entire method)"></a>Declarative Transaction Management (for entire method)</h1><ul>
+<li>use annotation<h2 id="Template-Code"><a href="#Template-Code" class="headerlink" title="Template Code"></a>Template Code</h2></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@Transactional</span>(isolation = Isolatio.READ_COMMITTED, propagation = Propagation.REQUIRED)</span><br><span class="line"> <span class="function"><span class="keyword">public</span> xxx <span class="title">methodNeedToBeManaged</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     </span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="Programmatic-Transaction-Management-for-a-few-statement"><a href="#Programmatic-Transaction-Management-for-a-few-statement" class="headerlink" title="Programmatic Transaction Management (for a few statement)"></a>Programmatic Transaction Management (for a few statement)</h1><ul>
+<li>use TransationTemplate<h2 id="Step"><a href="#Step" class="headerlink" title="Step"></a>Step</h2></li>
+</ul>
+<ol>
+<li>inject TransactionTemplate</li>
+<li>create method</li>
+<li>setIsolationLevel and setPropagationBehavior</li>
+<li>new TransationCallback() <xxx> and Override doInTransation(TransationStatus status)</li>
+<li>transationTemplate.execute(TransationCallback)</li>
+</ol>
+<h2 id="Template-Code-1"><a href="#Template-Code-1" class="headerlink" title="Template Code"></a>Template Code</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// inject TransactionTemplate</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> TransactionTemplate transationTemplate;</span><br><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">public</span> xxx <span class="title">methodNeedToBeManaged</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">     transationTemplate.setIsolationLevel(TransactionDefinition.ISOLATION_READ_COMMITTED);</span><br><span class="line">     transationTemplate.setPropagationBehavior(TransactionDefinition.PROPAGATOIN_REQUIRED);</span><br><span class="line"></span><br><span class="line">     <span class="keyword">return</span> transationTemplate.execute(<span class="keyword">new</span> TransationCallback&lt;xxx&gt;()&#123;</span><br><span class="line"></span><br><span class="line">         <span class="meta">@Override</span></span><br><span class="line">         <span class="function"><span class="keyword">public</span> Object <span class="title">doInTransation</span><span class="params">(TransationStatus status)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//  method belowe will be call by spring automatically</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">             <span class="keyword">return</span> xxx;</span><br><span class="line"></span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     </span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/02/18/MyForum-05-Interceptor/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/02/18/MyForum-05-Interceptor/" itemprop="url">MyForum 05 Interceptor</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-02-18T10:12:27+08:00">
+                2021-02-18
               </time>
             
 
@@ -581,16 +747,16 @@ function category_js () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/06/MyForum-04-Login-Module%20/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/02/06/MyForum-04-Login-Module%20/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
     </span>
 
     
@@ -600,7 +766,7 @@ function category_js () {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2021/01/06/MyForum-04-Login-Module%20/" itemprop="url">MyForum 04 Login Module</a></h1>
+                <a class="post-title-link" href="/2021/02/06/MyForum-04-Login-Module%20/" itemprop="url">MyForum 04 Login Module</a></h1>
         
 
         <div class="post-meta">
@@ -612,8 +778,8 @@ function category_js () {
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-06T11:22:10+08:00">
-                2021-01-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-02-06T11:22:10+08:00">
+                2021-02-06
               </time>
             
 
@@ -735,16 +901,16 @@ function category_js () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/03/MyForum-03-Register-Module/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/02/03/MyForum-03-Register-Module/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
     </span>
 
     
@@ -754,7 +920,7 @@ function category_js () {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2021/01/03/MyForum-03-Register-Module/" itemprop="url">MyForum 03 Registration Module</a></h1>
+                <a class="post-title-link" href="/2021/02/03/MyForum-03-Register-Module/" itemprop="url">MyForum 03 Registration Module</a></h1>
         
 
         <div class="post-meta">
@@ -766,8 +932,8 @@ function category_js () {
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-03T14:27:18+08:00">
-                2021-01-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-02-03T14:27:18+08:00">
+                2021-02-03
               </time>
             
 
@@ -889,16 +1055,16 @@ function category_js () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/03/MyForum-02-Home-Page/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/02/03/Spring-MyBatis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
     </span>
 
     
@@ -908,7 +1074,7 @@ function category_js () {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2021/01/03/MyForum-02-Home-Page/" itemprop="url">MyForum 02 Home Page</a></h1>
+                <a class="post-title-link" href="/2021/02/03/Spring-MyBatis/" itemprop="url">Spring-MyBatis</a></h1>
         
 
         <div class="post-meta">
@@ -920,8 +1086,140 @@ function category_js () {
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-03T12:42:13+08:00">
-                2021-01-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-02-03T14:12:13+08:00">
+                2021-02-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="MyBatis-Core"><a href="#MyBatis-Core" class="headerlink" title="MyBatis Core"></a>MyBatis Core</h1><ul>
+<li>SqlSessionFactory, used for create sqlSession</li>
+<li>SqlSession, similar to connection obj in jdbc</li>
+<li>Mapper interface, used to define method</li>
+<li>Mapper file, for writing sql statement</li>
+<li>config file, regist mapper file and config connection</li>
+</ul>
+<h1 id="Integrate-with-Spring"><a href="#Integrate-with-Spring" class="headerlink" title="Integrate with Spring"></a>Integrate with Spring</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># DataSourceProperties</span><br><span class="line">spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver</span><br><span class="line">spring.datasource.url=jdbc:mysql://localhost:3306/myforum?characterEncoding=utf-8&amp;useSSL=false&amp;serverTimezone=Hongkong</span><br><span class="line">spring.datasource.username=root</span><br><span class="line">spring.datasource.password=admin</span><br><span class="line">spring.datasource.type=com.zaxxer.hikari.HikariDataSource</span><br><span class="line">spring.datasource.hikari.maximum-pool-size=15</span><br><span class="line">spring.datasource.hikari.minimum-idle=5</span><br><span class="line">spring.datasource.hikari.idle-timeout=30000</span><br><span class="line"></span><br><span class="line"># MybatisProperties</span><br><span class="line">mybatis.mapper-locations=classpath:mapper/*.xml</span><br><span class="line">mybatis.type-aliases-package=com.devepkm.myforum.entity</span><br><span class="line"># allow auto increment for data refill</span><br><span class="line">mybatis.configuration.useGeneratedKeys=true</span><br><span class="line">mybatis.configuration.mapUnderscoreToCamelCase=true</span><br></pre></td></tr></table></figure>
+
+<h1 id="Param"><a href="#Param" class="headerlink" title="@Param"></a>@Param</h1><ul>
+<li>Param is used to assign an alias name to param</li>
+<li>it must be used if there is only 1 para. in the method and it will be used inside &lt;if&gt; tag</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/02/03/MyForum-02-Home-Page/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/02/03/MyForum-02-Home-Page/" itemprop="url">MyForum 02 Home Page</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-02-03T12:42:13+08:00">
+                2021-02-03
               </time>
             
 
@@ -1043,16 +1341,16 @@ function category_js () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/03/MyForum-01-Enviroment/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/02/03/MyForum-01-Enviroment/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
     </span>
 
     
@@ -1062,7 +1360,7 @@ function category_js () {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2021/01/03/MyForum-01-Enviroment/" itemprop="url">MyForum-01 Enviroment Setup</a></h1>
+                <a class="post-title-link" href="/2021/02/03/MyForum-01-Enviroment/" itemprop="url">MyForum-01 Enviroment Setup</a></h1>
         
 
         <div class="post-meta">
@@ -1074,8 +1372,8 @@ function category_js () {
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-03T12:32:12+08:00">
-                2021-01-03
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-02-03T12:32:12+08:00">
+                2021-02-03
               </time>
             
 
@@ -1202,16 +1500,16 @@ function category_js () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/12/MyBookStore-06/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/03/SpringBoot-03/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
     </span>
 
     
@@ -1221,7 +1519,7 @@ function category_js () {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/10/12/MyBookStore-06/" itemprop="url">MyBookStore 06</a></h1>
+                <a class="post-title-link" href="/2021/01/03/SpringBoot-03/" itemprop="url">SpringBoot SpringMVC</a></h1>
         
 
         <div class="post-meta">
@@ -1233,8 +1531,8 @@ function category_js () {
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-10-12T09:50:39+08:00">
-                2020-10-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-03T14:12:13+08:00">
+                2021-01-03
               </time>
             
 
@@ -1256,19 +1554,8 @@ function category_js () {
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Project/" itemprop="url" rel="index">
-                    <span itemprop="name">Project</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Project/MybookStore/" itemprop="url" rel="index">
-                    <span itemprop="name">MybookStore</span>
+                  <a href="/categories/Spring-Boot/" itemprop="url" rel="index">
+                    <span itemprop="name">Spring Boot</span>
                   </a>
                 </span>
 
@@ -1306,51 +1593,7 @@ function category_js () {
       
         
           
-            <h1 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h1><img src="/images/MyBookStore_P6_Objective1.png" class="" width="800" height="800" title="MyBookStore_P6 Objective 1"> 
-<ol>
-<li>Implement login and logout function<img src="/images/MyBookStore_P6_Objective2.png" class="" width="800" height="800" title="MyBookStore_P6 Objective 2"> </li>
-<li>impl Validation code verification</li>
-<li>add js to refresh verification code<img src="/images/MyBookStore_P6_Objective4.png" class="" width="800" height="800" title="MyBookStore_P6 Objective 4"> </li>
-<li>impl Cart module<img src="/images/MyBookStore_P6_Objective5.png" class="" width="800" height="800" title="MyBookStore_P6 Objective 5"> </li>
-<li>impl Order module</li>
-</ol>
-<h1 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h1><h2 id="Objective-1"><a href="#Objective-1" class="headerlink" title="Objective 1"></a>Objective 1</h2><ol>
-<li>use cookie to save usename in login page</li>
-<li>display the last logined username</li>
-<li>show username in login_success page</li>
-<li>Logout<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  UserServlet login()</span></span><br><span class="line">    Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"username"</span>, u.getUsername());</span><br><span class="line">    cookie.setMaxAge(<span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span> * <span class="number">7</span>);</span><br><span class="line">    resp.addCookie(cookie);</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- login.jsp --&gt;</span><br><span class="line"></span><br><span class="line">&lt;input <span class="class"><span class="keyword">class</span></span>=<span class="string">"itxt"</span> type=<span class="string">"text"</span> value=<span class="string">"$&#123;cookie.username.value&#125;"</span> autocomplete=<span class="string">"off"</span> tabindex=<span class="string">"1"</span> name=<span class="string">"username"</span>/&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!-- index.jsp --&gt;</span><br><span class="line">&lt;!-- check <span class="keyword">if</span> the user is logged by checking <span class="keyword">if</span> there is a user obj in session --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;c:<span class="keyword">if</span> test=<span class="string">"$&#123;empty sessionScope.user&#125;"</span>&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;a href="page/user/login.jsp"&gt;Login&lt;/a&gt; &amp;nbsp;</span><br><span class="line">            &lt;a href="page/user/regist.jsp"&gt;Sign Up&lt;/a&gt; &amp;nbsp;</span><br><span class="line">            &lt;a href="page/cart/cart.jsp"&gt;Cart&lt;/a&gt; &amp;nbsp;&amp;nbsp;</span><br><span class="line">            &lt;a href="page/manager/manager.jsp"&gt;Management&lt;/a&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/c:if&gt;</span><br><span class="line"></span><br><span class="line">    &lt;c:<span class="keyword">if</span> test=<span class="string">"$&#123;not empty sessionScope.user&#125;"</span>&gt;</span><br><span class="line"></span><br><span class="line">       &lt;div&gt;</span><br><span class="line">            &lt;span&gt;Welcome &lt;span class="um_span"&gt;$&#123;sessionScope.user.username&#125;&lt;/span&gt;&lt;/span&gt;</span><br><span class="line">            &lt;a href="page/order/order.jsp"&gt;My Order&lt;/a&gt;&amp;nbsp;</span><br><span class="line">            &lt;a href="userServlet?action=logout"&gt;Logout&lt;/a&gt;&amp;nbsp;</span><br><span class="line">            &lt;a href="index.jsp"&gt;Back&lt;/a&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;/c:if&gt;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- display username in login_success.jsp --&gt;</span><br><span class="line"></span><br><span class="line">&lt;span&gt;Welcome &lt;span class="um_span"&gt;$&#123;sessionScope.user.username&#125;&lt;/span&gt;&lt;/span&gt;</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">logout</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">    req.getSession().invalidate();</span><br><span class="line"><span class="comment">//  redirect to Home page</span></span><br><span class="line">    resp.sendRedirect(req.getContextPath());</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="Objective-2"><a href="#Objective-2" class="headerlink" title="Objective 2"></a>Objective 2</h2><ol>
-<li>import goole KaptchaServlet</li>
-<li>match the KaptchaServlet to a url eg(/kaptchaServlet.jpg)</li>
-</ol>
-<h2 id="Objective-4"><a href="#Objective-4" class="headerlink" title="Objective 4"></a>Objective 4</h2><ol>
-<li>impl Cart class, CartItem Class</li>
-<li>impl CartServlet(addItem, deleteItem, updateCount, clearCart)<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// CartServlet.java</span></span><br><span class="line"><span class="comment">// save Cart obj in session, example code for addItemToCart</span></span><br><span class="line"> <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">addItem</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> InvocationTargetException, IllegalAccessException, ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> id = WebUtils.parseInt(req.getParameter(<span class="string">"id"</span>), <span class="number">0</span>);</span><br><span class="line">        Book book = bookService.queryBookById(id);</span><br><span class="line"></span><br><span class="line">        Cart cart = (Cart) req.getSession().getAttribute(<span class="string">"cart"</span>);</span><br><span class="line">        <span class="keyword">if</span> (cart == <span class="keyword">null</span>) &#123;</span><br><span class="line">            cart = <span class="keyword">new</span> Cart();</span><br><span class="line">            req.getSession().setAttribute(<span class="string">"cart"</span>, cart);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cart.addItem(<span class="keyword">new</span> CartItem(book.getId(), book.getName(), <span class="number">1</span>, book.getPrice(), <span class="keyword">new</span> BigDecimal(book.getPrice())));</span><br><span class="line">        req.getSession().setAttribute(<span class="string">"lastItem"</span>, book.getName());</span><br><span class="line"></span><br><span class="line">        resp.sendRedirect(req.getHeader(<span class="string">"Referer"</span>));</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
-<li>display Cartitems in JSP<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- cart.jsp --&gt;</span><br><span class="line">&lt;c:<span class="keyword">if</span> test=<span class="string">"$&#123;not empty sessionScope.cart.cartItems&#125;"</span>&gt;</span><br><span class="line">    &lt;c:forEach items=<span class="string">"$&#123;sessionScope.cart.cartItems&#125;"</span> <span class="keyword">var</span>=<span class="string">"item"</span>&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;$&#123;item.value.name&#125;&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;&lt;input id="$&#123;item.value.id&#125;" class="counInp" type="text" value="$&#123;item.value.count&#125;" style="width: 50px"&gt;&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;$&#123;item.value.price&#125;&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;$&#123;item.value.amount&#125;&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;&lt;a href="cartServlet?action=deleteItem&amp;id=$&#123;item.value.id&#125;" class="delBtn"&gt;Delete&lt;/a&gt;&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/c:forEach&gt;</span><br><span class="line">&lt;/c:if&gt;</span><br><span class="line"></span><br><span class="line">&lt;c:<span class="keyword">if</span> test=<span class="string">"$&#123;empty sessionScope.cart.cartItems&#125;"</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td colspan="5"&gt;&lt;a href="index.jsp"&gt;Empty Cart, Back to Home page&lt;/a&gt;&lt;/td&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line"></span><br><span class="line">&lt;/c:if&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="Objective-5"><a href="#Objective-5" class="headerlink" title="Objective 5"></a>Objective 5</h2></li>
-<li>impl db table<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> bookorder(</span><br><span class="line">    <span class="string">`order_id`</span> <span class="built_in">varchar</span>(<span class="number">50</span>) primary <span class="keyword">key</span>,</span><br><span class="line">    <span class="string">`create_time`</span> datetime,</span><br><span class="line">    <span class="string">`price`</span> <span class="built_in">decimal</span>(<span class="number">11</span>,<span class="number">2</span>),</span><br><span class="line">    <span class="string">`status`</span> <span class="built_in">int</span>,</span><br><span class="line">    <span class="string">`user_id`</span> <span class="built_in">int</span>,</span><br><span class="line">    <span class="keyword">foreign</span> <span class="keyword">key</span> (<span class="string">`user_id`</span>) <span class="keyword">references</span> <span class="keyword">user</span>(<span class="string">`id`</span>)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> orderItem(</span><br><span class="line">    <span class="string">`id`</span> <span class="built_in">int</span> primary <span class="keyword">key</span> auto_increment,</span><br><span class="line">    <span class="string">`name`</span> <span class="built_in">varchar</span>(<span class="number">100</span>),</span><br><span class="line">    <span class="string">`count`</span> <span class="built_in">int</span>,</span><br><span class="line">    <span class="string">`prince`</span> <span class="built_in">decimal</span>(<span class="number">11</span>,<span class="number">2</span>),</span><br><span class="line">    <span class="string">`amount`</span> <span class="built_in">decimal</span>(<span class="number">11</span>,<span class="number">2</span>),</span><br><span class="line">    <span class="string">`order_id`</span> <span class="built_in">varchar</span>(<span class="number">50</span>),</span><br><span class="line">    <span class="keyword">foreign</span> <span class="keyword">key</span> (<span class="string">`order_id`</span>) <span class="keyword">references</span> bookorder(<span class="string">`order_id`</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></li>
-<li>impl BookOrderDao, OrderItemDao</li>
-</ol>
-<h1 id="Problem-Encountered"><a href="#Problem-Encountered" class="headerlink" title="Problem Encountered"></a>Problem Encountered</h1><h2 id="Objective-3"><a href="#Objective-3" class="headerlink" title="Objective 3"></a>Objective 3</h2><ul>
-<li>browser do not refresh the img due to the cache</li>
-</ul>
-<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><h2 id="Objective-3-1"><a href="#Objective-3-1" class="headerlink" title="Objective 3"></a>Objective 3</h2><ul>
-<li>this is due to the same request for same url</li>
-<li>browser use cache instead of making real request</li>
-<li>we can add a ramdom string in img src to prevent the cache problem<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//refresh verification code</span></span><br><span class="line">$(<span class="string">"#codeimg"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.src = $(<span class="string">"base"</span>).attr(<span class="string">"href"</span>) + <span class="string">"kaptchaServlet.jpg?d="</span> + <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
-</ul>
+            <h1 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h1><img src="/images/myforum/WebServerStructure.png" class="" width="800" height="800" title="Web Server Structure"> 
 
           
         
@@ -1399,16 +1642,16 @@ function category_js () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/10/07/MyBookStore-05/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/03/SpringBoot-02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
     </span>
 
     
@@ -1418,7 +1661,7 @@ function category_js () {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/10/07/MyBookStore-05/" itemprop="url">MyBookStore 05</a></h1>
+                <a class="post-title-link" href="/2021/01/03/SpringBoot-02/" itemprop="url">SpringBoot-02 SpringMVC</a></h1>
         
 
         <div class="post-meta">
@@ -1430,8 +1673,8 @@ function category_js () {
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-10-07T15:21:48+08:00">
-                2020-10-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-03T14:12:13+08:00">
+                2021-01-03
               </time>
             
 
@@ -1440,39 +1683,6 @@ function category_js () {
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Project/" itemprop="url" rel="index">
-                    <span itemprop="name">Project</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Project/MybookStore/" itemprop="url" rel="index">
-                    <span itemprop="name">MybookStore</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -1503,471 +1713,49 @@ function category_js () {
       
         
           
-            <h1 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h1><img src="/images/MyBookStore_P5_Objective1.png" class="" width="800" height="800" title="MyBookStore_P5 Objective 1"> 
-<ol>
-<li>display the book list on separete pages</li>
-<li>set up nav bar in book_manager.jsp</li>
-<li>display page number in jsp</li>
-<li>update edit(), add(), delete() for redirect to correct page<img src="/images/MyBookStore_P5_Objective5.png" class="" width="800" height="800" title="MyBookStore_P5 Objective 5"> </li>
-<li>set up nav bar for client/index.jsp</li>
-<li>extract nav bar as a common nav.jsp, so it can be used for different page<img src="/images/MyBookStore_P5_Objective7.png" class="" width="800" height="800" title="MyBookStore_P5 Objective 7"> </li>
-<li>imp priceSearch function</li>
-</ol>
-<h1 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h1><h2 id="Objective-1"><a href="#Objective-1" class="headerlink" title="Objective 1"></a>Objective 1</h2><ol>
-<li>create Page class</li>
-<li>impl page() in BookServlet</li>
-<li>impl getPage() in BookSerivce</li>
-<li>impl queryTotalRecords() and queryPageRecords() in BookDao</li>
-<li>set up nav bar in book_manager.jsp<h2 id="Objective-2"><a href="#Objective-2" class="headerlink" title="Objective 2"></a>Objective 2</h2></li>
-<li>impl go to XX Page function<h2 id="Objective-4"><a href="#Objective-4" class="headerlink" title="Objective 4"></a>Objective 4</h2></li>
-<li>send pageNo from book_manager to book_edit, and then send it to servlet</li>
-<li>redirect to correct page in servlet<h2 id="Objective-7"><a href="#Objective-7" class="headerlink" title="Objective 7"></a>Objective 7</h2></li>
-<li>set form action to priceSerach<br>2 .imp priceSearch() in web layer</li>
-<li>imp getPriceSearch() in Service layer</li>
-<li>imp queryPriceSearchTotalRecord() and queryPriceSearchRecord() in dao</li>
-</ol>
-<h1 id="Technique"><a href="#Technique" class="headerlink" title="Technique"></a>Technique</h1><h2 id="Objective-2-1"><a href="#Objective-2-1" class="headerlink" title="Objective 2"></a>Objective 2</h2><ol>
-<li>set page boundary in js</li>
-</ol>
+            <h1 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h1><img src="/images/WebServerStructure.png" class="" width="800" height="800" title="Web Server Structure"> 
+<img src="/images/SpringMVCStructure.png" class="" width="800" height="800" title="SpringMVC Structure"> 
+<img src="/images/View.png" class="" width="800" height="800" title="View"> 
+
+<h1 id="RequestMapping"><a href="#RequestMapping" class="headerlink" title="@RequestMapping"></a>@RequestMapping</h1><ul>
+<li>scope: class, method</li>
+<li>parm: path, method</li>
+<li>eg. @RequestMapping(path=”/test”, method=RequestMethod.GET)</li>
+</ul>
+<h1 id="How-to-get-request-and-response-objs-in-controller"><a href="#How-to-get-request-and-response-objs-in-controller" class="headerlink" title="How to get request and response objs in controller"></a>How to get request and response objs in controller</h1><ul>
+<li>declare in method parm. spring will inject automatically<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">tempClass</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"test"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="How-to-get-parms-in-request"><a href="#How-to-get-parms-in-request" class="headerlink" title="How to get parms. in request"></a>How to get parms. in request</h1></li>
+<li>declare in method para., spring will inject automatically<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//path: /student?current=1&amp;limit=10</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(path = <span class="string">"/students"</span>, method = RequestMethod.GET)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getStudents</span><span class="params">(<span class="keyword">int</span> current, <span class="keyword">int</span> limit)</span> </span>&#123;</span><br><span class="line">        System.out.println(current);</span><br><span class="line">        System.out.println(limit);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"some students"</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+<li>use @RequestParam to setup default value</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//path: /student?current=1&amp;limit=10</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(path = <span class="string">"/students"</span>, method = RequestMethod.GET)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getStudents</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">            @RequestParam(name = <span class="string">"current"</span>, required = <span class="keyword">false</span>, defaultValue = <span class="string">"1"</span>)</span> <span class="keyword">int</span> current,</span></span><br><span class="line"><span class="function">            @<span class="title">RequestParam</span><span class="params">(name = <span class="string">"limit"</span>, required = <span class="keyword">false</span>, defaultValue = <span class="string">"10"</span>)</span> <span class="keyword">int</span> limit) </span>&#123;</span><br><span class="line">        System.out.println(current);</span><br><span class="line">        System.out.println(limit);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"some students"</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>if js file contain jsp code, it must write in jsp file<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- </span><br><span class="line">                location.href can get the current url in the browser</span><br><span class="line">                writing to location.href can redirect to <span class="keyword">new</span> url</span><br><span class="line"> --&gt;</span><br><span class="line"></span><br><span class="line">$(function () &#123;</span><br><span class="line">            $(<span class="string">"#goBtn"</span>).click(function () &#123;</span><br><span class="line">                <span class="keyword">var</span> pageNo = $(<span class="string">"#pn_input"</span>).val();</span><br><span class="line"></span><br><span class="line">                <span class="keyword">var</span> totalPageNo = $&#123;requestScope.page.totalPageNo&#125;;</span><br><span class="line"></span><br><span class="line">                <span class="comment">//set boundary</span></span><br><span class="line">                <span class="keyword">if</span> (pageNo &gt; totalPageNo) &#123;</span><br><span class="line">                    pageNo = totalPageNo;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (pageNo &lt; <span class="number">1</span>) &#123;</span><br><span class="line">                    pageNo = <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="comment">//location.href can get the current url in the browser</span></span><br><span class="line">                <span class="comment">//writing to location.href can redirect to new url</span></span><br><span class="line">                location.href = <span class="string">"manager/bookServlet?action=page&amp;pageNo="</span> + pageNo;</span><br><span class="line"></span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure></li>
-</ul>
-<ol start="2">
-<li>set page boundary in Page class<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setPageNo</span><span class="params">(<span class="keyword">int</span> pageNo)</span> </span>&#123;</span><br><span class="line">      <span class="comment">//        set page boundary</span></span><br><span class="line">      <span class="keyword">if</span> (pageNo &lt; <span class="number">1</span>) &#123;</span><br><span class="line">          pageNo = <span class="number">1</span>;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (pageNo &gt; totalPageNo) &#123;</span><br><span class="line">          pageNo = totalPageNo;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">this</span>.pageNo = pageNo;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ol>
-<h1 id="Problem-Encountered"><a href="#Problem-Encountered" class="headerlink" title="Problem Encountered"></a>Problem Encountered</h1><h2 id="Objective-7-1"><a href="#Objective-7-1" class="headerlink" title="Objective 7"></a>Objective 7</h2><ul>
-<li>para cannot directly appen to form action <figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- <span class="keyword">this</span> is wrong --&gt;</span><br><span class="line">&lt;form action=<span class="string">"client/bookServlet?action=priceSearch"</span> method=<span class="string">"get"</span>&gt;</span><br></pre></td></tr></table></figure>
-
+<li>when hiding parm name in url<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">   </span><br><span class="line"><span class="comment">//path:  /student/123</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(path = <span class="string">"/student/&#123;id&#125;"</span>, method = RequestMethod.GET)</span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getStudent</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> <span class="keyword">int</span> id) </span>&#123;</span><br><span class="line">    System.out.println(id);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"a student"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><h2 id="Objective-7-2"><a href="#Objective-7-2" class="headerlink" title="Objective 7"></a>Objective 7</h2><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--use hidden input --&gt;</span><br><span class="line">&lt;form action=<span class="string">"client/bookServlet"</span> method=<span class="string">"get"</span>&gt;</span><br><span class="line">    &lt;input type=<span class="string">"hidden"</span> name=<span class="string">"action"</span> value=<span class="string">"priceSearch"</span>&gt;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
+<h1 id="How-to-return-View"><a href="#How-to-return-View" class="headerlink" title="How to return View"></a>How to return View</h1><h2 id="Method1-return-ModelAndView"><a href="#Method1-return-ModelAndView" class="headerlink" title="Method1: return ModelAndView"></a>Method1: return ModelAndView</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. save data in ModelAndView</span></span><br><span class="line"><span class="comment">// 2. set up the template file location</span></span><br><span class="line"><span class="comment">// 3. return the ModelAndView obj</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(path = <span class="string">"/teacher"</span>, method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">getTeacher</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ModelAndView mav = <span class="keyword">new</span> ModelAndView();</span><br><span class="line">        mav.addObject(<span class="string">"name"</span>, <span class="string">"张三"</span>);</span><br><span class="line">        mav.addObject(<span class="string">"age"</span>, <span class="number">30</span>);</span><br><span class="line">        mav.setViewName(<span class="string">"/demo/view"</span>);</span><br><span class="line">        <span class="keyword">return</span> mav;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Method2-return-String"><a href="#Method2-return-String" class="headerlink" title="Method2: return String"></a>Method2: return String</h2><ul>
+<li>decalre  model obj in method parm, spring will inject the model automatically</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. decalre  model obj in method parm, spring will inject the model automatically</span></span><br><span class="line"><span class="comment">// 2. save data in Model</span></span><br><span class="line"><span class="comment">// 3. return file location as string</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(path = <span class="string">"/school"</span>, method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getSchool</span><span class="params">(Model model)</span> </span>&#123;</span><br><span class="line">        model.addAttribute(<span class="string">"name"</span>, <span class="string">"HKU"</span>);</span><br><span class="line">        model.addAttribute(<span class="string">"age"</span>, <span class="number">150</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"/demo/view"</span>;</span><br></pre></td></tr></table></figure>
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/30/MyBookStore-04/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/09/30/MyBookStore-04/" itemprop="url">MyBookStore 04</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-30T14:35:57+08:00">
-                2020-09-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Project/" itemprop="url" rel="index">
-                    <span itemprop="name">Project</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Project/MybookStore/" itemprop="url" rel="index">
-                    <span itemprop="name">MybookStore</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h1><ol>
-<li>use static include to inculde the header(css, js file and dynameic base tag), footer, manager_menu</li>
-<li>imp book dao, book service (bean, dao)</li>
-<li>impl Web(BookServlet list() )<img src="/images/MyBookStore_P4_Objective3.png" class="" width="800" height="800" title="MyBookStore_P4 Objective 3"> </li>
-<li>impl Web(BookServlet add() )</li>
-<li>impl Web(BookServlet delete() )</li>
-<li>add a js for delete confirmation</li>
-<li>display book info in edit page<img src="/images/MyBookStore_P4_Objective7.png" class="" width="800" height="800" title="MyBookStore_P4 Objective 7"> </li>
-<li>impl Web(BookServlet edit() )<img src="/images/MyBookStore_P4_Objective8.png" class="" width="800" height="800" title="MyBookStore_P4 Objective 8"> </li>
-<li>solve the conflict between “Add A New Book” and “Edit”<img src="/images/MyBookStore_P4_Objective9.png" class="" width="800" height="800" title="MyBookStore_P4 Objective 9"> 
-
-
-</li>
-</ol>
-<h1 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h1><h2 id="Objective-1"><a href="#Objective-1" class="headerlink" title="Objective 1"></a>Objective 1</h2><ol>
-<li><p>create a common header.jsp footer.jsp, manager_menu.jsp</p>
-</li>
-<li><p>use static include to inculde the common header.jsp in different jsp page</p>
-<h2 id="Objective-2"><a href="#Objective-2" class="headerlink" title="Objective 2"></a>Objective 2</h2></li>
-<li><p>create table for book</p>
-</li>
-<li><p>create bean class(Book)</p>
-</li>
-<li><p>book Dao</p>
-</li>
-<li><p>book service</p>
-<h2 id="Objective-3"><a href="#Objective-3" class="headerlink" title="Objective 3"></a>Objective 3</h2></li>
-<li><p>BookServlet: list() method</p>
-</li>
-<li><p>link manager.jsp to bookServlet, map servlet url</p>
-</li>
-<li><p>display data in book_manager.jsp</p>
-<h2 id="Objective-4"><a href="#Objective-4" class="headerlink" title="Objective 4"></a>Objective 4</h2></li>
-<li><p>BookServlet: add() method</p>
-<h2 id="Objective-5"><a href="#Objective-5" class="headerlink" title="Objective 5"></a>Objective 5</h2></li>
-<li><p>BookServlet: delete() method</p>
-</li>
-<li><p>send book id to servlet when delete button is pressed</p>
-<h2 id="Objective-6"><a href="#Objective-6" class="headerlink" title="Objective 6"></a>Objective 6</h2></li>
-<li><p>imp js for add delete confirmation</p>
-<h2 id="Objective-7"><a href="#Objective-7" class="headerlink" title="Objective 7"></a>Objective 7</h2></li>
-<li><p>imp querybook()</p>
-</li>
-<li><p>display on jsp</p>
-<h2 id="Objective-8"><a href="#Objective-8" class="headerlink" title="Objective 8"></a>Objective 8</h2><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">12</span>.</span><br><span class="line">        &lt;%--        <span class="function">sd id to servlet <span class="keyword">if</span> it is a <span class="title">edit</span><span class="params">()</span> operation--%&gt;</span></span><br><span class="line"><span class="function">        &lt;input type</span>=<span class="string">"hidden"</span> name=<span class="string">"id"</span> value=$&#123;requestScope.book.id&#125;&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="Technique"><a href="#Technique" class="headerlink" title="Technique"></a>Technique</h1><h2 id="Objective-1-1"><a href="#Objective-1-1" class="headerlink" title="Objective 1"></a>Objective 1</h2><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;%<span class="meta">@include</span> file=<span class="string">"/page/common/header.jsp"</span> %&gt;</span><br><span class="line"></span><br><span class="line">&lt;%<span class="meta">@include</span> file=<span class="string">"/page/common/manager_menu.jsp"</span> %&gt;</span><br><span class="line"></span><br><span class="line">&lt;%<span class="meta">@include</span> file=<span class="string">"/page/common/footer.jsp"</span> %&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="Objective-5-1"><a href="#Objective-5-1" class="headerlink" title="Objective 5"></a>Objective 5</h2></li>
-</ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- use $&#123;boo.id&#125; to get the book id from req.param and send it to the servlet --&gt;</span><br><span class="line">                &lt;td&gt;&lt;a class="delete" href="manager/bookServlet?action=delete&amp;id=$&#123;book.id&#125;"&gt;Delete&lt;/a&gt;&lt;/td&gt;</span><br></pre></td></tr></table></figure>
-
-<h1 id="Problem-Encountered"><a href="#Problem-Encountered" class="headerlink" title="Problem Encountered"></a>Problem Encountered</h1><h2 id="Objective-4-1"><a href="#Objective-4-1" class="headerlink" title="Objective 4"></a>Objective 4</h2><ul>
-<li>when clicking f5 after add a book, it will re-add the same book to database<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="Objective-9"><a href="#Objective-9" class="headerlink" title="Objective 9"></a>Objective 9</h2><img src="/images/MyBookStore_P4_Objective9.png" class="" width="800" height="800" title="MyBookStore_P4 Objective 9"> 
-
+<h1 id="How-to-get-data-in-thymeleaf-file"><a href="#How-to-get-data-in-thymeleaf-file" class="headerlink" title="How to get data in thymeleaf file"></a>How to get data in thymeleaf file</h1><ul>
+<li>use th:<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">"$&#123;name&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">"$&#123;age&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><h2 id="Objective-4-2"><a href="#Objective-4-2" class="headerlink" title="Objective 4"></a>Objective 4</h2><ul>
-<li>it is because the browser will automatically save the last request, when F5 is pressed, the last add request will resend to the server<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// use resp.sendRedirect instead of req.getRequestDispatcher</span></span><br><span class="line"><span class="comment">// resp.sendRedirect() will separate the request to two request, so the browser will only</span></span><br><span class="line"><span class="comment">// save the last request("/manager/bookServlet?action=list")</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//      req.getRequestDispatcher("/manager/bookServlet?action=list").forward(req, resp);</span></span><br><span class="line">        resp.sendRedirect(req.getContextPath() + <span class="string">"/manager/bookServlet?action=list"</span>);</span><br></pre></td></tr></table></figure>
-
+<h1 id="How-to-return-JSON"><a href="#How-to-return-JSON" class="headerlink" title="How to return JSON"></a>How to return JSON</h1><ul>
+<li>use @ResponseBody</li>
+<li>it will automatically convert the return type to Json string<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(path = <span class="string">"/emp"</span>, method = RequestMethod.GET)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Map&lt;String, Object&gt; <span class="title">getEmp</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Map&lt;String, Object&gt; emp = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        emp.put(<span class="string">"name"</span>, <span class="string">"ken"</span>);</span><br><span class="line">        emp.put(<span class="string">"age"</span>, <span class="number">23</span>);</span><br><span class="line">        emp.put(<span class="string">"salary"</span>, <span class="number">8000.00</span>);</span><br><span class="line">        <span class="keyword">return</span> emp;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+<li>when return Collection by @ResponseBody, brower will receive a array containing json string<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(path = <span class="string">"/emps"</span>, method = RequestMethod.GET)</span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="keyword">public</span> List&lt;Map&lt;String, Object&gt;&gt; getEmps() &#123;</span><br><span class="line">    List&lt;Map&lt;String, Object&gt;&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    Map&lt;String, Object&gt; emp = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    emp.put(<span class="string">"name"</span>, <span class="string">"ken"</span>);</span><br><span class="line">    emp.put(<span class="string">"age"</span>, <span class="number">23</span>);</span><br><span class="line">    list.add(emp);</span><br><span class="line"></span><br><span class="line">    emp = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    emp.put(<span class="string">"name"</span>, <span class="string">"jacky"</span>);</span><br><span class="line">    emp.put(<span class="string">"age"</span>, <span class="number">24</span>);</span><br><span class="line">    list.add(emp);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Json received in browser</span></span><br><span class="line">[&#123;<span class="string">"name"</span>=<span class="string">"ken"</span>,<span class="string">"age"</span>=<span class="number">23</span>&#125;,&#123;<span class="string">"name"</span>=<span class="string">"jacky"</span>,<span class="string">"age"</span>=<span class="number">24</span>&#125;]</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
-<h2 id="Objective-9-1"><a href="#Objective-9-1" class="headerlink" title="Objective 9"></a>Objective 9</h2><p>method one </p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- book_manager.jsp --&gt;</span><br><span class="line">&lt;!-- add method param. at url to determinate which method should be called --&gt;</span><br><span class="line">         &lt;td&gt;&lt;a href="manager/bookServlet?action=querybook&amp;id=$&#123;book.id&#125;&amp;method=edit"&gt;Edit&lt;/a&gt;&lt;/td&gt;</span><br><span class="line">         &lt;td&gt;&lt;a href="page/manager/book_edit.jsp?method=add"&gt;Add new a book&lt;/a&gt;&lt;/td&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- book_edit.jsp --&gt;</span><br><span class="line">        &lt;input type=<span class="string">"hidden"</span> name=<span class="string">"action"</span> value=$&#123;param.method&#125;&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="How-to-get-Cookie"><a href="#How-to-get-Cookie" class="headerlink" title="How to get Cookie"></a>How to get Cookie</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(path = <span class="string">"/cookie/get"</span>, method = RequestMethod.GET)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getCookie</span><span class="params">(@CookieValue(<span class="string">"code"</span>)</span> String code) </span>&#123;</span><br><span class="line">    System.out.println(code);</span><br><span class="line">   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>method two </p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- book_edit.jsp --&gt;</span><br><span class="line">&lt;!-- determinate <span class="keyword">if</span> there are id param  in req param.--&gt;</span><br><span class="line"> &lt;!-- <span class="function">since id is only needed in <span class="title">edit</span><span class="params">()</span> --&gt; </span></span><br><span class="line"><span class="function"> &lt;input type</span>=<span class="string">"hidden"</span> name=<span class="string">"action"</span> value=$&#123;empty param.id ? <span class="string">"add"</span> : <span class="string">"edit"</span>&#125;&gt;</span><br></pre></td></tr></table></figure>
-<p>method three </p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- determinate <span class="keyword">if</span> there are book obj in requestScope--&gt;</span><br><span class="line"> &lt;!-- <span class="function">since id is only needed in <span class="title">edit</span><span class="params">()</span> --&gt; </span></span><br><span class="line"><span class="function"> &lt;input type</span>=<span class="string">"hidden"</span> name=<span class="string">"action"</span> value=$&#123;empty requestScope.book ? <span class="string">"add"</span> : <span class="string">"edit"</span>&#125;&gt;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/30/MyBookStore-03/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/09/30/MyBookStore-03/" itemprop="url">MyBookStore 03</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-30T11:34:27+08:00">
-                2020-09-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Project/" itemprop="url" rel="index">
-                    <span itemprop="name">Project</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Project/MybookStore/" itemprop="url" rel="index">
-                    <span itemprop="name">MybookStore</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h1><img src="/images/MyBookStore_P3_Objective1.png" class="" width="800" height="800" title="MyBookStore_P3 Objective 1"> 
-<ol>
-<li>change the static html page to jsp page, for dynamically show information from server </li>
-</ol>
-<ul>
-<li>eg. show error message in login page</li>
-</ul>
-<ol start="2">
-<li>combine the two servlet to one servlet<img src="/images/MyBookStore_P3_Objective2.png" class="" width="800" height="800" title="MyBookStore_P3 Objective 2"> </li>
-<li>change the if else to reflection<img src="/images/MyBookStore_P3_Objective3.png" class="" width="800" height="800" title="MyBookStore_P3 Objective 3"> </li>
-<li>imp an abstract BaseServlet for different Servlet class<img src="/images/MyBookStore_P3_Objective4.png" class="" width="800" height="800" title="MyBookStore_P3 Objective 4"> </li>
-<li>use BeanUtils to inject params to replace manully injection<img src="/images/MyBookStore_P3_Objective5.png" class="" width="800" height="800" title="MyBookStore_P3 Objective 5"> </li>
-<li>keep the user inputed infos in login page<h1 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h1><h2 id="Objective-1"><a href="#Objective-1" class="headerlink" title="Objective 1"></a>Objective 1</h2></li>
-<li>add &lt;%@ page contentType=”text/html;charset=UTF-8” language=”java” %&gt; in the html</li>
-<li>change the .html to .jsp</li>
-<li>use idea (cmd + shift + r) to search .htm for entire directory</li>
-<li>change the static base tag to dynamic base tag</li>
-<li>In web layer, save the errMsg and user’s input in request attribute</li>
-<li>In jsp, show the errMsg and user’s input <h2 id="Objective-2"><a href="#Objective-2" class="headerlink" title="Objective 2"></a>Objective 2</h2></li>
-<li>add an hidden input in jsp</li>
-<li>create and impl the UserServlet class<h2 id="Objective-3"><a href="#Objective-3" class="headerlink" title="Objective 3"></a>Objective 3</h2></li>
-<li>getDeclaredMethod</li>
-<li>invoke<h2 id="Objective-5"><a href="#Objective-5" class="headerlink" title="Objective 5"></a>Objective 5</h2></li>
-<li>Create a WebUtils and imp the injectBean() method<h1 id="Technique"><a href="#Technique" class="headerlink" title="Technique"></a>Technique</h1><h2 id="Objective-1-1"><a href="#Objective-1-1" class="headerlink" title="Objective 1"></a>Objective 1</h2></li>
-</ol>
-<ul>
-<li>save the infos in request attribute</li>
-<li>in jsp, retirve the infos from request attribute<h2 id="Objective-2-1"><a href="#Objective-2-1" class="headerlink" title="Objective 2"></a>Objective 2</h2></li>
-<li>use hidden input to send the “action” to server </li>
-<li>server can determinate which method to call by the “action”<h2 id="Objective-3-1"><a href="#Objective-3-1" class="headerlink" title="Objective 3"></a>Objective 3</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String action = req.getParameter(<span class="string">"action"</span>);</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    Method method = <span class="keyword">this</span>.getClass().getDeclaredMethod(action, HttpServletRequest<span class="class">.<span class="keyword">class</span>, <span class="title">HttpServletResponse</span>.<span class="title">class</span>)</span>;</span><br><span class="line">    method.invoke(<span class="keyword">this</span>, req, resp);</span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Objective-5-1"><a href="#Objective-5-1" class="headerlink" title="Objective 5"></a>Objective 5</h2></li>
-<li>BeanUtils injects the obj by getter and setter</li>
-<li>request properties can get by req.getParameterMap()<h1 id="Problem-Encountered"><a href="#Problem-Encountered" class="headerlink" title="Problem Encountered"></a>Problem Encountered</h1><img src="/images/resource-include-problem-in-jsp.png" class="" width="800" height="800" title="Resource Include Problem In Jsp"> </li>
-</ul>
-<ol>
-<li>resource eg css, img not working</li>
-</ol>
-<ul>
-<li>since base tag is linked to localhost, when user request the url it cannot get the resource in his own localhost<br></li>
-</ul>
-<ol start="2">
-<li>java.lang.IllegalStateException: Cannot forward after response has been committe</li>
-</ol>
-<ul>
-<li>this is beacuse no return statement after request redirection<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1></li>
-</ul>
-<ol>
-<li>change the base tag to dynamically link the resource<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">    &lt;%</span><br><span class="line">        String baseUrl = request.getScheme()</span><br><span class="line">                + <span class="string">"://"</span></span><br><span class="line">                + request.getServerName()</span><br><span class="line">                + <span class="string">":"</span></span><br><span class="line">                + request.getServerPort()</span><br><span class="line">                + request.getContextPath()</span><br><span class="line">                + <span class="string">"/"</span>;</span><br><span class="line">    %&gt;</span><br><span class="line">&lt;%--    &lt;base href=<span class="string">"http://localhost:8080/MyBookStore_P3/"</span>&gt;--%&gt;</span><br><span class="line">&lt;%--    change the <span class="keyword">static</span> base to dynamic base--%&gt;</span><br><span class="line">    &lt;base href=<span class="string">"&lt;%=baseUrl%&gt;"</span>&gt;</span><br></pre></td></tr></table></figure></li>
-<li>add return statement after every redirection<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// add return statement after every redirection</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">login</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">    String username = req.getParameter(<span class="string">"username"</span>);</span><br><span class="line">    String password = req.getParameter(<span class="string">"password"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">boolean</span> isLogin = userService.login(<span class="keyword">new</span> User(username, password));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (isLogin) &#123;</span><br><span class="line">        req.getRequestDispatcher(<span class="string">"/page/user/login_success.jsp"</span>).forward(req, resp);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        req.setAttribute(<span class="string">"errMsg"</span>, <span class="string">"Wrong Username or Password"</span>);</span><br><span class="line">        req.setAttribute(<span class="string">"usename"</span>, username);</span><br><span class="line">        req.getRequestDispatcher(<span class="string">"page/user/login.jsp"</span>).forward(req, resp);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-
+<h1 id="How-to-set-and-get-session"><a href="#How-to-set-and-get-session" class="headerlink" title="How to set and get session"></a>How to set and get session</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(path = <span class="string">"/session/set"</span>, method = RequestMethod.GET)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">setSession</span><span class="params">(HttpSession session)</span> </span>&#123;</span><br><span class="line">    session.setAttribute(<span class="string">"id"</span>, <span class="number">1</span>);</span><br><span class="line">    session.setAttribute(<span class="string">"name"</span>, <span class="string">"ken"</span>);</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RequestMapping</span>(path = <span class="string">"/session/get"</span>, method = RequestMethod.GET)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getSession</span><span class="params">(HttpSession session)</span> </span>&#123;</span><br><span class="line">    System.out.println(session.getAttribute(<span class="string">"id"</span>));</span><br><span class="line">    System.out.println(session.getAttribute(<span class="string">"name"</span>));</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           
         
       
@@ -2006,7 +1794,7 @@ function category_js () {
 
   
  <nav class="pagination">
-   <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="accessibility.next_page"></i></a>
+   <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="accessibility.next_page"></i></a>
  </nav>
 
 
@@ -2040,7 +1828,7 @@ function category_js () {
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">Tech Dustdojo</p>
+              <p class="site-author-name" itemprop="name">Max Foo</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -2051,7 +1839,7 @@ function category_js () {
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">75</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2062,7 +1850,7 @@ function category_js () {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -2073,7 +1861,7 @@ function category_js () {
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -2114,7 +1902,7 @@ function category_js () {
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Tech Dustdojo</span>
+  <span class="author" itemprop="copyrightHolder">Max Foo</span>
 
   
 </div>

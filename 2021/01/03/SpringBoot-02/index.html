@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="SpringMVC       @RequestMapping scope: class, method parm: path, method eg. @RequestMapping(path&#x3D;”&#x2F;test”, method&#x3D;RequestMethod.GET)  How to get request and response objs in controller declare in metho">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot-02 SpringMVC">
+<meta property="og:url" content="http://yoursite.com/2021/01/03/SpringBoot-02/index.html">
+<meta property="og:site_name" content="Max Foo">
+<meta property="og:description" content="SpringMVC       @RequestMapping scope: class, method parm: path, method eg. @RequestMapping(path&#x3D;”&#x2F;test”, method&#x3D;RequestMethod.GET)  How to get request and response objs in controller declare in metho">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/WebServerStructure.png">
+<meta property="og:image" content="http://yoursite.com/images/SpringMVCStructure.png">
+<meta property="og:image" content="http://yoursite.com/images/View.png">
+<meta property="article:published_time" content="2021-01-03T06:12:13.000Z">
+<meta property="article:modified_time" content="2021-02-14T04:35:58.170Z">
+<meta property="article:author" content="Max Foo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/WebServerStructure.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2021/01/03/SpringBoot-02/"/>
+
+
+
+
+
+  <title>SpringBoot-02 SpringMVC | Max Foo</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Max Foo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+<script>
+function category_js () {
+  $("<div class='display' style='float: left'> &nbsp>&nbsp </div>").prependTo(".category-list-item");
+  $(".category-list-child").css("display","none");
+  // .posts-expand .post-body ul li
+
+  // $(".posts-expand .post-body ul  li .category-list-link ").first().css("font-weight","bold");
+  $(".posts-expand .post-body ul .category-list-item ").first().children(".category-list-link").css("font-weight","bold");
+  $(".posts-expand .post-body ul .category-list-item ").first().siblings("li").children(".category-list-link").css("font-weight","bold");
+  // $(".category-list-child").css("list-style-type","none");
+  // $(".category-list-item").css("list-style-type","none");
+  $(".posts-expand .post-body ul li ").css("list-style-type", "none");
+  $(".category-list-link ").css("border-bottom", "none");
+
+  $(".display").click(function () {
+  // $(this).siblings(".category-list-child").css("display")=="none"?
+  // $(this).siblings(".category-list-child").css("display","block"):$(this).siblings(".category-list-child").css("display","none");
+  $(this).siblings(".category-list-child").slideToggle();
+  // $(this).siblings(".category-list-child").fadeToggle();
+  
+  })
+}
+</script>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/03/SpringBoot-02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SpringBoot-02 SpringMVC</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-03T14:12:13+08:00">
+                2021-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h1><img src="/images/WebServerStructure.png" class="" width="800" height="800" title="Web Server Structure"> 
+<img src="/images/SpringMVCStructure.png" class="" width="800" height="800" title="SpringMVC Structure"> 
+<img src="/images/View.png" class="" width="800" height="800" title="View"> 
+
+<h1 id="RequestMapping"><a href="#RequestMapping" class="headerlink" title="@RequestMapping"></a>@RequestMapping</h1><ul>
+<li>scope: class, method</li>
+<li>parm: path, method</li>
+<li>eg. @RequestMapping(path=”/test”, method=RequestMethod.GET)</li>
+</ul>
+<h1 id="How-to-get-request-and-response-objs-in-controller"><a href="#How-to-get-request-and-response-objs-in-controller" class="headerlink" title="How to get request and response objs in controller"></a>How to get request and response objs in controller</h1><ul>
+<li>declare in method parm. spring will inject automatically<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">tempClass</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"test"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="How-to-get-parms-in-request"><a href="#How-to-get-parms-in-request" class="headerlink" title="How to get parms. in request"></a>How to get parms. in request</h1></li>
+<li>declare in method para., spring will inject automatically<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//path: /student?current=1&amp;limit=10</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(path = <span class="string">"/students"</span>, method = RequestMethod.GET)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getStudents</span><span class="params">(<span class="keyword">int</span> current, <span class="keyword">int</span> limit)</span> </span>&#123;</span><br><span class="line">        System.out.println(current);</span><br><span class="line">        System.out.println(limit);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"some students"</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+<li>use @RequestParam to setup default value</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//path: /student?current=1&amp;limit=10</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(path = <span class="string">"/students"</span>, method = RequestMethod.GET)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getStudents</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">            @RequestParam(name = <span class="string">"current"</span>, required = <span class="keyword">false</span>, defaultValue = <span class="string">"1"</span>)</span> <span class="keyword">int</span> current,</span></span><br><span class="line"><span class="function">            @<span class="title">RequestParam</span><span class="params">(name = <span class="string">"limit"</span>, required = <span class="keyword">false</span>, defaultValue = <span class="string">"10"</span>)</span> <span class="keyword">int</span> limit) </span>&#123;</span><br><span class="line">        System.out.println(current);</span><br><span class="line">        System.out.println(limit);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"some students"</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>when hiding parm name in url<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">   </span><br><span class="line"><span class="comment">//path:  /student/123</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(path = <span class="string">"/student/&#123;id&#125;"</span>, method = RequestMethod.GET)</span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getStudent</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> <span class="keyword">int</span> id) </span>&#123;</span><br><span class="line">    System.out.println(id);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"a student"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="How-to-return-View"><a href="#How-to-return-View" class="headerlink" title="How to return View"></a>How to return View</h1><h2 id="Method1-return-ModelAndView"><a href="#Method1-return-ModelAndView" class="headerlink" title="Method1: return ModelAndView"></a>Method1: return ModelAndView</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. save data in ModelAndView</span></span><br><span class="line"><span class="comment">// 2. set up the template file location</span></span><br><span class="line"><span class="comment">// 3. return the ModelAndView obj</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(path = <span class="string">"/teacher"</span>, method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ModelAndView <span class="title">getTeacher</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ModelAndView mav = <span class="keyword">new</span> ModelAndView();</span><br><span class="line">        mav.addObject(<span class="string">"name"</span>, <span class="string">"张三"</span>);</span><br><span class="line">        mav.addObject(<span class="string">"age"</span>, <span class="number">30</span>);</span><br><span class="line">        mav.setViewName(<span class="string">"/demo/view"</span>);</span><br><span class="line">        <span class="keyword">return</span> mav;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Method2-return-String"><a href="#Method2-return-String" class="headerlink" title="Method2: return String"></a>Method2: return String</h2><ul>
+<li>decalre  model obj in method parm, spring will inject the model automatically</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. decalre  model obj in method parm, spring will inject the model automatically</span></span><br><span class="line"><span class="comment">// 2. save data in Model</span></span><br><span class="line"><span class="comment">// 3. return file location as string</span></span><br><span class="line">    <span class="meta">@RequestMapping</span>(path = <span class="string">"/school"</span>, method = RequestMethod.GET)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getSchool</span><span class="params">(Model model)</span> </span>&#123;</span><br><span class="line">        model.addAttribute(<span class="string">"name"</span>, <span class="string">"HKU"</span>);</span><br><span class="line">        model.addAttribute(<span class="string">"age"</span>, <span class="number">150</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"/demo/view"</span>;</span><br></pre></td></tr></table></figure>
+
+<h1 id="How-to-get-data-in-thymeleaf-file"><a href="#How-to-get-data-in-thymeleaf-file" class="headerlink" title="How to get data in thymeleaf file"></a>How to get data in thymeleaf file</h1><ul>
+<li>use th:<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">"$&#123;name&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">"$&#123;age&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="How-to-return-JSON"><a href="#How-to-return-JSON" class="headerlink" title="How to return JSON"></a>How to return JSON</h1><ul>
+<li>use @ResponseBody</li>
+<li>it will automatically convert the return type to Json string<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(path = <span class="string">"/emp"</span>, method = RequestMethod.GET)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Map&lt;String, Object&gt; <span class="title">getEmp</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Map&lt;String, Object&gt; emp = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        emp.put(<span class="string">"name"</span>, <span class="string">"ken"</span>);</span><br><span class="line">        emp.put(<span class="string">"age"</span>, <span class="number">23</span>);</span><br><span class="line">        emp.put(<span class="string">"salary"</span>, <span class="number">8000.00</span>);</span><br><span class="line">        <span class="keyword">return</span> emp;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+<li>when return Collection by @ResponseBody, brower will receive a array containing json string<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(path = <span class="string">"/emps"</span>, method = RequestMethod.GET)</span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="keyword">public</span> List&lt;Map&lt;String, Object&gt;&gt; getEmps() &#123;</span><br><span class="line">    List&lt;Map&lt;String, Object&gt;&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    Map&lt;String, Object&gt; emp = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    emp.put(<span class="string">"name"</span>, <span class="string">"ken"</span>);</span><br><span class="line">    emp.put(<span class="string">"age"</span>, <span class="number">23</span>);</span><br><span class="line">    list.add(emp);</span><br><span class="line"></span><br><span class="line">    emp = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    emp.put(<span class="string">"name"</span>, <span class="string">"jacky"</span>);</span><br><span class="line">    emp.put(<span class="string">"age"</span>, <span class="number">24</span>);</span><br><span class="line">    list.add(emp);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Json received in browser</span></span><br><span class="line">[&#123;<span class="string">"name"</span>=<span class="string">"ken"</span>,<span class="string">"age"</span>=<span class="number">23</span>&#125;,&#123;<span class="string">"name"</span>=<span class="string">"jacky"</span>,<span class="string">"age"</span>=<span class="number">24</span>&#125;]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="How-to-get-Cookie"><a href="#How-to-get-Cookie" class="headerlink" title="How to get Cookie"></a>How to get Cookie</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(path = <span class="string">"/cookie/get"</span>, method = RequestMethod.GET)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getCookie</span><span class="params">(@CookieValue(<span class="string">"code"</span>)</span> String code) </span>&#123;</span><br><span class="line">    System.out.println(code);</span><br><span class="line">   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="How-to-set-and-get-session"><a href="#How-to-set-and-get-session" class="headerlink" title="How to set and get session"></a>How to set and get session</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(path = <span class="string">"/session/set"</span>, method = RequestMethod.GET)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">setSession</span><span class="params">(HttpSession session)</span> </span>&#123;</span><br><span class="line">    session.setAttribute(<span class="string">"id"</span>, <span class="number">1</span>);</span><br><span class="line">    session.setAttribute(<span class="string">"name"</span>, <span class="string">"ken"</span>);</span><br><span class="line">  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RequestMapping</span>(path = <span class="string">"/session/get"</span>, method = RequestMethod.GET)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getSession</span><span class="params">(HttpSession session)</span> </span>&#123;</span><br><span class="line">    System.out.println(session.getAttribute(<span class="string">"id"</span>));</span><br><span class="line">    System.out.println(session.getAttribute(<span class="string">"name"</span>));</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/01/03/Kafka/" rel="next" title="Kafka">
+                <i class="fa fa-chevron-left"></i> Kafka
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/01/03/SpringBoot-03/" rel="prev" title="SpringBoot SpringMVC">
+                SpringBoot SpringMVC <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Max Foo</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">90</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringMVC"><span class="nav-number">1.</span> <span class="nav-text">SpringMVC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RequestMapping"><span class="nav-number">2.</span> <span class="nav-text">@RequestMapping</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-get-request-and-response-objs-in-controller"><span class="nav-number">3.</span> <span class="nav-text">How to get request and response objs in controller</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-get-parms-in-request"><span class="nav-number">4.</span> <span class="nav-text">How to get parms. in request</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-return-View"><span class="nav-number">5.</span> <span class="nav-text">How to return View</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Method1-return-ModelAndView"><span class="nav-number">5.1.</span> <span class="nav-text">Method1: return ModelAndView</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Method2-return-String"><span class="nav-number">5.2.</span> <span class="nav-text">Method2: return String</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-get-data-in-thymeleaf-file"><span class="nav-number">6.</span> <span class="nav-text">How to get data in thymeleaf file</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-return-JSON"><span class="nav-number">7.</span> <span class="nav-text">How to return JSON</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-get-Cookie"><span class="nav-number">8.</span> <span class="nav-text">How to get Cookie</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-set-and-get-session"><span class="nav-number">9.</span> <span class="nav-text">How to set and get session</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Max Foo</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

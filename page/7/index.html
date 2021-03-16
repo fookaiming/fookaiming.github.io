@@ -80,11 +80,11 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Tech Dustdojo">
+<meta property="og:title" content="Max Foo">
 <meta property="og:url" content="http://yoursite.com/page/7/index.html">
-<meta property="og:site_name" content="Tech Dustdojo">
+<meta property="og:site_name" content="Max Foo">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="Tech Dustdojo">
+<meta property="article:author" content="Max Foo">
 <meta name="twitter:card" content="summary">
 
 
@@ -121,7 +121,7 @@
 
 
 
-  <title>Tech Dustdojo</title>
+  <title>Max Foo</title>
   
 
 
@@ -152,7 +152,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Tech Dustdojo</span>
+        <span class="site-title">Max Foo</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -271,16 +271,16 @@ function category_js () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/30/Thread-Lock-in-java/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/27/MySQL-Crash-Course-Chapt-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
     </span>
 
     
@@ -290,7 +290,7 @@ function category_js () {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/12/30/Thread-Lock-in-java/" itemprop="url">Thread Lock in  java</a></h1>
+                <a class="post-title-link" href="/2020/05/27/MySQL-Crash-Course-Chapt-1/" itemprop="url">MySQL Crash Course Chapt 1</a></h1>
         
 
         <div class="post-meta">
@@ -302,8 +302,8 @@ function category_js () {
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-30T17:45:49+08:00">
-                2019-12-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-27T23:53:33+08:00">
+                2020-05-27
               </time>
             
 
@@ -325,8 +325,8 @@ function category_js () {
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaSE/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaSE</span>
+                  <a href="/categories/Database/" itemprop="url" rel="index">
+                    <span itemprop="name">Database</span>
                   </a>
                 </span>
 
@@ -364,600 +364,49 @@ function category_js () {
       
         
           
-            <h2 id="Use-lock-to-solve-the-data-integrity-problem-due-to-muti-thread-data-sharing-problem"><a href="#Use-lock-to-solve-the-data-integrity-problem-due-to-muti-thread-data-sharing-problem" class="headerlink" title="Use lock to solve the data integrity problem due to muti-thread data sharing problem"></a>Use lock to solve the data integrity problem due to muti-thread data sharing problem</h2><ol>
-<li>create a lock obj</li>
-<li>put the operation in try finally block</li>
-<li>lock.lock in the try block</li>
-<li>lock.unlock in finally block<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> ReentrantLock lock = <span class="keyword">new</span> ReentrantLock();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(ture)&#123;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            lock.lock();</span><br><span class="line">            <span class="comment">// operation</span></span><br><span class="line">        &#125;<span class="keyword">final</span>&#123;</span><br><span class="line">            lock.unlock();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<hr>
-<h2 id="Difference-between-synchronized-method-and-lock-method"><a href="#Difference-between-synchronized-method-and-lock-method" class="headerlink" title="Difference between synchronized method and lock method"></a>Difference between synchronized method and lock method</h2><ul>
-<li>synchronized method will automatically release the lock </li>
-<li>lock method need to release the lock manully</li>
+            <h1 id="Chapter-1"><a href="#Chapter-1" class="headerlink" title="Chapter 1"></a>Chapter 1</h1><ul>
+<li>Schema </li>
 </ul>
-<img src="/images/Workflow-to-solve-muti-thread-problem.png" class="" width="600" height="600" title="Workflow to solve mutithread-problem">
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/30/Thread-synchronization-in-java/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/30/Thread-synchronization-in-java/" itemprop="url">Thread synchronization in  java</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-30T15:27:33+08:00">
-                2019-12-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaSE/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaSE</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Synchronized-code-block-method"><a href="#Synchronized-code-block-method" class="headerlink" title="Synchronized code block method"></a>Synchronized code block method</h2><ul>
-<li>synchronized(synchronized monitor)</li>
-</ul>
-<hr>
-<h3 id="For-class-implement-runnable-interface"><a href="#For-class-implement-runnable-interface" class="headerlink" title="For class implement runnable interface:"></a>For class implement runnable interface:</h3><ul>
-<li>Synchronized monitor(lock) -&gt; any obj can act as a lock</li>
-<li>usually use the this obj as a lock<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span>(<span class="keyword">this</span>)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>above method usually use when the class implement runnable interface since they share the same class obj </li>
-</ul>
-<h3 id="For-class-extends-Thread-class"><a href="#For-class-extends-Thread-class" class="headerlink" title="For class extends Thread class"></a>For class extends Thread class</h3><hr>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span>(ClassName<span class="class">.<span class="keyword">class</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>above method usually use when the class extends the Thread class. ClassName.class is also an obj</li>
-</ul>
-<hr>
-<ul>
-<li><em>make sure the threads are using the same lock(obj) in both two method</em></li>
-</ul>
-<hr>
-<h2 id="Synchronized-method"><a href="#Synchronized-method" class="headerlink" title="Synchronized method"></a>Synchronized method</h2><h3 id="For-class-implement-runnable-interface-1"><a href="#For-class-implement-runnable-interface-1" class="headerlink" title="For class implement runnable interface:"></a>For class implement runnable interface:</h3><ul>
-<li>decalre a Synchronized method<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">// synchronized monitor is this</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<hr>
-<h3 id="For-class-extends-Thread-class-1"><a href="#For-class-extends-Thread-class-1" class="headerlink" title="For class extends Thread class"></a>For class extends Thread class</h3><ul>
-<li>decalre a static method </li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">// synchronized monitor is Classname.class</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/30/Thread-in-Java/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/30/Thread-in-Java/" itemprop="url">Thread in Java</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-30T12:04:39+08:00">
-                2019-12-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaSE/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaSE</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Basic-concept"><a href="#Basic-concept" class="headerlink" title="Basic concept"></a>Basic concept</h2><ul>
-<li>Threads have indepent stack and programme counter</li>
-<li>Threads share same heap, and method area</li>
-<li>A java programme has at least 3 threads including main, garbage collection, and exception handle.</li>
-<li>There are 2 types of threads</li>
-<li>Daemon thread eg: garbage collection, and exception handle thread</li>
-<li>User thread eg: main </li>
-<li>Daemon will automatically stop if user thread stops </li>
-</ul>
-<h2 id="Create-Thread"><a href="#Create-Thread" class="headerlink" title="Create Thread"></a>Create Thread</h2><h3 id="Method-1"><a href="#Method-1" class="headerlink" title="Method 1:"></a>Method 1:</h3><ol>
-<li>inherit the Thread class</li>
-<li>override run method</li>
-<li>create obj</li>
-<li><em>obj.start()</em>    //not run(), run() will not create a new thread</li>
+<ol>
+<li>sometimes used as a synonym for database</li>
+<li>it is the information about database and table layout and properties.</li>
 </ol>
 <ul>
-<li>Start() -&gt;causes JVM will automatically call run method</li>
-<li>one obj can only create one thread only</li>
-<li>multiple objs is required to create mutilple threads<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//create thread using anonymous obj</span></span><br><span class="line"><span class="keyword">new</span> Thread()&#123;</span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                       </span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"> &#125;.start();ß</span><br></pre></td></tr></table></figure>
-
+<li><p>Breaking Up Data <br/> </p>
 </li>
-</ul>
-<h3 id="Method-2"><a href="#Method-2" class="headerlink" title="Method 2:"></a>Method 2:</h3><ol>
-<li>decalre Mythread class and implement runnable interface</li>
-<li>implemrnt run method</li>
-<li>decalre Mythread obj</li>
-<li>decalre thread obj and pass Mythread obj as parameter</li>
-<li>threadObj.start() <h3 id="mutiple-thread"><a href="#mutiple-thread" class="headerlink" title="mutiple thread:"></a>mutiple thread:</h3></li>
-</ol>
-<ul>
-<li>when using the same MyThreadObj to declre mutiple thread, those threads are sharing one obj with the same data (attributes) </li>
-</ul>
-<hr>
-<h2 id="Method-in-thread-class"><a href="#Method-in-thread-class" class="headerlink" title="Method in thread class"></a>Method in thread class</h2><h3 id="Thread-currentThread"><a href="#Thread-currentThread" class="headerlink" title="Thread.currentThread()"></a>Thread.currentThread()</h3><ul>
-<li>get the current thread</li>
-</ul>
-<h3 id="yield"><a href="#yield" class="headerlink" title="yield()"></a>yield()</h3><ul>
-<li>tell cpu to halt the current and give the execution chance to other threads</li>
-<li>the scheduling is depend on operating system not the thread</li>
-</ul>
-<h3 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h3><ul>
-<li>wait until other thread to complete</li>
-<li>currentThread will be blocked until other thread has completed<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    ObjNeedToCompletBeforeMe.join();</span><br><span class="line">&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="sleep-long-millisecond"><a href="#sleep-long-millisecond" class="headerlink" title="sleep(long millisecond)"></a>sleep(long millisecond)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">     sleep(<span class="number">10000</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="isAlive"><a href="#isAlive" class="headerlink" title="isAlive()"></a>isAlive()</h3><hr>
-<h2 id="Thread-priority"><a href="#Thread-priority" class="headerlink" title="Thread priority"></a>Thread priority</h2><h3 id="final-static-int-variable"><a href="#final-static-int-variable" class="headerlink" title="final static int variable"></a>final static int variable</h3><ul>
-<li>MIN_PRIORITY = 1</li>
-<li>NORM_PRIORITY = 5</li>
-<li>MAX_PRIORITY = 10</li>
-</ul>
-<h3 id="getPriority"><a href="#getPriority" class="headerlink" title="getPriority()"></a>getPriority()</h3><h3 id="setPriority-set-before-the-thread-start"><a href="#setPriority-set-before-the-thread-start" class="headerlink" title="setPriority() //set before the thread start"></a>setPriority() //set before the thread start</h3><hr>
-<h2 id="Thread-status"><a href="#Thread-status" class="headerlink" title="Thread.status"></a>Thread.status</h2><ul>
-<li>NEW -&gt; not yet started</li>
-<li>RUNNABLE</li>
-<li>WAITING</li>
-<li>TIMED_WAITING</li>
-<li>TERMINATED</li>
-</ul>
-<img src="/images/Java-Thread-Life-Cycle.png" class="" width="600" height="600" title="Thread life cycle">
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/29/Head-First-Java-Chapter-5-6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/29/Head-First-Java-Chapter-5-6/" itemprop="url">Head First Java Chapter 5 - 6</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-29T17:14:14+08:00">
-                2019-12-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/" itemprop="url" rel="index">
-                    <span itemprop="name">Book</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/Head-First-Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Head First Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Chapter-5"><a href="#Chapter-5" class="headerlink" title="Chapter 5"></a>Chapter 5</h2><hr>
-<h3 id="Workflow-of-developing-a-class"><a href="#Workflow-of-developing-a-class" class="headerlink" title="Workflow of developing a class"></a>Workflow of developing a class</h3><ul>
 <li><ol>
-<li>figure out what the class should do</li>
+<li>important to break data into multiple columns correctly. <br/> <br/> </li>
 </ol>
 </li>
 <li><ol start="2">
-<li>list the attributes and methods</li>
+<li>For example, city, state, and ZIP Code should always be separate columns. By breaking these out, it becomes possible to sort or filter data by specific columns (for example, to find all customers in a particular state or in a particular city)</li>
 </ol>
 </li>
-<li><ol start="3">
-<li><strong>write the test class</strong></li>
-</ol>
-</li>
-<li><ol start="4">
-<li>implement the class</li>
-</ol>
-</li>
-<li><ol start="5">
-<li>test</li>
-</ol>
-</li>
-<li><ol start="6">
-<li>debug</li>
-</ol>
+<li><p>data type</p>
 </li>
 </ul>
-<h3 id="Casting"><a href="#Casting" class="headerlink" title="Casting"></a>Casting</h3><p>When changing a bigger obj to smaller obj, casting is need (lose accuracy)</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//eg</span></span><br><span class="line"><span class="keyword">long</span> x = <span class="number">8</span>;</span><br><span class="line"><span class="keyword">int</span> y = (<span class="keyword">int</span>) x;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//weird result when the range exceed the smaller obj</span></span><br><span class="line"><span class="keyword">long</span> y = <span class="number">40002</span>;</span><br><span class="line"><span class="keyword">short</span> x = (<span class="keyword">short</span>) y;</span><br><span class="line">System.out.println(x);  <span class="comment">//-25534</span></span><br></pre></td></tr></table></figure>
+<img src="/images/sql-data-type-string.png" class="" width="600" height="600" title="String">
+<br/> 
+<img src="/images/sql-data-type-numeric.png" class="" width="600" height="600" title="Numeric">
+<br/> 
+<img src="/images/sql-data-type-date-and-time.png" class="" width="600" height="600" title="Date and time">
 
-<hr>
-<h2 id="Chapter-6"><a href="#Chapter-6" class="headerlink" title="Chapter 6"></a>Chapter 6</h2><h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><p>ArrayList is a class</p>
+
 <ul>
-<li>ArrayList obj just like other obj lives in heap</li>
-<li>boxing is needed to add the primitive type to the ArrayList</li>
+<li>Perimary Key</li>
 </ul>
-<h3 id="amp-amp-amp-and"><a href="#amp-amp-amp-and" class="headerlink" title="&amp;&amp;, &amp; and ||, |"></a>&amp;&amp;, &amp; and ||, |</h3><ul>
-<li><p>&amp; and |</p>
+<ol>
+<li>uniquely identify a row among the table</li>
+<li>not null</li>
+<li>can form by mutiple column (the combination should be unique)</li>
+</ol>
+<ul>
+<li>Tips<ol>
+<li>• Don’t update values in primary key columns.</li>
+<li>• Don’t reuse values in primary key columns.</li>
+<li>• Don’t use values that might change in primary key columns. (For example, when<br>you use a name as a primary key to identify a supplier, you would have to change the primary key when the supplier merges and changes its name.)</li>
+</ol>
 </li>
-<li><p>jvm will force to check oprands in both side.</p>
-</li>
-<li><p>&amp;&amp; and || are know as short circuit oprators</p>
-</li>
-<li><p>the second oprand will only be checked if necessary</p>
-</li>
-</ul>
-<h3 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h3><ul>
-<li>java.util.ArrayList</li>
-<li>java.util is the name of package</li>
-<li>ArrayList is the class name</li>
-</ul>
-<h3 id="import-all-classes-in-a-package"><a href="#import-all-classes-in-a-package" class="headerlink" title="import all classes in a package"></a>import all classes in a package</h3><ul>
-<li>if * is used to import all classes in a package</li>
-<li>it will only affect the compilie time, not the run time</li>
 </ul>
 
           
@@ -1007,16 +456,16 @@ function category_js () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/29/Head-First-Java-Chapter-1-4/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/27/Version-control-Git-and-Github/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
     </span>
 
     
@@ -1026,7 +475,7 @@ function category_js () {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/12/29/Head-First-Java-Chapter-1-4/" itemprop="url">Head First Java Chapter 1 - 4</a></h1>
+                <a class="post-title-link" href="/2020/05/27/Version-control-Git-and-Github/" itemprop="url">Version control(Git and Github)</a></h1>
         
 
         <div class="post-meta">
@@ -1038,8 +487,207 @@ function category_js () {
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-29T12:02:04+08:00">
-                2019-12-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-27T21:12:07+08:00">
+                2020-05-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Version-control/" itemprop="url" rel="index">
+                    <span itemprop="name">Version control</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Set-up"><a href="#Set-up" class="headerlink" title="Set up"></a>Set up</h1><h2 id="Step-1-Generate-ssh-key"><a href="#Step-1-Generate-ssh-key" class="headerlink" title="Step 1 Generate ssh key"></a>Step 1 Generate ssh key</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ssh-keygen -t rsa -b 4096 -C <span class="string">"your github email"</span></span><br></pre></td></tr></table></figure>
+<br/> 
+
+<h2 id="Step-2-add-the-pub-file-in-github-setting"><a href="#Step-2-add-the-pub-file-in-github-setting" class="headerlink" title="Step 2 add the .pub file in github setting"></a>Step 2 add the .pub file in github setting</h2><br/> 
+
+
+<h2 id="Step-3-Test-the-connection"><a href="#Step-3-Test-the-connection" class="headerlink" title="Step 3  Test the connection"></a>Step 3  Test the connection</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Version-Control"><a href="#Version-Control" class="headerlink" title="Version Control"></a>Version Control</h2><h3 id="Initialize"><a href="#Initialize" class="headerlink" title="Initialize"></a>Initialize</h3><h4 id="Method-one"><a href="#Method-one" class="headerlink" title="Method one:"></a>Method one:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">git init <span class="comment"># add .git folder</span></span><br></pre></td></tr></table></figure>
+
+
+<h4 id="Method-two"><a href="#Method-two" class="headerlink" title="Method two:"></a>Method two:</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> ssh_url <span class="comment"># add .git folder and remote</span></span><br></pre></td></tr></table></figure>
+<h3 id="Git-Structure"><a href="#Git-Structure" class="headerlink" title="Git Structure"></a>Git Structure</h3><img src="/images/git-structure.png" class="" width="600" height="600" title="Git Structure">
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git add filename.html</span><br><span class="line"></span><br><span class="line">git commit -m <span class="string">"added filename"</span></span><br><span class="line"></span><br><span class="line">git diff <span class="comment"># show changes</span></span><br><span class="line"></span><br><span class="line">git push <span class="comment"># push to online repository</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Branches"><a href="#Branches" class="headerlink" title="Branches"></a>Branches</h3><img src="/images/git-branches.png" class="" width="600" height="600" title="Git Branches">
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git branch feature_a <span class="comment"># create new branch</span></span><br><span class="line"></span><br><span class="line">git checkout feature_a <span class="comment"># switch to feature_a</span></span><br><span class="line"></span><br><span class="line">git checkout -b feature_a <span class="comment">#create and switch to feature_a</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><h3 id="use-the-following-cmd-to-push-if-the-repository-do-not-contain-the-new-branch"><a href="#use-the-following-cmd-to-push-if-the-repository-do-not-contain-the-new-branch" class="headerlink" title="use the following cmd to push if the repository do not contain the new branch"></a>use the following cmd to push if the repository do not contain the new branch</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push --<span class="built_in">set</span>-upstream origin branch_name</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h3 id="Merge"><a href="#Merge" class="headerlink" title="Merge"></a>Merge</h3><img src="/images/git-merge.png" class="" width="600" height="600" title="Git Merge">
+
+
+<ul>
+<li><h3 id="switch-to-master-branch-first"><a href="#switch-to-master-branch-first" class="headerlink" title="switch to master branch first"></a>switch to master branch first</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge branche_name <span class="comment">#merge the branch to master</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="Conflict"><a href="#Conflict" class="headerlink" title="Conflict"></a>Conflict</h3><img src="/images/git-conflict.png" class="" width="600" height="600" title="Git Conflict">
+
+<ul>
+<li><h3 id="if-conflict-occurs-when-merging-two-file"><a href="#if-conflict-occurs-when-merging-two-file" class="headerlink" title="if conflict occurs when merging two file"></a>if conflict occurs when merging two file</h3></li>
+</ul>
+<img src="/images/git-conflict-solution.png" class="" width="600" height="600" title="Git Conflict Solution">
+
+<ul>
+<li><h3 id="delete-the-unnessary-code-as-following"><a href="#delete-the-unnessary-code-as-following" class="headerlink" title="delete the unnessary code as following"></a>delete the unnessary code as following</h3></li>
+<li><h3 id="then-add-commit-push"><a href="#then-add-commit-push" class="headerlink" title="then add, commit, push"></a>then add, commit, push</h3></li>
+</ul>
+<h3 id="Git-pull"><a href="#Git-pull" class="headerlink" title="Git pull"></a>Git pull</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git pull </span><br><span class="line"></span><br><span class="line"><span class="comment"># get the update from GitHub repository</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Other-cmd"><a href="#Other-cmd" class="headerlink" title="Other cmd"></a>Other cmd</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status <span class="comment">#show current branch</span></span><br></pre></td></tr></table></figure>
+<br/> 
+<br/> 
+---
+
+<p>Reference<br><br/><br>Introduction to Web Development || Setup || Part 1 -  Web Dev Simplified<br><a href="https://www.youtube.com/watch?v=HfTXHrWMGVY&amp;t" target="_blank" rel="noopener">https://www.youtube.com/watch?v=HfTXHrWMGVY&amp;t</a><br><br/><br>Learn Git in 20 Minutes -  Web Dev Simplified<br><a href="https://www.youtube.com/watch?v=IHaTbJPdB-s" target="_blank" rel="noopener">https://www.youtube.com/watch?v=IHaTbJPdB-s</a><br><br/></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/04/Deep-Learning-from-Scratch-Chapter-5-III/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/04/Deep-Learning-from-Scratch-Chapter-5-III/" itemprop="url">Deep Learning from Scratch Chapter 5 III</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-04T18:29:39+08:00">
+                2020-02-04
               </time>
             
 
@@ -1072,8 +720,19 @@ function category_js () {
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/Head-First-Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Head First Java</span>
+                  <a href="/categories/Book/Deep-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/Deep-Learning/Deep-Learning-from-Scratch/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning from Scratch</span>
                   </a>
                 </span>
 
@@ -1111,72 +770,17 @@ function category_js () {
       
         
           
-            <h2 id="Chapter-1"><a href="#Chapter-1" class="headerlink" title="Chapter 1"></a>Chapter 1</h2><hr>
-<h3 id="Compilier-work-flow"><a href="#Compilier-work-flow" class="headerlink" title="Compilier work flow"></a>Compilier work flow</h3><p>.java source file -&gt; compilier -&gt; .class -&gt; JVM -&gt; run</p>
-<ul>
-<li>every class will compiler to a .class file even they are in the same source file</li>
-</ul>
-<h3 id="How-to-compiler-and-run-java-programme"><a href="#How-to-compiler-and-run-java-programme" class="headerlink" title="How to compiler and run java programme"></a>How to compiler and run java programme</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">javac Source.java</span><br><span class="line">java Source</span><br></pre></td></tr></table></figure>
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Affine</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, W, b)</span>:</span></span><br><span class="line">        self.W =W</span><br><span class="line">        self.b = b</span><br><span class="line">        </span><br><span class="line">        self.x = <span class="literal">None</span></span><br><span class="line">        self.original_x_shape = <span class="literal">None</span></span><br><span class="line">        <span class="comment"># 权重和偏置参数的导数</span></span><br><span class="line">        self.dW = <span class="literal">None</span></span><br><span class="line">        self.db = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        <span class="comment"># 对应张量</span></span><br><span class="line">        self.original_x_shape = x.shape</span><br><span class="line">        x = x.reshape(x.shape[<span class="number">0</span>], <span class="number">-1</span>)</span><br><span class="line">        self.x = x</span><br><span class="line"></span><br><span class="line">        out = np.dot(self.x, self.W) + self.b</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> out</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">backward</span><span class="params">(self, dout)</span>:</span></span><br><span class="line">        dx = np.dot(dout, self.W.T)</span><br><span class="line">        self.dW = np.dot(self.x.T, dout)</span><br><span class="line">        self.db = np.sum(dout, axis=<span class="number">0</span>)</span><br><span class="line">        </span><br><span class="line">        dx = dx.reshape(*self.original_x_shape)  <span class="comment"># 还原输入数据的形状（对应张量）</span></span><br><span class="line">        <span class="keyword">return</span> dx</span><br></pre></td></tr></table></figure>
 
 
-<h3 id="Basic-concept"><a href="#Basic-concept" class="headerlink" title="Basic concept"></a>Basic concept</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span>(i)&#123;</span><br><span class="line">    <span class="comment">//wrong</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>int value cannot be used in condition checking.</li>
-</ul>
-<hr>
-<h2 id="Chapter-2"><a href="#Chapter-2" class="headerlink" title="Chapter 2"></a>Chapter 2</h2><p>When child class extends super class</p>
-<ul>
-<li>all method and attributes will be inheritance from super <em>except</em> private method and attributes.</li>
-<li>child class can override method in super class</br>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"><span class="keyword">import</span> sys, os</span><br><span class="line">sys.path.append(os.pardir)  <span class="comment"># 为了导入父目录的文件而进行的设定</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> common.layers <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> common.gradient <span class="keyword">import</span> numerical_gradient</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> OrderedDict</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TwoLayerNet</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, input_size, hidden_size, output_size, weight_init_std = <span class="number">0.01</span>)</span>:</span></span><br><span class="line">        <span class="comment"># 初始化权重</span></span><br><span class="line">        self.params = &#123;&#125;</span><br><span class="line">        self.params[<span class="string">'W1'</span>] = weight_init_std * np.random.randn(input_size, hidden_size)</span><br><span class="line">        self.params[<span class="string">'b1'</span>] = np.zeros(hidden_size)</span><br><span class="line">        self.params[<span class="string">'W2'</span>] = weight_init_std * np.random.randn(hidden_size, output_size) </span><br><span class="line">        self.params[<span class="string">'b2'</span>] = np.zeros(output_size)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 生成层</span></span><br><span class="line">        self.layers = OrderedDict()</span><br><span class="line">        self.layers[<span class="string">'Affine1'</span>] = Affine(self.params[<span class="string">'W1'</span>], self.params[<span class="string">'b1'</span>])</span><br><span class="line">        self.layers[<span class="string">'Relu1'</span>] = Relu()</span><br><span class="line">        self.layers[<span class="string">'Affine2'</span>] = Affine(self.params[<span class="string">'W2'</span>], self.params[<span class="string">'b2'</span>])</span><br><span class="line"></span><br><span class="line">        self.lastLayer = SoftmaxWithLoss()</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">predict</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> layer <span class="keyword">in</span> self.layers.values():</span><br><span class="line">            x = layer.forward(x)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line">        </span><br><span class="line">    <span class="comment"># x:输入数据, t:监督数据</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">loss</span><span class="params">(self, x, t)</span>:</span></span><br><span class="line">        y = self.predict(x)</span><br><span class="line">        <span class="keyword">return</span> self.lastLayer.forward(y, t)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">accuracy</span><span class="params">(self, x, t)</span>:</span></span><br><span class="line">        y = self.predict(x)</span><br><span class="line">        y = np.argmax(y, axis=<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span> t.ndim != <span class="number">1</span> : t = np.argmax(t, axis=<span class="number">1</span>)</span><br><span class="line">        </span><br><span class="line">        accuracy = np.sum(y == t) / float(x.shape[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">return</span> accuracy</span><br><span class="line">        </span><br><span class="line">    <span class="comment"># x:输入数据, t:监督数据</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">numerical_gradient</span><span class="params">(self, x, t)</span>:</span></span><br><span class="line">        loss_W = <span class="keyword">lambda</span> W: self.loss(x, t)</span><br><span class="line">        </span><br><span class="line">        grads = &#123;&#125;</span><br><span class="line">        grads[<span class="string">'W1'</span>] = numerical_gradient(loss_W, self.params[<span class="string">'W1'</span>])</span><br><span class="line">        grads[<span class="string">'b1'</span>] = numerical_gradient(loss_W, self.params[<span class="string">'b1'</span>])</span><br><span class="line">        grads[<span class="string">'W2'</span>] = numerical_gradient(loss_W, self.params[<span class="string">'W2'</span>])</span><br><span class="line">        grads[<span class="string">'b2'</span>] = numerical_gradient(loss_W, self.params[<span class="string">'b2'</span>])</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> grads</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">gradient</span><span class="params">(self, x, t)</span>:</span></span><br><span class="line">        <span class="comment"># forward</span></span><br><span class="line">        self.loss(x, t)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># backward</span></span><br><span class="line">        dout = <span class="number">1</span></span><br><span class="line">        dout = self.lastLayer.backward(dout)</span><br><span class="line">        </span><br><span class="line">        layers = list(self.layers.values())</span><br><span class="line">        layers.reverse()</span><br><span class="line">        <span class="keyword">for</span> layer <span class="keyword">in</span> layers:</span><br><span class="line">            dout = layer.backward(dout)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 设定</span></span><br><span class="line">        grads = &#123;&#125;</span><br><span class="line">        grads[<span class="string">'W1'</span>], grads[<span class="string">'b1'</span>] = self.layers[<span class="string">'Affine1'</span>].dW, self.layers[<span class="string">'Affine1'</span>].db</span><br><span class="line">        grads[<span class="string">'W2'</span>], grads[<span class="string">'b2'</span>] = self.layers[<span class="string">'Affine2'</span>].dW, self.layers[<span class="string">'Affine2'</span>].db</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> grads</span><br></pre></td></tr></table></figure>
 
 
-</li>
-</ul>
-<p>All object live in heap no matter how is it created</p>
-<p>public static final variable can be interrupt as gobal variable</p>
-<hr>
-<h2 id="Chapter-3"><a href="#Chapter-3" class="headerlink" title="Chapter 3"></a>Chapter 3</h2><p>floating-point number default type is double.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span> i = <span class="number">23.5</span>; <span class="comment">// wrong</span></span><br><span class="line"><span class="keyword">byte</span> i = <span class="number">23.5f</span>; <span class="comment">//right</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
-<li>obj name in Java is reference only</li>
-<li>obj name can be reuse to reference different obj of the same type (not applicable if it is final variable)</li>
-<li>when an obj do not have any reference to access, it will be clean by the garbage collector</li>
-</ul>
-<hr>
-<h2 id="Chapter-4"><a href="#Chapter-4" class="headerlink" title="Chapter 4"></a>Chapter 4</h2><ul>
-<li>When passing obj to method, we are passing a copy of the reference to the method, not the obj itself</li>
-<li>The return value of a method must compatible with the declared type</li>
-</ul>
-<h3 id="Encapsulation"><a href="#Encapsulation" class="headerlink" title="Encapsulation"></a>Encapsulation</h3><ul>
-<li>set the attributes to private and create setter and getter</li>
-<li>-&gt; ensure the data integrity</li>
-<li>-&gt; eg. safety checking inside the setter (balance cannot be negative)</li>
-</ul>
-<h3 id="Default-value-of-instace-variable-obj-attributes"><a href="#Default-value-of-instace-variable-obj-attributes" class="headerlink" title="Default value of instace variable (obj attributes)"></a>Default value of instace variable (obj attributes)</h3><ul>
-<li>int/floting point number -&gt; 0/0.0</li>
-<li>bollean -&gt; false</li>
-<li>obj reference -&gt; null</li>
-</ul>
-<h3 id="Local-variable-variable-inside-method-do-not-have-default-value"><a href="#Local-variable-variable-inside-method-do-not-have-default-value" class="headerlink" title="Local variable (variable inside method) do not have default value"></a>Local variable (variable inside method) do not have default value</h3><ul>
-<li>intialization must be done before use</li>
-<li>otherwise -&gt; complie error</li>
-<li>see exp below</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        String ad;</span><br><span class="line">        System.out.println(ad);</span><br><span class="line"> &#125;</span><br><span class="line"><span class="comment">//  complie error</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="and-equals-method"><a href="#and-equals-method" class="headerlink" title="== and .equals() method"></a>== and .equals() method</h3><ul>
-<li>== is used to check if two obj reference refer to the same obj </li>
-<li>except one or both side of the == is prmitive type number</li>
-<li>see the example below<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                <span class="comment">// write your code here</span></span><br><span class="line">                <span class="keyword">float</span> p = (<span class="keyword">float</span>)(<span class="number">25</span>);</span><br><span class="line">                <span class="keyword">double</span> q = (<span class="keyword">double</span>)(<span class="number">25</span>);</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">                <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">if</span> (p == q) &#123;</span><br><span class="line">                    result = <span class="number">1</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    result = <span class="number">2</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                System.out.println(<span class="string">"result is "</span>+result);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">result is <span class="number">1</span></span><br></pre></td></tr></table></figure>
 
 
-</li>
-</ul>
-<ul>
-<li>.equal() method can be override to compare the actual meaning of equal</li>
-</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"><span class="keyword">import</span> sys, os</span><br><span class="line">sys.path.append(os.pardir)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> dataset.mnist <span class="keyword">import</span> load_mnist</span><br><span class="line"><span class="keyword">from</span> two_layer_net <span class="keyword">import</span> TwoLayerNet</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读入数据</span></span><br><span class="line">(x_train, t_train), (x_test, t_test) = load_mnist(normalize=<span class="literal">True</span>, one_hot_label=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">network = TwoLayerNet(input_size=<span class="number">784</span>, hidden_size=<span class="number">50</span>, output_size=<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">iters_num = <span class="number">10000</span></span><br><span class="line">train_size = x_train.shape[<span class="number">0</span>]</span><br><span class="line">batch_size = <span class="number">100</span></span><br><span class="line">learning_rate = <span class="number">0.1</span></span><br><span class="line"></span><br><span class="line">train_loss_list = []</span><br><span class="line">train_acc_list = []</span><br><span class="line">test_acc_list = []</span><br><span class="line"></span><br><span class="line">iter_per_epoch = max(train_size / batch_size, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(iters_num):</span><br><span class="line">    batch_mask = np.random.choice(train_size, batch_size)</span><br><span class="line">    x_batch = x_train[batch_mask]</span><br><span class="line">    t_batch = t_train[batch_mask]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 梯度</span></span><br><span class="line">    <span class="comment">#grad = network.numerical_gradient(x_batch, t_batch)</span></span><br><span class="line">    grad = network.gradient(x_batch, t_batch)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 更新</span></span><br><span class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> (<span class="string">'W1'</span>, <span class="string">'b1'</span>, <span class="string">'W2'</span>, <span class="string">'b2'</span>):</span><br><span class="line">        network.params[key] -= learning_rate * grad[key]</span><br><span class="line">    </span><br><span class="line">    loss = network.loss(x_batch, t_batch)</span><br><span class="line">    train_loss_list.append(loss)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> i % iter_per_epoch == <span class="number">0</span>:</span><br><span class="line">        train_acc = network.accuracy(x_train, t_train)</span><br><span class="line">        test_acc = network.accuracy(x_test, t_test)</span><br><span class="line">        train_acc_list.append(train_acc)</span><br><span class="line">        test_acc_list.append(test_acc)</span><br><span class="line">        print(train_acc, test_acc)</span><br></pre></td></tr></table></figure>
+
+
 
           
         
@@ -1225,16 +829,16 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/25/Access-Modifiers/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/03/Deep-Learning-from-Scratch-Chapter-5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
     </span>
 
     
@@ -1244,7 +848,7 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/12/25/Access-Modifiers/" itemprop="url">Access Modifiers</a></h1>
+                <a class="post-title-link" href="/2020/02/03/Deep-Learning-from-Scratch-Chapter-5/" itemprop="url">Deep Learning from Scratch Chapter 5</a></h1>
         
 
         <div class="post-meta">
@@ -1256,166 +860,8 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-25T23:29:19+08:00">
-                2019-12-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <table>
-<thead>
-<tr>
-<th>Access Modifiers</th>
-<th>same class</th>
-<th>same package</th>
-<th>child class</th>
-<th>all class</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>private</td>
-<td>*</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>default</td>
-<td>*</td>
-<td>*</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>protected</td>
-<td>*</td>
-<td>*</td>
-<td>*</td>
-<td></td>
-</tr>
-<tr>
-<td>public</td>
-<td>*</td>
-<td>*</td>
-<td>*</td>
-<td>*</td>
-</tr>
-</tbody></table>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/25/Abstract-class/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/25/Abstract-class/" itemprop="url">Abstract class and Interface</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-25T23:26:56+08:00">
-                2019-12-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-03T14:40:00+08:00">
+                2020-02-03
               </time>
             
 
@@ -1437,8 +883,30 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaSE/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaSE</span>
+                  <a href="/categories/Book/" itemprop="url" rel="index">
+                    <span itemprop="name">Book</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/Deep-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/Deep-Learning/Deep-Learning-from-Scratch/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning from Scratch</span>
                   </a>
                 </span>
 
@@ -1476,7 +944,25 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
       
         
           
-            
+            <h2 id="Backpropagation"><a href="#Backpropagation" class="headerlink" title="Backpropagation"></a>Backpropagation</h2><h2 id="computational-graph"><a href="#computational-graph" class="headerlink" title="computational graph"></a>computational graph</h2><img src="/images/computational-graph.png" class="" width="600" height="600" title="Example of a Computational graph">
+
+
+<h3 id="Backpropagation-of-addition-layer"><a href="#Backpropagation-of-addition-layer" class="headerlink" title="Backpropagation of addition layer"></a>Backpropagation of addition layer</h3><img src="/images/Backpropagation-of-addition-layer.png" class="" width="600" height="600" title="Backpropagation of addition layer">
+
+
+<h3 id="Backpropagation-of-multiplication-layer"><a href="#Backpropagation-of-multiplication-layer" class="headerlink" title="Backpropagation of multiplication layer"></a>Backpropagation of multiplication layer</h3><img src="/images/Backpropagation-of-multiplication-layer.png" class="" width="600" height="600" title="Backpropagation of multiplication layer">
+
+
+<h3 id="Example-of-backpropagation"><a href="#Example-of-backpropagation" class="headerlink" title="Example of backpropagation"></a>Example of backpropagation</h3><img src="/images/Example-of-backpropagation.png" class="" width="600" height="600" title="Example of backpropagation">
+
+
+<h2 id="implementation-of-the-multiplication-layer-and-addition-layer"><a href="#implementation-of-the-multiplication-layer-and-addition-layer" class="headerlink" title="implementation of the multiplication layer and addition layer"></a>implementation of the multiplication layer and addition layer</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MulLayer</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.x = <span class="literal">None</span></span><br><span class="line">        self.y = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x, y)</span>:</span></span><br><span class="line">        self.x = x</span><br><span class="line">        self.y = y                </span><br><span class="line">        out = x * y</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> out</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">backward</span><span class="params">(self, dout)</span>:</span></span><br><span class="line">        dx = dout * self.y</span><br><span class="line">        dy = dout * self.x</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dx, dy</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AddLayer</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x, y)</span>:</span></span><br><span class="line">        out = x + y</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> out</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">backward</span><span class="params">(self, dout)</span>:</span></span><br><span class="line">        dx = dout * <span class="number">1</span></span><br><span class="line">        dy = dout * <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dx, dy</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>implementation of the Example of backpropagation</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"><span class="keyword">from</span> layer_naive <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">apple = <span class="number">100</span></span><br><span class="line">apple_num = <span class="number">2</span></span><br><span class="line">orange = <span class="number">150</span></span><br><span class="line">orange_num = <span class="number">3</span></span><br><span class="line">tax = <span class="number">1.1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># layer</span></span><br><span class="line">mul_apple_layer = MulLayer()</span><br><span class="line">mul_orange_layer = MulLayer()</span><br><span class="line">add_apple_orange_layer = AddLayer()</span><br><span class="line">mul_tax_layer = MulLayer()</span><br><span class="line"></span><br><span class="line"><span class="comment"># forward</span></span><br><span class="line">apple_price = mul_apple_layer.forward(apple, apple_num)  <span class="comment"># (1)</span></span><br><span class="line">orange_price = mul_orange_layer.forward(orange, orange_num)  <span class="comment"># (2)</span></span><br><span class="line">all_price = add_apple_orange_layer.forward(apple_price, orange_price)  <span class="comment"># (3)</span></span><br><span class="line">price = mul_tax_layer.forward(all_price, tax)  <span class="comment"># (4)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># backward</span></span><br><span class="line">dprice = <span class="number">1</span></span><br><span class="line">dall_price, dtax = mul_tax_layer.backward(dprice)  <span class="comment"># (4)</span></span><br><span class="line">dapple_price, dorange_price = add_apple_orange_layer.backward(dall_price)  <span class="comment"># (3)</span></span><br><span class="line">dorange, dorange_num = mul_orange_layer.backward(dorange_price)  <span class="comment"># (2)</span></span><br><span class="line">dapple, dapple_num = mul_apple_layer.backward(dapple_price)  <span class="comment"># (1)</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">"price:"</span>, int(price))</span><br><span class="line">print(<span class="string">"dApple:"</span>, dapple)</span><br><span class="line">print(<span class="string">"dApple_num:"</span>, int(dapple_num))</span><br><span class="line">print(<span class="string">"dOrange:"</span>, dorange)</span><br><span class="line">print(<span class="string">"dOrange_num:"</span>, int(dorange_num))</span><br><span class="line">print(<span class="string">"dTax:"</span>, dtax)</span><br></pre></td></tr></table></figure>
+
           
         
       
@@ -1524,16 +1010,16 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/25/Inheritance/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/03/Deep-Learning-from-Scratch-Chapter-4-III/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
     </span>
 
     
@@ -1543,7 +1029,7 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/12/25/Inheritance/" itemprop="url">Inheritance and Override</a></h1>
+                <a class="post-title-link" href="/2020/02/03/Deep-Learning-from-Scratch-Chapter-4-III/" itemprop="url">Deep Learning from Scratch Chapter 4 III</a></h1>
         
 
         <div class="post-meta">
@@ -1555,8 +1041,8 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-25T22:35:12+08:00">
-                2019-12-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-03T10:03:25+08:00">
+                2020-02-03
               </time>
             
 
@@ -1578,8 +1064,30 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaSE/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaSE</span>
+                  <a href="/categories/Book/" itemprop="url" rel="index">
+                    <span itemprop="name">Book</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/Deep-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/Deep-Learning/Deep-Learning-from-Scratch/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning from Scratch</span>
                   </a>
                 </span>
 
@@ -1618,28 +1126,13 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
         
           
             <hr>
-<p>All class are extend from object</p>
-<hr>
-<p>Class can only extend from one class</p>
-<hr>
-<p>Child class extends <strong>all attributes and method</strong> of the super class <strong>except</strong> the private attributes and private method</p>
-<hr>
-<p>When an child obj is created, the super class will automatically creat before the child obj.</p>
-<ul>
-<li>∴Complier automatically call super()</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123; </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"new ChildClass obj......"</span>);</span><br><span class="line">        <span class="keyword">new</span> ChildClass();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FatherClass</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">FatherClass</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"new FatherClass"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ChildClass</span> <span class="keyword">extends</span> <span class="title">FatherClass</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ChildClass</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"new ChildClass"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Output"><a href="#Output" class="headerlink" title="Output:"></a>Output:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">new ChildClass obj......</span><br><span class="line">new FatherClass</span><br><span class="line">new ChildClass</span><br><span class="line">&#x2F;&#x2F;complier automatically call super() before the creation of child class</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="Final-class"><a href="#Final-class" class="headerlink" title="Final class"></a>Final class</h2><ul>
-<li>Final class cannot inherit</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Vehicle</span> </span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> <span class="keyword">extends</span> <span class="title">Vehicle</span> </span>&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//wrong ,final class cannot inherit.</span></span><br></pre></td></tr></table></figure>
+<h2 id="simple-2-layer-network-implementation"><a href="#simple-2-layer-network-implementation" class="headerlink" title="simple 2 layer network implementation"></a>simple 2 layer network implementation</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"><span class="keyword">import</span> sys, os</span><br><span class="line">sys.path.append(os.pardir)  <span class="comment"># 为了导入父目录的文件而进行的设定</span></span><br><span class="line"><span class="keyword">from</span> common.functions <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> common.gradient <span class="keyword">import</span> numerical_gradient</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TwoLayerNet</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, input_size, hidden_size, output_size, weight_init_std=<span class="number">0.01</span>)</span>:</span></span><br><span class="line">        <span class="comment"># 初始化权重</span></span><br><span class="line">        self.params = &#123;&#125;</span><br><span class="line">        self.params[<span class="string">'W1'</span>] = weight_init_std * np.random.randn(input_size, hidden_size)</span><br><span class="line">        self.params[<span class="string">'b1'</span>] = np.zeros(hidden_size)</span><br><span class="line">        self.params[<span class="string">'W2'</span>] = weight_init_std * np.random.randn(hidden_size, output_size)</span><br><span class="line">        self.params[<span class="string">'b2'</span>] = np.zeros(output_size)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">predict</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        W1, W2 = self.params[<span class="string">'W1'</span>], self.params[<span class="string">'W2'</span>]</span><br><span class="line">        b1, b2 = self.params[<span class="string">'b1'</span>], self.params[<span class="string">'b2'</span>]</span><br><span class="line">    </span><br><span class="line">        a1 = np.dot(x, W1) + b1</span><br><span class="line">        z1 = sigmoid(a1)</span><br><span class="line">        a2 = np.dot(z1, W2) + b2</span><br><span class="line">        y = softmax(a2)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> y</span><br><span class="line">        </span><br><span class="line">    <span class="comment"># x:输入数据, t:监督数据</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">loss</span><span class="params">(self, x, t)</span>:</span></span><br><span class="line">        y = self.predict(x)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> cross_entropy_error(y, t)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">accuracy</span><span class="params">(self, x, t)</span>:</span></span><br><span class="line">        y = self.predict(x)</span><br><span class="line">        y = np.argmax(y, axis=<span class="number">1</span>)</span><br><span class="line">        t = np.argmax(t, axis=<span class="number">1</span>)</span><br><span class="line">        </span><br><span class="line">        accuracy = np.sum(y == t) / float(x.shape[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">return</span> accuracy</span><br><span class="line">        </span><br><span class="line">    <span class="comment"># x:输入数据, t:监督数据</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">numerical_gradient</span><span class="params">(self, x, t)</span>:</span></span><br><span class="line">        loss_W = <span class="keyword">lambda</span> W: self.loss(x, t)</span><br><span class="line">        </span><br><span class="line">        grads = &#123;&#125;</span><br><span class="line">        grads[<span class="string">'W1'</span>] = numerical_gradient(loss_W, self.params[<span class="string">'W1'</span>])</span><br><span class="line">        grads[<span class="string">'b1'</span>] = numerical_gradient(loss_W, self.params[<span class="string">'b1'</span>])</span><br><span class="line">        grads[<span class="string">'W2'</span>] = numerical_gradient(loss_W, self.params[<span class="string">'W2'</span>])</span><br><span class="line">        grads[<span class="string">'b2'</span>] = numerical_gradient(loss_W, self.params[<span class="string">'b2'</span>])</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> grads</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">gradient</span><span class="params">(self, x, t)</span>:</span></span><br><span class="line">        W1, W2 = self.params[<span class="string">'W1'</span>], self.params[<span class="string">'W2'</span>]</span><br><span class="line">        b1, b2 = self.params[<span class="string">'b1'</span>], self.params[<span class="string">'b2'</span>]</span><br><span class="line">        grads = &#123;&#125;</span><br><span class="line">        </span><br><span class="line">        batch_num = x.shape[<span class="number">0</span>]</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># forward</span></span><br><span class="line">        a1 = np.dot(x, W1) + b1</span><br><span class="line">        z1 = sigmoid(a1)</span><br><span class="line">        a2 = np.dot(z1, W2) + b2</span><br><span class="line">        y = softmax(a2)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># backward</span></span><br><span class="line">        dy = (y - t) / batch_num</span><br><span class="line">        grads[<span class="string">'W2'</span>] = np.dot(z1.T, dy)</span><br><span class="line">        grads[<span class="string">'b2'</span>] = np.sum(dy, axis=<span class="number">0</span>)</span><br><span class="line">        </span><br><span class="line">        da1 = np.dot(dy, W2.T)</span><br><span class="line">        dz1 = sigmoid_grad(a1) * da1</span><br><span class="line">        grads[<span class="string">'W1'</span>] = np.dot(x.T, dz1)</span><br><span class="line">        grads[<span class="string">'b1'</span>] = np.sum(dz1, axis=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> grads</span><br></pre></td></tr></table></figure>
 
-<hr>
-<h2 id="Override"><a href="#Override" class="headerlink" title="Override"></a>Override</h2><p>When overriding methods in super class</p>
+
+
+
 <ul>
-<li>The return type of child class must smaller or equal to the super class</li>
+<li>train<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"><span class="keyword">import</span> sys, os</span><br><span class="line">sys.path.append(os.pardir)  <span class="comment"># 为了导入父目录的文件而进行的设定</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> dataset.mnist <span class="keyword">import</span> load_mnist</span><br><span class="line"><span class="keyword">from</span> two_layer_net <span class="keyword">import</span> TwoLayerNet</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读入数据</span></span><br><span class="line">(x_train, t_train), (x_test, t_test) = load_mnist(normalize=<span class="literal">True</span>, one_hot_label=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">network = TwoLayerNet(input_size=<span class="number">784</span>, hidden_size=<span class="number">50</span>, output_size=<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">iters_num = <span class="number">10000</span>  <span class="comment"># 适当设定循环的次数</span></span><br><span class="line">train_size = x_train.shape[<span class="number">0</span>]</span><br><span class="line">batch_size = <span class="number">100</span>        <span class="comment">#feed 100 data to the network each time to update the weight</span></span><br><span class="line">learning_rate = <span class="number">0.1</span></span><br><span class="line"></span><br><span class="line">train_loss_list = []</span><br><span class="line">train_acc_list = []</span><br><span class="line">test_acc_list = []</span><br><span class="line"></span><br><span class="line">iter_per_epoch = max(train_size / batch_size, <span class="number">1</span>)        <span class="comment"># how many batch of data among all training data</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(iters_num):</span><br><span class="line">    batch_mask = np.random.choice(train_size, batch_size)</span><br><span class="line">    x_batch = x_train[batch_mask]</span><br><span class="line">    t_batch = t_train[batch_mask]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 计算梯度</span></span><br><span class="line">    <span class="comment">#grad = network.numerical_gradient(x_batch, t_batch)</span></span><br><span class="line">    grad = network.gradient(x_batch, t_batch)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 更新参数</span></span><br><span class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> (<span class="string">'W1'</span>, <span class="string">'b1'</span>, <span class="string">'W2'</span>, <span class="string">'b2'</span>):</span><br><span class="line">        network.params[key] -= learning_rate * grad[key]</span><br><span class="line">    </span><br><span class="line">    loss = network.loss(x_batch, t_batch)</span><br><span class="line">    train_loss_list.append(loss)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> i % iter_per_epoch == <span class="number">0</span>:             <span class="comment">#cal the acc every time it has train for a epoch -&gt; all training data has been trained</span></span><br><span class="line">        train_acc = network.accuracy(x_train, t_train)</span><br><span class="line">        test_acc = network.accuracy(x_test, t_test)</span><br><span class="line">        train_acc_list.append(train_acc)</span><br><span class="line">        test_acc_list.append(test_acc)</span><br><span class="line">        print(<span class="string">"train acc, test acc | "</span> + str(train_acc) + <span class="string">", "</span> + str(test_acc))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制图形</span></span><br><span class="line">markers = &#123;<span class="string">'train'</span>: <span class="string">'o'</span>, <span class="string">'test'</span>: <span class="string">'s'</span>&#125;</span><br><span class="line">x = np.arange(len(train_acc_list))</span><br><span class="line">plt.plot(x, train_acc_list, label=<span class="string">'train acc'</span>)</span><br><span class="line">plt.plot(x, test_acc_list, label=<span class="string">'test acc'</span>, linestyle=<span class="string">'--'</span>)</span><br><span class="line">plt.xlabel(<span class="string">"epochs"</span>)</span><br><span class="line">plt.ylabel(<span class="string">"accuracy"</span>)</span><br><span class="line">plt.ylim(<span class="number">0</span>, <span class="number">1.0</span>)</span><br><span class="line">plt.legend(loc=<span class="string">'lower right'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure></li>
 </ul>
 
           
@@ -1689,16 +1182,16 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/25/Create-categories/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/02/Deep-Learning-from-Scratch-Chapter-4-II/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
     </span>
 
     
@@ -1708,7 +1201,7 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/12/25/Create-categories/" itemprop="url">Create categories</a></h1>
+                <a class="post-title-link" href="/2020/02/02/Deep-Learning-from-Scratch-Chapter-4-II/" itemprop="url">Deep Learning from Scratch Chapter 4 II</a></h1>
         
 
         <div class="post-meta">
@@ -1720,8 +1213,8 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-25T20:51:08+08:00">
-                2019-12-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-02T20:55:06+08:00">
+                2020-02-02
               </time>
             
 
@@ -1730,6 +1223,50 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/" itemprop="url" rel="index">
+                    <span itemprop="name">Book</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/Deep-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/Deep-Learning/Deep-Learning-from-Scratch/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning from Scratch</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1760,7 +1297,22 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
       
         
           
-            
+            <h2 id="Numerical-differentiation"><a href="#Numerical-differentiation" class="headerlink" title="Numerical differentiation"></a>Numerical differentiation</h2><img src="/images/Numerical-differentiation.png" class="" width="600" height="600" title="Numerical differentiation">
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pylab <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">numerical_diff</span><span class="params">(f, x)</span>:</span></span><br><span class="line">    h = <span class="number">1e-4</span> <span class="comment"># 0.0001</span></span><br><span class="line">    <span class="keyword">return</span> (f(x+h) - f(x-h)) / (<span class="number">2</span>*h)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">function_1</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0.01</span>*x**<span class="number">2</span> + <span class="number">0.1</span>*x </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">tangent_line</span><span class="params">(f, x)</span>:</span></span><br><span class="line">    d = numerical_diff(f, x)</span><br><span class="line">    print(d)</span><br><span class="line">    y = f(x) - d*x</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">lambda</span> t: d*t + y</span><br><span class="line">     </span><br><span class="line">x = np.arange(<span class="number">0.0</span>, <span class="number">20.0</span>, <span class="number">0.1</span>)       <span class="comment">#plot the function</span></span><br><span class="line">y = function_1(x)</span><br><span class="line">plt.xlabel(<span class="string">"x"</span>)</span><br><span class="line">plt.ylabel(<span class="string">"f(x)"</span>)</span><br><span class="line"></span><br><span class="line">tf = tangent_line(function_1, <span class="number">5</span>)    <span class="comment">#plot the slope</span></span><br><span class="line">y2 = tf(x)</span><br><span class="line"></span><br><span class="line">plt.plot(x, y)</span><br><span class="line">plt.plot(x, y2)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h2 id="Numerical-Gradient"><a href="#Numerical-Gradient" class="headerlink" title="Numerical Gradient"></a>Numerical Gradient</h2><ul>
+<li>for function f in point x<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"><span class="comment"># cf.http://d.hatena.ne.jp/white_wheels/20100327/p3</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pylab <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> mpl_toolkits.mplot3d <span class="keyword">import</span> Axes3D</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">_numerical_gradient_no_batch</span><span class="params">(f, x)</span>:</span></span><br><span class="line">    h = <span class="number">1e-4</span> <span class="comment"># 0.0001</span></span><br><span class="line">    grad = np.zeros_like(x)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> idx <span class="keyword">in</span> range(x.size):</span><br><span class="line">        tmp_val = x[idx]</span><br><span class="line">        x[idx] = float(tmp_val) + h</span><br><span class="line">        fxh1 = f(x) <span class="comment"># f(x+h)</span></span><br><span class="line">        </span><br><span class="line">        x[idx] = tmp_val - h </span><br><span class="line">        fxh2 = f(x) <span class="comment"># f(x-h)</span></span><br><span class="line">        grad[idx] = (fxh1 - fxh2) / (<span class="number">2</span>*h)</span><br><span class="line">        </span><br><span class="line">        x[idx] = tmp_val <span class="comment"># 还原值</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">return</span> grad</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">numerical_gradient</span><span class="params">(f, X)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> X.ndim == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> _numerical_gradient_no_batch(f, X)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        grad = np.zeros_like(X)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> idx, x <span class="keyword">in</span> enumerate(X):</span><br><span class="line">            grad[idx] = _numerical_gradient_no_batch(f, x)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> grad</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h2 id="Gradient-descent-method"><a href="#Gradient-descent-method" class="headerlink" title="Gradient descent method"></a>Gradient descent method</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gradient_descent</span><span class="params">(f, init_x, lr=<span class="number">0.01</span>, step_num=<span class="number">100</span>)</span>:</span></span><br><span class="line">    x = init_x</span><br><span class="line">    x_history = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(step_num):</span><br><span class="line">        x_history.append( x.copy() )</span><br><span class="line"></span><br><span class="line">        grad = numerical_gradient(f, x)</span><br><span class="line">        x -= lr * grad</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> x, np.array(x_history)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>learning rate cannot be too large or too small</li>
+<li>it is usually set by try and error</li>
+</ul>
+
           
         
       
@@ -1808,16 +1360,16 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/25/Insert-image-on-hexo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/29/Deep-Learning-from-Scratch-Chapter-4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tech Dustdojo">
+      <meta itemprop="name" content="Max Foo">
     </span>
 
     
@@ -1827,7 +1379,7 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/12/25/Insert-image-on-hexo/" itemprop="url">Insert image on hexo</a></h1>
+                <a class="post-title-link" href="/2020/01/29/Deep-Learning-from-Scratch-Chapter-4/" itemprop="url">Deep Learning from Scratch Chapter 4</a></h1>
         
 
         <div class="post-meta">
@@ -1839,8 +1391,8 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-25T20:50:16+08:00">
-                2019-12-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-29T23:27:14+08:00">
+                2020-01-29
               </time>
             
 
@@ -1849,6 +1401,50 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/" itemprop="url" rel="index">
+                    <span itemprop="name">Book</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/Deep-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/Deep-Learning/Deep-Learning-from-Scratch/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning from Scratch</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -1879,7 +1475,630 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
       
         
           
+            <h2 id="Train-the-neural-network"><a href="#Train-the-neural-network" class="headerlink" title="Train the neural network"></a>Train the neural network</h2><h3 id="Step-to-train-the-neural-network"><a href="#Step-to-train-the-neural-network" class="headerlink" title="Step to train the neural network"></a>Step to train the neural network</h3><ol>
+<li>feed the train data to the network</li>
+<li>calculate the loss function</li>
+<li>update the weighting</li>
+<li>repeat the process until the loss is acceptable</li>
+</ol>
+<h2 id="loss-function"><a href="#loss-function" class="headerlink" title="loss function"></a>loss function</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># output of a training data</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>t = [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = [<span class="number">0.1</span>, <span class="number">0.05</span>, <span class="number">0.6</span>, <span class="number">0.0</span>, <span class="number">0.05</span>, <span class="number">0.1</span>, <span class="number">0.0</span>, <span class="number">0.1</span>, <span class="number">0.0</span>, <span class="number">0.0</span>]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>mean squared error<img src="/images/mean-squared-error.png" class="" width="600" height="600" title="Mean squared error">
+
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mean_squared_error</span><span class="params">(y, t)</span>:</span> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0.5</span> * np.sum((y-t)**<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li><p>cross entropy error</p>
+<img src="/images/cross-entropy-error.png" class="" width="600" height="600" title="Cross entropy error">
+</li>
+<li><p>faster than the mean squared error since in one hot representation </p>
+</li>
+<li><p>since the t vector has only one non zero value</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cross_entropy_error</span><span class="params">(y, t)</span>:</span> </span><br><span class="line">    delta = <span class="number">1e-7</span></span><br><span class="line">    <span class="keyword">return</span> -np.sum(t * np.log(y + delta)) <span class="comment">#add a very small value to prevent occurrence of log(0) -&gt; -infinity</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="mini-batch-training-base-on-cross-entropy-error"><a href="#mini-batch-training-base-on-cross-entropy-error" class="headerlink" title="mini batch training base on cross entropy error"></a>mini batch training base on cross entropy error</h2><img src="/images/mini-batch-cross-entropy-error.png" class="" width="600" height="600" title="Mini batch Cross entropy error">
+<ul>
+<li>the cross entropy error of a batch data is the mean error of each output</li>
+</ul>
+<h3 id="get-the-mini-batch-data"><a href="#get-the-mini-batch-data" class="headerlink" title="get the mini batch data"></a>get the mini batch data</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys, os sys.path.append(os.pardir)</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> dataset.mnist <span class="keyword">import</span> load_mnist</span><br><span class="line">(x_train, t_train), (x_test, t_test) = load_mnist(normalize=<span class="literal">True</span>, one_hot_label=<span class="literal">True</span>)</span><br><span class="line">print(x_train.shape) <span class="comment"># (60000, 784) print(t_train.shape) # (60000, 10)</span></span><br><span class="line"></span><br><span class="line">train_size = x_train.shape[<span class="number">0</span>]</span><br><span class="line">batch_size = <span class="number">10</span></span><br><span class="line">batch_mask = np.random.choice(train_size, batch_size) </span><br><span class="line">x_batch = x_train[batch_mask]</span><br><span class="line">t_batch = t_train[batch_mask]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>np.random.choice()<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.random.choice(<span class="number">60000</span>, <span class="number">10</span>)</span><br><span class="line">array([ <span class="number">8013</span>, <span class="number">14666</span>, <span class="number">58210</span>, <span class="number">23832</span>, <span class="number">52091</span>, <span class="number">10153</span>, <span class="number">8107</span>, <span class="number">19410</span>, <span class="number">27260</span>, <span class="number">21411</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li>mini-batch version of cross entropy error base on one hot labelling</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cross_entropy_error</span><span class="params">(y, t)</span>:</span> </span><br><span class="line">    <span class="keyword">if</span> y.ndim == <span class="number">1</span>: <span class="comment">#handle the single input</span></span><br><span class="line">        t = t.reshape(<span class="number">1</span>, t.size) </span><br><span class="line">        y = y.reshape(<span class="number">1</span>, y.size)</span><br><span class="line"></span><br><span class="line">    batch_size = y.shape[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">return</span> -np.sum(t * np.log(y + <span class="number">1e-7</span>)) / batch_size</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>mini-batch version of cross entropy error base on non one hot labelling</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cross_entropy_error</span><span class="params">(y, t)</span>:</span> </span><br><span class="line">    <span class="keyword">if</span> y.ndim == <span class="number">1</span>: <span class="comment">##handle the single input</span></span><br><span class="line">        t = t.reshape(<span class="number">1</span>, t.size) </span><br><span class="line">        y = y.reshape(<span class="number">1</span>, y.size)</span><br><span class="line"></span><br><span class="line">    batch_size = y.shape[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">return</span> -np.sum(np.log(y[np.arange(batch_size), t] + <span class="number">1e-7</span>)) / batch_size</span><br></pre></td></tr></table></figure>
+<ul>
+<li>np.arange()<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.arange(<span class="number">5</span>)</span><br><span class="line">array([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># t [2, 7, 0, 9, 4]</span></span><br><span class="line">y[np.arange(<span class="number">5</span>),t]</span><br><span class="line">array([y[<span class="number">0</span>,<span class="number">2</span>], y[<span class="number">1</span>,<span class="number">7</span>], y[<span class="number">2</span>,<span class="number">0</span>], y[<span class="number">3</span>,<span class="number">9</span>], y[<span class="number">4</span>,<span class="number">4</span>]])</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/27/Deep-Learning-from-Scratch-Chapter-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/27/Deep-Learning-from-Scratch-Chapter-3/" itemprop="url">Deep Learning from Scratch Chapter 3</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
             
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-27T14:53:54+08:00">
+                2020-01-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/" itemprop="url" rel="index">
+                    <span itemprop="name">Book</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/Deep-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/Deep-Learning/Deep-Learning-from-Scratch/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning from Scratch</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<h2 id="Neural-network"><a href="#Neural-network" class="headerlink" title="Neural network"></a>Neural network</h2><ul>
+<li>The essence of neural network is to find the weighting and bias of perceptrons</li>
+</ul>
+<h3 id="Activation-function"><a href="#Activation-function" class="headerlink" title="Activation function"></a>Activation function</h3><ul>
+<li>Sigmoid</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sigmoid</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> / (<span class="number">1</span> + np.exp(-x))</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>ReLu</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">relu</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> np.maximum(<span class="number">0</span>, x)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Matrix-calculation-in-neural-network"><a href="#Matrix-calculation-in-neural-network" class="headerlink" title="Matrix calculation in neural network"></a>Matrix calculation in neural network</h3><img src="/images/Matrix-calculation-in-neural-network.png" class="" width="600" height="600" title="Matrix calculation in neural network">
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Y = np.dot(X, W) + B</span><br><span class="line">Z = sigmoid(Y)</span><br></pre></td></tr></table></figure>
+
+<h3 id="python-implenmentation-of-3-layer-neural-network"><a href="#python-implenmentation-of-3-layer-neural-network" class="headerlink" title="python implenmentation of 3 layer neural network"></a>python implenmentation of 3 layer neural network</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">init_network</span><span class="params">()</span>:</span></span><br><span class="line">    network = &#123;&#125;</span><br><span class="line">    network[<span class="string">'W1'</span>] = network[<span class="string">'b1'</span>] = network[<span class="string">'W2'</span>] = network[<span class="string">'b2'</span>] = network[<span class="string">'W3'</span>] =</span><br><span class="line">    np.array([[<span class="number">0.1</span>, <span class="number">0.3</span>, <span class="number">0.5</span>], [<span class="number">0.2</span>, <span class="number">0.4</span>, <span class="number">0.6</span>]]) np.array([<span class="number">0.1</span>, <span class="number">0.2</span>, <span class="number">0.3</span>])</span><br><span class="line">    np.array([[<span class="number">0.1</span>, <span class="number">0.4</span>], [<span class="number">0.2</span>, <span class="number">0.5</span>], [<span class="number">0.3</span>, <span class="number">0.6</span>]]) np.array([<span class="number">0.1</span>, <span class="number">0.2</span>])</span><br><span class="line">    np.array([[<span class="number">0.1</span>, <span class="number">0.3</span>], [<span class="number">0.2</span>, <span class="number">0.4</span>]])</span><br><span class="line">    network[<span class="string">'b3'</span>] = np.array([<span class="number">0.1</span>, <span class="number">0.2</span>])</span><br><span class="line">    <span class="keyword">return</span> network</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(network, x)</span>:</span></span><br><span class="line">    W1, W2, W3 = network[<span class="string">'W1'</span>], network[<span class="string">'W2'</span>], network[<span class="string">'W3'</span>] </span><br><span class="line">    b1, b2, b3 = network[<span class="string">'b1'</span>], network[<span class="string">'b2'</span>], network[<span class="string">'b3'</span>]</span><br><span class="line">    a1 = np.dot(x, W1) + b1 </span><br><span class="line">    z1 = sigmoid(a1)</span><br><span class="line">    a2 = np.dot(z1, W2) + b2 </span><br><span class="line">    z2 = sigmoid(a2)</span><br><span class="line">    a3 = np.dot(z2, W3) + b3 </span><br><span class="line">    y = a3</span><br><span class="line">    <span class="keyword">return</span> y</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">network = init_network()</span><br><span class="line">x = np.array([<span class="number">1.0</span>, <span class="number">0.5</span>])</span><br><span class="line">y = forward(network, x)</span><br><span class="line">print(y)</span><br><span class="line"> <span class="comment"># [ 0.31682708 0.69627909]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Softmax-function"><a href="#Softmax-function" class="headerlink" title="Softmax function"></a>Softmax function</h3><img src="/images/Softmax.png" class="" width="600" height="600" title="Softmax function">
+
+<ul>
+<li>softmax function usually use in the last layer of a classification problem</li>
+<li>it accept the vector output from last layer to gerenrate the output</li>
+<li>the output can be interrupt as the probrability of the given class</li>
+<li>each output range between 0 and 1</li>
+<li>the sum of the outputs are always 1</li>
+</ul>
+<h3 id="python-implenmentation-of-Softmax-function"><a href="#python-implenmentation-of-Softmax-function" class="headerlink" title="python implenmentation of Softmax function"></a>python implenmentation of Softmax function</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">softmax</span><span class="params">(a)</span>:</span></span><br><span class="line">    c = np.max(a)</span><br><span class="line">    exp_a = np.exp(a - c) <span class="comment"># c is used to prevent overflow</span></span><br><span class="line">    y = exp_a / sum_exp_a</span><br><span class="line">    <span class="keyword">return</span> y</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/27/Deep-Learning-from-Scratch-Chapter-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/27/Deep-Learning-from-Scratch-Chapter-2/" itemprop="url">Deep Learning from Scratch Chapter 2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-27T14:15:46+08:00">
+                2020-01-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/" itemprop="url" rel="index">
+                    <span itemprop="name">Book</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/Deep-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/Deep-Learning/Deep-Learning-from-Scratch/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning from Scratch</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Perceptron"><a href="#Perceptron" class="headerlink" title="Perceptron"></a>Perceptron</h2><img src="/images/Perceptron.png" class="" width="600" height="600" title="Perceptron">
+
+<h3 id="example-of-AND-gate-perceptron"><a href="#example-of-AND-gate-perceptron" class="headerlink" title="example of AND gate perceptron"></a>example of AND gate perceptron</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">AND</span><span class="params">(x1, x2)</span>:</span></span><br><span class="line">x = np.array([x1, x2])</span><br><span class="line">w = np.array([<span class="number">0.5</span>, <span class="number">0.5</span>]) b = <span class="number">-0.7</span></span><br><span class="line">tmp = np.sum(w*x) + b</span><br><span class="line"><span class="keyword">if</span> tmp &lt;= <span class="number">0</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> </span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">AND(<span class="number">0</span>, <span class="number">0</span>) <span class="comment"># 输出0 </span></span><br><span class="line">AND(<span class="number">1</span>, <span class="number">0</span>) <span class="comment"># 输出0 </span></span><br><span class="line">AND(<span class="number">0</span>, <span class="number">1</span>) <span class="comment"># 输出0 </span></span><br><span class="line">AND(<span class="number">1</span>, <span class="number">1</span>) <span class="comment"># 输出1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Limitation-of-simple-perceptron"><a href="#Limitation-of-simple-perceptron" class="headerlink" title="Limitation of simple perceptron"></a>Limitation of simple perceptron</h3><img src="/images/Limitation-of-simple-perceptron.png" class="" width="600" height="600" title="Limitation of simple perceptron">
+
+<ul>
+<li>some problem cannot be solve by using the simple perceptron</li>
+</ul>
+<h3 id="Method-to-solve-the-problem-of-a-sigle-perceptron"><a href="#Method-to-solve-the-problem-of-a-sigle-perceptron" class="headerlink" title="Method to solve the problem of a sigle perceptron"></a>Method to solve the problem of a sigle perceptron</h3><ul>
+<li>use non linear perceptron</li>
+</ul>
+<img src="/images/Non-linear-perceptron.png" class="" width="600" height="600" title="Non linear perceptron">
+
+<ul>
+<li>multiple perceptron</li>
+</ul>
+<img src="/images/Multiple-perceptron.png" class="" width="600" height="600" title="Multiple perceptron">
+
+<ul>
+<li>non linear function can be express by using multiple perceptron</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/27/Deep-Learning-from-Scratch-Chapter-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/27/Deep-Learning-from-Scratch-Chapter-1/" itemprop="url">Deep Learning from Scratch Chapter 1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-27T13:38:33+08:00">
+                2020-01-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/" itemprop="url" rel="index">
+                    <span itemprop="name">Book</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/Deep-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/Deep-Learning/Deep-Learning-from-Scratch/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning from Scratch</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h2><h3 id="Broadcast"><a href="#Broadcast" class="headerlink" title="Broadcast"></a>Broadcast</h3><img src="/images/broadcast.png" class="" width="600" height="600" title="Broadcast">
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>A = np.array([[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>]]) </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>B = np.array([<span class="number">10</span>, <span class="number">20</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>A * B</span><br><span class="line">array([[ <span class="number">10</span>, <span class="number">40</span>],</span><br><span class="line">[ <span class="number">30</span>, <span class="number">80</span>]])</span><br></pre></td></tr></table></figure>
+
+<h3 id="change-multi-dimention-matrix-to-a-vector"><a href="#change-multi-dimention-matrix-to-a-vector" class="headerlink" title="change multi dimention matrix to a vector"></a>change multi dimention matrix to a vector</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A.flatten()</span><br></pre></td></tr></table></figure>
+
+<h3 id="get-the-corresponding-element-fulfill-certain-criteria"><a href="#get-the-corresponding-element-fulfill-certain-criteria" class="headerlink" title="get the corresponding element fulfill certain criteria"></a>get the corresponding element fulfill certain criteria</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>A &gt; <span class="number">15</span></span><br><span class="line">array([ <span class="literal">True</span>, <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>], dtype=bool)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>A[A&gt;<span class="number">15</span>]</span><br><span class="line">array([<span class="number">51</span>, <span class="number">55</span>, <span class="number">19</span>])</span><br></pre></td></tr></table></figure>
+<h3 id="useful-function"><a href="#useful-function" class="headerlink" title="useful function"></a>useful function</h3><ul>
+<li>np.array</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A = np.array([[<span class="number">1</span>,<span class="number">2</span>], [<span class="number">3</span>,<span class="number">4</span>]])</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>sum()</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>w</span><br><span class="line">array([<span class="number">0.</span> , <span class="number">0.5</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.sum(w) </span><br><span class="line"><span class="number">0.5</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>astype()</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x</span><br><span class="line">array([<span class="number">-1.</span>, <span class="number">1.</span>, <span class="number">2.</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = x &gt; <span class="number">0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y</span><br><span class="line">array([<span class="literal">False</span>, <span class="literal">True</span>, <span class="literal">True</span>], dtype=bool)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = y.astype(np.int) </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y</span><br><span class="line">array([<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>])</span><br></pre></td></tr></table></figure></li>
+<li><p>np.ndim, shape and reshape</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>B = np.array([[<span class="number">1</span>,<span class="number">2</span>], [<span class="number">3</span>,<span class="number">4</span>], [<span class="number">5</span>,<span class="number">6</span>]]) </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(B)</span><br><span class="line">[[<span class="number">1</span> <span class="number">2</span>]</span><br><span class="line">[<span class="number">3</span> <span class="number">4</span>]</span><br><span class="line">[<span class="number">5</span> <span class="number">6</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.ndim(B) </span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>B.shape <span class="comment">#（row，column）</span></span><br><span class="line">(<span class="number">3</span>, <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>B.reshape(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">- np.dot()</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>A = np.array([[<span class="number">1</span>,<span class="number">2</span>], [<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>B = np.array([[<span class="number">5</span>,<span class="number">6</span>], [<span class="number">7</span>,<span class="number">8</span>]]) </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.dot(A, B)</span><br><span class="line">array([[<span class="number">19</span>, <span class="number">22</span>],</span><br><span class="line">[<span class="number">43</span>, <span class="number">50</span>]])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>np.argmax() (find the index of the maximum number)</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = np.array([[<span class="number">0.1</span>, <span class="number">0.8</span>, <span class="number">0.1</span>], [<span class="number">0.3</span>, <span class="number">0.1</span>, <span class="number">0.6</span>], [<span class="number">0.2</span>, <span class="number">0.5</span>, <span class="number">0.3</span>], [<span class="number">0.8</span>, <span class="number">0.1</span>, <span class="number">0.1</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = np.argmax(x, axis=<span class="number">1</span>) <span class="comment"># by each row</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(y)</span><br><span class="line">[<span class="number">1</span> <span class="number">2</span> <span class="number">1</span> <span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<h2 id="Matplotlib"><a href="#Matplotlib" class="headerlink" title="Matplotlib"></a>Matplotlib</h2><h3 id="plot-graph"><a href="#plot-graph" class="headerlink" title="plot graph"></a>plot graph</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="comment"># 生成数据</span></span><br><span class="line">x = np.arange(<span class="number">0</span>, <span class="number">6</span>, <span class="number">0.1</span>) <span class="comment"># 以0.1为单位，生成0到6的数据 y1 = np.sin(x)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制图形</span></span><br><span class="line">plt.plot(x, y1, label=<span class="string">"sin"</span>)</span><br><span class="line">plt.plot(x, y2, linestyle = <span class="string">"--"</span>, label=<span class="string">"cos"</span>) <span class="comment"># 用虚线绘制 plt.xlabel("x") # x轴标签</span></span><br><span class="line">plt.ylabel(<span class="string">"y"</span>) <span class="comment"># y轴标签</span></span><br><span class="line">plt.title(<span class="string">'sin &amp; cos'</span>) <span class="comment"># 标题</span></span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h3 id="show-image"><a href="#show-image" class="headerlink" title="show image"></a>show image</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt </span><br><span class="line"><span class="keyword">from</span> matplotlib.image <span class="keyword">import</span> imread</span><br><span class="line">             </span><br><span class="line">img = imread(<span class="string">'lena.png'</span>) <span class="comment"># 读入图像(设定合适的路径!) plt.imshow(img)</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h2 id="lambda"><a href="#lambda" class="headerlink" title="lambda"></a>lambda</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(W)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> net.loss(x, t)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># same as</span></span><br><span class="line"></span><br><span class="line">f = <span class="keyword">lambda</span> w: net.loss(x, t)</span><br></pre></td></tr></table></figure>
           
         
       
@@ -1918,7 +2137,7 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
 
   
  <nav class="pagination">
-   <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="accessibility.next_page"></i></a>
+   <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="accessibility.next_page"></i></a>
  </nav>
 
 
@@ -1952,7 +2171,7 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">Tech Dustdojo</p>
+              <p class="site-author-name" itemprop="name">Max Foo</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -1963,7 +2182,7 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">75</span>
+                  <span class="site-state-item-count">90</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1974,7 +2193,7 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1985,7 +2204,7 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">40</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -2026,7 +2245,7 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Tech Dustdojo</span>
+  <span class="author" itemprop="copyrightHolder">Max Foo</span>
 
   
 </div>
