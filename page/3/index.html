@@ -271,7 +271,7 @@ function category_js () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/03/SpringBoot-Unified-Log/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/03/SpringBoot-kaptcha/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Max Foo">
@@ -290,7 +290,7 @@ function category_js () {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2021/01/03/SpringBoot-Unified-Log/" itemprop="url">SpringBoot Unified Log Handling</a></h1>
+                <a class="post-title-link" href="/2021/01/03/SpringBoot-kaptcha/" itemprop="url">SpringBoot-kaptcha</a></h1>
         
 
         <div class="post-meta">
@@ -342,7 +342,188 @@ function category_js () {
       
         
           
-            <h1 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.JoinPoint;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.Aspect;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.Before;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.Pointcut;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.context.request.RequestAttributes;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.context.request.RequestContextHolder;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.context.request.ServletRequestAttributes;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ServiceLogAspect</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger looger = LoggerFactory.getLogger(ServiceLogAspect<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Pointcut</span>(<span class="string">"execution(* com.devepkm.MyForum.Service.*.*(..))"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pointcut</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// inject JoinPoint to get Target method</span></span><br><span class="line">    <span class="meta">@Before</span>(<span class="string">"pointcut()"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">before</span><span class="params">(JoinPoint joinPoint)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//       log format: user[xxx.xxx.xx], visit com.devepkm.MyForum.Service.xxx in 2020.10.10</span></span><br><span class="line">        ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();</span><br><span class="line">        HttpServletRequest request = requestAttributes.getRequest();</span><br><span class="line">        String ip = request.getRemoteHost();</span><br><span class="line">        String date = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>).format(<span class="keyword">new</span> Date());</span><br><span class="line">        String method = joinPoint.getSignature().getDeclaringTypeName() + <span class="string">"."</span> + joinPoint.getSignature().getName();</span><br><span class="line">        looger.info(String.format(<span class="string">"user[%s], visit %s in %s"</span>, ip,method,date));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h1 id="Denpendency"><a href="#Denpendency" class="headerlink" title="Denpendency"></a>Denpendency</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.penggle<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>kaptcha<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.3.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Integrate-with-springboot"><a href="#Integrate-with-springboot" class="headerlink" title="Integrate with springboot"></a>Integrate with springboot</h1><ul>
+<li>create a conf. class</li>
+<li>return Producer</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.devepkm.MyForum.Config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.google.code.kaptcha.Producer;</span><br><span class="line"><span class="keyword">import</span> com.google.code.kaptcha.impl.DefaultKaptcha;</span><br><span class="line"><span class="keyword">import</span> com.google.code.kaptcha.util.Config;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Properties;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">KaptchaConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Producer <span class="title">kaptchaProducer</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Properties properties = <span class="keyword">new</span> Properties();</span><br><span class="line">        properties.setProperty(<span class="string">"kaptcha.image.width"</span>, <span class="string">"100"</span>);</span><br><span class="line">        properties.setProperty(<span class="string">"kaptcha.image.height"</span>, <span class="string">"40"</span>);</span><br><span class="line">        properties.setProperty(<span class="string">"kaptcha.textproducer.font.size"</span>, <span class="string">"32"</span>);</span><br><span class="line">        properties.setProperty(<span class="string">"kaptcha.textproducer.font.color"</span>, <span class="string">"0,0,0"</span>);</span><br><span class="line">        properties.setProperty(<span class="string">"kaptcha.textproducer.char.string"</span>, <span class="string">"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYAZ"</span>);</span><br><span class="line">        properties.setProperty(<span class="string">"kaptcha.textproducer.char.length"</span>, <span class="string">"4"</span>);</span><br><span class="line">        properties.setProperty(<span class="string">"kaptcha.noise.impl"</span>, <span class="string">"com.google.code.kaptcha.impl.NoNoise"</span>);</span><br><span class="line"></span><br><span class="line">        DefaultKaptcha kaptcha = <span class="keyword">new</span> DefaultKaptcha();</span><br><span class="line">        Config config = <span class="keyword">new</span> Config(properties);</span><br><span class="line">        kaptcha.setConfig(config);</span><br><span class="line">        <span class="keyword">return</span> kaptcha;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Sav-in-session"><a href="#Sav-in-session" class="headerlink" title="Sav in session"></a>Sav in session</h1><ul>
+<li>inject producer</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@RequestMapping</span>(path = <span class="string">"/kaptcha"</span>, method = RequestMethod.GET)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getKaptcha</span><span class="params">(HttpServletResponse response, HttpSession session)</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    String text = kaptchaProducer.createText();</span><br><span class="line">    BufferedImage image = kaptchaProducer.createImage(text);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// save to session</span></span><br><span class="line">    session.setAttribute(<span class="string">"kaptcha"</span>, text);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// return to browser</span></span><br><span class="line">    response.setContentType(<span class="string">"image/png"</span>);</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        OutputStream os = response.getOutputStream();</span><br><span class="line">        ImageIO.write(image, <span class="string">"png"</span>, os);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        logger.error(<span class="string">"kaptcha error:"</span> + e.getMessage());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/03/Thymeleaf-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/01/03/Thymeleaf-01/" itemprop="url">Thymeleaf</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-03T12:32:12+08:00">
+                2021-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Thymeleaf/" itemprop="url" rel="index">
+                    <span itemprop="name">Thymeleaf</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Thymeleaf"><a href="#Thymeleaf" class="headerlink" title="Thymeleaf"></a>Thymeleaf</h1><h2 id="What-is-Thymeleaf"><a href="#What-is-Thymeleaf" class="headerlink" title="What is Thymeleaf"></a>What is Thymeleaf</h2><ul>
+<li>a template engine</li>
+</ul>
+<h2 id="Integrate-with-spring"><a href="#Integrate-with-spring" class="headerlink" title="Integrate with spring"></a>Integrate with spring</h2><h3 id="turn-off-cache-in-devpe-for-hot-deployment"><a href="#turn-off-cache-in-devpe-for-hot-deployment" class="headerlink" title="turn off cache in devpe for hot deployment"></a>turn off cache in devpe for hot deployment</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//application.xml</span><br><span class="line">spring.thymeleaf.cache=false</span><br></pre></td></tr></table></figure>
+<h1 id="Dynamic-path-in-thymeleaf"><a href="#Dynamic-path-in-thymeleaf" class="headerlink" title="Dynamic path in thymeleaf"></a>Dynamic path in thymeleaf</h1><ul>
+<li>@{} -&gt; under /resource/static<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- example --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">th:href</span>=<span class="string">"@&#123;/css/global.css&#125;"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="looping-in-Thymeleaf"><a href="#looping-in-Thymeleaf" class="headerlink" title="looping in Thymeleaf"></a>looping in Thymeleaf</h1><ul>
+<li>th:each=”$ item:${iterateItems}”<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span> <span class="attr">th:each</span>=<span class="string">"item:$&#123;iterateItems&#125;"</span>&gt;</span></span><br><span class="line">					</span><br><span class="line">	<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="Condition"><a href="#Condition" class="headerlink" title="Condition"></a>Condition</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">th:if</span>=<span class="string">"$&#123;map.post.type == 1&#125;"</span>&gt;</span>Pinned<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="th-text-and-th-utext"><a href="#th-text-and-th-utext" class="headerlink" title="th:text and th:utext"></a>th:text and th:utext</h1></li>
+<li>utext can used to parse html tag</li>
+</ul>
+<h1 id="Common-function"><a href="#Common-function" class="headerlink" title="Common function"></a>Common function</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- format time --&gt;</span></span><br><span class="line">th:text="$&#123;#dates.format(map.post.createTime,'yyyy-MM-dd HH:mm:ss')&#125;"</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- get a sequence of number from 5 to 8 --&gt;</span></span><br><span class="line">th:each="i : $&#123;#numbers.sequence(5,8)&#125;"</span><br></pre></td></tr></table></figure>
+
+<h1 id="How-to-combine-static-class-and-thymeleaf-expression"><a href="#How-to-combine-static-class-and-thymeleaf-expression" class="headerlink" title="How to combine static class and thymeleaf expression"></a>How to combine static class and thymeleaf expression</h1><ul>
+<li>use ||<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- page-item is static but disabled is dynamic --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">th:class</span>=<span class="string">"|page-item $&#123;page.pageNo==1?'disabled':''&#125;|"</span>&gt;</span> <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="How-to-add-Param-in-url"><a href="#How-to-add-Param-in-url" class="headerlink" title="How to add Param in url"></a>How to add Param in url</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">th:href</span>=<span class="string">"@&#123;/order/details(id=3)&#125;"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">output: /order/details?id=3</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="How-to-reuse-html-code-block"><a href="#How-to-reuse-html-code-block" class="headerlink" title="How to reuse html code block"></a>How to reuse html code block</h1><p>eg reuse the header, footer, nav</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- use fragment --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- index.html --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">header</span> <span class="attr">class</span>=<span class="string">"bg-dark sticky-top"</span> <span class="attr">th:fragment</span>=<span class="string">"header"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- use replace --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- login.html --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 						location::fragmentName --&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">header</span> <span class="attr">th:replace</span>=<span class="string">"index :: header"</span>&gt;</span><span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
           
         
       
@@ -1753,164 +1934,6 @@ function category_js () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/17/JSP-05/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Max Foo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Max Foo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/09/17/JSP-05/" itemprop="url">JSP 05 EL</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-17T16:27:15+08:00">
-                2020-09-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JSP/" itemprop="url" rel="index">
-                    <span itemprop="name">JSP</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="EL"><a href="#EL" class="headerlink" title="EL"></a>EL</h1><ul>
-<li>it is used to output the domain obj in jsp</li>
-<li>It is design for replacing expression tag in jsp<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// example: difference between EL and expression tag</span></span><br><span class="line">    &lt;%</span><br><span class="line">        request.setAttribute(<span class="string">"key1"</span>,<span class="string">"value1"</span>);</span><br><span class="line">    %&gt;</span><br><span class="line">    expression tag：&lt;%=request.getAttribute(<span class="string">"key2"</span>))%&gt;&lt;br/&gt;</span><br><span class="line">    EL ：$&#123;key1&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// output:</span></span><br><span class="line"> expression tag：<span class="keyword">null</span></span><br><span class="line"> EL ： <span class="comment">//nothing will output will the value is null</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<h2 id="Output-domain-obj"><a href="#Output-domain-obj" class="headerlink" title="Output domain obj"></a>Output domain obj</h2><ul>
-<li>when 4 domain obj have the same key</li>
-<li>it will output the obj with smallest scope<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">   </span><br><span class="line">    request.setAttribute(<span class="string">"key"</span>, <span class="string">"request"</span>);</span><br><span class="line">    session.setAttribute(<span class="string">"key"</span>, <span class="string">"session"</span>);</span><br><span class="line">    application.setAttribute(<span class="string">"key"</span>, <span class="string">"application"</span>);</span><br><span class="line">    pageContext.setAttribute(<span class="string">"key"</span>, <span class="string">"pageContext"</span>);</span><br><span class="line">%&gt;</span><br><span class="line">$&#123; key &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// output:</span></span><br><span class="line"><span class="comment">// request</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<hr>
-<h2 id="Output-Bean-obj"><a href="#Output-Bean-obj" class="headerlink" title="Output Bean obj"></a>Output Bean obj</h2><ul>
-<li>EL will use the getter method in bean class to get the value of that attr.</li>
-<li>it will be shown if the getter method is provided, even the bean class do not contain that attr. <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">  &lt;%</span><br><span class="line">        Person person = <span class="keyword">new</span> Person();</span><br><span class="line">        person.setName(<span class="string">"ken！"</span>);</span><br><span class="line">        person.setPhones(<span class="keyword">new</span> String[]&#123;<span class="string">"18610541354"</span>,<span class="string">"18688886666"</span>,<span class="string">"18699998888"</span>&#125;);</span><br><span class="line"></span><br><span class="line">        List&lt;String&gt; cities = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        cities.add(<span class="string">"hk"</span>);</span><br><span class="line">        cities.add(<span class="string">"ny"</span>);</span><br><span class="line">        cities.add(<span class="string">"ca"</span>);</span><br><span class="line">        person.setCities(cities);</span><br><span class="line"></span><br><span class="line">        Map&lt;String,Object&gt;map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">"key1"</span>,<span class="string">"value1"</span>);</span><br><span class="line">        map.put(<span class="string">"key2"</span>,<span class="string">"value2"</span>);</span><br><span class="line">        map.put(<span class="string">"key3"</span>,<span class="string">"value3"</span>);</span><br><span class="line">        person.setMap(map);</span><br><span class="line"></span><br><span class="line">        pageContext.setAttribute(<span class="string">"p"</span>, person);</span><br><span class="line">    %&gt;</span><br><span class="line"></span><br><span class="line">    output Person：$&#123; p &#125;&lt;br/&gt;</span><br><span class="line">    output Person‘s name：$&#123;p.name&#125; &lt;br&gt;</span><br><span class="line">    output Person‘s phones array：$&#123;p.phones[<span class="number">2</span>]&#125; &lt;br&gt;</span><br><span class="line">    output Person‘s cities list：$&#123;p.cities&#125; &lt;br&gt;</span><br><span class="line">    output element inside a cities List：$&#123;p.cities[<span class="number">2</span>]&#125; &lt;br&gt;</span><br><span class="line">    output Person‘s Map: $&#123;p.map&#125; &lt;br&gt;</span><br><span class="line">    output element inside map: $&#123;p.map.key3&#125; &lt;br&gt;</span><br><span class="line">    output Person‘s age：$&#123;p.age&#125; &lt;br&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// output:</span></span><br><span class="line">output Person：：Person&#123;name=ken！, phones=[<span class="number">18610541354</span>, <span class="number">18688886666</span>, <span class="number">18699998888</span>], cities=[hk, ny, ca], map=&#123;key1=value1, key2=value2, key3=value3&#125;&#125;</span><br><span class="line">output Person‘s name：ken！</span><br><span class="line">output Person‘s phones array：<span class="number">18699998888</span></span><br><span class="line">output Person‘s cities list：[hk, ny, ca]</span><br><span class="line">output element inside a cities List：ca</span><br><span class="line">output Person‘s Map: &#123;key1=value1, key2=value2, key3=value3&#125;</span><br><span class="line">output element inside map: value3</span><br><span class="line">output Person‘s age：<span class="number">18</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/17/JSP-04/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2056,7 +2079,7 @@ function category_js () {
 
   
  <nav class="pagination">
-   <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="accessibility.next_page"></i></a>
+   <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="accessibility.next_page"></i></a>
  </nav>
 
 
@@ -2101,7 +2124,7 @@ function category_js () {
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">90</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2112,7 +2135,7 @@ function category_js () {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>

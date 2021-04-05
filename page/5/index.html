@@ -271,7 +271,7 @@ function category_js () {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/30/JavaWeb-05-DOM/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/12/JavaWeb-06-jQuery/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Max Foo">
@@ -290,7 +290,7 @@ function category_js () {
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/06/30/JavaWeb-05-DOM/" itemprop="url">JavaWeb 05 DOM</a></h1>
+                <a class="post-title-link" href="/2020/07/12/JavaWeb-06-jQuery/" itemprop="url">JavaWeb 06 jQuery</a></h1>
         
 
         <div class="post-meta">
@@ -302,8 +302,8 @@ function category_js () {
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-30T15:27:05+08:00">
-                2020-06-30
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-12T00:36:09+08:00">
+                2020-07-12
               </time>
             
 
@@ -375,29 +375,44 @@ function category_js () {
       
         
           
-            <h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><hr>
-<img src="/images/dom-structure.gif" class="" width="600" height="600" title="DOM Structure">
-<ul>
-<li><p>Document obj can manage all the content of inside HTML</p>
+            <h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h2 id=""><a href="#" class="headerlink" title="$"></a>$</h2><ul>
+<li>$() represent a fuction<h3 id="4-ways-to-use"><a href="#4-ways-to-use" class="headerlink" title="4 ways to use $()"></a>4 ways to use $()</h3></li>
+</ul>
+<ol>
+<li><p>passing function</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// window.onload = function()&#123;&#125;</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                    </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>tree structure</p>
+<li><p>passing css selector</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// document.getElement</span></span><br><span class="line">$(#btn01)</span><br></pre></td></tr></table></figure></li>
+<li><p>passing html string</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// create html node</span></span><br><span class="line">$(&lt;div&gt;</span><br><span class="line">        &lt;a&gt;create a div node&lt;<span class="regexp">/a&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;)</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>all tree nodes can consider as an obj</p>
-</li>
-<li><p>Common method</p>
-</li>
-<li><p>getElementById()</p>
-</li>
-<li><p>getElementByName()</p>
-</li>
-<li><p>getElementByTagName()</p>
-</li>
-<li><p>createElement()</p>
-</li>
-<li><p><b>remember to use above method on window.onload, to make sure the obj is created.</b></p>
+<li><p>passing dom obj</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// convert dom obj to jQuery obj</span></span><br><span class="line"><span class="keyword">var</span> i = <span class="built_in">document</span>.getElementById(<span class="string">"id"</span>);</span><br><span class="line">$(i)</span><br></pre></td></tr></table></figure>
+<h2 id="diff-between-jQuery-obj-and-DOM-obj"><a href="#diff-between-jQuery-obj-and-DOM-obj" class="headerlink" title="diff. between jQuery obj and DOM obj"></a>diff. between jQuery obj and DOM obj</h2></li>
+</ol>
+<p>alter DOM obj -&gt; [object HTMLTagNameElement]<br>alter jQuery obj -&gt; [object Object]<br>DOM obj cannot use jQuery obj’s function and attri. vice versa</p>
+<h2 id="what-is-jQuery-obj"><a href="#what-is-jQuery-obj" class="headerlink" title="what is jQuery obj"></a>what is jQuery obj</h2><ul>
+<li>jQuery obj are actually dom object array + a series of function provide by jQuery</li>
+</ul>
+<h2 id="Convert"><a href="#Convert" class="headerlink" title="Convert"></a>Convert</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DOM -&gt; jQuery</span><br><span class="line">$(DOM obj)</span><br><span class="line"></span><br><span class="line">jQuery -&gt; DOM</span><br><span class="line">$obj[number]</span><br></pre></td></tr></table></figure>
+<h2 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h2><h3 id="basic-filter"><a href="#basic-filter" class="headerlink" title="basic filter"></a>basic filter</h3><p>:first<br><br>:last<br><br>:eq(index)<br><br>:not(selector)<br><br>:animated<br></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- eg --&gt;</span><br><span class="line">$(<span class="string">"li:first"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="content-filter"><a href="#content-filter" class="headerlink" title="content filter"></a>content filter</h3><p>:contains(text)<br><br>:empty<br></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- eg --&gt;</span><br><span class="line">$(<span class="string">"li:contains('apple')"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="attr-filter"><a href="#attr-filter" class="headerlink" title="attr. filter"></a>attr. filter</h3><p>[attr.]<br><br>[attr. = value]<br><br>[attr.^ = value]<br><br>[attr1.][attr2.]<br></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- eg --&gt;</span><br><span class="line">$(<span class="string">"input[name='fruits']"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="form-filter"><a href="#form-filter" class="headerlink" title="form filter"></a>form filter</h3><p>:input<br><br>:text<br><br>:password<br><br>:radio<br><br>:checkbox<br><br>:checked<br><br>:selected<br></p>
+<h2 id="jQuery-attr-manipulation"><a href="#jQuery-attr-manipulation" class="headerlink" title="jQuery attr. manipulation"></a>jQuery attr. manipulation</h2><ul>
+<li>getting attr. -&gt; do not pass parameter</li>
+<li>setting attr. -&gt; pass parameter<br>.html()     -&gt; same as innerHTML<br><br>.val()      -&gt; get value in <b>form</b><br><br>.text()     -&gt; same as innerText</li>
+</ul>
+<h2 id="attr-do-not-use-on-checked、readOnly、selected、disabled"><a href="#attr-do-not-use-on-checked、readOnly、selected、disabled" class="headerlink" title="attr() do not use on checked、readOnly、selected、disabled"></a>attr() do not use on checked、readOnly、selected、disabled</h2><ul>
+<li>used to set and get the attr. of jQuery obj<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// eg. get the attr. value</span></span><br><span class="line">$(<span class="string">"input"</span>).attr(<span class="string">"value"</span>);  </span><br><span class="line"></span><br><span class="line"><span class="comment">// eg. set the attr. value</span></span><br><span class="line">$(<span class="string">"input"</span>).attr(<span class="string">"value"</span>,<span class="string">"hi"</span>);</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
-
+<h2 id="prop-use-on-checked、readOnly、selected、disabled"><a href="#prop-use-on-checked、readOnly、selected、disabled" class="headerlink" title="prop() use on checked、readOnly、selected、disabled"></a>prop() use on checked、readOnly、selected、disabled</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> allCheckBoxes = $(<span class="string">"input[type='checkbox']"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//select all</span></span><br><span class="line">$(<span class="string">"#btn01"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    allCheckBoxes.prop(<span class="string">"checked"</span>,<span class="literal">true</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
           
         
       
@@ -588,6 +603,180 @@ function category_js () {
 <li><p>attache the funtion to the obj</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn01"</span>&gt;</span>Button<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- js --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">//   Step 1: use windos.onload to make sure the js exe after dom is created</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.onload =<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="actionscript">    <span class="comment">//    Step 2:</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> btn01Obj = <span class="built_in">document</span>.getElementById(<span class="string">"btn01"</span>);</span></span><br><span class="line">        </span><br><span class="line"><span class="actionscript">        <span class="comment">// Step 3:</span></span></span><br><span class="line"><span class="actionscript">        btn01Obj.onclick = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">            alert(<span class="string">"clicked"</span>);</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 </ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/30/JavaWeb-05-DOM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/30/JavaWeb-05-DOM/" itemprop="url">JavaWeb 05 DOM</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-30T15:27:05+08:00">
+                2020-06-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaWeb</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaWeb/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><hr>
+<img src="/images/dom-structure.gif" class="" width="600" height="600" title="DOM Structure">
+<ul>
+<li><p>Document obj can manage all the content of inside HTML</p>
+</li>
+<li><p>tree structure</p>
+</li>
+<li><p>all tree nodes can consider as an obj</p>
+</li>
+<li><p>Common method</p>
+</li>
+<li><p>getElementById()</p>
+</li>
+<li><p>getElementByName()</p>
+</li>
+<li><p>getElementByTagName()</p>
+</li>
+<li><p>createElement()</p>
+</li>
+<li><p><b>remember to use above method on window.onload, to make sure the obj is created.</b></p>
+</li>
+</ul>
 
           
         
@@ -1947,198 +2136,11 @@ see below exp.
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/07/Head-First-Java-Chapter-8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Max Foo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Max Foo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/07/Head-First-Java-Chapter-8/" itemprop="url">Head First Java Chapter 8</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-07T12:19:28+08:00">
-                2020-06-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/" itemprop="url" rel="index">
-                    <span itemprop="name">Book</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/Head-First-Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Head First Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="More-about-polymorphism"><a href="#More-about-polymorphism" class="headerlink" title="More about polymorphism"></a>More about polymorphism</h1><hr>
-<p>Be careful to the diff between Abstract class, Abstract method, interface.</p>
-<hr>
-<h2 id="Abstract-class"><a href="#Abstract-class" class="headerlink" title="Abstract class"></a>Abstract class</h2><ul>
-<li>Some classes are not suitable to create a instance eg. Animal, because we dont know what should a animal obj look like.</li>
-<li>Abstract class help to prevent it being created as a instance obj.</li>
-<li>The first concrete class must implement all the abstract methods in the class.</li>
-<li>Abstract class have abstract method and non abstract method</li>
-</ul>
-<ul>
-<li>see the exp below<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Animal c; </span><br><span class="line">c = <span class="keyword">new</span> Dog();   <span class="comment">//legal, because we can assign it to child class</span></span><br><span class="line"></span><br><span class="line">Animal c = <span class="keyword">new</span> Animal(); <span class="comment">// illegal  Abstract class cannot be new</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="Abstract-methood"><a href="#Abstract-methood" class="headerlink" title="Abstract methood"></a>Abstract methood</h2><ul>
-<li>class contain any abstract method should declare as abstract class</li>
-<li>ie. Non Abstract class CANNOT have Abstract method</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span></span>; <span class="comment">//abstract method do not contain implementation</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// it ends with ;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="Object-class"><a href="#Object-class" class="headerlink" title="Object class"></a>Object class</h2><ul>
-<li>all class extends object class</li>
-<li>exp. method in obj class<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- equals()</span><br><span class="line">- hashCode()</span><br><span class="line">- toString()</span><br><span class="line"></span><br><span class="line">&lt;!-- above three method are recommand to overrided --&gt;</span><br><span class="line"></span><br><span class="line">- getClass()</span><br></pre></td></tr></table></figure>
-<h3 id="equals-and"><a href="#equals-and" class="headerlink" title=".equals() and =="></a>.equals() and ==</h3></li>
-<li>both compare if two refferece relate to the same obj</li>
-<li>.equals() will usually be override to compare actual meaning of equality base on the obj.</li>
-</ul>
-<hr>
-<h2 id="interface"><a href="#interface" class="headerlink" title="interface"></a>interface</h2><ul>
-<li>all methods are abstract</li>
-<li>think interface as a contract, any class implement the interface are granteed to implenment the abstract methods</li>
-<li>class can implement multiple interface</li>
-<li>but can only extends from one class<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Pet</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>&#123;&#125;;    <span class="comment">//abstract method only</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;&#125;; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">pulbilc <span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span> <span class="title">implenments</span> <span class="title">Pet</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">play</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">// implenmentation</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="comment">// implenmentation</span></span><br><span class="line">    &#125;; </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
  <nav class="pagination">
-   <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="accessibility.next_page"></i></a>
+   <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="accessibility.next_page"></i></a>
  </nav>
 
 
@@ -2183,7 +2185,7 @@ see below exp.
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">90</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2194,7 +2196,7 @@ see below exp.
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>

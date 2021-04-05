@@ -271,6 +271,197 @@ function category_js () {
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/27/Deep-Learning-from-Scratch-Chapter-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/27/Deep-Learning-from-Scratch-Chapter-1/" itemprop="url">Deep Learning from Scratch Chapter 1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-27T13:38:33+08:00">
+                2020-01-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/" itemprop="url" rel="index">
+                    <span itemprop="name">Book</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/Deep-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/Deep-Learning/Deep-Learning-from-Scratch/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning from Scratch</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h2><h3 id="Broadcast"><a href="#Broadcast" class="headerlink" title="Broadcast"></a>Broadcast</h3><img src="/images/broadcast.png" class="" width="600" height="600" title="Broadcast">
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>A = np.array([[<span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>]]) </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>B = np.array([<span class="number">10</span>, <span class="number">20</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>A * B</span><br><span class="line">array([[ <span class="number">10</span>, <span class="number">40</span>],</span><br><span class="line">[ <span class="number">30</span>, <span class="number">80</span>]])</span><br></pre></td></tr></table></figure>
+
+<h3 id="change-multi-dimention-matrix-to-a-vector"><a href="#change-multi-dimention-matrix-to-a-vector" class="headerlink" title="change multi dimention matrix to a vector"></a>change multi dimention matrix to a vector</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A.flatten()</span><br></pre></td></tr></table></figure>
+
+<h3 id="get-the-corresponding-element-fulfill-certain-criteria"><a href="#get-the-corresponding-element-fulfill-certain-criteria" class="headerlink" title="get the corresponding element fulfill certain criteria"></a>get the corresponding element fulfill certain criteria</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>A &gt; <span class="number">15</span></span><br><span class="line">array([ <span class="literal">True</span>, <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>], dtype=bool)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>A[A&gt;<span class="number">15</span>]</span><br><span class="line">array([<span class="number">51</span>, <span class="number">55</span>, <span class="number">19</span>])</span><br></pre></td></tr></table></figure>
+<h3 id="useful-function"><a href="#useful-function" class="headerlink" title="useful function"></a>useful function</h3><ul>
+<li>np.array</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A = np.array([[<span class="number">1</span>,<span class="number">2</span>], [<span class="number">3</span>,<span class="number">4</span>]])</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>sum()</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>w</span><br><span class="line">array([<span class="number">0.</span> , <span class="number">0.5</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.sum(w) </span><br><span class="line"><span class="number">0.5</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>astype()</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x</span><br><span class="line">array([<span class="number">-1.</span>, <span class="number">1.</span>, <span class="number">2.</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = x &gt; <span class="number">0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y</span><br><span class="line">array([<span class="literal">False</span>, <span class="literal">True</span>, <span class="literal">True</span>], dtype=bool)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = y.astype(np.int) </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y</span><br><span class="line">array([<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>])</span><br></pre></td></tr></table></figure></li>
+<li><p>np.ndim, shape and reshape</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>B = np.array([[<span class="number">1</span>,<span class="number">2</span>], [<span class="number">3</span>,<span class="number">4</span>], [<span class="number">5</span>,<span class="number">6</span>]]) </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(B)</span><br><span class="line">[[<span class="number">1</span> <span class="number">2</span>]</span><br><span class="line">[<span class="number">3</span> <span class="number">4</span>]</span><br><span class="line">[<span class="number">5</span> <span class="number">6</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.ndim(B) </span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>B.shape <span class="comment">#（row，column）</span></span><br><span class="line">(<span class="number">3</span>, <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>B.reshape(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">- np.dot()</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>A = np.array([[<span class="number">1</span>,<span class="number">2</span>], [<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>B = np.array([[<span class="number">5</span>,<span class="number">6</span>], [<span class="number">7</span>,<span class="number">8</span>]]) </span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.dot(A, B)</span><br><span class="line">array([[<span class="number">19</span>, <span class="number">22</span>],</span><br><span class="line">[<span class="number">43</span>, <span class="number">50</span>]])</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>np.argmax() (find the index of the maximum number)</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = np.array([[<span class="number">0.1</span>, <span class="number">0.8</span>, <span class="number">0.1</span>], [<span class="number">0.3</span>, <span class="number">0.1</span>, <span class="number">0.6</span>], [<span class="number">0.2</span>, <span class="number">0.5</span>, <span class="number">0.3</span>], [<span class="number">0.8</span>, <span class="number">0.1</span>, <span class="number">0.1</span>]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = np.argmax(x, axis=<span class="number">1</span>) <span class="comment"># by each row</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(y)</span><br><span class="line">[<span class="number">1</span> <span class="number">2</span> <span class="number">1</span> <span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<h2 id="Matplotlib"><a href="#Matplotlib" class="headerlink" title="Matplotlib"></a>Matplotlib</h2><h3 id="plot-graph"><a href="#plot-graph" class="headerlink" title="plot graph"></a>plot graph</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="comment"># 生成数据</span></span><br><span class="line">x = np.arange(<span class="number">0</span>, <span class="number">6</span>, <span class="number">0.1</span>) <span class="comment"># 以0.1为单位，生成0到6的数据 y1 = np.sin(x)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制图形</span></span><br><span class="line">plt.plot(x, y1, label=<span class="string">"sin"</span>)</span><br><span class="line">plt.plot(x, y2, linestyle = <span class="string">"--"</span>, label=<span class="string">"cos"</span>) <span class="comment"># 用虚线绘制 plt.xlabel("x") # x轴标签</span></span><br><span class="line">plt.ylabel(<span class="string">"y"</span>) <span class="comment"># y轴标签</span></span><br><span class="line">plt.title(<span class="string">'sin &amp; cos'</span>) <span class="comment"># 标题</span></span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h3 id="show-image"><a href="#show-image" class="headerlink" title="show image"></a>show image</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt </span><br><span class="line"><span class="keyword">from</span> matplotlib.image <span class="keyword">import</span> imread</span><br><span class="line">             </span><br><span class="line">img = imread(<span class="string">'lena.png'</span>) <span class="comment"># 读入图像(设定合适的路径!) plt.imshow(img)</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h2 id="lambda"><a href="#lambda" class="headerlink" title="lambda"></a>lambda</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(W)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> net.loss(x, t)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># same as</span></span><br><span class="line"></span><br><span class="line">f = <span class="keyword">lambda</span> w: net.loss(x, t)</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/10/Make-Your-Own-Neural-Network/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2041,229 +2232,11 @@ function category_js () {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/29/Head-First-Java-Chapter-1-4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Max Foo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Max Foo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/29/Head-First-Java-Chapter-1-4/" itemprop="url">Head First Java Chapter 1 - 4</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-29T12:02:04+08:00">
-                2019-12-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/" itemprop="url" rel="index">
-                    <span itemprop="name">Book</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/Head-First-Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Head First Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Chapter-1"><a href="#Chapter-1" class="headerlink" title="Chapter 1"></a>Chapter 1</h2><hr>
-<h3 id="Compilier-work-flow"><a href="#Compilier-work-flow" class="headerlink" title="Compilier work flow"></a>Compilier work flow</h3><p>.java source file -&gt; compilier -&gt; .class -&gt; JVM -&gt; run</p>
-<ul>
-<li>every class will compiler to a .class file even they are in the same source file</li>
-</ul>
-<h3 id="How-to-compiler-and-run-java-programme"><a href="#How-to-compiler-and-run-java-programme" class="headerlink" title="How to compiler and run java programme"></a>How to compiler and run java programme</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">javac Source.java</span><br><span class="line">java Source</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="Basic-concept"><a href="#Basic-concept" class="headerlink" title="Basic concept"></a>Basic concept</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span>(i)&#123;</span><br><span class="line">    <span class="comment">//wrong</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>int value cannot be used in condition checking.</li>
-</ul>
-<hr>
-<h2 id="Chapter-2"><a href="#Chapter-2" class="headerlink" title="Chapter 2"></a>Chapter 2</h2><p>When child class extends super class</p>
-<ul>
-<li>all method and attributes will be inheritance from super <em>except</em> private method and attributes.</li>
-<li>child class can override method in super class</br>
-
-
-</li>
-</ul>
-<p>All object live in heap no matter how is it created</p>
-<p>public static final variable can be interrupt as gobal variable</p>
-<hr>
-<h2 id="Chapter-3"><a href="#Chapter-3" class="headerlink" title="Chapter 3"></a>Chapter 3</h2><p>floating-point number default type is double.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span> i = <span class="number">23.5</span>; <span class="comment">// wrong</span></span><br><span class="line"><span class="keyword">byte</span> i = <span class="number">23.5f</span>; <span class="comment">//right</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
-<li>obj name in Java is reference only</li>
-<li>obj name can be reuse to reference different obj of the same type (not applicable if it is final variable)</li>
-<li>when an obj do not have any reference to access, it will be clean by the garbage collector</li>
-</ul>
-<hr>
-<h2 id="Chapter-4"><a href="#Chapter-4" class="headerlink" title="Chapter 4"></a>Chapter 4</h2><ul>
-<li>When passing obj to method, we are passing a copy of the reference to the method, not the obj itself</li>
-<li>The return value of a method must compatible with the declared type</li>
-</ul>
-<h3 id="Encapsulation"><a href="#Encapsulation" class="headerlink" title="Encapsulation"></a>Encapsulation</h3><ul>
-<li>set the attributes to private and create setter and getter</li>
-<li>-&gt; ensure the data integrity</li>
-<li>-&gt; eg. safety checking inside the setter (balance cannot be negative)</li>
-</ul>
-<h3 id="Default-value-of-instace-variable-obj-attributes"><a href="#Default-value-of-instace-variable-obj-attributes" class="headerlink" title="Default value of instace variable (obj attributes)"></a>Default value of instace variable (obj attributes)</h3><ul>
-<li>int/floting point number -&gt; 0/0.0</li>
-<li>bollean -&gt; false</li>
-<li>obj reference -&gt; null</li>
-</ul>
-<h3 id="Local-variable-variable-inside-method-do-not-have-default-value"><a href="#Local-variable-variable-inside-method-do-not-have-default-value" class="headerlink" title="Local variable (variable inside method) do not have default value"></a>Local variable (variable inside method) do not have default value</h3><ul>
-<li>intialization must be done before use</li>
-<li>otherwise -&gt; complie error</li>
-<li>see exp below</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        String ad;</span><br><span class="line">        System.out.println(ad);</span><br><span class="line"> &#125;</span><br><span class="line"><span class="comment">//  complie error</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="and-equals-method"><a href="#and-equals-method" class="headerlink" title="== and .equals() method"></a>== and .equals() method</h3><ul>
-<li>== is used to check if two obj reference refer to the same obj </li>
-<li>except one or both side of the == is prmitive type number</li>
-<li>see the example below<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                <span class="comment">// write your code here</span></span><br><span class="line">                <span class="keyword">float</span> p = (<span class="keyword">float</span>)(<span class="number">25</span>);</span><br><span class="line">                <span class="keyword">double</span> q = (<span class="keyword">double</span>)(<span class="number">25</span>);</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">                <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">if</span> (p == q) &#123;</span><br><span class="line">                    result = <span class="number">1</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    result = <span class="number">2</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                System.out.println(<span class="string">"result is "</span>+result);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">result is <span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
-<ul>
-<li>.equal() method can be override to compare the actual meaning of equal</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
  <nav class="pagination">
-   <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="accessibility.next_page"></i></a>
+   <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="accessibility.next_page"></i></a>
  </nav>
 
 
@@ -2308,7 +2281,7 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">90</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2319,7 +2292,7 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>

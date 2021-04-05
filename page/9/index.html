@@ -271,6 +271,224 @@ function category_js () {
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/29/Head-First-Java-Chapter-1-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/29/Head-First-Java-Chapter-1-4/" itemprop="url">Head First Java Chapter 1 - 4</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-29T12:02:04+08:00">
+                2019-12-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/" itemprop="url" rel="index">
+                    <span itemprop="name">Book</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/Head-First-Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Head First Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Chapter-1"><a href="#Chapter-1" class="headerlink" title="Chapter 1"></a>Chapter 1</h2><hr>
+<h3 id="Compilier-work-flow"><a href="#Compilier-work-flow" class="headerlink" title="Compilier work flow"></a>Compilier work flow</h3><p>.java source file -&gt; compilier -&gt; .class -&gt; JVM -&gt; run</p>
+<ul>
+<li>every class will compiler to a .class file even they are in the same source file</li>
+</ul>
+<h3 id="How-to-compiler-and-run-java-programme"><a href="#How-to-compiler-and-run-java-programme" class="headerlink" title="How to compiler and run java programme"></a>How to compiler and run java programme</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">javac Source.java</span><br><span class="line">java Source</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Basic-concept"><a href="#Basic-concept" class="headerlink" title="Basic concept"></a>Basic concept</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span>(i)&#123;</span><br><span class="line">    <span class="comment">//wrong</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>int value cannot be used in condition checking.</li>
+</ul>
+<hr>
+<h2 id="Chapter-2"><a href="#Chapter-2" class="headerlink" title="Chapter 2"></a>Chapter 2</h2><p>When child class extends super class</p>
+<ul>
+<li>all method and attributes will be inheritance from super <em>except</em> private method and attributes.</li>
+<li>child class can override method in super class</br>
+
+
+</li>
+</ul>
+<p>All object live in heap no matter how is it created</p>
+<p>public static final variable can be interrupt as gobal variable</p>
+<hr>
+<h2 id="Chapter-3"><a href="#Chapter-3" class="headerlink" title="Chapter 3"></a>Chapter 3</h2><p>floating-point number default type is double.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span> i = <span class="number">23.5</span>; <span class="comment">// wrong</span></span><br><span class="line"><span class="keyword">byte</span> i = <span class="number">23.5f</span>; <span class="comment">//right</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
+<li>obj name in Java is reference only</li>
+<li>obj name can be reuse to reference different obj of the same type (not applicable if it is final variable)</li>
+<li>when an obj do not have any reference to access, it will be clean by the garbage collector</li>
+</ul>
+<hr>
+<h2 id="Chapter-4"><a href="#Chapter-4" class="headerlink" title="Chapter 4"></a>Chapter 4</h2><ul>
+<li>When passing obj to method, we are passing a copy of the reference to the method, not the obj itself</li>
+<li>The return value of a method must compatible with the declared type</li>
+</ul>
+<h3 id="Encapsulation"><a href="#Encapsulation" class="headerlink" title="Encapsulation"></a>Encapsulation</h3><ul>
+<li>set the attributes to private and create setter and getter</li>
+<li>-&gt; ensure the data integrity</li>
+<li>-&gt; eg. safety checking inside the setter (balance cannot be negative)</li>
+</ul>
+<h3 id="Default-value-of-instace-variable-obj-attributes"><a href="#Default-value-of-instace-variable-obj-attributes" class="headerlink" title="Default value of instace variable (obj attributes)"></a>Default value of instace variable (obj attributes)</h3><ul>
+<li>int/floting point number -&gt; 0/0.0</li>
+<li>bollean -&gt; false</li>
+<li>obj reference -&gt; null</li>
+</ul>
+<h3 id="Local-variable-variable-inside-method-do-not-have-default-value"><a href="#Local-variable-variable-inside-method-do-not-have-default-value" class="headerlink" title="Local variable (variable inside method) do not have default value"></a>Local variable (variable inside method) do not have default value</h3><ul>
+<li>intialization must be done before use</li>
+<li>otherwise -&gt; complie error</li>
+<li>see exp below</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        String ad;</span><br><span class="line">        System.out.println(ad);</span><br><span class="line"> &#125;</span><br><span class="line"><span class="comment">//  complie error</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="and-equals-method"><a href="#and-equals-method" class="headerlink" title="== and .equals() method"></a>== and .equals() method</h3><ul>
+<li>== is used to check if two obj reference refer to the same obj </li>
+<li>except one or both side of the == is prmitive type number</li>
+<li>see the example below<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                <span class="comment">// write your code here</span></span><br><span class="line">                <span class="keyword">float</span> p = (<span class="keyword">float</span>)(<span class="number">25</span>);</span><br><span class="line">                <span class="keyword">double</span> q = (<span class="keyword">double</span>)(<span class="number">25</span>);</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">                <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">if</span> (p == q) &#123;</span><br><span class="line">                    result = <span class="number">1</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    result = <span class="number">2</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                System.out.println(<span class="string">"result is "</span>+result);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">result is <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li>.equal() method can be override to compare the actual meaning of equal</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/25/Access-Modifiers/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1642,198 +1860,11 @@ function category_js () {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/24/Set-up-Hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Max Foo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Max Foo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/24/Set-up-Hexo/" itemprop="url">Set up Hexo</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-24T00:55:19+08:00">
-                2019-12-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Static-Web/" itemprop="url" rel="index">
-                    <span itemprop="name">Static Web</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Static-Web/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Set-up-Enviroment"><a href="#Set-up-Enviroment" class="headerlink" title="Set up Enviroment"></a>Set up Enviroment</h2><ul>
-<li>install <a href="https://nodejs.org/en/" target="_blank" rel="noopener">Nodejs</a></li>
-</ul>
-<ul>
-<li>install <a href="https://git-scm.com/download/mac" target="_blank" rel="noopener">git</a></li>
-</ul>
-<h2 id="Set-up-Hexo"><a href="#Set-up-Hexo" class="headerlink" title="Set up Hexo"></a>Set up Hexo</h2><ul>
-<li>install hexo</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<h3 id="Create-a-directory-for-the-blog"><a href="#Create-a-directory-for-the-blog" class="headerlink" title="Create a directory for the blog"></a>Create a directory for the blog</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog</span><br></pre></td></tr></table></figure>
-
-<h2 id="Intialization"><a href="#Intialization" class="headerlink" title="Intialization"></a>Intialization</h2><ul>
-<li>go to the blog directory</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo hexo init</span><br></pre></td></tr></table></figure>
-
-<h2 id="Start-the-server"><a href="#Start-the-server" class="headerlink" title="Start the server"></a>Start the server</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<h2 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n <span class="string">"new post title"</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Save-change"><a href="#Save-change" class="headerlink" title="Save change"></a>Save change</h3><ul>
-<li>whenever a change is made</li>
-<li>execute the following cmd in sequence</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo c <span class="comment">#clean the cache</span></span><br><span class="line">hexo g <span class="comment">#generate the static file</span></span><br><span class="line">hexo d <span class="comment"># deploy on server</span></span><br><span class="line">    or</span><br><span class="line">hexo s <span class="comment"># start running at the local server</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="Change-Theme"><a href="#Change-Theme" class="headerlink" title="Change Theme"></a>Change Theme</h1><ul>
-<li><p>download theme to themes dir</p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>set up </p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- <span class="built_in">Set</span> theme <span class="keyword">in</span> main Hexo root config _config.yml file: --&gt;</span><br><span class="line"></span><br><span class="line"><span class="function">theme: <span class="title">next</span></span></span><br></pre></td></tr></table></figure></li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
  <nav class="pagination">
-   <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span>
+   <a class="extend prev" rel="prev" href="/page/8/"><i class="fa fa-angle-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/10/"><i class="fa fa-angle-right" aria-label="accessibility.next_page"></i></a>
  </nav>
 
 
@@ -1878,7 +1909,7 @@ function category_js () {
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">90</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1889,7 +1920,7 @@ function category_js () {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>

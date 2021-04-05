@@ -271,6 +271,164 @@ function category_js () {
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/17/JSP-05/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/09/17/JSP-05/" itemprop="url">JSP 05 EL</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-17T16:27:15+08:00">
+                2020-09-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JSP/" itemprop="url" rel="index">
+                    <span itemprop="name">JSP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="EL"><a href="#EL" class="headerlink" title="EL"></a>EL</h1><ul>
+<li>it is used to output the domain obj in jsp</li>
+<li>It is design for replacing expression tag in jsp<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// example: difference between EL and expression tag</span></span><br><span class="line">    &lt;%</span><br><span class="line">        request.setAttribute(<span class="string">"key1"</span>,<span class="string">"value1"</span>);</span><br><span class="line">    %&gt;</span><br><span class="line">    expression tag：&lt;%=request.getAttribute(<span class="string">"key2"</span>))%&gt;&lt;br/&gt;</span><br><span class="line">    EL ：$&#123;key1&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// output:</span></span><br><span class="line"> expression tag：<span class="keyword">null</span></span><br><span class="line"> EL ： <span class="comment">//nothing will output will the value is null</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="Output-domain-obj"><a href="#Output-domain-obj" class="headerlink" title="Output domain obj"></a>Output domain obj</h2><ul>
+<li>when 4 domain obj have the same key</li>
+<li>it will output the obj with smallest scope<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">   </span><br><span class="line">    request.setAttribute(<span class="string">"key"</span>, <span class="string">"request"</span>);</span><br><span class="line">    session.setAttribute(<span class="string">"key"</span>, <span class="string">"session"</span>);</span><br><span class="line">    application.setAttribute(<span class="string">"key"</span>, <span class="string">"application"</span>);</span><br><span class="line">    pageContext.setAttribute(<span class="string">"key"</span>, <span class="string">"pageContext"</span>);</span><br><span class="line">%&gt;</span><br><span class="line">$&#123; key &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// output:</span></span><br><span class="line"><span class="comment">// request</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<h2 id="Output-Bean-obj"><a href="#Output-Bean-obj" class="headerlink" title="Output Bean obj"></a>Output Bean obj</h2><ul>
+<li>EL will use the getter method in bean class to get the value of that attr.</li>
+<li>it will be shown if the getter method is provided, even the bean class do not contain that attr. <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">  &lt;%</span><br><span class="line">        Person person = <span class="keyword">new</span> Person();</span><br><span class="line">        person.setName(<span class="string">"ken！"</span>);</span><br><span class="line">        person.setPhones(<span class="keyword">new</span> String[]&#123;<span class="string">"18610541354"</span>,<span class="string">"18688886666"</span>,<span class="string">"18699998888"</span>&#125;);</span><br><span class="line"></span><br><span class="line">        List&lt;String&gt; cities = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        cities.add(<span class="string">"hk"</span>);</span><br><span class="line">        cities.add(<span class="string">"ny"</span>);</span><br><span class="line">        cities.add(<span class="string">"ca"</span>);</span><br><span class="line">        person.setCities(cities);</span><br><span class="line"></span><br><span class="line">        Map&lt;String,Object&gt;map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        map.put(<span class="string">"key1"</span>,<span class="string">"value1"</span>);</span><br><span class="line">        map.put(<span class="string">"key2"</span>,<span class="string">"value2"</span>);</span><br><span class="line">        map.put(<span class="string">"key3"</span>,<span class="string">"value3"</span>);</span><br><span class="line">        person.setMap(map);</span><br><span class="line"></span><br><span class="line">        pageContext.setAttribute(<span class="string">"p"</span>, person);</span><br><span class="line">    %&gt;</span><br><span class="line"></span><br><span class="line">    output Person：$&#123; p &#125;&lt;br/&gt;</span><br><span class="line">    output Person‘s name：$&#123;p.name&#125; &lt;br&gt;</span><br><span class="line">    output Person‘s phones array：$&#123;p.phones[<span class="number">2</span>]&#125; &lt;br&gt;</span><br><span class="line">    output Person‘s cities list：$&#123;p.cities&#125; &lt;br&gt;</span><br><span class="line">    output element inside a cities List：$&#123;p.cities[<span class="number">2</span>]&#125; &lt;br&gt;</span><br><span class="line">    output Person‘s Map: $&#123;p.map&#125; &lt;br&gt;</span><br><span class="line">    output element inside map: $&#123;p.map.key3&#125; &lt;br&gt;</span><br><span class="line">    output Person‘s age：$&#123;p.age&#125; &lt;br&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// output:</span></span><br><span class="line">output Person：：Person&#123;name=ken！, phones=[<span class="number">18610541354</span>, <span class="number">18688886666</span>, <span class="number">18699998888</span>], cities=[hk, ny, ca], map=&#123;key1=value1, key2=value2, key3=value3&#125;&#125;</span><br><span class="line">output Person‘s name：ken！</span><br><span class="line">output Person‘s phones array：<span class="number">18699998888</span></span><br><span class="line">output Person‘s cities list：[hk, ny, ca]</span><br><span class="line">output element inside a cities List：ca</span><br><span class="line">output Person‘s Map: &#123;key1=value1, key2=value2, key3=value3&#125;</span><br><span class="line">output element inside map: value3</span><br><span class="line">output Person‘s age：<span class="number">18</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/17/JSP-02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1944,200 +2102,11 @@ one() same as bind(), but the events only response once<br>unbind()<br>live() sa
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/12/JavaWeb-06-jQuery/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Max Foo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Max Foo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/12/JavaWeb-06-jQuery/" itemprop="url">JavaWeb 06 jQuery</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-12T00:36:09+08:00">
-                2020-07-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaWeb/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaWeb</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaWeb/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h2 id=""><a href="#" class="headerlink" title="$"></a>$</h2><ul>
-<li>$() represent a fuction<h3 id="4-ways-to-use"><a href="#4-ways-to-use" class="headerlink" title="4 ways to use $()"></a>4 ways to use $()</h3></li>
-</ul>
-<ol>
-<li><p>passing function</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// window.onload = function()&#123;&#125;</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                    </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>passing css selector</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// document.getElement</span></span><br><span class="line">$(#btn01)</span><br></pre></td></tr></table></figure></li>
-<li><p>passing html string</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// create html node</span></span><br><span class="line">$(&lt;div&gt;</span><br><span class="line">        &lt;a&gt;create a div node&lt;<span class="regexp">/a&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>passing dom obj</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// convert dom obj to jQuery obj</span></span><br><span class="line"><span class="keyword">var</span> i = <span class="built_in">document</span>.getElementById(<span class="string">"id"</span>);</span><br><span class="line">$(i)</span><br></pre></td></tr></table></figure>
-<h2 id="diff-between-jQuery-obj-and-DOM-obj"><a href="#diff-between-jQuery-obj-and-DOM-obj" class="headerlink" title="diff. between jQuery obj and DOM obj"></a>diff. between jQuery obj and DOM obj</h2></li>
-</ol>
-<p>alter DOM obj -&gt; [object HTMLTagNameElement]<br>alter jQuery obj -&gt; [object Object]<br>DOM obj cannot use jQuery obj’s function and attri. vice versa</p>
-<h2 id="what-is-jQuery-obj"><a href="#what-is-jQuery-obj" class="headerlink" title="what is jQuery obj"></a>what is jQuery obj</h2><ul>
-<li>jQuery obj are actually dom object array + a series of function provide by jQuery</li>
-</ul>
-<h2 id="Convert"><a href="#Convert" class="headerlink" title="Convert"></a>Convert</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DOM -&gt; jQuery</span><br><span class="line">$(DOM obj)</span><br><span class="line"></span><br><span class="line">jQuery -&gt; DOM</span><br><span class="line">$obj[number]</span><br></pre></td></tr></table></figure>
-<h2 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h2><h3 id="basic-filter"><a href="#basic-filter" class="headerlink" title="basic filter"></a>basic filter</h3><p>:first<br><br>:last<br><br>:eq(index)<br><br>:not(selector)<br><br>:animated<br></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- eg --&gt;</span><br><span class="line">$(<span class="string">"li:first"</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="content-filter"><a href="#content-filter" class="headerlink" title="content filter"></a>content filter</h3><p>:contains(text)<br><br>:empty<br></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- eg --&gt;</span><br><span class="line">$(<span class="string">"li:contains('apple')"</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="attr-filter"><a href="#attr-filter" class="headerlink" title="attr. filter"></a>attr. filter</h3><p>[attr.]<br><br>[attr. = value]<br><br>[attr.^ = value]<br><br>[attr1.][attr2.]<br></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- eg --&gt;</span><br><span class="line">$(<span class="string">"input[name='fruits']"</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="form-filter"><a href="#form-filter" class="headerlink" title="form filter"></a>form filter</h3><p>:input<br><br>:text<br><br>:password<br><br>:radio<br><br>:checkbox<br><br>:checked<br><br>:selected<br></p>
-<h2 id="jQuery-attr-manipulation"><a href="#jQuery-attr-manipulation" class="headerlink" title="jQuery attr. manipulation"></a>jQuery attr. manipulation</h2><ul>
-<li>getting attr. -&gt; do not pass parameter</li>
-<li>setting attr. -&gt; pass parameter<br>.html()     -&gt; same as innerHTML<br><br>.val()      -&gt; get value in <b>form</b><br><br>.text()     -&gt; same as innerText</li>
-</ul>
-<h2 id="attr-do-not-use-on-checked、readOnly、selected、disabled"><a href="#attr-do-not-use-on-checked、readOnly、selected、disabled" class="headerlink" title="attr() do not use on checked、readOnly、selected、disabled"></a>attr() do not use on checked、readOnly、selected、disabled</h2><ul>
-<li>used to set and get the attr. of jQuery obj<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// eg. get the attr. value</span></span><br><span class="line">$(<span class="string">"input"</span>).attr(<span class="string">"value"</span>);  </span><br><span class="line"></span><br><span class="line"><span class="comment">// eg. set the attr. value</span></span><br><span class="line">$(<span class="string">"input"</span>).attr(<span class="string">"value"</span>,<span class="string">"hi"</span>);</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="prop-use-on-checked、readOnly、selected、disabled"><a href="#prop-use-on-checked、readOnly、selected、disabled" class="headerlink" title="prop() use on checked、readOnly、selected、disabled"></a>prop() use on checked、readOnly、selected、disabled</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> allCheckBoxes = $(<span class="string">"input[type='checkbox']"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//select all</span></span><br><span class="line">$(<span class="string">"#btn01"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    allCheckBoxes.prop(<span class="string">"checked"</span>,<span class="literal">true</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
  <nav class="pagination">
-   <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="accessibility.next_page"></i></a>
+   <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="accessibility.prev_page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="accessibility.next_page"></i></a>
  </nav>
 
 
@@ -2182,7 +2151,7 @@ one() same as bind(), but the events only response once<br>unbind()<br>live() sa
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">90</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2193,7 +2162,7 @@ one() same as bind(), but the events only response once<br>unbind()<br>live() sa
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
