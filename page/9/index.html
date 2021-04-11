@@ -271,6 +271,742 @@ function category_js () {
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/30/Thread-Lock-in-java/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/30/Thread-Lock-in-java/" itemprop="url">Thread Lock in  java</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-30T17:45:49+08:00">
+                2019-12-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaSE/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaSE</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Use-lock-to-solve-the-data-integrity-problem-due-to-muti-thread-data-sharing-problem"><a href="#Use-lock-to-solve-the-data-integrity-problem-due-to-muti-thread-data-sharing-problem" class="headerlink" title="Use lock to solve the data integrity problem due to muti-thread data sharing problem"></a>Use lock to solve the data integrity problem due to muti-thread data sharing problem</h2><ol>
+<li>create a lock obj</li>
+<li>put the operation in try finally block</li>
+<li>lock.lock in the try block</li>
+<li>lock.unlock in finally block<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> ReentrantLock lock = <span class="keyword">new</span> ReentrantLock();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(ture)&#123;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            lock.lock();</span><br><span class="line">            <span class="comment">// operation</span></span><br><span class="line">        &#125;<span class="keyword">final</span>&#123;</span><br><span class="line">            lock.unlock();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<hr>
+<h2 id="Difference-between-synchronized-method-and-lock-method"><a href="#Difference-between-synchronized-method-and-lock-method" class="headerlink" title="Difference between synchronized method and lock method"></a>Difference between synchronized method and lock method</h2><ul>
+<li>synchronized method will automatically release the lock </li>
+<li>lock method need to release the lock manully</li>
+</ul>
+<img src="/images/Workflow-to-solve-muti-thread-problem.png" class="" width="600" height="600" title="Workflow to solve mutithread-problem">
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/30/Thread-synchronization-in-java/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/30/Thread-synchronization-in-java/" itemprop="url">Thread synchronization in  java</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-30T15:27:33+08:00">
+                2019-12-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaSE/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaSE</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Synchronized-code-block-method"><a href="#Synchronized-code-block-method" class="headerlink" title="Synchronized code block method"></a>Synchronized code block method</h2><ul>
+<li>synchronized(synchronized monitor)</li>
+</ul>
+<hr>
+<h3 id="For-class-implement-runnable-interface"><a href="#For-class-implement-runnable-interface" class="headerlink" title="For class implement runnable interface:"></a>For class implement runnable interface:</h3><ul>
+<li>Synchronized monitor(lock) -&gt; any obj can act as a lock</li>
+<li>usually use the this obj as a lock<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span>(<span class="keyword">this</span>)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>above method usually use when the class implement runnable interface since they share the same class obj </li>
+</ul>
+<h3 id="For-class-extends-Thread-class"><a href="#For-class-extends-Thread-class" class="headerlink" title="For class extends Thread class"></a>For class extends Thread class</h3><hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">synchronized</span>(ClassName<span class="class">.<span class="keyword">class</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>above method usually use when the class extends the Thread class. ClassName.class is also an obj</li>
+</ul>
+<hr>
+<ul>
+<li><em>make sure the threads are using the same lock(obj) in both two method</em></li>
+</ul>
+<hr>
+<h2 id="Synchronized-method"><a href="#Synchronized-method" class="headerlink" title="Synchronized method"></a>Synchronized method</h2><h3 id="For-class-implement-runnable-interface-1"><a href="#For-class-implement-runnable-interface-1" class="headerlink" title="For class implement runnable interface:"></a>For class implement runnable interface:</h3><ul>
+<li>decalre a Synchronized method<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">// synchronized monitor is this</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<hr>
+<h3 id="For-class-extends-Thread-class-1"><a href="#For-class-extends-Thread-class-1" class="headerlink" title="For class extends Thread class"></a>For class extends Thread class</h3><ul>
+<li>decalre a static method </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="comment">// synchronized monitor is Classname.class</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/30/Thread-in-Java/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/30/Thread-in-Java/" itemprop="url">Thread in Java</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-30T12:04:39+08:00">
+                2019-12-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaSE/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaSE</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Basic-concept"><a href="#Basic-concept" class="headerlink" title="Basic concept"></a>Basic concept</h2><ul>
+<li>Threads have indepent stack and programme counter</li>
+<li>Threads share same heap, and method area</li>
+<li>A java programme has at least 3 threads including main, garbage collection, and exception handle.</li>
+<li>There are 2 types of threads</li>
+<li>Daemon thread eg: garbage collection, and exception handle thread</li>
+<li>User thread eg: main </li>
+<li>Daemon will automatically stop if user thread stops </li>
+</ul>
+<h2 id="Create-Thread"><a href="#Create-Thread" class="headerlink" title="Create Thread"></a>Create Thread</h2><h3 id="Method-1"><a href="#Method-1" class="headerlink" title="Method 1:"></a>Method 1:</h3><ol>
+<li>inherit the Thread class</li>
+<li>override run method</li>
+<li>create obj</li>
+<li><em>obj.start()</em>    //not run(), run() will not create a new thread</li>
+</ol>
+<ul>
+<li>Start() -&gt;causes JVM will automatically call run method</li>
+<li>one obj can only create one thread only</li>
+<li>multiple objs is required to create mutilple threads<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//create thread using anonymous obj</span></span><br><span class="line"><span class="keyword">new</span> Thread()&#123;</span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                       </span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"> &#125;.start();ß</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="Method-2"><a href="#Method-2" class="headerlink" title="Method 2:"></a>Method 2:</h3><ol>
+<li>decalre Mythread class and implement runnable interface</li>
+<li>implemrnt run method</li>
+<li>decalre Mythread obj</li>
+<li>decalre thread obj and pass Mythread obj as parameter</li>
+<li>threadObj.start() <h3 id="mutiple-thread"><a href="#mutiple-thread" class="headerlink" title="mutiple thread:"></a>mutiple thread:</h3></li>
+</ol>
+<ul>
+<li>when using the same MyThreadObj to declre mutiple thread, those threads are sharing one obj with the same data (attributes) </li>
+</ul>
+<hr>
+<h2 id="Method-in-thread-class"><a href="#Method-in-thread-class" class="headerlink" title="Method in thread class"></a>Method in thread class</h2><h3 id="Thread-currentThread"><a href="#Thread-currentThread" class="headerlink" title="Thread.currentThread()"></a>Thread.currentThread()</h3><ul>
+<li>get the current thread</li>
+</ul>
+<h3 id="yield"><a href="#yield" class="headerlink" title="yield()"></a>yield()</h3><ul>
+<li>tell cpu to halt the current and give the execution chance to other threads</li>
+<li>the scheduling is depend on operating system not the thread</li>
+</ul>
+<h3 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h3><ul>
+<li>wait until other thread to complete</li>
+<li>currentThread will be blocked until other thread has completed<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    ObjNeedToCompletBeforeMe.join();</span><br><span class="line">&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="sleep-long-millisecond"><a href="#sleep-long-millisecond" class="headerlink" title="sleep(long millisecond)"></a>sleep(long millisecond)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">     sleep(<span class="number">10000</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="isAlive"><a href="#isAlive" class="headerlink" title="isAlive()"></a>isAlive()</h3><hr>
+<h2 id="Thread-priority"><a href="#Thread-priority" class="headerlink" title="Thread priority"></a>Thread priority</h2><h3 id="final-static-int-variable"><a href="#final-static-int-variable" class="headerlink" title="final static int variable"></a>final static int variable</h3><ul>
+<li>MIN_PRIORITY = 1</li>
+<li>NORM_PRIORITY = 5</li>
+<li>MAX_PRIORITY = 10</li>
+</ul>
+<h3 id="getPriority"><a href="#getPriority" class="headerlink" title="getPriority()"></a>getPriority()</h3><h3 id="setPriority-set-before-the-thread-start"><a href="#setPriority-set-before-the-thread-start" class="headerlink" title="setPriority() //set before the thread start"></a>setPriority() //set before the thread start</h3><hr>
+<h2 id="Thread-status"><a href="#Thread-status" class="headerlink" title="Thread.status"></a>Thread.status</h2><ul>
+<li>NEW -&gt; not yet started</li>
+<li>RUNNABLE</li>
+<li>WAITING</li>
+<li>TIMED_WAITING</li>
+<li>TERMINATED</li>
+</ul>
+<img src="/images/Java-Thread-Life-Cycle.png" class="" width="600" height="600" title="Thread life cycle">
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/29/Head-First-Java-Chapter-5-6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/29/Head-First-Java-Chapter-5-6/" itemprop="url">Head First Java Chapter 5 - 6</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-29T17:14:14+08:00">
+                2019-12-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/" itemprop="url" rel="index">
+                    <span itemprop="name">Book</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/Head-First-Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Head First Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Chapter-5"><a href="#Chapter-5" class="headerlink" title="Chapter 5"></a>Chapter 5</h2><hr>
+<h3 id="Workflow-of-developing-a-class"><a href="#Workflow-of-developing-a-class" class="headerlink" title="Workflow of developing a class"></a>Workflow of developing a class</h3><ul>
+<li><ol>
+<li>figure out what the class should do</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>list the attributes and methods</li>
+</ol>
+</li>
+<li><ol start="3">
+<li><strong>write the test class</strong></li>
+</ol>
+</li>
+<li><ol start="4">
+<li>implement the class</li>
+</ol>
+</li>
+<li><ol start="5">
+<li>test</li>
+</ol>
+</li>
+<li><ol start="6">
+<li>debug</li>
+</ol>
+</li>
+</ul>
+<h3 id="Casting"><a href="#Casting" class="headerlink" title="Casting"></a>Casting</h3><p>When changing a bigger obj to smaller obj, casting is need (lose accuracy)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//eg</span></span><br><span class="line"><span class="keyword">long</span> x = <span class="number">8</span>;</span><br><span class="line"><span class="keyword">int</span> y = (<span class="keyword">int</span>) x;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//weird result when the range exceed the smaller obj</span></span><br><span class="line"><span class="keyword">long</span> y = <span class="number">40002</span>;</span><br><span class="line"><span class="keyword">short</span> x = (<span class="keyword">short</span>) y;</span><br><span class="line">System.out.println(x);  <span class="comment">//-25534</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="Chapter-6"><a href="#Chapter-6" class="headerlink" title="Chapter 6"></a>Chapter 6</h2><h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><p>ArrayList is a class</p>
+<ul>
+<li>ArrayList obj just like other obj lives in heap</li>
+<li>boxing is needed to add the primitive type to the ArrayList</li>
+</ul>
+<h3 id="amp-amp-amp-and"><a href="#amp-amp-amp-and" class="headerlink" title="&amp;&amp;, &amp; and ||, |"></a>&amp;&amp;, &amp; and ||, |</h3><ul>
+<li><p>&amp; and |</p>
+</li>
+<li><p>jvm will force to check oprands in both side.</p>
+</li>
+<li><p>&amp;&amp; and || are know as short circuit oprators</p>
+</li>
+<li><p>the second oprand will only be checked if necessary</p>
+</li>
+</ul>
+<h3 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h3><ul>
+<li>java.util.ArrayList</li>
+<li>java.util is the name of package</li>
+<li>ArrayList is the class name</li>
+</ul>
+<h3 id="import-all-classes-in-a-package"><a href="#import-all-classes-in-a-package" class="headerlink" title="import all classes in a package"></a>import all classes in a package</h3><ul>
+<li>if * is used to import all classes in a package</li>
+<li>it will only affect the compilie time, not the run time</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/29/Head-First-Java-Chapter-1-4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1178,688 +1914,6 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/25/Data-type/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Max Foo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Max Foo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/25/Data-type/" itemprop="url">Data type</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-25T20:28:44+08:00">
-                2019-12-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaSE/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaSE</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Data-type"><a href="#Data-type" class="headerlink" title="Data type"></a>Data type</h2><table>
-<thead>
-<tr>
-<th>Data type</th>
-<th align="center">Size(byte)</th>
-<th align="right">Range</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>byte</td>
-<td align="center">1</td>
-<td align="right">-128 ~ 127</td>
-</tr>
-<tr>
-<td>short</td>
-<td align="center">2</td>
-<td align="right">~ ±32000</td>
-</tr>
-<tr>
-<td>int</td>
-<td align="center">4</td>
-<td align="right">~ ±21亿</td>
-</tr>
-<tr>
-<td>long</td>
-<td align="center">8</td>
-<td align="right">~ ±2^63</td>
-</tr>
-<tr>
-<td>float</td>
-<td align="center">4</td>
-<td align="right">~ ±3^38</td>
-</tr>
-<tr>
-<td>double</td>
-<td align="center">8</td>
-<td align="right">~ ±1^308</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="Data-decoration"><a href="#Data-decoration" class="headerlink" title="Data decoration"></a>Data decoration</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">15</span>;</span><br><span class="line"><span class="keyword">int</span> b = <span class="number">015</span>;    <span class="comment">//oct</span></span><br><span class="line"><span class="keyword">int</span> c = <span class="number">0x15</span>;   <span class="comment">//hex</span></span><br><span class="line">ind d = <span class="number">0b1101</span>; <span class="comment">//bin</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> e = <span class="number">74L</span>;   <span class="comment">// change int to long</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">float</span> f = <span class="number">3.14F</span>;<span class="comment">//change double to float</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> g = <span class="number">3.14</span>;</span><br></pre></td></tr></table></figure>
-<hr>
-<ul>
-<li>Do not compare floating-point number since it is not accurate</li>
-<li>use BigDecimal instead</li>
-</ul>
-<hr>
-<h2 id="Arithmetic-Operation"><a href="#Arithmetic-Operation" class="headerlink" title="Arithmetic Operation"></a>Arithmetic Operation</h2><img src="/images/df.png" class="" width="600" height="600" title="整數運算">
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/25/Coding-Guidelines/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Max Foo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Max Foo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/25/Coding-Guidelines/" itemprop="url">Coding Guidelines</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-25T19:22:38+08:00">
-                2019-12-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaSE/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaSE</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Coding-Guidelines"><a href="#Coding-Guidelines" class="headerlink" title="Coding Guidelines"></a>Coding Guidelines</h1><hr>
-<h3 id="Define-each-variable-just-before-it-is-used-for-the-first-time"><a href="#Define-each-variable-just-before-it-is-used-for-the-first-time" class="headerlink" title="Define each variable just before it is used for the first time:"></a>Define each variable just before it is used for the first time:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line"><span class="keyword">double</span> xold; <span class="comment">// Don't </span></span><br><span class="line"><span class="keyword">double</span> xnew;</span><br><span class="line"><span class="keyword">boolean</span> more;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="Do-not-define-two-variables-on-the-same-line"><a href="#Do-not-define-two-variables-on-the-same-line" class="headerlink" title="Do not define two variables on the same line:"></a>Do not define two variables on the same line:</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> dimes = <span class="number">0</span>, nickels = <span class="number">0</span>;</span><br><span class="line"> <span class="comment">// Don't</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="Naming"><a href="#Naming" class="headerlink" title="Naming"></a>Naming</h2><ol>
-<li><ul>
-<li>Class Name : </li>
-<li>use capital letter for each word </li>
-<li>eg : Man, GoodMan </li>
-</ul>
-</li>
-</ol>
-<hr>
-<ol start="2">
-<li><ul>
-<li>Variable and Method : </li>
-<li>camel style naming</li>
-<li>eg : getName(), eat()</li>
-</ul>
-</li>
-</ol>
-<hr>
-<ol start="3">
-<li><ul>
-<li>Constant :</li>
-<li>use All capital letter and undersocre</li>
-<li>eg : MAX_VALUE  </li>
-</ul>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/25/Deploy-Hexo-on-github/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Max Foo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Max Foo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/25/Deploy-Hexo-on-github/" itemprop="url">Deploy Hexo on github</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-25T12:58:49+08:00">
-                2019-12-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Static-Web/" itemprop="url" rel="index">
-                    <span itemprop="name">Static Web</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Static-Web/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Create-a-new-git-repository"><a href="#Create-a-new-git-repository" class="headerlink" title="Create a new git repository"></a>Create a new git repository</h2><ul>
-<li>The repository name must fulfill the following requirement</li>
-<li>xxx.github.io, where xxx is the github id.</li>
-</ul>
-<h2 id="Install-hexo-deployer-git"><a href="#Install-hexo-deployer-git" class="headerlink" title="Install hexo-deployer-git"></a>Install hexo-deployer-git</h2><ul>
-<li>go to the blog dir</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
-
-<p>Configure the gobal hexo config file (_config.yml)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Path blog/_config.yml</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#append following code in the end of the file</span></span><br><span class="line"></span><br><span class="line">deploy:<span class="built_in">type</span>: git</span><br><span class="line">repository: https://github.com/xxx/xxx.github.io <span class="comment"># where xxx is the github id.</span></span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
-
-
-<h2 id="Depoly"><a href="#Depoly" class="headerlink" title="Depoly"></a>Depoly</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo d <span class="comment"># enter the github id and password</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#xxx.github.io is now hosting the blog</span></span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/24/IntelliJ-Shortcuts/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Max Foo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Max Foo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/24/IntelliJ-Shortcuts/" itemprop="url">IntelliJ Shortcuts</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-24T12:58:49+08:00">
-                2019-12-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/IDE/" itemprop="url" rel="index">
-                    <span itemprop="name">IDE</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/IDE/IntelliJ/" itemprop="url" rel="index">
-                    <span itemprop="name">IntelliJ</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="View"><a href="#View" class="headerlink" title="View"></a>View</h2><h3 id="view-source-code"><a href="#view-source-code" class="headerlink" title="view source code"></a>view source code</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cmd + click</span><br><span class="line">&#96;&#96;&#96; </span><br><span class="line"></span><br><span class="line">### view inheritance tree</span><br></pre></td></tr></table></figure>
-<p>control + h</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">***</span><br><span class="line"></span><br><span class="line">## Type</span><br><span class="line">### System.out.println()</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;bash</span><br><span class="line">sout ↵</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1909,7 +1963,7 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">91</span>
+                  <span class="site-state-item-count">95</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1920,7 +1974,7 @@ Result<figure class="highlight java"><table><tr><td class="gutter"><pre><span cl
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>

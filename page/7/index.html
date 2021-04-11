@@ -271,6 +271,639 @@ function category_js () {
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/04/MySQL-Crash-Course-Chapt-6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/04/MySQL-Crash-Course-Chapt-6/" itemprop="url">MySQL Crash Course Chapt 6</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-04T10:09:13+08:00">
+                2020-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Database/" itemprop="url" rel="index">
+                    <span itemprop="name">Database</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Filtering"><a href="#Filtering" class="headerlink" title="Filtering"></a>Filtering</h1><img src="/images/where-clause-operators.png" class="" width="600" height="600" title="Where clause operators.png">
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> product_name</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">WHERE</span> price &lt; <span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>BETWEEN</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> product_id</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">WHERE</span> product_id <span class="keyword">BETWEEN</span> <span class="number">2</span> <span class="keyword">AND</span> <span class="number">4</span>;</span><br><span class="line"><span class="comment">-- ID 2,3,4 are selected</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>IS NULL</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> email</span><br><span class="line"><span class="keyword">FROM</span> emails</span><br><span class="line"><span class="keyword">WHERE</span> phone <span class="keyword">IS</span> <span class="literal">NULL</span>;</span><br><span class="line"><span class="comment">-- select the email where it have null value in phone</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/04/MySQL-Crash-Course-Chapt-5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/04/MySQL-Crash-Course-Chapt-5/" itemprop="url">MySQL Crash Course Chapt 4</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-04T09:45:23+08:00">
+                2020-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Database/" itemprop="url" rel="index">
+                    <span itemprop="name">Database</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Sorting"><a href="#Sorting" class="headerlink" title="Sorting"></a>Sorting</h1><h2 id="ORDER-BY"><a href="#ORDER-BY" class="headerlink" title="ORDER BY"></a>ORDER BY</h2><ul>
+<li><p>it can apply to the selected column and the non selected column. see exp. below</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> product_name</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> product_name;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> product_name</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> product_id;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>apply to mutiple column (sort by the first column, if the same, sort by the next columns)</p>
+</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> product_name</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> product_price, product_name;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- if two items have same price, then sort by the name</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="DESC-reverse-order-descending"><a href="#DESC-reverse-order-descending" class="headerlink" title="DESC (reverse order, descending)"></a>DESC (reverse order, descending)</h2><ul>
+<li>DESC is only apply to its precedence column<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> product_name</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> product_price <span class="keyword">DESC</span>, product_name;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- sort by the reversed price</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="ASC-ascending"><a href="#ASC-ascending" class="headerlink" title="ASC (ascending)"></a>ASC (ascending)</h2><ul>
+<li>default sorting</li>
+<li>not vert useful</li>
+</ul>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><ul>
+<li>find maximum or minimum by ORDER BY and LIMIT</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> product_name</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> product_price <span class="keyword">DESC</span></span><br><span class="line"><span class="keyword">LIMIT</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<ul>
+<li>Position of ORDER BY Clause When specifying an ORDER BY clause, be sure that it is after the FROM clause. If LIMIT is used, it must come after ORDER BY. Using clauses out of order will generate an error message.</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/03/Sams-teach-yourself-regular-expression-in-10-minutes-chapt-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/03/Sams-teach-yourself-regular-expression-in-10-minutes-chapt-1/" itemprop="url">Sams teach yourself regular expression in 10 minutes chapt 1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-03T23:27:17+08:00">
+                2020-06-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/" itemprop="url" rel="index">
+                    <span itemprop="name">Book</span>
+                  </a>
+                </span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Book/Sams-teach-yourself-regular-expression-in-10-minutes/" itemprop="url" rel="index">
+                    <span itemprop="name">Sams teach yourself regular expression in 10 minutes</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/03/MySQL-Crash-Course-Chapt-4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/03/MySQL-Crash-Course-Chapt-4/" itemprop="url">MySQL Crash Course Chapt 4</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-06-03T00:04:46+08:00">
+                2020-06-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Database/" itemprop="url" rel="index">
+                    <span itemprop="name">Database</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="SELECT"><a href="#SELECT" class="headerlink" title="SELECT"></a>SELECT</h1><ul>
+<li><p>use select keyword to query data from table</br></p>
+</li>
+<li><p>the result is ramdom if no sorting is specify</p>
+</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> product_name, product_id <span class="comment">-- columns</span></span><br><span class="line"><span class="keyword">FROM</span> products; <span class="comment">-- table</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="SELECT-DISTINCT"><a href="#SELECT-DISTINCT" class="headerlink" title="SELECT DISTINCT"></a>SELECT DISTINCT</h2><ul>
+<li>filter out the item having same value</li>
+<li>imp. <space> <space> DISTINCT is applied to all columns</li>
+</ul>
+<h2 id="LIMIT"><a href="#LIMIT" class="headerlink" title="LIMIT"></a>LIMIT</h2><ul>
+<li>rows start from index 0</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> product_name, product_id <span class="comment">-- columns</span></span><br><span class="line"><span class="keyword">FROM</span> products; <span class="comment">-- table</span></span><br><span class="line">LIMIT 5;</span><br><span class="line"><span class="comment">-- limit to 5 results</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> product_name, product_id <span class="comment">-- columns</span></span><br><span class="line"><span class="keyword">FROM</span> products; <span class="comment">-- table</span></span><br><span class="line">LIMIT 3,5;</span><br><span class="line"><span class="comment">-- return from row 3 and limit to 5 results</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- same as below</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> product_name, product_id <span class="comment">-- columns</span></span><br><span class="line"><span class="keyword">FROM</span> products; <span class="comment">-- table</span></span><br><span class="line">LIMIT 5 OFFSET 3;</span><br><span class="line"><span class="comment">-- return from row 3 and limit to 5 results</span></span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/02/MySQL-Crash-Course-Chapt-2-and-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1324,779 +1957,6 @@ function category_js () {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/02/Deep-Learning-from-Scratch-Chapter-4-II/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Max Foo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Max Foo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/02/02/Deep-Learning-from-Scratch-Chapter-4-II/" itemprop="url">Deep Learning from Scratch Chapter 4 II</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-02T20:55:06+08:00">
-                2020-02-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/" itemprop="url" rel="index">
-                    <span itemprop="name">Book</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/Deep-Learning/" itemprop="url" rel="index">
-                    <span itemprop="name">Deep Learning</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/Deep-Learning/Deep-Learning-from-Scratch/" itemprop="url" rel="index">
-                    <span itemprop="name">Deep Learning from Scratch</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Numerical-differentiation"><a href="#Numerical-differentiation" class="headerlink" title="Numerical differentiation"></a>Numerical differentiation</h2><img src="/images/Numerical-differentiation.png" class="" width="600" height="600" title="Numerical differentiation">
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pylab <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">numerical_diff</span><span class="params">(f, x)</span>:</span></span><br><span class="line">    h = <span class="number">1e-4</span> <span class="comment"># 0.0001</span></span><br><span class="line">    <span class="keyword">return</span> (f(x+h) - f(x-h)) / (<span class="number">2</span>*h)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">function_1</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0.01</span>*x**<span class="number">2</span> + <span class="number">0.1</span>*x </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">tangent_line</span><span class="params">(f, x)</span>:</span></span><br><span class="line">    d = numerical_diff(f, x)</span><br><span class="line">    print(d)</span><br><span class="line">    y = f(x) - d*x</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">lambda</span> t: d*t + y</span><br><span class="line">     </span><br><span class="line">x = np.arange(<span class="number">0.0</span>, <span class="number">20.0</span>, <span class="number">0.1</span>)       <span class="comment">#plot the function</span></span><br><span class="line">y = function_1(x)</span><br><span class="line">plt.xlabel(<span class="string">"x"</span>)</span><br><span class="line">plt.ylabel(<span class="string">"f(x)"</span>)</span><br><span class="line"></span><br><span class="line">tf = tangent_line(function_1, <span class="number">5</span>)    <span class="comment">#plot the slope</span></span><br><span class="line">y2 = tf(x)</span><br><span class="line"></span><br><span class="line">plt.plot(x, y)</span><br><span class="line">plt.plot(x, y2)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-<h2 id="Numerical-Gradient"><a href="#Numerical-Gradient" class="headerlink" title="Numerical Gradient"></a>Numerical Gradient</h2><ul>
-<li>for function f in point x<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"><span class="comment"># cf.http://d.hatena.ne.jp/white_wheels/20100327/p3</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pylab <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> mpl_toolkits.mplot3d <span class="keyword">import</span> Axes3D</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">_numerical_gradient_no_batch</span><span class="params">(f, x)</span>:</span></span><br><span class="line">    h = <span class="number">1e-4</span> <span class="comment"># 0.0001</span></span><br><span class="line">    grad = np.zeros_like(x)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> idx <span class="keyword">in</span> range(x.size):</span><br><span class="line">        tmp_val = x[idx]</span><br><span class="line">        x[idx] = float(tmp_val) + h</span><br><span class="line">        fxh1 = f(x) <span class="comment"># f(x+h)</span></span><br><span class="line">        </span><br><span class="line">        x[idx] = tmp_val - h </span><br><span class="line">        fxh2 = f(x) <span class="comment"># f(x-h)</span></span><br><span class="line">        grad[idx] = (fxh1 - fxh2) / (<span class="number">2</span>*h)</span><br><span class="line">        </span><br><span class="line">        x[idx] = tmp_val <span class="comment"># 还原值</span></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">return</span> grad</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">numerical_gradient</span><span class="params">(f, X)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> X.ndim == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> _numerical_gradient_no_batch(f, X)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        grad = np.zeros_like(X)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> idx, x <span class="keyword">in</span> enumerate(X):</span><br><span class="line">            grad[idx] = _numerical_gradient_no_batch(f, x)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> grad</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ul>
-<h2 id="Gradient-descent-method"><a href="#Gradient-descent-method" class="headerlink" title="Gradient descent method"></a>Gradient descent method</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gradient_descent</span><span class="params">(f, init_x, lr=<span class="number">0.01</span>, step_num=<span class="number">100</span>)</span>:</span></span><br><span class="line">    x = init_x</span><br><span class="line">    x_history = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(step_num):</span><br><span class="line">        x_history.append( x.copy() )</span><br><span class="line"></span><br><span class="line">        grad = numerical_gradient(f, x)</span><br><span class="line">        x -= lr * grad</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> x, np.array(x_history)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>learning rate cannot be too large or too small</li>
-<li>it is usually set by try and error</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/29/Deep-Learning-from-Scratch-Chapter-4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Max Foo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Max Foo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/29/Deep-Learning-from-Scratch-Chapter-4/" itemprop="url">Deep Learning from Scratch Chapter 4</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-29T23:27:14+08:00">
-                2020-01-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/" itemprop="url" rel="index">
-                    <span itemprop="name">Book</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/Deep-Learning/" itemprop="url" rel="index">
-                    <span itemprop="name">Deep Learning</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/Deep-Learning/Deep-Learning-from-Scratch/" itemprop="url" rel="index">
-                    <span itemprop="name">Deep Learning from Scratch</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Train-the-neural-network"><a href="#Train-the-neural-network" class="headerlink" title="Train the neural network"></a>Train the neural network</h2><h3 id="Step-to-train-the-neural-network"><a href="#Step-to-train-the-neural-network" class="headerlink" title="Step to train the neural network"></a>Step to train the neural network</h3><ol>
-<li>feed the train data to the network</li>
-<li>calculate the loss function</li>
-<li>update the weighting</li>
-<li>repeat the process until the loss is acceptable</li>
-</ol>
-<h2 id="loss-function"><a href="#loss-function" class="headerlink" title="loss function"></a>loss function</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># output of a training data</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>t = [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = [<span class="number">0.1</span>, <span class="number">0.05</span>, <span class="number">0.6</span>, <span class="number">0.0</span>, <span class="number">0.05</span>, <span class="number">0.1</span>, <span class="number">0.0</span>, <span class="number">0.1</span>, <span class="number">0.0</span>, <span class="number">0.0</span>]</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>mean squared error<img src="/images/mean-squared-error.png" class="" width="600" height="600" title="Mean squared error">
-
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mean_squared_error</span><span class="params">(y, t)</span>:</span> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0.5</span> * np.sum((y-t)**<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-
-
-<ul>
-<li><p>cross entropy error</p>
-<img src="/images/cross-entropy-error.png" class="" width="600" height="600" title="Cross entropy error">
-</li>
-<li><p>faster than the mean squared error since in one hot representation </p>
-</li>
-<li><p>since the t vector has only one non zero value</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cross_entropy_error</span><span class="params">(y, t)</span>:</span> </span><br><span class="line">    delta = <span class="number">1e-7</span></span><br><span class="line">    <span class="keyword">return</span> -np.sum(t * np.log(y + delta)) <span class="comment">#add a very small value to prevent occurrence of log(0) -&gt; -infinity</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="mini-batch-training-base-on-cross-entropy-error"><a href="#mini-batch-training-base-on-cross-entropy-error" class="headerlink" title="mini batch training base on cross entropy error"></a>mini batch training base on cross entropy error</h2><img src="/images/mini-batch-cross-entropy-error.png" class="" width="600" height="600" title="Mini batch Cross entropy error">
-<ul>
-<li>the cross entropy error of a batch data is the mean error of each output</li>
-</ul>
-<h3 id="get-the-mini-batch-data"><a href="#get-the-mini-batch-data" class="headerlink" title="get the mini batch data"></a>get the mini batch data</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys, os sys.path.append(os.pardir)</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> dataset.mnist <span class="keyword">import</span> load_mnist</span><br><span class="line">(x_train, t_train), (x_test, t_test) = load_mnist(normalize=<span class="literal">True</span>, one_hot_label=<span class="literal">True</span>)</span><br><span class="line">print(x_train.shape) <span class="comment"># (60000, 784) print(t_train.shape) # (60000, 10)</span></span><br><span class="line"></span><br><span class="line">train_size = x_train.shape[<span class="number">0</span>]</span><br><span class="line">batch_size = <span class="number">10</span></span><br><span class="line">batch_mask = np.random.choice(train_size, batch_size) </span><br><span class="line">x_batch = x_train[batch_mask]</span><br><span class="line">t_batch = t_train[batch_mask]</span><br></pre></td></tr></table></figure>
-<ul>
-<li>np.random.choice()<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.random.choice(<span class="number">60000</span>, <span class="number">10</span>)</span><br><span class="line">array([ <span class="number">8013</span>, <span class="number">14666</span>, <span class="number">58210</span>, <span class="number">23832</span>, <span class="number">52091</span>, <span class="number">10153</span>, <span class="number">8107</span>, <span class="number">19410</span>, <span class="number">27260</span>, <span class="number">21411</span>])</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<ul>
-<li>mini-batch version of cross entropy error base on one hot labelling</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cross_entropy_error</span><span class="params">(y, t)</span>:</span> </span><br><span class="line">    <span class="keyword">if</span> y.ndim == <span class="number">1</span>: <span class="comment">#handle the single input</span></span><br><span class="line">        t = t.reshape(<span class="number">1</span>, t.size) </span><br><span class="line">        y = y.reshape(<span class="number">1</span>, y.size)</span><br><span class="line"></span><br><span class="line">    batch_size = y.shape[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">return</span> -np.sum(t * np.log(y + <span class="number">1e-7</span>)) / batch_size</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>mini-batch version of cross entropy error base on non one hot labelling</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cross_entropy_error</span><span class="params">(y, t)</span>:</span> </span><br><span class="line">    <span class="keyword">if</span> y.ndim == <span class="number">1</span>: <span class="comment">##handle the single input</span></span><br><span class="line">        t = t.reshape(<span class="number">1</span>, t.size) </span><br><span class="line">        y = y.reshape(<span class="number">1</span>, y.size)</span><br><span class="line"></span><br><span class="line">    batch_size = y.shape[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">return</span> -np.sum(np.log(y[np.arange(batch_size), t] + <span class="number">1e-7</span>)) / batch_size</span><br></pre></td></tr></table></figure>
-<ul>
-<li>np.arange()<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>np.arange(<span class="number">5</span>)</span><br><span class="line">array([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># t [2, 7, 0, 9, 4]</span></span><br><span class="line">y[np.arange(<span class="number">5</span>),t]</span><br><span class="line">array([y[<span class="number">0</span>,<span class="number">2</span>], y[<span class="number">1</span>,<span class="number">7</span>], y[<span class="number">2</span>,<span class="number">0</span>], y[<span class="number">3</span>,<span class="number">9</span>], y[<span class="number">4</span>,<span class="number">4</span>]])</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/27/Deep-Learning-from-Scratch-Chapter-3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Max Foo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Max Foo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/27/Deep-Learning-from-Scratch-Chapter-3/" itemprop="url">Deep Learning from Scratch Chapter 3</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-27T14:53:54+08:00">
-                2020-01-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/" itemprop="url" rel="index">
-                    <span itemprop="name">Book</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/Deep-Learning/" itemprop="url" rel="index">
-                    <span itemprop="name">Deep Learning</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/Deep-Learning/Deep-Learning-from-Scratch/" itemprop="url" rel="index">
-                    <span itemprop="name">Deep Learning from Scratch</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<h2 id="Neural-network"><a href="#Neural-network" class="headerlink" title="Neural network"></a>Neural network</h2><ul>
-<li>The essence of neural network is to find the weighting and bias of perceptrons</li>
-</ul>
-<h3 id="Activation-function"><a href="#Activation-function" class="headerlink" title="Activation function"></a>Activation function</h3><ul>
-<li>Sigmoid</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sigmoid</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> / (<span class="number">1</span> + np.exp(-x))</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>ReLu</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">relu</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> np.maximum(<span class="number">0</span>, x)</span><br></pre></td></tr></table></figure>
-
-<h3 id="Matrix-calculation-in-neural-network"><a href="#Matrix-calculation-in-neural-network" class="headerlink" title="Matrix calculation in neural network"></a>Matrix calculation in neural network</h3><img src="/images/Matrix-calculation-in-neural-network.png" class="" width="600" height="600" title="Matrix calculation in neural network">
-
-
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Y = np.dot(X, W) + B</span><br><span class="line">Z = sigmoid(Y)</span><br></pre></td></tr></table></figure>
-
-<h3 id="python-implenmentation-of-3-layer-neural-network"><a href="#python-implenmentation-of-3-layer-neural-network" class="headerlink" title="python implenmentation of 3 layer neural network"></a>python implenmentation of 3 layer neural network</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">init_network</span><span class="params">()</span>:</span></span><br><span class="line">    network = &#123;&#125;</span><br><span class="line">    network[<span class="string">'W1'</span>] = network[<span class="string">'b1'</span>] = network[<span class="string">'W2'</span>] = network[<span class="string">'b2'</span>] = network[<span class="string">'W3'</span>] =</span><br><span class="line">    np.array([[<span class="number">0.1</span>, <span class="number">0.3</span>, <span class="number">0.5</span>], [<span class="number">0.2</span>, <span class="number">0.4</span>, <span class="number">0.6</span>]]) np.array([<span class="number">0.1</span>, <span class="number">0.2</span>, <span class="number">0.3</span>])</span><br><span class="line">    np.array([[<span class="number">0.1</span>, <span class="number">0.4</span>], [<span class="number">0.2</span>, <span class="number">0.5</span>], [<span class="number">0.3</span>, <span class="number">0.6</span>]]) np.array([<span class="number">0.1</span>, <span class="number">0.2</span>])</span><br><span class="line">    np.array([[<span class="number">0.1</span>, <span class="number">0.3</span>], [<span class="number">0.2</span>, <span class="number">0.4</span>]])</span><br><span class="line">    network[<span class="string">'b3'</span>] = np.array([<span class="number">0.1</span>, <span class="number">0.2</span>])</span><br><span class="line">    <span class="keyword">return</span> network</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(network, x)</span>:</span></span><br><span class="line">    W1, W2, W3 = network[<span class="string">'W1'</span>], network[<span class="string">'W2'</span>], network[<span class="string">'W3'</span>] </span><br><span class="line">    b1, b2, b3 = network[<span class="string">'b1'</span>], network[<span class="string">'b2'</span>], network[<span class="string">'b3'</span>]</span><br><span class="line">    a1 = np.dot(x, W1) + b1 </span><br><span class="line">    z1 = sigmoid(a1)</span><br><span class="line">    a2 = np.dot(z1, W2) + b2 </span><br><span class="line">    z2 = sigmoid(a2)</span><br><span class="line">    a3 = np.dot(z2, W3) + b3 </span><br><span class="line">    y = a3</span><br><span class="line">    <span class="keyword">return</span> y</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">network = init_network()</span><br><span class="line">x = np.array([<span class="number">1.0</span>, <span class="number">0.5</span>])</span><br><span class="line">y = forward(network, x)</span><br><span class="line">print(y)</span><br><span class="line"> <span class="comment"># [ 0.31682708 0.69627909]</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Softmax-function"><a href="#Softmax-function" class="headerlink" title="Softmax function"></a>Softmax function</h3><img src="/images/Softmax.png" class="" width="600" height="600" title="Softmax function">
-
-<ul>
-<li>softmax function usually use in the last layer of a classification problem</li>
-<li>it accept the vector output from last layer to gerenrate the output</li>
-<li>the output can be interrupt as the probrability of the given class</li>
-<li>each output range between 0 and 1</li>
-<li>the sum of the outputs are always 1</li>
-</ul>
-<h3 id="python-implenmentation-of-Softmax-function"><a href="#python-implenmentation-of-Softmax-function" class="headerlink" title="python implenmentation of Softmax function"></a>python implenmentation of Softmax function</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">softmax</span><span class="params">(a)</span>:</span></span><br><span class="line">    c = np.max(a)</span><br><span class="line">    exp_a = np.exp(a - c) <span class="comment"># c is used to prevent overflow</span></span><br><span class="line">    y = exp_a / sum_exp_a</span><br><span class="line">    <span class="keyword">return</span> y</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/27/Deep-Learning-from-Scratch-Chapter-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Max Foo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Max Foo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/27/Deep-Learning-from-Scratch-Chapter-2/" itemprop="url">Deep Learning from Scratch Chapter 2</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-27T14:15:46+08:00">
-                2020-01-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/" itemprop="url" rel="index">
-                    <span itemprop="name">Book</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/Deep-Learning/" itemprop="url" rel="index">
-                    <span itemprop="name">Deep Learning</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Book/Deep-Learning/Deep-Learning-from-Scratch/" itemprop="url" rel="index">
-                    <span itemprop="name">Deep Learning from Scratch</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Perceptron"><a href="#Perceptron" class="headerlink" title="Perceptron"></a>Perceptron</h2><img src="/images/Perceptron.png" class="" width="600" height="600" title="Perceptron">
-
-<h3 id="example-of-AND-gate-perceptron"><a href="#example-of-AND-gate-perceptron" class="headerlink" title="example of AND gate perceptron"></a>example of AND gate perceptron</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">AND</span><span class="params">(x1, x2)</span>:</span></span><br><span class="line">x = np.array([x1, x2])</span><br><span class="line">w = np.array([<span class="number">0.5</span>, <span class="number">0.5</span>]) b = <span class="number">-0.7</span></span><br><span class="line">tmp = np.sum(w*x) + b</span><br><span class="line"><span class="keyword">if</span> tmp &lt;= <span class="number">0</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> </span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">AND(<span class="number">0</span>, <span class="number">0</span>) <span class="comment"># 输出0 </span></span><br><span class="line">AND(<span class="number">1</span>, <span class="number">0</span>) <span class="comment"># 输出0 </span></span><br><span class="line">AND(<span class="number">0</span>, <span class="number">1</span>) <span class="comment"># 输出0 </span></span><br><span class="line">AND(<span class="number">1</span>, <span class="number">1</span>) <span class="comment"># 输出1</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Limitation-of-simple-perceptron"><a href="#Limitation-of-simple-perceptron" class="headerlink" title="Limitation of simple perceptron"></a>Limitation of simple perceptron</h3><img src="/images/Limitation-of-simple-perceptron.png" class="" width="600" height="600" title="Limitation of simple perceptron">
-
-<ul>
-<li>some problem cannot be solve by using the simple perceptron</li>
-</ul>
-<h3 id="Method-to-solve-the-problem-of-a-sigle-perceptron"><a href="#Method-to-solve-the-problem-of-a-sigle-perceptron" class="headerlink" title="Method to solve the problem of a sigle perceptron"></a>Method to solve the problem of a sigle perceptron</h3><ul>
-<li>use non linear perceptron</li>
-</ul>
-<img src="/images/Non-linear-perceptron.png" class="" width="600" height="600" title="Non linear perceptron">
-
-<ul>
-<li>multiple perceptron</li>
-</ul>
-<img src="/images/Multiple-perceptron.png" class="" width="600" height="600" title="Multiple perceptron">
-
-<ul>
-<li>non linear function can be express by using multiple perceptron</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2146,7 +2006,7 @@ function category_js () {
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">91</span>
+                  <span class="site-state-item-count">95</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2157,7 +2017,7 @@ function category_js () {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>

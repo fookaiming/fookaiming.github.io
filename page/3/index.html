@@ -271,6 +271,526 @@ function category_js () {
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/03/SpringBoot-Redis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/01/03/SpringBoot-Redis/" itemprop="url">SpringBoot Redis</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-03T12:32:12+08:00">
+                2021-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Config-Redis"><a href="#Config-Redis" class="headerlink" title="Config Redis"></a>Config Redis</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- application.properties --&gt;</span></span><br><span class="line">#Redis</span><br><span class="line">spring.redis.database=0</span><br><span class="line">spring.redis.host=localhost</span><br><span class="line">spring.redis.port=6379</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// RedisConfig.java</span></span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.connection.RedisConnectionFactory;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.core.RedisTemplate;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.serializer.RedisSerializer;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RedisConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//  inject RedisConnectionFactory</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> RedisTemplate&lt;String,Object&gt; <span class="title">redisTemplate</span><span class="params">(RedisConnectionFactory factory)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        RedisTemplate&lt;String,Object&gt; template = <span class="keyword">new</span> RedisTemplate&lt;&gt;();</span><br><span class="line">        template.setConnectionFactory(factory);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        set setKeySerializer for key</span></span><br><span class="line">        template.setKeySerializer(RedisSerializer.string());</span><br><span class="line"><span class="comment">//        set setKeySerializer for value</span></span><br><span class="line">        template.setValueSerializer(RedisSerializer.json());</span><br><span class="line"></span><br><span class="line"><span class="comment">//        set setKeySerializer for HashMap key</span></span><br><span class="line">        template.setHashKeySerializer(RedisSerializer.string());</span><br><span class="line"></span><br><span class="line"><span class="comment">//        set setKeySerializer for HashMap value</span></span><br><span class="line">        template.setHashValueSerializer(RedisSerializer.json());</span><br><span class="line"></span><br><span class="line">        template.afterPropertiesSet();</span><br><span class="line">        <span class="keyword">return</span> template;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Exapmle"><a href="#Exapmle" class="headerlink" title="Exapmle"></a>Exapmle</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line"><span class="keyword">import</span> org.springframework.dao.DataAccessException;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.core.BoundValueOperations;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.core.RedisOperations;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.core.RedisTemplate;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.redis.core.SessionCallback;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.ContextConfiguration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.TimeUnit;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RunWith</span>(SpringRunner<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class">@<span class="title">SpringBootTest</span></span></span><br><span class="line"><span class="class">@<span class="title">ContextConfiguration</span>(<span class="title">classes</span> </span>= CommunityApplication<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class"><span class="title">public</span> <span class="title">class</span> <span class="title">RedisTests</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> RedisTemplate redisTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testStrings</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        String redisKey = <span class="string">"test:count"</span>;</span><br><span class="line"></span><br><span class="line">        redisTemplate.opsForValue().set(redisKey, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(redisTemplate.opsForValue().get(redisKey));</span><br><span class="line">        System.out.println(redisTemplate.opsForValue().increment(redisKey));</span><br><span class="line">        System.out.println(redisTemplate.opsForValue().decrement(redisKey));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testHashes</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        String redisKey = <span class="string">"test:user"</span>;</span><br><span class="line"></span><br><span class="line">        redisTemplate.opsForHash().put(redisKey, <span class="string">"id"</span>, <span class="number">1</span>);</span><br><span class="line">        redisTemplate.opsForHash().put(redisKey, <span class="string">"username"</span>, <span class="string">"zhangsan"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(redisTemplate.opsForHash().get(redisKey, <span class="string">"id"</span>));</span><br><span class="line">        System.out.println(redisTemplate.opsForHash().get(redisKey, <span class="string">"username"</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testLists</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        String redisKey = <span class="string">"test:ids"</span>;</span><br><span class="line"></span><br><span class="line">        redisTemplate.opsForList().leftPush(redisKey, <span class="number">101</span>);</span><br><span class="line">        redisTemplate.opsForList().leftPush(redisKey, <span class="number">102</span>);</span><br><span class="line">        redisTemplate.opsForList().leftPush(redisKey, <span class="number">103</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(redisTemplate.opsForList().size(redisKey));</span><br><span class="line">        System.out.println(redisTemplate.opsForList().index(redisKey, <span class="number">0</span>));</span><br><span class="line">        System.out.println(redisTemplate.opsForList().range(redisKey, <span class="number">0</span>, <span class="number">2</span>));</span><br><span class="line"></span><br><span class="line">        System.out.println(redisTemplate.opsForList().leftPop(redisKey));</span><br><span class="line">        System.out.println(redisTemplate.opsForList().leftPop(redisKey));</span><br><span class="line">        System.out.println(redisTemplate.opsForList().leftPop(redisKey));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSets</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        String redisKey = <span class="string">"test:teachers"</span>;</span><br><span class="line"></span><br><span class="line">        redisTemplate.opsForSet().add(redisKey, <span class="string">"ken"</span>, <span class="string">"andy"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(redisTemplate.opsForSet().size(redisKey));</span><br><span class="line">        System.out.println(redisTemplate.opsForSet().pop(redisKey));</span><br><span class="line">        System.out.println(redisTemplate.opsForSet().members(redisKey));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSortedSets</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        String redisKey = <span class="string">"test:students"</span>;</span><br><span class="line"></span><br><span class="line">        redisTemplate.opsForZSet().add(redisKey, <span class="string">"ken"</span>, <span class="number">80</span>);</span><br><span class="line">        redisTemplate.opsForZSet().add(redisKey, <span class="string">"andy"</span>, <span class="number">90</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(redisTemplate.opsForZSet().zCard(redisKey));</span><br><span class="line">        System.out.println(redisTemplate.opsForZSet().score(redisKey, <span class="string">"ken"</span>));</span><br><span class="line">        System.out.println(redisTemplate.opsForZSet().reverseRank(redisKey, <span class="string">"andy"</span>));</span><br><span class="line">        System.out.println(redisTemplate.opsForZSet().reverseRange(redisKey, <span class="number">0</span>, <span class="number">2</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testKeys</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        redisTemplate.delete(<span class="string">"test:user"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(redisTemplate.hasKey(<span class="string">"test:user"</span>));</span><br><span class="line"></span><br><span class="line">        redisTemplate.expire(<span class="string">"test:students"</span>, <span class="number">10</span>, TimeUnit.SECONDS);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testBoundOperations</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        String redisKey = <span class="string">"test:count"</span>;</span><br><span class="line">        BoundValueOperations operations = redisTemplate.boundValueOps(redisKey);</span><br><span class="line">        operations.increment();</span><br><span class="line">        operations.increment();</span><br><span class="line">        operations.increment();</span><br><span class="line">        operations.increment();</span><br><span class="line">        operations.increment();</span><br><span class="line">        System.out.println(operations.get());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Transcation"><a href="#Transcation" class="headerlink" title="Transcation"></a>Transcation</h1><h2 id="Two-ways-of-Transaction-Management"><a href="#Two-ways-of-Transaction-Management" class="headerlink" title="Two ways of Transaction Management"></a>Two ways of Transaction Management</h2><ul>
+<li>Declarative Transaction Management</li>
+<li>Programmatic Transaction Management</li>
+<li>selection operation cannot be use inside transaction</li>
+</ul>
+<h2 id="Example-of-Programmatic-Transaction-Management"><a href="#Example-of-Programmatic-Transaction-Management" class="headerlink" title="Example of Programmatic Transaction Management"></a>Example of Programmatic Transaction Management</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testTransactional</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Object obj = redisTemplate.execute(<span class="keyword">new</span> SessionCallback() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> Object <span class="title">execute</span><span class="params">(RedisOperations operations)</span> <span class="keyword">throws</span> DataAccessException </span>&#123;</span><br><span class="line">                String redisKey = <span class="string">"test:tx"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//          start transcation</span></span><br><span class="line">                operations.multi();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                operations.opsForSet().add(redisKey, <span class="string">"ken"</span>);</span><br><span class="line">                operations.opsForSet().add(redisKey, <span class="string">"andy"</span>);</span><br><span class="line">                operations.opsForSet().add(redisKey, <span class="string">"km"</span>);</span><br><span class="line"></span><br><span class="line">                System.out.println(operations.opsForSet().members(redisKey));</span><br><span class="line"></span><br><span class="line"><span class="comment">//          submit transcation</span></span><br><span class="line">                <span class="keyword">return</span> operations.exec();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        System.out.println(obj);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/03/SpringBoot-Unified-Exception-Handling/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/01/03/SpringBoot-Unified-Exception-Handling/" itemprop="url">SpringBoot Unified Exception Handling</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-03T12:32:12+08:00">
+                2021-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Configure-error-page-in-Spring"><a href="#Configure-error-page-in-Spring" class="headerlink" title="Configure error page in Spring"></a>Configure error page in Spring</h1><h2 id="step"><a href="#step" class="headerlink" title="step"></a>step</h2><ol>
+<li>create an folder name error (must) under resource/templates (must)</li>
+<li>create different error page name (response code, eg: 404.html)</li>
+</ol>
+<h1 id="Unified-Exception-Handling"><a href="#Unified-Exception-Handling" class="headerlink" title="Unified Exception Handling"></a>Unified Exception Handling</h1><h2 id="ExceptionHandler"><a href="#ExceptionHandler" class="headerlink" title="@ExceptionHandler"></a>@ExceptionHandler</h2><ul>
+<li>scope: method</li>
+<li>this method will be call when exception occurs in any controller<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ControllerAdvice;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ExceptionHandler;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@ControllerAdvice</span>(annotations = Controller<span class="class">.<span class="keyword">class</span>)</span></span><br><span class="line"><span class="class"><span class="title">public</span> <span class="title">class</span> <span class="title">ExceptionAdvice</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger logger = LoggerFactory.getLogger(ExceptionAdvice<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@ExceptionHandler</span>(&#123;Exception<span class="class">.<span class="keyword">class</span>&#125;)</span></span><br><span class="line"><span class="class">    <span class="title">public</span> <span class="title">void</span> <span class="title">handleException</span>(<span class="title">Exception</span> <span class="title">e</span>, <span class="title">HttpServletRequest</span> <span class="title">req</span>, <span class="title">HttpServletResponse</span> <span class="title">resp</span>) <span class="title">throws</span> <span class="title">IOException</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        logger.error(<span class="string">"Error occurs: "</span> + e.getMessage());</span><br><span class="line">        <span class="keyword">for</span> (StackTraceElement element : e.getStackTrace())&#123;</span><br><span class="line">            logger.error(element.toString());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//        check if the request is json or normal request</span></span><br><span class="line">        String header = req.getHeader(<span class="string">"x-requested-with"</span>);</span><br><span class="line">        <span class="keyword">if</span> (<span class="string">"XMLHttpRequest"</span>.equals(header))&#123;</span><br><span class="line">            resp.setContentType(<span class="string">"application/plain;charset=utf-8"</span>);</span><br><span class="line">            PrintWriter writer = resp.getWriter();</span><br><span class="line">            writer.write(MyFourmUtils.getJsonString(<span class="number">1</span>, <span class="string">"Error occurs"</span>));</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            resp.sendRedirect(req.getContextPath() + <span class="string">"/error"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="ModelAttribute"><a href="#ModelAttribute" class="headerlink" title="@ModelAttribute"></a>@ModelAttribute</h2></li>
+<li>scope: method</li>
+<li>this method will be call before controller, it is used to inject obj to model when multiple request uses the same obj</li>
+</ul>
+<h3 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ControllerAdvice</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GlobalModelData</span> </span>&#123;</span><br><span class="line">    <span class="meta">@ModelAttribute</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">globalUser</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        User user = <span class="keyword">new</span> User();</span><br><span class="line">        user.setUn(<span class="string">"xxx"</span>);</span><br><span class="line">        <span class="keyword">return</span> user;</span><br><span class="line">        <span class="comment">// user can be get in Model inside controller</span></span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="DataBinder"><a href="#DataBinder" class="headerlink" title="@DataBinder"></a>@DataBinder</h2><ul>
+<li>scope: method</li>
+<li>this method will be call before controller, it is used to convert request params. to different type.</li>
+<li>eg: convert a username and password to a user obj, so controller use the user obj</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/03/SpringMail/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/01/03/SpringMail/" itemprop="url">SpringMail</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-03T12:32:12+08:00">
+                2021-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Logging-level"><a href="#Logging-level" class="headerlink" title="Logging level"></a>Logging level</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">TRACE 	</span><br><span class="line">DEBUG</span><br><span class="line">INFO </span><br><span class="line">WARN </span><br><span class="line">ERROR</span><br></pre></td></tr></table></figure>
+
+<h1 id="Set-up-STMP-in-Gmai"><a href="#Set-up-STMP-in-Gmai" class="headerlink" title="Set up STMP in Gmai"></a>Set up STMP in Gmai</h1><ul>
+<li>enable less secure app access</li>
+<li>set up app password</li>
+</ul>
+<h1 id="conf-in-springboot"><a href="#conf-in-springboot" class="headerlink" title="conf. in springboot"></a>conf. in springboot</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Spring mail</span><br><span class="line">spring.mail.host=smtp.gmail.com</span><br><span class="line">spring.mail.port=465</span><br><span class="line">spring.mail.username=abc@gmail.com</span><br><span class="line">spring.mail.password=abc</span><br><span class="line">spring.mail.protocol=smtp</span><br><span class="line">spring.mail.properties.mail.smtp.ssl.enable=true</span><br></pre></td></tr></table></figure>
+<h1 id="create-mail-client"><a href="#create-mail-client" class="headerlink" title="create mail client"></a>create mail client</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.devepkm.MyForum.Utils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Value;</span><br><span class="line"><span class="keyword">import</span> org.springframework.mail.javamail.JavaMailSender;</span><br><span class="line"><span class="keyword">import</span> org.springframework.mail.javamail.MimeMessageHelper;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.mail.MessagingException;</span><br><span class="line"><span class="keyword">import</span> javax.mail.internet.MimeMessage;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>:</span></span><br><span class="line"><span class="comment"> * setup logger and sending email</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MailClient</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger logger = LoggerFactory.getLogger(MailClient<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> JavaMailSender mailSender;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$(spring.mail.username)"</span>)</span><br><span class="line">    <span class="keyword">private</span> String from;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendEmail</span><span class="params">(String to, String subject, String content)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line"></span><br><span class="line">            MimeMessage message = mailSender.createMimeMessage();</span><br><span class="line">            MimeMessageHelper helper = <span class="keyword">new</span> MimeMessageHelper(message, <span class="keyword">true</span>, <span class="string">"UTF-8"</span>);</span><br><span class="line">            helper.setFrom(from);</span><br><span class="line">            helper.setTo(to);</span><br><span class="line">            helper.setSubject(subject);</span><br><span class="line">            helper.setText(content, <span class="keyword">true</span>);</span><br><span class="line">            mailSender.send(message);</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (MessagingException e) &#123;</span><br><span class="line">            logger.error(e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="Send-email-with-Thymeleaf"><a href="#Send-email-with-Thymeleaf" class="headerlink" title="Send email with Thymeleaf"></a>Send email with Thymeleaf</h1><ul>
+<li>inject TemplateEngine</li>
+<li>inject data to template</li>
+<li>use process() to create html string</li>
+<li>send by MailClient<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.thymeleaf.TemplateEngine;</span><br><span class="line"><span class="keyword">import</span> org.thymeleaf.context.Context;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> TemplateEngine templateEngine;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testHtmlMail</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Context context = <span class="keyword">new</span> Context();</span><br><span class="line">        context.setVariable(<span class="string">"username"</span>, <span class="string">"sunday"</span>);</span><br><span class="line"></span><br><span class="line">        String content = templateEngine.process(<span class="string">"/mail/demo"</span>, context);</span><br><span class="line">        System.out.println(content);</span><br><span class="line"></span><br><span class="line">        mailClient.sendMail(<span class="string">"xxx@xxxx.com"</span>, <span class="string">"HTML"</span>, content);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/03/SpringBoot-Unified-Log/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Max Foo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Max Foo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/01/03/SpringBoot-Unified-Log/" itemprop="url">SpringBoot Unified Log Handling</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2021-01-03T12:32:12+08:00">
+                2021-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.JoinPoint;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.Aspect;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.Before;</span><br><span class="line"><span class="keyword">import</span> org.aspectj.lang.annotation.Pointcut;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.context.request.RequestAttributes;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.context.request.RequestContextHolder;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.context.request.ServletRequestAttributes;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ServiceLogAspect</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger looger = LoggerFactory.getLogger(ServiceLogAspect<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Pointcut</span>(<span class="string">"execution(* com.devepkm.MyForum.Service.*.*(..))"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pointcut</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// inject JoinPoint to get Target method</span></span><br><span class="line">    <span class="meta">@Before</span>(<span class="string">"pointcut()"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">before</span><span class="params">(JoinPoint joinPoint)</span></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//       log format: user[xxx.xxx.xx], visit com.devepkm.MyForum.Service.xxx in 2020.10.10</span></span><br><span class="line">        ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();</span><br><span class="line">        HttpServletRequest request = requestAttributes.getRequest();</span><br><span class="line">        String ip = request.getRemoteHost();</span><br><span class="line">        String date = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>).format(<span class="keyword">new</span> Date());</span><br><span class="line">        String method = joinPoint.getSignature().getDeclaringTypeName() + <span class="string">"."</span> + joinPoint.getSignature().getName();</span><br><span class="line">        looger.info(String.format(<span class="string">"user[%s], visit %s in %s"</span>, ip,method,date));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/03/SpringBoot-kaptcha/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1371,710 +1891,6 @@ function category_js () {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/20/MyBookStore-02/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Max Foo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Max Foo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/09/20/MyBookStore-02/" itemprop="url">MyBookStore 02</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-20T16:11:41+08:00">
-                2020-09-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Project/" itemprop="url" rel="index">
-                    <span itemprop="name">Project</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Project/MybookStore/" itemprop="url" rel="index">
-                    <span itemprop="name">MybookStore</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Project-Structure"><a href="#Project-Structure" class="headerlink" title="Project Structure"></a>Project Structure</h1><img src="/images/Web_Project_Structure.png" class="" width="800" height="800" title="Web Project Structure">
-
-<h1 id="Package-Structure"><a href="#Package-Structure" class="headerlink" title="Package Structure"></a>Package Structure</h1> <img src="/images/Package_Structure.png" class="" width="800" height="800" title="Package Structure">
-
-<h1 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h1><ul>
-<li>implement the backend service of login and register page  </li>
-</ul>
-<h1 id="Workflow"><a href="#Workflow" class="headerlink" title="Workflow"></a>Workflow</h1><ol>
-<li>Create db table</li>
-<li>bean: User.java</li>
-<li>utils:  JdbcUtils.java </li>
-</ol>
-<ul>
-<li>getConnection()</li>
-<li>close()</li>
-</ul>
-<ol start="4">
-<li>dao: basedao, userdao userdaoimp</li>
-<li>service: userService userServiceImp</li>
-</ol>
-<ul>
-<li>login()</li>
-<li>signUp()</li>
-<li>isUsernameExits()</li>
-</ul>
-<ol start="6">
-<li>servlet: RegsitServlet LoginServlet</li>
-</ol>
-<ul>
-<li>doPost()</li>
-</ul>
-<ol start="7">
-<li>web.xml</li>
-</ol>
-<ul>
-<li>config servlet mapping</li>
-</ul>
-<h1 id="Technique"><a href="#Technique" class="headerlink" title="Technique"></a>Technique</h1><h2 id="Project-Structure-1"><a href="#Project-Structure-1" class="headerlink" title="Project Structure"></a>Project Structure</h2><img src="/images/Web_Project_Structure.png" class="" width="800" height="800" title="Web Project Structure">
-<ul>
-<li>The entire servlet process should be hierarchy. </li>
-<li>Servlet class is initiate by the http request</li>
-<li>Web layer should be initiated Servlet layer</li>
-<li>Dao layer should be initiated Web layer</li>
-</ul>
-<h1 id="Problem-Encountered"><a href="#Problem-Encountered" class="headerlink" title="Problem Encountered"></a>Problem Encountered</h1><ul>
-<li>tomcat noclassdeffounderror</li>
-<li>status 500</li>
-<li>it is because tomcat cannot find the class at start up</li>
-</ul>
-<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><ul>
-<li>Add all dependencies and libraries in project structure</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/19/MyBookStore-01/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Max Foo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Max Foo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/09/19/MyBookStore-01/" itemprop="url">MyBookStore 01 Sign Up page Verification</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-19T16:54:46+08:00">
-                2020-09-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Project/" itemprop="url" rel="index">
-                    <span itemprop="name">Project</span>
-                  </a>
-                </span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Project/MybookStore/" itemprop="url" rel="index">
-                    <span itemprop="name">MybookStore</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h1><ul>
-<li>Verify the info in sign up page</li>
-<li>select the html element by jQuery and then verify, show error msg if error occurs</li>
-</ul>
-<h1 id="Technique"><a href="#Technique" class="headerlink" title="Technique"></a>Technique</h1><ul>
-<li>jQuery select different element<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"content"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"login_form"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"login_box"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tit"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Register<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"errorMsg"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"regist_success.html"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">label</span>&gt;</span>Username：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"itxt"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">“Enter</span> <span class="attr">Username</span>" <span class="attr">autocomplete</span>=<span class="string">"off"</span> <span class="attr">tabindex</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">                           <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">id</span>=<span class="string">"username"</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">label</span>&gt;</span>Password：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"itxt"</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">“Enter</span> <span class="attr">Password</span>" <span class="attr">autocomplete</span>=<span class="string">"off"</span> <span class="attr">tabindex</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">                           <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">id</span>=<span class="string">"password"</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">label</span>&gt;</span>Confirm：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"itxt"</span> <span class="attr">type</span>=<span class="string">"password"</span> <span class="attr">placeholder</span>=<span class="string">“Enter</span> <span class="attr">Password</span> <span class="attr">Again</span>" <span class="attr">autocomplete</span>=<span class="string">"off"</span> <span class="attr">tabindex</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">                           <span class="attr">name</span>=<span class="string">"repwd"</span> <span class="attr">id</span>=<span class="string">"repwd"</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">label</span>&gt;</span>Email：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"itxt"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">placeholder</span>=<span class="string">“Enter</span> <span class="attr">Email</span>" <span class="attr">autocomplete</span>=<span class="string">"off"</span> <span class="attr">tabindex</span>=<span class="string">"1"</span></span></span><br><span class="line"><span class="tag">                           <span class="attr">name</span>=<span class="string">"email"</span> <span class="attr">id</span>=<span class="string">"email"</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">label</span>&gt;</span>Code：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"itxt"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">style</span>=<span class="string">"width: 150px;"</span> <span class="attr">id</span>=<span class="string">"code"</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">img</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">src</span>=<span class="string">"../../static/img/code.bmp"</span> <span class="attr">style</span>=<span class="string">"float: right; margin-right: 40px"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">“Submit</span>" <span class="attr">id</span>=<span class="string">"sub_btn"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Userinput Verification</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    $(<span class="string">"#sub_btn"</span>).click(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// verify username, password, confirm password, email, verification code</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> usernameText = $(<span class="string">"#username"</span>).val();</span><br><span class="line">        <span class="comment">//word, number, _ and length between 5-12</span></span><br><span class="line">        <span class="keyword">var</span> usernamePatt = <span class="regexp">/^\w&#123;5,12&#125;$/</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!usernamePatt.test(usernameText)) &#123;</span><br><span class="line">            $(<span class="string">"span.errorMsg"</span>).text(<span class="string">"Invalid Username! "</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> passwordText = $(<span class="string">"#password"</span>).val();</span><br><span class="line">        <span class="keyword">if</span> (!usernamePatt.test(passwordText)) &#123;</span><br><span class="line">            $(<span class="string">"span.errorMsg"</span>).text(<span class="string">"Invalid Password! "</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> repwText = $(<span class="string">"#repwd"</span>).val();</span><br><span class="line">        <span class="keyword">if</span> (repwText != passwordText) &#123;</span><br><span class="line">            $(<span class="string">"span.errorMsg"</span>).text(<span class="string">"Incorrect Confirmed Password! "</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> emailText = $(<span class="string">"#email"</span>).val();</span><br><span class="line">        <span class="keyword">var</span> emailPatt = <span class="regexp">/^(([^&lt;&gt;()\[\]\\.,;:\s@"]+(\.[^&lt;&gt;()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]&#123;1,3&#125;\.[0-9]&#123;1,3&#125;\.[0-9]&#123;1,3&#125;\.[0-9]&#123;1,3&#125;])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]&#123;2,&#125;))$/</span>;</span><br><span class="line">        <span class="keyword">if</span> (!emailPatt.test(emailText))&#123;</span><br><span class="line">            $(<span class="string">"span.errorMsg"</span>).text(<span class="string">"Invalid Email! "</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// only verify if verification code is not null</span></span><br><span class="line">        <span class="keyword">var</span> codeText = $(<span class="string">"#code"</span>).val();</span><br><span class="line">        <span class="keyword">if</span> (codeText == <span class="string">""</span>)&#123;</span><br><span class="line">            $(<span class="string">"span.errorMsg"</span>).text(<span class="string">"Invalid Verification Code! "</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="comment">//clean all error msg</span></span><br><span class="line">        $(<span class="string">"span.errorMsg"</span>).text(<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/17/JSP-03/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Max Foo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Max Foo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/09/17/JSP-03/" itemprop="url">JSP 03 9 jsp implicit objects</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-17T16:27:15+08:00">
-                2020-09-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JSP/" itemprop="url" rel="index">
-                    <span itemprop="name">JSP</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="9-jsp-implicit-objects"><a href="#9-jsp-implicit-objects" class="headerlink" title="9 jsp implicit objects"></a>9 jsp implicit objects</h1><ul>
-<li>after tomcat translation, it will automatically create 9 obj<br>including</li>
-</ul>
-<ol>
-<li>request</li>
-<li>response</li>
-<li>pageContext</li>
-<li>session</li>
-<li>application (ServletContext obj)</li>
-<li>config (ServletConfig obj)</li>
-<li>out</li>
-<li>page</li>
-<li>exception</li>
-</ol>
-<h2 id="4-domian-obj"><a href="#4-domian-obj" class="headerlink" title="4 domian obj"></a>4 domian obj</h2><ul>
-<li>domain obj is used to save and read data</li>
-<li>the usage of 4 domain obj is the same</li>
-<li>only the scope is different</li>
-</ul>
-<ol>
-<li>pageContext (current jsp page)</li>
-<li>request     (current request)</li>
-<li>session     (current session, until browser is close)</li>
-<li>application  (current web module, until it stop)</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  example: write to 4 domain obj</span></span><br><span class="line">    &lt;%</span><br><span class="line">        pageContext.setAttribute(<span class="string">"key"</span>, <span class="string">"pageContext"</span>);</span><br><span class="line">        request.setAttribute(<span class="string">"key"</span>, <span class="string">"request"</span>);</span><br><span class="line">        session.setAttribute(<span class="string">"key"</span>, <span class="string">"session"</span>);</span><br><span class="line">        application.setAttribute(<span class="string">"key"</span>, <span class="string">"application"</span>);</span><br><span class="line">    %&gt;</span><br><span class="line">    pageContext ：&lt;%=pageContext.getAttribute(<span class="string">"key"</span>)%&gt; &lt;br&gt;</span><br><span class="line">    request：&lt;%=request.getAttribute(<span class="string">"key"</span>)%&gt; &lt;br&gt;</span><br><span class="line">    session：&lt;%=session.getAttribute(<span class="string">"key"</span>)%&gt; &lt;br&gt;</span><br><span class="line">    application：&lt;%=application.getAttribute(<span class="string">"key"</span>)%&gt; &lt;br&gt;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="Difference-between-out-and-response-getwriter"><a href="#Difference-between-out-and-response-getwriter" class="headerlink" title="Difference between out and response.getwriter()"></a>Difference between out and response.getwriter()</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">out.write(<span class="string">"write"</span>);</span><br><span class="line">response.getwriter().write(<span class="string">"response"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// output：</span></span><br><span class="line">response</span><br><span class="line">write</span><br></pre></td></tr></table></figure>
-<ul>
-<li>response will output first</li>
-<li>because both out and response will write to its own buffer</li>
-<li>when writing to output, the programme will first execute out.flush()</li>
-<li>which will flush all the element inside out’s buffer to the response’s buffer</li>
-<li>and then output all element in response’s buffer</li>
-<li>since the jsp use out for output</li>
-<li>so out is recommend</li>
-</ul>
-<h2 id="out-write-and-out-print"><a href="#out-write-and-out-print" class="headerlink" title="out.write() and out.print()"></a>out.write() and out.print()</h2><ul>
-<li>write() can only output string</li>
-<li>print() will change other class to string and then call write()</li>
-<li>recommend use print()</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/17/JSP-04/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Max Foo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Max Foo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/09/17/JSP-04/" itemprop="url">JSP 04 JSP include</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-17T16:27:15+08:00">
-                2020-09-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JSP/" itemprop="url" rel="index">
-                    <span itemprop="name">JSP</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="static-include"><a href="#static-include" class="headerlink" title="static include"></a>static include</h1><p>syntax</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ include file=<span class="string">"/include/footer.jsp"</span>%&gt;--%&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>static include will not translate the included jsp to java class</li>
-<li>it will only copy the file to included place and output</li>
-<li>it is usually used for static html page</li>
-</ul>
-<hr>
-<h1 id="dynamic-include"><a href="#dynamic-include" class="headerlink" title="dynamic include"></a>dynamic include</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:include page="/include/footer.jsp"&gt;&lt;/jsp:include&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>dynamic include will translate the included jsp to java class</li>
-</ul>
-<hr>
-<h1 id="request-redirect"><a href="#request-redirect" class="headerlink" title="request redirect"></a>request redirect</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:forward page="/page2.jsp"&gt;&lt;/jsp:forward&gt;</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2124,7 +1940,7 @@ function category_js () {
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">91</span>
+                  <span class="site-state-item-count">95</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2135,7 +1951,7 @@ function category_js () {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
