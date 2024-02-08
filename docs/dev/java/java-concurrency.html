@@ -1,0 +1,339 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Concurrency - logbook</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../../maxfoo/maxfoo.html">Max FOO</a></li><li class="chapter-item "><a href="../../todos.html">TODO</a></li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">SEC</li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">DEV</li><li class="chapter-item expanded "><a href="../../dev/java/java.html">JAVA</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../dev/java/virtual-thread/virtual-thread.html">Virtual Thread</a></li><li class="chapter-item expanded "><a href="../../dev/java/java-concurrency.html" class="active">Concurrency</a></li><li class="chapter-item "><a href="../../dev/java/tips_and_tricks/tips_and_tricks.html">Tips and Tricks</a></li></ol></li><li class="chapter-item "><a href="../../dev/data-structure/data-structure.html">Data Structure</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../dev/data-structure/bloom-filter/bloom-filter.html">Bloom Filter</a></li></ol></li><li class="chapter-item "><a href="../../dev/distributed-systems/distributed-system.html">Distributed Systems</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../dev/distributed-systems/cse138/cse138.html">CSE138</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../dev/distributed-systems/cse138/distributed-system-what-and-why/distributed-system-what-and-why.html">Distributed System What and Why</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../dev/leetcode/leetcode.html">LeetCode</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../dev/leetcode/binary-search.html">Binary Search</a></li><li class="spacer"></li><li class="spacer"></li></ol></li><li class="chapter-item "><li class="part-title">BOOK</li><li class="chapter-item "><a href="../../book/java-concurrency-in-practice/java-concurrency-in-practice.html">Java Concurrency In Practice</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../book/java-concurrency-in-practice/thread_safety.html">Thread Safety</a></li><li class="chapter-item "><a href="../../book/java-concurrency-in-practice/sharing_object.html">Sharing Object</a></li></ol></li><li class="chapter-item "><a href="../../book/the-rust-programming-language/the-rust-programming-language.html">The Rust Programming Language</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../book/the-rust-programming-language/cargo.html">Cargo</a></li><li class="chapter-item "><a href="../../book/the-rust-programming-language/common-programming-concept.html">Common Programming Concept</a></li><li class="chapter-item "><a href="../../book/the-rust-programming-language/rust-memory-model.html">Rust Memory Model</a></li><li class="chapter-item "><a href="../../book/the-rust-programming-language/ownership/ownership.html">Ownership</a></li><li class="chapter-item "><a href="../../book/the-rust-programming-language/fight-with-borrow-checker.html">Fight With Borrow Checker</a></li><li class="chapter-item "><a href="../../book/the-rust-programming-language/struct.html">Struct</a></li><li class="spacer"></li></ol></li><li class="chapter-item "><li class="part-title">You Might Be Interested In</li><li class="chapter-item "><a href="../../great-content.html">Grate Content</a></li><li class="spacer"></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">logbook</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="java-concurrency"><a class="header" href="#java-concurrency">Java Concurrency</a></h1>
+<h2 id="common-problem-when-developing-concurrent-programme"><a class="header" href="#common-problem-when-developing-concurrent-programme">Common Problem when developing concurrent programme</a></h2>
+<ol>
+<li>starvation
+<ul>
+<li>prevent starvation by placing a timeout, waits for only a finite amount of time</li>
+</ul>
+</li>
+<li>deadlock
+<ul>
+<li>prevent deadlock by acquiring resources in a specific order</li>
+<li><em><strong>better avoid explicit locks and sharing mutable state</strong></em></li>
+</ul>
+</li>
+<li><em><strong>race condition</strong></em> <em>(<strong>should be eliminated at root</strong>)</em>
+<ul>
+<li>two main factors lead to race condition
+<ol>
+<li>JIT optimization</li>
+<li>Java Memory Model</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="the-root-cause-of-race-condition"><a class="header" href="#the-root-cause-of-race-condition">The root cause of race condition</a></h2>
+<h3 id="shared-mutability-is-pure-evil"><a class="header" href="#shared-mutability-is-pure-evil">Shared mutability is pure evil</a></h3>
+<blockquote>
+<p>When we have a nonfinal (mutable) field, each time a thread changes the value, we have to consider whether we have to
+put the change back to the memory or leave it in the registers/cache. Each time we read the field, we need to be
+concerned if we read the latest valid value or a stale value left behind in the cache. We need to ensure the changes
+to
+variables are atomic; that is, threads don’t see partial changes. Furthermore, we need to worry about protecting
+multiple threads from changing the data at the same time. Every single access to shared mutable state must be verified
+to be correct. Even if one of them is broken, the entire application is broken.</p>
+</blockquote>
+<h3 id="ways-to-prevent-shared-mutability"><a class="header" href="#ways-to-prevent-shared-mutability">ways to prevent shared mutability</a></h3>
+<ul>
+<li>keep the mutable state well encapsulated and share only immutable data</li>
+<li>functional programming</li>
+<li>prevent it from design (STM and Actor-based Model)</li>
+</ul>
+<hr />
+<h1 id="strategies-for-concurrency"><a class="header" href="#strategies-for-concurrency">Strategies For Concurrency</a></h1>
+<blockquote>
+<p>💡 all discussions below have ignored the overhead of context switching, for real scenario please put context switching
+in consideration</p>
+</blockquote>
+<hr />
+<h2 id="how-many-threads-to-create"><a class="header" href="#how-many-threads-to-create">How many threads to create?</a></h2>
+<blockquote>
+<p>number of threads = number of available cores / (1 - blocking coefficient) <br />
+where 0 &lt;= blocking coefficient &lt; 1</p>
+</blockquote>
+<ul>
+<li>number of cores can be obtained by Runtime.getRuntime().availableProcessors()</li>
+</ul>
+<h3 id="computation-intensive-application"><a class="header" href="#computation-intensive-application">computation intensive application</a></h3>
+<ul>
+<li>blocking coefficient ≈ 0 -&gt; number of threads ≈ number of available cores</li>
+<li>having more threads than the cores actully hurts</li>
+</ul>
+<h3 id="ways-to-compute-the-blocking-coefficient"><a class="header" href="#ways-to-compute-the-blocking-coefficient">Ways to compute the blocking coefficient</a></h3>
+<ul>
+<li>guess then converge by the following
+<ul>
+<li>profiling</li>
+<li>java.lang.management API</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="how-to-divide-the-problem"><a class="header" href="#how-to-divide-the-problem">How to divide the problem</a></h2>
+<h3 id="two-strategies"><a class="header" href="#two-strategies">two strategies</a></h3>
+<h4 id="for-fair-load-tasks"><a class="header" href="#for-fair-load-tasks">For fair load tasks</a></h4>
+<ul>
+<li>divide the problems as many as the number of thread</li>
+</ul>
+<h4 id="for-fair-workload-tasks"><a class="header" href="#for-fair-workload-tasks">For fair workload tasks</a></h4>
+<ul>
+<li>make it fair, but most time it is hard/impossible, the dividing process itself may increase load</li>
+<li>divide <em><strong>far more parts than the threads</strong></em> to <em><strong>keep threads busy</strong></em></li>
+<li>the exact number of parts need to be test on real scenario</li>
+</ul>
+<hr />
+<p>// todo:</p>
+<ul>
+<li>
+<p>do not use more than one synchronization mechanisms at the same time eg: atomic variable + synchronized block</p>
+<ul>
+<li>confusing and would offer no performance or safety benefit</li>
+</ul>
+</li>
+<li>
+<p>don't break down synchronized blocks too far(overheat)</p>
+</li>
+<li>
+<p>Avoid holding locks during lengthy computations or operations at risk of not completing quickly such as network or
+console I/O.</p>
+</li>
+</ul>
+<p>Debugging tip: For server applications, be sure to always specify the -server JVM command line switch when invoking the
+JVM, even for development and testing. The server JVM performs more optimization than the client JVM, such as hoisting
+variables out of a loop that are not modified in the loop; code that might appear to work in the development
+environment (client JVM) can break in the deployment environment (server JVM)</p>
+<p>Many developers fear that this(using immutable object for to hold all mutable variable and update atomically) approach
+will create performance problems, but these fears are usually unwarranted.
+Allocation is cheaper than you might think, and immutable objects offer additional performance advantages such as
+reduced need for locking or defensive copies and reduced impact on generational garbage collection.</p>
+<p>group multiple mutable variable to one immutable varible</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../dev/java/virtual-thread/virtual-thread.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../dev/java/tips_and_tricks/tips_and_tricks.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../dev/java/virtual-thread/virtual-thread.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../dev/java/tips_and_tricks/tips_and_tricks.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

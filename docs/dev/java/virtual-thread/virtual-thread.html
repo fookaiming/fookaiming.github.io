@@ -1,0 +1,380 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Virtual Thread - logbook</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../../favicon.svg">
+        <link rel="shortcut icon" href="../../../favicon.png">
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="../../../maxfoo/maxfoo.html">Max FOO</a></li><li class="chapter-item "><a href="../../../todos.html">TODO</a></li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">SEC</li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">DEV</li><li class="chapter-item expanded "><a href="../../../dev/java/java.html">JAVA</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../dev/java/virtual-thread/virtual-thread.html" class="active">Virtual Thread</a></li><li class="chapter-item "><a href="../../../dev/java/java-concurrency.html">Concurrency</a></li><li class="chapter-item "><a href="../../../dev/java/tips_and_tricks/tips_and_tricks.html">Tips and Tricks</a></li></ol></li><li class="chapter-item "><a href="../../../dev/data-structure/data-structure.html">Data Structure</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../dev/data-structure/bloom-filter/bloom-filter.html">Bloom Filter</a></li></ol></li><li class="chapter-item "><a href="../../../dev/distributed-systems/distributed-system.html">Distributed Systems</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../dev/distributed-systems/cse138/cse138.html">CSE138</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../dev/distributed-systems/cse138/distributed-system-what-and-why/distributed-system-what-and-why.html">Distributed System What and Why</a></li></ol></li></ol></li><li class="chapter-item "><a href="../../../dev/leetcode/leetcode.html">LeetCode</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../dev/leetcode/binary-search.html">Binary Search</a></li><li class="spacer"></li><li class="spacer"></li></ol></li><li class="chapter-item "><li class="part-title">BOOK</li><li class="chapter-item "><a href="../../../book/java-concurrency-in-practice/java-concurrency-in-practice.html">Java Concurrency In Practice</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../book/java-concurrency-in-practice/thread_safety.html">Thread Safety</a></li><li class="chapter-item "><a href="../../../book/java-concurrency-in-practice/sharing_object.html">Sharing Object</a></li></ol></li><li class="chapter-item "><a href="../../../book/the-rust-programming-language/the-rust-programming-language.html">The Rust Programming Language</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../../../book/the-rust-programming-language/cargo.html">Cargo</a></li><li class="chapter-item "><a href="../../../book/the-rust-programming-language/common-programming-concept.html">Common Programming Concept</a></li><li class="chapter-item "><a href="../../../book/the-rust-programming-language/rust-memory-model.html">Rust Memory Model</a></li><li class="chapter-item "><a href="../../../book/the-rust-programming-language/ownership/ownership.html">Ownership</a></li><li class="chapter-item "><a href="../../../book/the-rust-programming-language/fight-with-borrow-checker.html">Fight With Borrow Checker</a></li><li class="chapter-item "><a href="../../../book/the-rust-programming-language/struct.html">Struct</a></li><li class="spacer"></li></ol></li><li class="chapter-item "><li class="part-title">You Might Be Interested In</li><li class="chapter-item "><a href="../../../great-content.html">Grate Content</a></li><li class="spacer"></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">logbook</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="virtual-thread"><a class="header" href="#virtual-thread">Virtual Thread</a></h1>
+<p><img src="virtual-thread.assets/virtual-thread.png" alt="Virtual Thread" /></p>
+<h2 id="what-is-virtual-thread"><a class="header" href="#what-is-virtual-thread">What is virtual thread?</a></h2>
+<blockquote>
+<p>a new thread model provided by jvm, for creating <strong><em>lightweight</em></strong> application thread that maps to a platform thread</p>
+</blockquote>
+<ul>
+<li>The virtual thread can map to different platform thread at different time(Many-to-Many)</li>
+<li>thread stack live in heap(dynamic stack space)</li>
+</ul>
+<h2 id="mechanism"><a class="header" href="#mechanism">Mechanism</a></h2>
+<ul>
+<li>yield whenever it encounters IO blocking operation, made runnable again and when one becomes available
+<ul>
+<li>large amount of jdk lib have rewrite for this refactor</li>
+</ul>
+</li>
+<li>implementation is based on fork join pool
+<ul>
+<li>context switch should be lightweight in most cases</li>
+</ul>
+</li>
+</ul>
+<h2 id="benefit-it-brings"><a class="header" href="#benefit-it-brings">Benefit it brings</a></h2>
+<ul>
+<li>less overhead
+<ul>
+<li>context switch occurs in application level rather than os level, stack, cache remains in hardware</li>
+<li>cheap to start/stop</li>
+</ul>
+</li>
+<li>much lighter weight
+<ul>
+<li>the tradition platform thread requires around 2MB / thread, If you wanted to support a million thread, you’d need
+2TB of memory!</li>
+<li>virtual threads only takes up 200-300 bytes / thread</li>
+</ul>
+</li>
+<li>simplicity
+<ul>
+<li>write code in sequential way rather than the reactive way</li>
+</ul>
+</li>
+<li>better scheduling
+<ul>
+<li>scheduling by os thread is dumb as the os don't know the context of the execution thread</li>
+<li>on the other hand, developer have better understanding about the code and context, scheduling in application level
+help reduce the overhead</li>
+</ul>
+</li>
+<li>scalability
+<ul>
+<li>can easily support millions of virtual thread</li>
+</ul>
+</li>
+</ul>
+<h2 id="limitation"><a class="header" href="#limitation">Limitation</a></h2>
+<h3 id="pinning"><a class="header" href="#pinning">Pinning</a></h3>
+<blockquote>
+<p>virtual thread cannot be unmounted from its carrier, monopolizing that carrier thread from executing other tasks</p>
+</blockquote>
+<h4 id="occurs-in"><a class="header" href="#occurs-in">Occurs in</a></h4>
+<ul>
+<li>Synchronized Blocks or Methods</li>
+<li>Native Methods or Foreign Functions</li>
+</ul>
+<h3 id="thread-local"><a class="header" href="#thread-local">Thread Local</a></h3>
+<ul>
+<li>as thread Local variable has its own independent copy of the variable, isolated from other threads
+<ul>
+<li>caching expensive object in thread local take up huge amount of space when massive threads are created</li>
+</ul>
+</li>
+</ul>
+<h2 id="capable-for"><a class="header" href="#capable-for">Capable for</a></h2>
+<ul>
+<li>IO intensive application</li>
+<li>short task</li>
+</ul>
+<h2 id="bear-in-mind"><a class="header" href="#bear-in-mind">Bear in mind</a></h2>
+<ul>
+<li>It is not for computational intensive task</li>
+<li><em><strong>NOT</strong></em> designed <strong><em>highly</em></strong> responsive aware application(first come, first served)
+<ul>
+<li>as the total throughput increase, this rule only applies on <strong><em>HIGHLY</em></strong> responsive aware application</li>
+<li>as it adds another layer of scheduling</li>
+<li>much more threads are waiting for schedule, higher chance to have starvation problem</li>
+</ul>
+</li>
+<li>synchronized block is not support</li>
+</ul>
+<h2 id="migration"><a class="header" href="#migration">Migration</a></h2>
+<ul>
+<li>migration is cheap, usually, one to few lines of code change, eg: changing thread pool to virtual thread factory
+<ul>
+<li>migrate task to virtual thread, not pool</li>
+</ul>
+</li>
+<li>most lib and framework have stated their migration to support to virtual thread eg: spring, tomcat</li>
+<li>thread local
+<ul>
+<li>don't cache expensive object in thread local
+<ul>
+<li>some mutable thread local object can be replaced by immutable object eg: SimpleDateFormatter -&gt;
+DateTimeFormatter</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="stumbling-block"><a class="header" href="#stumbling-block">stumbling block</a></h3>
+<ul>
+<li>mysql jdbc
+<ul>
+<li><a href="https://bugs.mysql.com/bug.php?id=110512">the migration of virtual thread have actually contributed but not merged</a></li>
+<li>the mysql jdbc is designed to be thread safe, but the modern application usage of jdbc are thread confined</li>
+<li>better impl. in a lock free way
+<ul>
+<li>lock free impl. mysql jdbc (https://github.com/neowu/mysql-connector-j</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="best-practise"><a class="header" href="#best-practise">Best practise</a></h2>
+<ul>
+<li>as it is lightweight, thread pool is not necessary</li>
+<li>limit virtual thread by semaphores</li>
+<li>thread per task rather than recycling the thread</li>
+<li>dont block long task
+<ul>
+<li>causing massive virtual tasks to be blocked</li>
+</ul>
+</li>
+</ul>
+<h2 id="further-discussion"><a class="header" href="#further-discussion">Further Discussion</a></h2>
+<ul>
+<li>combining the virtual thread with reactive model
+<ul>
+<li>hard to maintain</li>
+<li>gain even more performance</li>
+</ul>
+</li>
+</ul>
+<h2 id="ref"><a class="header" href="#ref">Ref</a></h2>
+<ul>
+<li><a href="https://openjdk.org/jeps/425">JEP 425</a></li>
+<li><a href="https://www.azul.com/blog/jdk-21-delivers-virtual-threads-other-new-features-and-long-term-support/">Azul virtual thread</a></li>
+<li><a href="https://www.youtube.com/watch?v=XF4XZlPZc_c">Modern Scalable Concurrency for the Java Platform By Alan Bateman</a></li>
+<li><a href="https://foojay.io/today/how-to-diagnose-and-mitigate-pinning-in-javas-virtual-thread-execution/">How to Diagnose and Mitigate Pinning in Java’s Virtual Thread Execution</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../dev/java/java.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../../../dev/java/java-concurrency.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../dev/java/java.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../../../dev/java/java-concurrency.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../elasticlunr.min.js"></script>
+        <script src="../../../mark.min.js"></script>
+        <script src="../../../searcher.js"></script>
+
+        <script src="../../../clipboard.min.js"></script>
+        <script src="../../../highlight.js"></script>
+        <script src="../../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

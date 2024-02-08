@@ -1,0 +1,17 @@
+[book]
+authors = ["kenfoo0"]
+language = "en"
+multilingual = false
+src = "src"
+title = "logbook"
+
+[build]
+create-missing = false
+
+[output.html]
+mathjax-support = true
+no-section-label = true
+
+[output.html.fold]
+enable = true
+level = 0

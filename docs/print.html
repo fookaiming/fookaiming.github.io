@@ -1,0 +1,1711 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>logbook</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><a href="maxfoo/maxfoo.html">Max FOO</a></li><li class="chapter-item "><a href="todos.html">TODO</a></li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">SEC</li><li class="spacer"></li><li class="chapter-item affix "><li class="part-title">DEV</li><li class="chapter-item "><a href="dev/java/java.html">JAVA</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="dev/java/virtual-thread/virtual-thread.html">Virtual Thread</a></li><li class="chapter-item "><a href="dev/java/java-concurrency.html">Concurrency</a></li><li class="chapter-item "><a href="dev/java/tips_and_tricks/tips_and_tricks.html">Tips and Tricks</a></li></ol></li><li class="chapter-item "><a href="dev/data-structure/data-structure.html">Data Structure</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="dev/data-structure/bloom-filter/bloom-filter.html">Bloom Filter</a></li></ol></li><li class="chapter-item "><a href="dev/distributed-systems/distributed-system.html">Distributed Systems</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="dev/distributed-systems/cse138/cse138.html">CSE138</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="dev/distributed-systems/cse138/distributed-system-what-and-why/distributed-system-what-and-why.html">Distributed System What and Why</a></li></ol></li></ol></li><li class="chapter-item "><a href="dev/leetcode/leetcode.html">LeetCode</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="dev/leetcode/binary-search.html">Binary Search</a></li><li class="spacer"></li><li class="spacer"></li></ol></li><li class="chapter-item "><li class="part-title">BOOK</li><li class="chapter-item "><a href="book/java-concurrency-in-practice/java-concurrency-in-practice.html">Java Concurrency In Practice</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="book/java-concurrency-in-practice/thread_safety.html">Thread Safety</a></li><li class="chapter-item "><a href="book/java-concurrency-in-practice/sharing_object.html">Sharing Object</a></li></ol></li><li class="chapter-item "><a href="book/the-rust-programming-language/the-rust-programming-language.html">The Rust Programming Language</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="book/the-rust-programming-language/cargo.html">Cargo</a></li><li class="chapter-item "><a href="book/the-rust-programming-language/common-programming-concept.html">Common Programming Concept</a></li><li class="chapter-item "><a href="book/the-rust-programming-language/rust-memory-model.html">Rust Memory Model</a></li><li class="chapter-item "><a href="book/the-rust-programming-language/ownership/ownership.html">Ownership</a></li><li class="chapter-item "><a href="book/the-rust-programming-language/fight-with-borrow-checker.html">Fight With Borrow Checker</a></li><li class="chapter-item "><a href="book/the-rust-programming-language/struct.html">Struct</a></li><li class="spacer"></li></ol></li><li class="chapter-item "><li class="part-title">You Might Be Interested In</li><li class="chapter-item "><a href="great-content.html">Grate Content</a></li><li class="spacer"></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">logbook</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <div style="break-before: page; page-break-before: always;"></div><h1 id="todo"><a class="header" href="#todo">TODO</a></h1>
+<ol>
+<li>cuckoo filter</li>
+<li>BGP</li>
+<li>partial ordering</li>
+<li>virtual thread</li>
+<li>https replay attack</li>
+<li>java structured task</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="virtual-thread"><a class="header" href="#virtual-thread">Virtual Thread</a></h1>
+<p><img src="dev/java/virtual-thread/virtual-thread.assets/virtual-thread.png" alt="Virtual Thread" /></p>
+<h2 id="what-is-virtual-thread"><a class="header" href="#what-is-virtual-thread">What is virtual thread?</a></h2>
+<blockquote>
+<p>a new thread model provided by jvm, for creating <strong><em>lightweight</em></strong> application thread that maps to a platform thread</p>
+</blockquote>
+<ul>
+<li>The virtual thread can map to different platform thread at different time(Many-to-Many)</li>
+<li>thread stack live in heap(dynamic stack space)</li>
+</ul>
+<h2 id="mechanism"><a class="header" href="#mechanism">Mechanism</a></h2>
+<ul>
+<li>yield whenever it encounters IO blocking operation, made runnable again and when one becomes available
+<ul>
+<li>large amount of jdk lib have rewrite for this refactor</li>
+</ul>
+</li>
+<li>implementation is based on fork join pool
+<ul>
+<li>context switch should be lightweight in most cases</li>
+</ul>
+</li>
+</ul>
+<h2 id="benefit-it-brings"><a class="header" href="#benefit-it-brings">Benefit it brings</a></h2>
+<ul>
+<li>less overhead
+<ul>
+<li>context switch occurs in application level rather than os level, stack, cache remains in hardware</li>
+<li>cheap to start/stop</li>
+</ul>
+</li>
+<li>much lighter weight
+<ul>
+<li>the tradition platform thread requires around 2MB / thread, If you wanted to support a million thread, you’d need
+2TB of memory!</li>
+<li>virtual threads only takes up 200-300 bytes / thread</li>
+</ul>
+</li>
+<li>simplicity
+<ul>
+<li>write code in sequential way rather than the reactive way</li>
+</ul>
+</li>
+<li>better scheduling
+<ul>
+<li>scheduling by os thread is dumb as the os don't know the context of the execution thread</li>
+<li>on the other hand, developer have better understanding about the code and context, scheduling in application level
+help reduce the overhead</li>
+</ul>
+</li>
+<li>scalability
+<ul>
+<li>can easily support millions of virtual thread</li>
+</ul>
+</li>
+</ul>
+<h2 id="limitation"><a class="header" href="#limitation">Limitation</a></h2>
+<h3 id="pinning"><a class="header" href="#pinning">Pinning</a></h3>
+<blockquote>
+<p>virtual thread cannot be unmounted from its carrier, monopolizing that carrier thread from executing other tasks</p>
+</blockquote>
+<h4 id="occurs-in"><a class="header" href="#occurs-in">Occurs in</a></h4>
+<ul>
+<li>Synchronized Blocks or Methods</li>
+<li>Native Methods or Foreign Functions</li>
+</ul>
+<h3 id="thread-local"><a class="header" href="#thread-local">Thread Local</a></h3>
+<ul>
+<li>as thread Local variable has its own independent copy of the variable, isolated from other threads
+<ul>
+<li>caching expensive object in thread local take up huge amount of space when massive threads are created</li>
+</ul>
+</li>
+</ul>
+<h2 id="capable-for"><a class="header" href="#capable-for">Capable for</a></h2>
+<ul>
+<li>IO intensive application</li>
+<li>short task</li>
+</ul>
+<h2 id="bear-in-mind"><a class="header" href="#bear-in-mind">Bear in mind</a></h2>
+<ul>
+<li>It is not for computational intensive task</li>
+<li><em><strong>NOT</strong></em> designed <strong><em>highly</em></strong> responsive aware application(first come, first served)
+<ul>
+<li>as the total throughput increase, this rule only applies on <strong><em>HIGHLY</em></strong> responsive aware application</li>
+<li>as it adds another layer of scheduling</li>
+<li>much more threads are waiting for schedule, higher chance to have starvation problem</li>
+</ul>
+</li>
+<li>synchronized block is not support</li>
+</ul>
+<h2 id="migration"><a class="header" href="#migration">Migration</a></h2>
+<ul>
+<li>migration is cheap, usually, one to few lines of code change, eg: changing thread pool to virtual thread factory
+<ul>
+<li>migrate task to virtual thread, not pool</li>
+</ul>
+</li>
+<li>most lib and framework have stated their migration to support to virtual thread eg: spring, tomcat</li>
+<li>thread local
+<ul>
+<li>don't cache expensive object in thread local
+<ul>
+<li>some mutable thread local object can be replaced by immutable object eg: SimpleDateFormatter -&gt;
+DateTimeFormatter</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="stumbling-block"><a class="header" href="#stumbling-block">stumbling block</a></h3>
+<ul>
+<li>mysql jdbc
+<ul>
+<li><a href="https://bugs.mysql.com/bug.php?id=110512">the migration of virtual thread have actually contributed but not merged</a></li>
+<li>the mysql jdbc is designed to be thread safe, but the modern application usage of jdbc are thread confined</li>
+<li>better impl. in a lock free way
+<ul>
+<li>lock free impl. mysql jdbc (https://github.com/neowu/mysql-connector-j</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="best-practise"><a class="header" href="#best-practise">Best practise</a></h2>
+<ul>
+<li>as it is lightweight, thread pool is not necessary</li>
+<li>limit virtual thread by semaphores</li>
+<li>thread per task rather than recycling the thread</li>
+<li>dont block long task
+<ul>
+<li>causing massive virtual tasks to be blocked</li>
+</ul>
+</li>
+</ul>
+<h2 id="further-discussion"><a class="header" href="#further-discussion">Further Discussion</a></h2>
+<ul>
+<li>combining the virtual thread with reactive model
+<ul>
+<li>hard to maintain</li>
+<li>gain even more performance</li>
+</ul>
+</li>
+</ul>
+<h2 id="ref"><a class="header" href="#ref">Ref</a></h2>
+<ul>
+<li><a href="https://openjdk.org/jeps/425">JEP 425</a></li>
+<li><a href="https://www.azul.com/blog/jdk-21-delivers-virtual-threads-other-new-features-and-long-term-support/">Azul virtual thread</a></li>
+<li><a href="https://www.youtube.com/watch?v=XF4XZlPZc_c">Modern Scalable Concurrency for the Java Platform By Alan Bateman</a></li>
+<li><a href="https://foojay.io/today/how-to-diagnose-and-mitigate-pinning-in-javas-virtual-thread-execution/">How to Diagnose and Mitigate Pinning in Java’s Virtual Thread Execution</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="java-concurrency"><a class="header" href="#java-concurrency">Java Concurrency</a></h1>
+<h2 id="common-problem-when-developing-concurrent-programme"><a class="header" href="#common-problem-when-developing-concurrent-programme">Common Problem when developing concurrent programme</a></h2>
+<ol>
+<li>starvation
+<ul>
+<li>prevent starvation by placing a timeout, waits for only a finite amount of time</li>
+</ul>
+</li>
+<li>deadlock
+<ul>
+<li>prevent deadlock by acquiring resources in a specific order</li>
+<li><em><strong>better avoid explicit locks and sharing mutable state</strong></em></li>
+</ul>
+</li>
+<li><em><strong>race condition</strong></em> <em>(<strong>should be eliminated at root</strong>)</em>
+<ul>
+<li>two main factors lead to race condition
+<ol>
+<li>JIT optimization</li>
+<li>Java Memory Model</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="the-root-cause-of-race-condition"><a class="header" href="#the-root-cause-of-race-condition">The root cause of race condition</a></h2>
+<h3 id="shared-mutability-is-pure-evil"><a class="header" href="#shared-mutability-is-pure-evil">Shared mutability is pure evil</a></h3>
+<blockquote>
+<p>When we have a nonfinal (mutable) field, each time a thread changes the value, we have to consider whether we have to
+put the change back to the memory or leave it in the registers/cache. Each time we read the field, we need to be
+concerned if we read the latest valid value or a stale value left behind in the cache. We need to ensure the changes
+to
+variables are atomic; that is, threads don’t see partial changes. Furthermore, we need to worry about protecting
+multiple threads from changing the data at the same time. Every single access to shared mutable state must be verified
+to be correct. Even if one of them is broken, the entire application is broken.</p>
+</blockquote>
+<h3 id="ways-to-prevent-shared-mutability"><a class="header" href="#ways-to-prevent-shared-mutability">ways to prevent shared mutability</a></h3>
+<ul>
+<li>keep the mutable state well encapsulated and share only immutable data</li>
+<li>functional programming</li>
+<li>prevent it from design (STM and Actor-based Model)</li>
+</ul>
+<hr />
+<h1 id="strategies-for-concurrency"><a class="header" href="#strategies-for-concurrency">Strategies For Concurrency</a></h1>
+<blockquote>
+<p>💡 all discussions below have ignored the overhead of context switching, for real scenario please put context switching
+in consideration</p>
+</blockquote>
+<hr />
+<h2 id="how-many-threads-to-create"><a class="header" href="#how-many-threads-to-create">How many threads to create?</a></h2>
+<blockquote>
+<p>number of threads = number of available cores / (1 - blocking coefficient) <br />
+where 0 &lt;= blocking coefficient &lt; 1</p>
+</blockquote>
+<ul>
+<li>number of cores can be obtained by Runtime.getRuntime().availableProcessors()</li>
+</ul>
+<h3 id="computation-intensive-application"><a class="header" href="#computation-intensive-application">computation intensive application</a></h3>
+<ul>
+<li>blocking coefficient ≈ 0 -&gt; number of threads ≈ number of available cores</li>
+<li>having more threads than the cores actully hurts</li>
+</ul>
+<h3 id="ways-to-compute-the-blocking-coefficient"><a class="header" href="#ways-to-compute-the-blocking-coefficient">Ways to compute the blocking coefficient</a></h3>
+<ul>
+<li>guess then converge by the following
+<ul>
+<li>profiling</li>
+<li>java.lang.management API</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="how-to-divide-the-problem"><a class="header" href="#how-to-divide-the-problem">How to divide the problem</a></h2>
+<h3 id="two-strategies"><a class="header" href="#two-strategies">two strategies</a></h3>
+<h4 id="for-fair-load-tasks"><a class="header" href="#for-fair-load-tasks">For fair load tasks</a></h4>
+<ul>
+<li>divide the problems as many as the number of thread</li>
+</ul>
+<h4 id="for-fair-workload-tasks"><a class="header" href="#for-fair-workload-tasks">For fair workload tasks</a></h4>
+<ul>
+<li>make it fair, but most time it is hard/impossible, the dividing process itself may increase load</li>
+<li>divide <em><strong>far more parts than the threads</strong></em> to <em><strong>keep threads busy</strong></em></li>
+<li>the exact number of parts need to be test on real scenario</li>
+</ul>
+<hr />
+<p>// todo:</p>
+<ul>
+<li>
+<p>do not use more than one synchronization mechanisms at the same time eg: atomic variable + synchronized block</p>
+<ul>
+<li>confusing and would offer no performance or safety benefit</li>
+</ul>
+</li>
+<li>
+<p>don't break down synchronized blocks too far(overheat)</p>
+</li>
+<li>
+<p>Avoid holding locks during lengthy computations or operations at risk of not completing quickly such as network or
+console I/O.</p>
+</li>
+</ul>
+<p>Debugging tip: For server applications, be sure to always specify the -server JVM command line switch when invoking the
+JVM, even for development and testing. The server JVM performs more optimization than the client JVM, such as hoisting
+variables out of a loop that are not modified in the loop; code that might appear to work in the development
+environment (client JVM) can break in the deployment environment (server JVM)</p>
+<p>Many developers fear that this(using immutable object for to hold all mutable variable and update atomically) approach
+will create performance problems, but these fears are usually unwarranted.
+Allocation is cheaper than you might think, and immutable objects offer additional performance advantages such as
+reduced need for locking or defensive copies and reduced impact on generational garbage collection.</p>
+<p>group multiple mutable variable to one immutable varible</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tips-and-tricks"><a class="header" href="#tips-and-tricks">Tips and Tricks</a></h1>
+<h2 id="record"><a class="header" href="#record">Record</a></h2>
+<ul>
+<li>handy way to create <strong><em>immutable</em></strong> class</li>
+<li>generate at compile time</li>
+<li>all fields are public final</li>
+</ul>
+<h3 id="example"><a class="header" href="#example">Example</a></h3>
+<pre><code class="language-java">public record CustomerIdAndName(String id, String name) {
+}
+
+// decompiled from .class file
+public record CustomerIdAndName(String id, String name) {
+    public CustomerIdAndName(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public String id() {
+        return this.id;
+    }
+
+    public String name() {
+        return this.name;
+    }
+}
+</code></pre>
+<h3 id="usage"><a class="header" href="#usage">Usage</a></h3>
+<ul>
+<li>wrap around to return multiple variables in a function call
+<ul>
+<li>prevent overuse, better use within a class to keep function simple</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-java">public CustomerIdAndName getCustomerIdAndName(){
+  // ...
+  return new CustomerIdAndName(id,name)
+}
+
+public record CustomerIdAndName(String id, String name) {
+}
+</code></pre>
+<ul>
+<li>cleaner code</li>
+</ul>
+<pre><code class="language-java">    private static class ArchiveTask implements Callable&lt;Integer&gt; {
+
+        private final LocalDate from;
+        
+        private final LocalDate to;
+
+        private final ArchiveService&lt;DailyStats&gt; archiveService;
+
+        private ArchiveTask(LocalDate from, LocalDate to, ArchiveService&lt;DailyStats&gt; archiveService) {
+            this.from = from;
+            this.to = to;
+            this.archiveService = archiveService;
+        }
+
+        @Override
+        public Integer call() {
+            archiveService.archive(from, to);
+            return 0;
+        }
+    }
+    
+    // much cleaner
+    private record ArchiveTask(LocalDate from, LocalDate to, ArchiveService&lt;DailyStats&gt; archiveService) implements Callable&lt;Integer&gt; {
+
+        @Override
+            public void call() {
+                archiveService.archive(from, to);
+            }
+        }
+</code></pre>
+<hr />
+<h2 id="collection"><a class="header" href="#collection">Collection</a></h2>
+<h3 id="create-hashmaphashset-with-exact-size-leads-to-poor-performance"><a class="header" href="#create-hashmaphashset-with-exact-size-leads-to-poor-performance">create HashMap/HashSet with exact size leads to poor performance</a></h3>
+<ul>
+<li>Hash set/map is sparse data structure</li>
+<li>for large data set, setting exact size induce risk of hash collision and resize may occur frequently</li>
+</ul>
+<pre><code class="language-java">      List&lt;String&gt; list = ....
+      Set&lt;String&gt; set = new HashMap(list.size())
+      
+      // demo purpose only, this case better use Stream api
+      for (String s : list) {
+        set.add(s.toLowerCase());
+      }
+</code></pre>
+<ul>
+<li>refer to <a href="https://github.com/google/guava/blob/master/guava/src/com/google/common/collect/Maps.java">guava maps impl</a>,
+init capacity with load factor
+0.75</li>
+</ul>
+<pre><code class="language-java">    public static &lt;T, V&gt; Map&lt;T, V&gt; newHashMapWithExpectedSize(int size) {
+        return new HashMap&lt;&gt;(capacity(size));
+    }
+
+    private static int capacity(int size) {
+        int capacity;
+        if (size &lt; 3) {
+            capacity = size + 1;
+        } else {
+            capacity = (int) ((float) size / 0.75f + 1);
+        }
+        return capacity;
+    }
+</code></pre>
+<hr />
+<h2 id="iteration"><a class="header" href="#iteration">Iteration</a></h2>
+<h3 id="use-iterator-instead-of-for-i-loop-whenever-possible"><a class="header" href="#use-iterator-instead-of-for-i-loop-whenever-possible">Use iterator instead of for i loop whenever possible</a></h3>
+<ul>
+<li>for i loop calls size() for every iteration -&gt; poor performance</li>
+<li>for i loop is much slower when collection do not support RandomAccess (constant time access) eg: LinkedList</li>
+<li>for i loop do not support removal operation while looping non thread safe collection</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="bloom-filter"><a class="header" href="#bloom-filter">Bloom Filter</a></h1>
+<p><img src="dev/data-structure/bloom-filter/bloom-filter.assets/BloomFilter.png" alt="BloomFilter" /></p>
+<h2 id="what-is-bloom-filter"><a class="header" href="#what-is-bloom-filter">What is Bloom Filter</a></h2>
+<ul>
+<li>A <em><strong>space-efficient</strong></em> data structure that quickly checks if an item is <em><strong>likely in</strong></em> a set or <em><strong>definitely not in it</strong></em>. </li>
+<li>Multiple hash functions and a bit array are used to store and check for the presence of items</li>
+</ul>
+<h2 id="advantage"><a class="header" href="#advantage">Advantage</a></h2>
+<ul>
+<li>O(1) time complexity for both querying and insertion operations</li>
+</ul>
+<h2 id="bear-it-mind"><a class="header" href="#bear-it-mind">Bear it mind</a></h2>
+<ul>
+<li>collision may happend, apply to fault tolerance scenario only</li>
+<li>removal of elements is not possible without rebuilding entire bit array as it represents the aggregation of all data</li>
+</ul>
+<h2 id="typical-use-case"><a class="header" href="#typical-use-case">Typical use Case</a></h2>
+<ul>
+<li><strong>Pre-checking before heavy operations</strong>
+<ul>
+<li>In many DBMS, bloom filter is used to check if the value exists before doing actual io operation, eg: before LSM tree searching</li>
+</ul>
+</li>
+<li><strong>Space-saving and performance improvement</strong>
+<ul>
+<li>eg: Storing a large amount of blacklisted email address require a lot of disk space, converting the list to a bloom filter can easily be designed to strike a balance between <strong>space</strong>, <strong>performance</strong> and <strong>correctness</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="collsion-rate"><a class="header" href="#collsion-rate">Collsion rate</a></h2>
+<p>\[
+\begin{aligned}
+P\simeq (1-e^{-kn/m})^k \\
+\\
+&amp;\textit{ P = probability of false positive} \\
+&amp;\textit{ m = size of the bit array} \\
+&amp;\textit{ n = total element} \\
+&amp;\textit{ k = number of hash function} \\
+\end{aligned}
+\]</p>
+<h2 id="tool"><a class="header" href="#tool">Tool</a></h2>
+<p><a href="https://hur.st/bloomfilter/">Bloom Filter Calculator</a></p>
+<h2 id="ref-1"><a class="header" href="#ref-1">Ref</a></h2>
+<p><a href="https://www.jasondavies.com/bloomfilter/">Bloom Filter</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="resources"><a class="header" href="#resources">Resources</a></h1>
+<ol>
+<li><a href="https://www.youtube.com/playlist?list=PLNPUF5QyWU8PydLG2cIJrCvnn5I_exhYx">USCS CSE138 (Distributed Systems) lectures, Spring 2021</a></li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="distributed-systems-what-and-why"><a class="header" href="#distributed-systems-what-and-why">Distributed Systems What and Why</a></h1>
+<h2 id="philosophy-of-solving-problem-in-computer-science"><a class="header" href="#philosophy-of-solving-problem-in-computer-science">Philosophy of solving problem in computer science</a></h2>
+<ol>
+<li>
+<p>Distributed Systems</p>
+<ul>
+<li>treat partial failure as expected and work around it</li>
+</ul>
+</li>
+<li>
+<p>High Performance Computing (HPC)</p>
+<ul>
+<li>treat partial failure as total failure</li>
+<li>peroidically create checkpoint/snapshot for failure recover</li>
+</ul>
+</li>
+</ol>
+<h2 id="what-is-distributed-systems"><a class="header" href="#what-is-distributed-systems">What is distributed systems</a></h2>
+<ul>
+<li>Connected computers work together to solve problems and handle <em><strong>failures</strong></em> and <em><strong>unbounded latency</strong></em>.</li>
+</ul>
+<h3 id="common-failures-in-distributed-systems"><a class="header" href="#common-failures-in-distributed-systems">Common failures in distributed systems</a></h3>
+<ul>
+<li>physical damage</li>
+<li>network connetivity</li>
+<li>all kind of latency</li>
+<li>data corruption</li>
+<li>bugs</li>
+</ul>
+<blockquote>
+<p>💡 It is <em><strong>impossible</strong></em> to identify the failure in most of time</p>
+</blockquote>
+<h2 id="why"><a class="header" href="#why">Why</a></h2>
+<ul>
+<li>make things faster (throughput/computation power)</li>
+<li>you have no choice</li>
+<li>reliability (replicas)</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="binary-search"><a class="header" href="#binary-search">Binary Search</a></h1>
+<h2 id="general-approach"><a class="header" href="#general-approach">General Approach</a></h2>
+<ol>
+<li>handle coner case</li>
+<li>define search space
+<ul>
+<li>[left, right] or <em><strong>[left, right)</strong></em></li>
+</ul>
+</li>
+<li>deduce stop condition from seaching space</li>
+<li>mid value: <em>(left + right) / 2</em> may cause overflow, better use <em><strong>((right - left) &gt;&gt; 1) + left</strong></em></li>
+<li>according to search space, update left/right</li>
+</ol>
+<h2 id="questions"><a class="header" href="#questions">Questions</a></h2>
+<h3 id="classic-binary-search"><a class="header" href="#classic-binary-search">Classic binary search</a></h3>
+<pre><code class="language-text">Given an array of integers nums which is sorted in ascending order, and an integer target,
+write a function to search target in nums. If target exists, then return its index.
+Otherwise, return -1.
+
+You must write an algorithm with O(log n) runtime complexity.
+
+Input: nums = [-1,0,3,5,9,12], target = 9
+Output: 4
+Explanation: 9 exists in nums and its index is 4
+
+Input: nums = [-1,0,3,5,9,12], target = 2
+Output: -1
+Explanation: 2 does not exist in nums so return -1
+
+Constraints:
+
+  -  1 &lt;= nums.length &lt;= 104
+  -  -10^4 &lt; nums[i], target &lt; 10^4
+  -  All the integers in nums are unique.
+  -  nums is sorted in ascending order.
+
+link: https://leetcode.com/problems/binary-search/
+</code></pre>
+<pre><code class="language-java">class _704 {
+    public int search(int[] nums, int target) {
+        // 1. Handle corner case
+        if (nums.length == 1) return nums[0] == target ? 0 : -1;
+        if (target &gt; nums[nums.length - 1]) return nums.length;
+
+        // 2. define search space, here  [left, right)
+        int left = 0;
+
+        // 2. according to [left, right),
+        // the search space do not include right pointer
+        int right = nums.length;
+
+        // 3. deduce stop condition from seaching space,
+        //    according to [left, right), left == right is illegal
+        while (left &lt; right) {
+            // 4. be careful about overflow
+            int mid = left + ((right - left) &gt;&gt; 1);
+
+            if (nums[mid] == target) {
+                return mid;
+            } // 5. according to [left, right), update left/right
+            else if (nums[mid] &lt; target) {
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+
+        return -1;
+    }
+}
+</code></pre>
+<h3 id="insertion-point"><a class="header" href="#insertion-point">Insertion Point</a></h3>
+<ul>
+<li>if target is found in array, the insertion point should be the index of the first target</li>
+<li>left point will never go beyond right when search space is [left, right)</li>
+<li>put the boundary of left pointer to target -&gt; left pointer will converage</li>
+</ul>
+<pre><code class="language-text"> Given a sorted array of distinct integers and a target value,
+ return the index if the target is found.
+ If not, return the index where it would be if it were inserted in order.
+
+ You must write an algorithm with O(log n) runtime complexity.
+
+ Input: nums = [1,3,5,6], target = 5
+ Output: 2
+
+ Input: nums = [1,3,5,6], target = 2
+ Output: 1
+
+ Input: nums = [1,3,5,6], target = 7
+ Output: 4
+
+ Constraints:
+ - 1 &lt;= nums.length &lt;= 104
+ - -10^4 &lt;= nums[i] &lt;= 10^4
+ - nums contains distinct values sorted in ascending order.
+ - -10^4 &lt;= target &lt;= 10^4
+
+link: https://leetcode.com/problems/search-insert-position/
+</code></pre>
+<pre><code class="language-java">public class _35 {
+    public int searchInsert(int[] nums, int target) {        
+        if (target &lt; nums[0]) return 0;
+        if (target &gt; nums[nums.length - 1]) return nums.length;
+
+        int left = 0;
+        int right = nums.length;
+
+        while(left &lt; right) {
+            int mid =  ((right - left) &gt;&gt; 1) + left;
+            // left point will never go beyond right since search space is [left, right)
+            // put right pointer to boundary -&gt; left pointer will converage
+            if (target &lt;= nums[mid]) {
+                right = mid;
+            } else {
+                left = mid + 1;
+            }
+
+        //  if (nums[mid] &lt; target) {
+        //     left = mid + 1;
+        // } else {
+        //     right = mid;
+        // }
+        }
+
+        return left;
+    }
+}
+</code></pre>
+<h3 id="first-and-last-position"><a class="header" href="#first-and-last-position">First and Last Position</a></h3>
+<ul>
+<li>variant of Q35</li>
+<li>first apporach is the find the insertion point, then nevigate the pointer to find last element
+<ul>
+<li>this apporach is slow when the distance between first and last element is far</li>
+</ul>
+</li>
+<li>second apporach is to search insertion point of target value then search <em><strong>insertion point of (target + 1)</strong></em></li>
+</ul>
+<blockquote>
+<p>please handle the coner case and boundary check carefully, and think about how to reduce the search space by boundary check</p>
+</blockquote>
+<pre><code class="language-text"> Given an array of integers nums sorted in non-decreasing order,
+ find the starting and ending position of a given target value.
+ If target is not found in the array, return [-1, -1].
+
+ You must write an algorithm with O(log n) runtime complexity.
+
+ Input: nums = [5,7,7,8,8,10], target = 8
+ Output: [3,4]
+
+ Input: nums = [5,7,7,8,8,10], target = 6
+ Output: [-1,-1]
+
+ Input: nums = [], target = 0
+ Output: [-1,-1]
+
+ Constraints:
+ - 0 &lt;= nums.length &lt;= 10^5
+ - -10^9 &lt;= nums[i] &lt;= 10^9
+ - nums is a non-decreasing array.
+ - -10^9 &lt;= target &lt;= 10^9
+
+link: https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array
+</code></pre>
+<pre><code class="language-java">public class _34 {
+    public int[] searchRange(int[] nums, int target) {
+        if (nums.length == 0) return new int[]{-1, -1};
+
+        if (nums.length == 1) return nums[0] == target ? new int[]{0, 0} : new int[]{-1, -1};
+
+        // reduce the search space by boundary check
+        if (nums[nums.length - 1] &lt; target) return new int[]{-1, -1};
+
+        int left = binarySearch(nums, 0, target);
+        if (nums[left] != target) return new int[]{-1, -1};
+        if (left == nums.length - 1) return new int[]{left, left};
+
+        int right = binarySearch(nums, left, target + 1);
+        if (right &gt;= nums.length) return new int[]{left, right - 1};
+        if (nums[right] &gt; target) return new int[]{left, right - 1};
+        return new int[]{left, right};
+
+
+    }
+
+    private int binarySearch(int[] nums, int start, int target) {
+        int left = start;
+        int right = nums.length;
+        while (left &lt; right) {
+            int mid = left + ((right - left) &gt;&gt; 1);
+            if (target &lt;= nums[mid]) {
+                right = mid;
+            } else {
+                left = mid + 1;
+            }
+        }
+
+        return left;
+    }
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="thread-safety"><a class="header" href="#thread-safety">Thread Safety</a></h1>
+<blockquote>
+<p>The core of thread safety is <strong>managing access</strong> to <strong><em>shared</em></strong>, <em><strong>mutable state</strong></em></p>
+</blockquote>
+<h2 id="what-is-thread-safe-class"><a class="header" href="#what-is-thread-safe-class">What is thread safe class</a></h2>
+<ul>
+<li>behaves correctly when accessed from multiple threads, regardless of the scheduling or interleaving of the execution
+of those threads by the runtime environment</li>
+<li>no additional synchronization or other coordination on the part of the calling code</li>
+</ul>
+<h2 id="ways-to-ensure-thread-safety"><a class="header" href="#ways-to-ensure-thread-safety">Ways to ensure thread safety?</a></h2>
+<ul>
+<li>Don't share state</li>
+<li>Make it immutable</li>
+<li>coordinate the accessing by synchronization eg: lock, volatile variable, atomic class</li>
+<li><em><strong>tolerance</strong></em>, is a good solution in some cases, eg: slightly inaccurate count of hits in a web-based service is an
+acceptable loss of accuracy</li>
+</ul>
+<blockquote>
+<p>In general, it is far easier to design a class to be thread-safe than to retrofit it for thread safety later</p>
+</blockquote>
+<hr />
+<h2 id="race-condition"><a class="header" href="#race-condition">Race Condition</a></h2>
+<blockquote>
+<p>A race condition occurs when the correctness of a computation depends on the relative timing or interleaving of
+multiple threads by the runtime</p>
+</blockquote>
+<h3 id="some-typical-of-race-condition"><a class="header" href="#some-typical-of-race-condition">Some typical of race condition</a></h3>
+<ul>
+<li>check-then-act
+<ul>
+<li>observe something to be true (file X doesn’t exist) and then take action based on that observation (create X); but
+in fact the observation could have become invalid between the time you observed it and the time you acted on it (
+someone else created X in the meantime), causing a problem (unexpected exception, overwritten data, file
+corruption)</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-java">      // lazy initialization
+      @NotThreadSafe
+      public class LazyInitRace {
+          private ExpensiveObject instance = null;
+            
+          public ExpensiveObject getInstance() {
+              // check then act
+              if (instance == null) instance = new ExpensiveObject(); 
+                   
+               return instance;
+          }
+      }
+</code></pre>
+<ul>
+<li>Read-modify-write
+<ul>
+<li>resulting state is derived from the previous state, eg: count++, change the count number by incremental operation
+(need to read the current state in order to update the state)</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="atomicity"><a class="header" href="#atomicity">Atomicity</a></h2>
+<h3 id="compound-actions"><a class="header" href="#compound-actions">Compound Actions</a></h3>
+<blockquote>
+<p>The root cause of race condition is compound actions</p>
+</blockquote>
+<ul>
+<li>both check-then-act and Read-modify-write are compound actions that consists of multiple steps</li>
+<li>the data is staled whenever it is read</li>
+<li>make compound actions to atomic prevents other threads from using a variable while we’re in the middle of modifying it</li>
+</ul>
+<blockquote>
+<p>To preserve state consistency, update related state variables in a single atomic operation.</p>
+</blockquote>
+<h3 id="data-race"><a class="header" href="#data-race">Data Race</a></h3>
+<blockquote>
+<p>subset of race condition, two or more threads access a shared memory location concurrently without synchronization,
+and at least one of the accesses is a write operation, lead to undefined behavior</p>
+</blockquote>
+<hr />
+<h2 id="tools-to-ensure-atomicity"><a class="header" href="#tools-to-ensure-atomicity">Tools to ensure atomicity</a></h2>
+<h3 id="reentrant-lock"><a class="header" href="#reentrant-lock">Reentrant Lock</a></h3>
+<blockquote>
+<p>locks are acquired on a per-thread rather than per-invocation basis, allowed to <strong><em>gain lock again</em></strong> when a thread
+already held the same lock</p>
+</blockquote>
+<h4 id="intrinsic-lockmonitor-lock"><a class="header" href="#intrinsic-lockmonitor-lock">Intrinsic Lock/Monitor Lock</a></h4>
+<ul>
+<li>intrinsic locks are reentrant</li>
+<li>mutexes (mutual exclusion lock)</li>
+<li>every Java object can implicitly act as intrinsic lock</li>
+<li>when using locks to coordinate access to a variable, the <strong><em>same lock(same object)</em></strong> must be used wherever that
+variable is accessed</li>
+</ul>
+<pre><code class="language-java">synchronized (lock) { 
+// Access or modify shared state guarded by lock 
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="sharing-object"><a class="header" href="#sharing-object">Sharing Object</a></h1>
+<h2 id="visibility"><a class="header" href="#visibility">Visibility</a></h2>
+<h3 id="reordering"><a class="header" href="#reordering">Reordering</a></h3>
+<blockquote>
+<p>In the absence of synchronization, the compiler, processor, and runtime can do some downright weird things to the
+order in which operations appear to execute</p>
+</blockquote>
+<blockquote>
+<p>there is no guarantee that the reading thread will see a value written by another thread,
+Synchronization must be used to ensure visibility of memory writes across threads</p>
+</blockquote>
+<h3 id="volatile-guarantee-visibility-not-atomicity"><a class="header" href="#volatile-guarantee-visibility-not-atomicity">volatile (guarantee visibility not atomicity)</a></h3>
+<blockquote>
+<p>Locking can guarantee both visibility and atomicity; volatile variables can only guarantee visibility</p>
+</blockquote>
+<ul>
+<li>compiler and runtime are put on notice that this variable is shared and that operations on it should not be
+reordered with other memory operations</li>
+<li>a read of a volatile variable always returns the most recent write by any thread</li>
+<li>volatile variable performs no locking
+<ul>
+<li>lighter weight than synchronized</li>
+</ul>
+</li>
+<li>semantics of volatile are not strong enough to make the increment operation (count++) atomic</li>
+</ul>
+<h3 id="common-mistake"><a class="header" href="#common-mistake">Common Mistake</a></h3>
+<blockquote>
+<p>assume that synchronization needs to be used only when writing to shared variables</p>
+</blockquote>
+<ul>
+<li>Reading data without synchronization is analogous to using the READ_UNCOMMITTED isolation level in a database
+<ul>
+<li>trade accuracy for performance</li>
+<li>should be very careful since the data may end up stale forever and never update, causing excepted result, error
+eg: infinite loop etc</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>data integrity is not guarantee for 64 bits numeric variable (double and long) without synchronization</p>
+</blockquote>
+<ul>
+<li>64 bits numeric JVM is permitted to treat a 64-bit read or write as two separate 32-bit operations. If the reads and
+writes occur in different threads, it is therefore possible to read a nonvolatile long and get back the high 32 bits
+of one value and the low 32 bits of another</li>
+</ul>
+<hr />
+<h2 id="publishing-object"><a class="header" href="#publishing-object">Publishing Object</a></h2>
+<ul>
+<li>this escape</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="cargo"><a class="header" href="#cargo">Cargo</a></h1>
+<h2 id="file-structure"><a class="header" href="#file-structure">File Structure</a></h2>
+<pre><code class="language-text">.
+├── Cargo.lock
+├── Cargo.toml
+├── src/
+│ ├── lib.rs
+│ ├── main.rs
+│ └── bin/
+│       ├── named-executable.rs
+│   ├── another-executable.rs
+│   └── multi-file-executable/
+│       ├── main.rs
+│       └── some_module.rs
+├── benches/
+│ ├── large-input.rs
+│ └── multi-file-bench/
+│     ├── main.rs
+│     └── bench_module.rs
+├── examples/
+│ ├── simple.rs
+│ └── multi-file-example/
+│     ├── main.rs
+│     └── ex_module.rs
+└── tests/
+    ├── some-integration-tests.rs
+    └── multi-file-test/
+        ├── main.rs
+        └── test_module.rs
+
+</code></pre>
+<ul>
+<li>Cargo.toml and Cargo.lock are stored in the root of your package (package root).</li>
+<li>Source code goes in the src directory.</li>
+<li>The default library file is src/lib.rs.</li>
+<li>The default executable file is src/main.rs.
+<ul>
+<li>Other executables can be placed in src/bin/.</li>
+</ul>
+</li>
+<li>Benchmarks go in the benches directory.</li>
+<li>Examples go in the examples directory.</li>
+<li>Integration tests go in the tests directory.</li>
+</ul>
+<h2 id="command"><a class="header" href="#command">Command</a></h2>
+<pre><code class="language-shell">cargo build
+
+cargo new &lt;project_name&gt;
+
+# check if it compiles without producing executable
+cargo check
+
+# build then run
+cargo run
+
+# update all dependencies to compatible version
+cargo update
+
+#build documentation provided by all your dependencies locally and open it in your browser
+cargo doc --open
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="common-programming-concept"><a class="header" href="#common-programming-concept">Common Programming Concept</a></h1>
+<h2 id="convention"><a class="header" href="#convention">Convention</a></h2>
+<ul>
+<li>snake_case for function and variable</li>
+<li>use <em><strong>//</strong></em> for comment</li>
+</ul>
+<hr />
+<h2 id="shadowing"><a class="header" href="#shadowing">Shadowing</a></h2>
+<ul>
+<li>ability to declare variable with the same name as a previous defined variable</li>
+<li>first variable <strong><em>is shadowed</em></strong> by the second</li>
+<li>it is different from mut, as type can be changed and after shadowing the previous variable is gone</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let x = 5;
+
+    let x = true;
+    
+    // creates a scope
+    {
+        let x = false;
+        println!(&quot;The value of x in the inner scope is: {x}&quot;);
+    }
+
+    println!(&quot;The value of x is: {x}&quot;);
+}</code></pre></pre>
+<hr />
+<h1 id="data-types"><a class="header" href="#data-types">Data Types</a></h1>
+<ul>
+<li>rust is statically typed -&gt; all types info is confirmed in compile time</li>
+</ul>
+<h2 id="primitives"><a class="header" href="#primitives">Primitives</a></h2>
+<h3 id="constant"><a class="header" href="#constant">Constant</a></h3>
+<ul>
+<li>use UPPER_CASE for constant</li>
+<li><strong>not</strong> allow to use mut</li>
+<li>type of the value must be annotated</li>
+<li>can be used in <strong><em>any scope</em></strong> including global scope, while let can only be used in function</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>const RETENTION_DAY: u32 = 30;
+<span class="boring">}</span></code></pre></pre>
+<h3 id="scalar"><a class="header" href="#scalar">Scalar</a></h3>
+<ul>
+<li>Integer, u8, i8, u32, i32..., isize, usize (depends on the architecture)</li>
+<li>Floating-Point
+<ul>
+<li>all floating point types are signed, f32, f64</li>
+<li>IEEE-754 standard</li>
+</ul>
+</li>
+<li>Boolean
+<ul>
+<li>one byte</li>
+</ul>
+</li>
+<li>Character
+<ul>
+<li>4 bytes</li>
+<li>unicode Scalar Value</li>
+<li>zero-width spaces is valid</li>
+</ul>
+</li>
+</ul>
+<h3 id="overflow"><a class="header" href="#overflow">Overflow</a></h3>
+<blockquote>
+<p>It will panic will overflow occurs in debug mode, two's complement wrapping instead of panic in release mode</p>
+</blockquote>
+<h4 id="explicitly-handle-overflow"><a class="header" href="#explicitly-handle-overflow">Explicitly handle overflow</a></h4>
+<ul>
+<li>Wrap in all modes with the wrapping_* methods, such as wrapping_add.</li>
+<li>Return the None value if there is overflow with the checked_* methods.</li>
+<li>Return the value and a boolean indicating whether there was overflow with the overflowing_* methods.</li>
+<li>Saturate at the value’s minimum or maximum values with the saturating_* methods.</li>
+</ul>
+<h3 id="unit"><a class="header" href="#unit">Unit</a></h3>
+<ul>
+<li>special <strong><em>type</em></strong> represent empty tuple</li>
+<li>expressions implicitly return the unit value if they don’t return any other value</li>
+</ul>
+<h3 id="tuple"><a class="header" href="#tuple">Tuple</a></h3>
+<ul>
+<li>fixed length, once declared, cannot grow or shrink</li>
+<li>multi-types values is allowed</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    // init
+    let tup: (i32, f64, u8) = (500, 6.4, 1);
+    let tup = (500, 6.4, 1);
+
+    // access
+    let five_hundred = tup.0;
+    let six_point_four = tup.1;
+    let one = tup.2;
+    
+    // no field `3` on type occurs when accessing invlid index
+    print!(&quot;{}&quot;, tup.3);
+
+    // destructure by pattern matching
+    let (x, y, z) = tup;
+}</code></pre></pre>
+<h3 id="array"><a class="header" href="#array">Array</a></h3>
+<ul>
+<li>fixed length, same type</li>
+<li>allocated on stack</li>
+<li>index out of bounds error occurs when accessing invalid index</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let a = [1, 2, 3, 4, 5];
+
+        // [type, num of elements]
+    let a: [i32; 5] = [1, 2, 3, 4, 5];
+
+    let a = [3; 5]; //same as let a = [3, 3, 3, 3, 3]
+
+    // access
+    let first = a[0];
+    let second = a[1];
+}</code></pre></pre>
+<hr />
+<h2 id="function"><a class="header" href="#function">Function</a></h2>
+<blockquote>
+<p>made up of a series of <strong><em>statement</em></strong> and optionally end with an <strong><em>expression</em></strong></p>
+</blockquote>
+<ul>
+<li>can be defined anywhere as long as it can be seen by the caller</li>
+<li>argument type of each parameter must be declared</li>
+<li>return type must be declared explicitly</li>
+<li>value can be return through the return keyword or return the <strong>last expression</strong> implicitly</li>
+<li><em><strong>unit</strong></em> is returned implicitly for function that don't have return value</li>
+</ul>
+<h3 id="statement"><a class="header" href="#statement">Statement</a></h3>
+<blockquote>
+<p>instructions that perform some action and <em><strong>do not return</strong></em> a value</p>
+</blockquote>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    // error, statement don't return valures
+    let x = (let y = 6);
+}</code></pre></pre>
+<ul>
+<li><em>Function</em> <em><strong>definitions</strong></em> are also statements -&gt; the entire function is statement -&gt; cannot assign fn to variable</li>
+</ul>
+<h3 id="expression"><a class="header" href="#expression">Expression</a></h3>
+<ul>
+<li>evaluate to a value</li>
+<li>Expressions <strong><em>do not include</em></strong> ending semicolons.</li>
+<li><em><strong>Calling</strong></em> <em>a function</em> is an expression</li>
+<li>A new scope block created with <em><strong>curly brackets</strong></em> is an expression</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let y = {
+        let x = 3;       // &lt;- this {} block is an expression
+        x + 1            // this line don't hv ; which tells it is an expression
+    };
+
+    println!(&quot;The value of y is: {y}&quot;);
+}</code></pre></pre>
+<h2 id="flow-control"><a class="header" href="#flow-control">Flow Control</a></h2>
+<ul>
+<li>non-boolean type is not allowed in condition expression</li>
+</ul>
+<h3 id="if"><a class="header" href="#if">if</a></h3>
+<ul>
+<li>if is a statement -&gt; can assign it to a variable</li>
+</ul>
+<h3 id="iteration-1"><a class="header" href="#iteration-1">Iteration</a></h3>
+<ul>
+<li>three kinds of iteration: <em><strong>loop</strong></em>, <em><strong>while</strong></em>, <em><strong>for</strong></em></li>
+</ul>
+<h3 id="loop"><a class="header" href="#loop">loop</a></h3>
+<ul>
+<li>run forever, until explicitly exit by <strong><em>break</em></strong></li>
+<li><strong><em>continue</em></strong> is allowed in loop</li>
+<li>label is allowed</li>
+</ul>
+<h3 id="return-values-from-break"><a class="header" href="#return-values-from-break">return values from break</a></h3>
+<pre><pre class="playground"><code class="language-rust">
+fn main() {
+    let mut counter = 0;
+
+    let result = loop {
+        counter += 1;
+        if counter == 10 {
+            break counter * 2;
+        }
+    };
+
+    println!(&quot;The result is {result}&quot;);
+}</code></pre></pre>
+<h3 id="while"><a class="header" href="#while">while</a></h3>
+<ul>
+<li>like common while loop in other language</li>
+</ul>
+<h3 id="for-loop"><a class="header" href="#for-loop">for loop</a></h3>
+<p>using break to return value is not allowed</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    for number in (1..4).rev() {
+        println!(&quot;{number}!&quot;);
+    }
+    
+
+    let a = [10, 20, 30, 40, 50];
+
+    for element in a {
+        println!(&quot;the value is: {element}&quot;);
+    }
+}</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><p>`# Rust Memory Model</p>
+<h2 id="what-is-memory-manage"><a class="header" href="#what-is-memory-manage">What is memory manage?</a></h2>
+<blockquote>
+<p>In most case, we mean manage heap, moreover, deallocate heap memory in right timing</p>
+</blockquote>
+<h2 id="memoryheap-manage-philosophy"><a class="header" href="#memoryheap-manage-philosophy">Memory(Heap) Manage Philosophy</a></h2>
+<ul>
+<li>Garbage Collector</li>
+<li>explicit manage by programmer</li>
+<li>Ownership</li>
+</ul>
+<hr />
+<h2 id="manual-memory-management"><a class="header" href="#manual-memory-management">Manual Memory Management</a></h2>
+<blockquote>
+<p>Manual Memory Management is not allow in Rust except using unsafe</p>
+</blockquote>
+<h2 id="design-principles-of-memory-management-in-rust"><a class="header" href="#design-principles-of-memory-management-in-rust">Design Principles of Memory Management in Rust</a></h2>
+<h3 id="safety"><a class="header" href="#safety">Safety</a></h3>
+<ul>
+<li>What is safety
+<ul>
+<li>never have undefined behavior in your programme, undefined behavior is especially dangerous for low-level programs
+with direct access to memory
+<ul>
+<li>About 70% of reported security vulnerabilities in low-level systems are caused by memory corruption</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="performance"><a class="header" href="#performance">Performance</a></h3>
+<ul>
+<li>prevent undefined behavior at compile-time instead of run-time
+<ul>
+<li>zero cost abstraction -&gt; check in compile time</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="memory-model-of-rust"><a class="header" href="#memory-model-of-rust">Memory Model of Rust</a></h2>
+<h3 id="stack"><a class="header" href="#stack">Stack</a></h3>
+<blockquote>
+<p>stack is managed by rust, <strong><em>stack frame</em></strong> is allocated when function is called and deallocated when return</p>
+</blockquote>
+<ul>
+<li>stack holds data associated with a specific function, while heap holds data that outlive a function</li>
+<li>when assigning types (with copy trait to variable) -&gt; value is copied to that variable (on stack frame)
+<ul>
+<li>assign an integer variable to new variable</li>
+</ul>
+</li>
+<li>access/copy on stack is faster than heap(loop up for new space for copy)</li>
+<li>stack is fixed size, cannot grow or shrink</li>
+</ul>
+<h3 id="heap"><a class="header" href="#heap">Heap</a></h3>
+<ul>
+<li>All heap data must be owned by <strong><em>exactly one</em></strong> variable</li>
+<li>Heap data can only be accessed through its current owner, not a previous owner.</li>
+</ul>
+<blockquote>
+<p>If a variable <strong><em>owns</em></strong> a box, when Rust deallocates the variable's frame, then Rust deallocates the box's heap
+memory.</p>
+</blockquote>
+<h4 id="box"><a class="header" href="#box">Box</a></h4>
+<ul>
+<li>used to put data on the heap</li>
+</ul>
+<h4 id="consider-the-following-example"><a class="header" href="#consider-the-following-example">Consider the following example</a></h4>
+<pre><pre class="playground"><code class="language-rust">    fn main() {
+    // copied 1_000_000 data on stak
+    let a = [0; 1_000_000];
+    let b = a;
+    
+    // copied 1 pointer on stack only
+    let c = Box::new([0; 1_000_000]);
+    let d = c;
+}</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ownership"><a class="header" href="#ownership">Ownership</a></h1>
+<blockquote>
+<p>💡 a set of rules that govern how a Rust program manages memory (heap) -&gt; make memory safety guarantee without garbage
+collector</p>
+</blockquote>
+<h2 id="ownership-rules"><a class="header" href="#ownership-rules">Ownership Rules</a></h2>
+<ul>
+<li>Each data in <em><strong>heap</strong></em> has an owner.</li>
+<li>There can only be one owner at a time.</li>
+<li>When the owner goes out of scope, the value will either be dropped or returned</li>
+</ul>
+<h4 id="move"><a class="header" href="#move">Move</a></h4>
+<ul>
+<li>Ownership can be transferred by moves, which happen on <strong><em>assignments</em></strong> and <strong><em>function calls</em></strong>.</li>
+</ul>
+<blockquote>
+<p>Moved heap data principle: if a variable x moves ownership of heap data to another variable y, then x cannot be used
+after the move.</p>
+</blockquote>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let s1 = gives_ownership();         // gives_ownership moves its return
+    // value into s1
+
+    let s2 = String::from(&quot;hello&quot;);     // s2 comes into scope
+
+    let s3 = takes_and_gives_back(s2);  // s2 is moved into
+    // takes_and_gives_back, which also
+    // moves its return value into s3
+} // Here, s3 goes out of scope and is dropped. s2 was moved, so nothing
+// happens. s1 goes out of scope and is dropped.
+
+fn gives_ownership() -&gt; String {             // gives_ownership will move its
+    // return value into the function
+    // that calls it
+
+    let some_string = String::from(&quot;yours&quot;); // some_string comes into scope
+
+    some_string                              // some_string is returned and
+    // moves out to the calling
+    // function
+}
+
+// This function takes a String and returns one
+fn takes_and_gives_back(a_string: String) -&gt; String { // a_string comes into
+    // scope
+
+    a_string  // a_string is returned and moves out to the calling function
+}</code></pre></pre>
+<hr />
+<h2 id="reference"><a class="header" href="#reference">Reference</a></h2>
+<blockquote>
+<p>References are non-owning pointers, because they do not own the data they point to</p>
+</blockquote>
+<p><img src="book/the-rust-programming-language/ownership/reference.png" alt="Reference" /></p>
+<h3 id="implicit-dereferencing-of-rust"><a class="header" href="#implicit-dereferencing-of-rust">Implicit dereferencing of Rust</a></h3>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let x: Box&lt;i32&gt; = Box::new(-1);
+    let x_abs1 = i32::abs(*x); // explicit dereference
+    let x_abs2 = x.abs();      // implicit dereference
+    assert_eq!(x_abs1, x_abs2);
+
+    let r: &amp;Box&lt;i32&gt; = &amp;x;
+    let r_abs1 = i32::abs(**r); // explicit dereference (twice)
+    let r_abs2 = r.abs();       // implicit dereference (twice)
+    assert_eq!(r_abs1, r_abs2);
+
+    let s = String::from(&quot;Hello&quot;);
+    let s_len1 = str::len(&amp;s); // explicit reference
+    let s_len2 = s.len();      // implicit reference
+    assert_eq!(s_len1, s_len2);
+}</code></pre></pre>
+<ul>
+<li>works for multiple layers of pointers</li>
+</ul>
+<h2 id="path"><a class="header" href="#path">Path</a></h2>
+<blockquote>
+<p>anything you can put on the left side of an assignment operator</p>
+</blockquote>
+<ul>
+<li>eg: a, *a, a[0], a.field</li>
+</ul>
+<h2 id="permission"><a class="header" href="#permission">Permission</a></h2>
+<blockquote>
+<p>permissions are defined paths, describe how the compiler &quot;thinks&quot; about your program before the program is executed.</p>
+</blockquote>
+<ul>
+<li>Read (R): data <strong><em>can be copied</em></strong> to another location.</li>
+<li>Write (W): data <strong><em>can be mutated in-place</em></strong>.</li>
+<li>Own (O): data can be <strong><em>moved or dropped</em></strong>.</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    // by default path has RO permission
+    let a = 5;
+
+    // add W permission by mut
+    let mut b = 5;
+
+    let mut v: Vec&lt;i32&gt; = vec![1, 2, 3];
+                                            // &lt;-   v: RWO
+    let num: &amp;i32 = &amp;v[2];
+                                            // &lt;- num: R O 
+}</code></pre></pre>
+<blockquote>
+<p>reference can <strong><em>temporarily remove</em></strong> permission on path, since some permission are <strong><em>mutually exclusive</em></strong> (data
+should not be aliased and mutated)</p>
+</blockquote>
+<blockquote>
+<p>borrow checker make use of permission to check if your programme is safe</p>
+</blockquote>
+<blockquote>
+<p>Permissions Are Returned At The End of a Reference's Lifetime</p>
+</blockquote>
+<h2 id="simultaneous-aliasing-and-mutation"><a class="header" href="#simultaneous-aliasing-and-mutation">Simultaneous Aliasing and Mutation</a></h2>
+<blockquote>
+<p>Data can be aliased. Data can be mutated. But data cannot be both aliased and mutated.</p>
+</blockquote>
+<h3 id="problems-of-simultaneous-aliasing-and-mutation"><a class="header" href="#problems-of-simultaneous-aliasing-and-mutation">Problems of Simultaneous Aliasing and Mutation</a></h3>
+<blockquote>
+<p>Aliasing and mutation at the same time is error-prone</p>
+</blockquote>
+<ul>
+<li>data race in concurrent programming</li>
+<li>deallocating at one variable and leaving others pointing to deallocated memory is dangerous</li>
+<li>mutating at one variable break promise expected by other variable</li>
+</ul>
+<blockquote>
+<p>∴ Rust disallow <strong><em>simultaneous</em></strong> Aliasing and Mutation</p>
+</blockquote>
+<h3 id="immutable-references-shared-references"><a class="header" href="#immutable-references-shared-references">Immutable references (shared references)</a></h3>
+<p><img src="book/the-rust-programming-language/ownership/immutable-references.png" alt="immutable-references" /></p>
+<h3 id="mutable-references-unique-references"><a class="header" href="#mutable-references-unique-references">Mutable references (unique references)</a></h3>
+<p><img src="book/the-rust-programming-language/ownership/mutable-references.png" alt="mutable-references" /></p>
+<h3 id="trick-to-downgrade-w-permission-temporarily"><a class="header" href="#trick-to-downgrade-w-permission-temporarily">Trick to downgrade W permission temporarily</a></h3>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut v: Vec&lt;i32&gt; = vec![1, 2, 3];
+    let num: &amp;mut i32 = &amp;mut v[2];
+    let num2: &amp;i32 = &amp;*num;
+                                     // alias is created
+                                     // &lt;-   *num: R
+                                     // &lt;-  *num2: R
+                                     // &lt;-    num: R
+                                     // &lt;-   num2: R O
+    
+    println!(&quot;{} {}&quot;, *num, *num2);
+}</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="fight-with-borrow-checker"><a class="header" href="#fight-with-borrow-checker">Fight With Borrow Checker</a></h1>
+<h2 id="case-study"><a class="header" href="#case-study">Case Study</a></h2>
+<h3 id="returning-a-reference-to-the-stack"><a class="header" href="#returning-a-reference-to-the-stack">Returning a Reference to the Stack</a></h3>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn return_a_string() -&gt; &amp;String {
+    let s = String::from(&quot;Hello world&quot;);
+    &amp;s
+    // s is dropped
+}
+<span class="boring">}</span></code></pre></pre>
+<h4 id="solution"><a class="header" href="#solution">Solution</a></h4>
+<ul>
+<li>return String instead of reference</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn return_a_string() -&gt; String {
+    let s = String::from(&quot;Hello world&quot;);
+    s
+}
+<span class="boring">}</span></code></pre></pre>
+<ul>
+<li>string literal (live forever)</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// 'static -&gt; live forever
+fn return_a_string() -&gt; &amp;'static str {
+    &quot;Hello world&quot;
+}
+<span class="boring">}</span></code></pre></pre>
+<ul>
+<li>defer borrow check with garbage collection</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// At runtime, 
+// the Rc checks when the last Rc pointing to data has been dropped
+// then deallocates the data.
+use std::rc::Rc;
+
+fn return_a_string() -&gt; Rc&lt;String&gt; {
+    let s = Rc::new(String::from(&quot;Hello world&quot;));
+    Rc::clone(&amp;s)
+}
+<span class="boring">}</span></code></pre></pre>
+<ul>
+<li>shift the responsibility to the caller</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn return_a_string(output: &amp;mut String) {
+    output.replace_range(.., &quot;Hello world&quot;);
+}
+<span class="boring">}</span></code></pre></pre>
+<blockquote>
+<p>💡 choose the solution base on your need, try to think about How long should my string live? Who should be in charge of
+deallocating it?</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="struct"><a class="header" href="#struct">Struct</a></h1>
+<h2 id="operation"><a class="header" href="#operation">Operation</a></h2>
+<pre><pre class="playground"><code class="language-rust">// define
+#[derive(Debug)]
+struct User {
+    active: bool,
+    username: String,
+    email: String,
+    sign_in_count: u64,
+}
+
+fn main() {
+    // new
+    let user1 = User {
+        active: true,
+        username: String::from(&quot;someusername123&quot;),
+        email: String::from(&quot;someone@example.com&quot;),
+        sign_in_count: 1,
+    };
+
+    // new from another instance
+    let user2 = User {
+        sign_in_count: 100,
+        ..user1             // &lt;- must state in last line 
+    };
+
+    // note user1 is invalid here,
+    // since the ownership of username and email is transferred to user2
+
+    print!(&quot;{:#?}&quot;, user2)
+}</code></pre></pre>
+<h2 id="tuple-struct"><a class="header" href="#tuple-struct">Tuple Struct</a></h2>
+<ul>
+<li>struct with fields that don't have a name</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">struct Color(i32, i32, i32);
+
+struct Point(i32, i32, i32);
+
+fn main() {
+    let black = Color(0, 0, 0);
+    let origin = Point(0, 0, 0);
+}</code></pre></pre>
+<h2 id="unit-like-struct"><a class="header" href="#unit-like-struct">Unit-Like Struct</a></h2>
+<ul>
+<li>struct with no field</li>
+<li>use for implementing trait</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">struct AlwaysEqual;
+
+fn main() {
+    let subject = AlwaysEqual;
+}</code></pre></pre>
+<h2 id="method"><a class="header" href="#method">Method</a></h2>
+<ul>
+<li>method calling support <em><strong>automatic referencing and dereferencing</strong></em> -&gt; implcitly induce from method receivers</li>
+<li>defined within the context of struct, enum or trait</li>
+<li>the first parameter is always <em><strong>self</strong></em></li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    // &amp;self is shorthand of self: &amp;Self
+    fn area(&amp;self) -&gt; u32 {
+        self.width * self.height
+    }
+}
+
+fn main() {
+    let rect1 = Rectangle {
+        width: 30,
+        height: 50,
+    };
+
+    // automatic referencing and de-referencing here: rect1.area() is same as (&amp;rect1).area()
+    println!(&quot;The area of the rectangle is {} square pixels.&quot;, rect1.area()
+    );
+}</code></pre></pre>
+<h2 id="associated-functions"><a class="header" href="#associated-functions">Associated Functions</a></h2>
+<ul>
+<li>All functions defined within an impl block are called associated functions, method is a subset of Associated Functions</li>
+<li>associated function can be defined <em><strong>without</strong></em> <em>self</em> parameter, like static method in java</li>
+<li>use <code>Struct_Name::FunctionName</code> to invoke the function</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">impl Rectangle {
+    fn square(size: u32) -&gt; Self {
+        // Self -&gt; alias of Rectangle
+        Self {
+            width: size,
+            height: size,
+        }
+    }
+}
+
+fn main() {
+    Rectangle::square(2)
+}</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="great-content"><a class="header" href="#great-content">Great Content</a></h1>
+<p><a href="https://www.youtube.com/watch?v=rZPRjLMWOao&amp;list=PLNPUF5QyWU8PydLG2cIJrCvnn5I_exhYx">CSE138</a></p>
+<ul>
+<li>UC Santa Cruz CSE138 (Distributed Systems) Lecture</li>
+</ul>
+<p><a href="https://www.youtube.com/watch?v=8fMFa6OqlY8">Teaching old Streams new tricks By Viktor Klang</a></p>
+<ul>
+<li>extends stream api capability</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
+
+    </div>
+    </body>
+</html>
