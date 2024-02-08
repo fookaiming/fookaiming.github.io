@@ -178,9 +178,8 @@
                     <main>
                         <h1 id="virtual-thread"><a class="header" href="#virtual-thread">Virtual Thread</a></h1>
 <p><img src="dev/java/virtual-thread.assets/virtual-thread.png" alt="Virtual Thread" /></p>
-<h2 id="what-is-virtual-thread"><a class="header" href="#what-is-virtual-thread">What is virtual thread?</a></h2>
 <blockquote>
-<p>a new thread model provided by jvm, for creating <strong><em>lightweight</em></strong> application thread that maps to a platform thread</p>
+<p>A new thread model provided by JVM, for creating <strong><em>lightweight</em></strong> application thread that maps to a platform thread</p>
 </blockquote>
 <ul>
 <li>The virtual thread can map to different platform thread at different time(Many-to-Many)</li>
@@ -233,9 +232,10 @@ help reduce the overhead</li>
 </li>
 </ul>
 <h2 id="limitation"><a class="header" href="#limitation">Limitation</a></h2>
-<h3 id="pinning"><a class="header" href="#pinning">Pinning</a></h3>
+<h3 id="pinning-issue"><a class="header" href="#pinning-issue">Pinning Issue</a></h3>
 <blockquote>
-<p>virtual thread cannot be unmounted from its carrier, monopolizing that carrier thread from executing other tasks</p>
+<p>Pinning occurs when virtual thread cannot be unmounted from its carrier, monopolizing that carrier thread from
+executing other tasks</p>
 </blockquote>
 <h4 id="occurs-in"><a class="header" href="#occurs-in">Occurs in</a></h4>
 <ul>
@@ -253,7 +253,6 @@ help reduce the overhead</li>
 <h2 id="capable-for"><a class="header" href="#capable-for">Capable for</a></h2>
 <ul>
 <li>IO intensive application</li>
-<li>short task</li>
 </ul>
 <h2 id="bear-in-mind"><a class="header" href="#bear-in-mind">Bear in mind</a></h2>
 <ul>
@@ -290,13 +289,13 @@ DateTimeFormatter</li>
 <ul>
 <li>mysql jdbc
 <ul>
-<li><a href="https://bugs.mysql.com/bug.php?id=110512">the migration of virtual thread have actually contributed but not merged</a></li>
-<li>the mysql jdbc is designed to be thread safe, but the modern application usage of jdbc are thread confined</li>
-<li>better impl. in a lock free way
+<li>currently not supported
 <ul>
-<li>lock free impl. mysql jdbc (https://github.com/neowu/mysql-connector-j</li>
+<li><a href="https://bugs.mysql.com/bug.php?id=110512">the migration of virtual thread have actually contributed but not merged</a></li>
 </ul>
 </li>
+<li>the mysql jdbc is designed to be thread safe, but the modern application usage of jdbc are thread confined</li>
+<li><a href="https://github.com/neowu/mysql-connector-j">A lock free implementation of mysql jdbc</a></li>
 </ul>
 </li>
 </ul>
@@ -329,9 +328,8 @@ DateTimeFormatter</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="virtual-thread-1"><a class="header" href="#virtual-thread-1">Virtual Thread</a></h1>
 <p><img src="dev/java/virtual-thread.assets/virtual-thread.png" alt="Virtual Thread" /></p>
-<h2 id="what-is-virtual-thread-1"><a class="header" href="#what-is-virtual-thread-1">What is virtual thread?</a></h2>
 <blockquote>
-<p>a new thread model provided by jvm, for creating <strong><em>lightweight</em></strong> application thread that maps to a platform thread</p>
+<p>A new thread model provided by JVM, for creating <strong><em>lightweight</em></strong> application thread that maps to a platform thread</p>
 </blockquote>
 <ul>
 <li>The virtual thread can map to different platform thread at different time(Many-to-Many)</li>
@@ -384,9 +382,10 @@ help reduce the overhead</li>
 </li>
 </ul>
 <h2 id="limitation-1"><a class="header" href="#limitation-1">Limitation</a></h2>
-<h3 id="pinning-1"><a class="header" href="#pinning-1">Pinning</a></h3>
+<h3 id="pinning-issue-1"><a class="header" href="#pinning-issue-1">Pinning Issue</a></h3>
 <blockquote>
-<p>virtual thread cannot be unmounted from its carrier, monopolizing that carrier thread from executing other tasks</p>
+<p>Pinning occurs when virtual thread cannot be unmounted from its carrier, monopolizing that carrier thread from
+executing other tasks</p>
 </blockquote>
 <h4 id="occurs-in-1"><a class="header" href="#occurs-in-1">Occurs in</a></h4>
 <ul>
@@ -404,7 +403,6 @@ help reduce the overhead</li>
 <h2 id="capable-for-1"><a class="header" href="#capable-for-1">Capable for</a></h2>
 <ul>
 <li>IO intensive application</li>
-<li>short task</li>
 </ul>
 <h2 id="bear-in-mind-1"><a class="header" href="#bear-in-mind-1">Bear in mind</a></h2>
 <ul>
@@ -441,13 +439,13 @@ DateTimeFormatter</li>
 <ul>
 <li>mysql jdbc
 <ul>
-<li><a href="https://bugs.mysql.com/bug.php?id=110512">the migration of virtual thread have actually contributed but not merged</a></li>
-<li>the mysql jdbc is designed to be thread safe, but the modern application usage of jdbc are thread confined</li>
-<li>better impl. in a lock free way
+<li>currently not supported
 <ul>
-<li>lock free impl. mysql jdbc (https://github.com/neowu/mysql-connector-j</li>
+<li><a href="https://bugs.mysql.com/bug.php?id=110512">the migration of virtual thread have actually contributed but not merged</a></li>
 </ul>
 </li>
+<li>the mysql jdbc is designed to be thread safe, but the modern application usage of jdbc are thread confined</li>
+<li><a href="https://github.com/neowu/mysql-connector-j">A lock free implementation of mysql jdbc</a></li>
 </ul>
 </li>
 </ul>
@@ -480,9 +478,8 @@ DateTimeFormatter</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="virtual-thread-2"><a class="header" href="#virtual-thread-2">Virtual Thread</a></h1>
 <p><img src="dev/java/virtual-thread.assets/virtual-thread.png" alt="Virtual Thread" /></p>
-<h2 id="what-is-virtual-thread-2"><a class="header" href="#what-is-virtual-thread-2">What is virtual thread?</a></h2>
 <blockquote>
-<p>a new thread model provided by jvm, for creating <strong><em>lightweight</em></strong> application thread that maps to a platform thread</p>
+<p>A new thread model provided by JVM, for creating <strong><em>lightweight</em></strong> application thread that maps to a platform thread</p>
 </blockquote>
 <ul>
 <li>The virtual thread can map to different platform thread at different time(Many-to-Many)</li>
@@ -535,9 +532,10 @@ help reduce the overhead</li>
 </li>
 </ul>
 <h2 id="limitation-2"><a class="header" href="#limitation-2">Limitation</a></h2>
-<h3 id="pinning-2"><a class="header" href="#pinning-2">Pinning</a></h3>
+<h3 id="pinning-issue-2"><a class="header" href="#pinning-issue-2">Pinning Issue</a></h3>
 <blockquote>
-<p>virtual thread cannot be unmounted from its carrier, monopolizing that carrier thread from executing other tasks</p>
+<p>Pinning occurs when virtual thread cannot be unmounted from its carrier, monopolizing that carrier thread from
+executing other tasks</p>
 </blockquote>
 <h4 id="occurs-in-2"><a class="header" href="#occurs-in-2">Occurs in</a></h4>
 <ul>
@@ -555,7 +553,6 @@ help reduce the overhead</li>
 <h2 id="capable-for-2"><a class="header" href="#capable-for-2">Capable for</a></h2>
 <ul>
 <li>IO intensive application</li>
-<li>short task</li>
 </ul>
 <h2 id="bear-in-mind-2"><a class="header" href="#bear-in-mind-2">Bear in mind</a></h2>
 <ul>
@@ -592,13 +589,13 @@ DateTimeFormatter</li>
 <ul>
 <li>mysql jdbc
 <ul>
-<li><a href="https://bugs.mysql.com/bug.php?id=110512">the migration of virtual thread have actually contributed but not merged</a></li>
-<li>the mysql jdbc is designed to be thread safe, but the modern application usage of jdbc are thread confined</li>
-<li>better impl. in a lock free way
+<li>currently not supported
 <ul>
-<li>lock free impl. mysql jdbc (https://github.com/neowu/mysql-connector-j</li>
+<li><a href="https://bugs.mysql.com/bug.php?id=110512">the migration of virtual thread have actually contributed but not merged</a></li>
 </ul>
 </li>
+<li>the mysql jdbc is designed to be thread safe, but the modern application usage of jdbc are thread confined</li>
+<li><a href="https://github.com/neowu/mysql-connector-j">A lock free implementation of mysql jdbc</a></li>
 </ul>
 </li>
 </ul>

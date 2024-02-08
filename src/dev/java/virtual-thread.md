@@ -2,9 +2,8 @@
 
 ![Virtual Thread](virtual-thread.assets/virtual-thread.png)
 
-## What is virtual thread?
 
-> a new thread model provided by jvm, for creating **_lightweight_** application thread that maps to a platform thread
+> A new thread model provided by JVM, for creating **_lightweight_** application thread that maps to a platform thread
 
 - The virtual thread can map to different platform thread at different time(Many-to-Many)
 - thread stack live in heap(dynamic stack space)
@@ -36,9 +35,10 @@
 
 ## Limitation
 
-### Pinning
+### Pinning Issue
 
-> virtual thread cannot be unmounted from its carrier, monopolizing that carrier thread from executing other tasks
+> Pinning occurs when virtual thread cannot be unmounted from its carrier, monopolizing that carrier thread from
+> executing other tasks
 
 #### Occurs in
 
@@ -53,7 +53,6 @@
 ## Capable for
 
 - IO intensive application
-- short task
 
 ## Bear in mind
 
@@ -77,10 +76,10 @@
 ### stumbling block
 
 - mysql jdbc
-    - [the migration of virtual thread have actually contributed but not merged](https://bugs.mysql.com/bug.php?id=110512)
+    - currently not supported
+        - [the migration of virtual thread have actually contributed but not merged](https://bugs.mysql.com/bug.php?id=110512)
     - the mysql jdbc is designed to be thread safe, but the modern application usage of jdbc are thread confined
-    - better impl. in a lock free way
-        - lock free impl. mysql jdbc (https://github.com/neowu/mysql-connector-j
+    - [A lock free implementation of mysql jdbc](https://github.com/neowu/mysql-connector-j)
 
 ## Best practise
 
