@@ -5,6 +5,7 @@
 ---
 
 # SEC
+- [Https Replay Attack](sec/https-replay-attack.md)
 
 ---
 
