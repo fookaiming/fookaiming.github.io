@@ -12,19 +12,19 @@
 
 # DEV
 
-- [JAVA](./dev/java/java.md)
-    - [Virtual Thread](dev/java/virtual-thread/virtual-thread.md)
+- [JAVA](./dev/java/virtual-thread.md)
+    - [Virtual Thread](dev/java/virtual-thread.md)
     - [Concurrency](./dev/java/java-concurrency.md)
-    - [Tips and Tricks](./dev/java/tips_and_tricks/tips_and_tricks.md)
+    - [Tips and Tricks](dev/java/tips_and_tricks.md)
 
-- [Data Structure](./dev/data-structure/data-structure.md)
-    - [Bloom Filter](./dev/data-structure/bloom-filter/bloom-filter.md)
+- [Data Structure](./dev/data-structure/bloom-filter.md)
+    - [Bloom Filter](dev/data-structure/bloom-filter.md)
 
 - [Distributed Systems](./dev/distributed-systems/distributed-system.md)
-    - [CSE138](./dev/distributed-systems/cse138/cse138.md)
-        - [Distributed System What and Why](./dev/distributed-systems/cse138/distributed-system-what-and-why/distributed-system-what-and-why.md)
+    - [CSE138](./dev/distributed-systems/cse138/distributed-system-what-and-why.md)
+        - [Distributed System What and Why](dev/distributed-systems/cse138/distributed-system-what-and-why.md)
 
-- [LeetCode](./dev/leetcode/leetcode.md)
+- [LeetCode](./dev/leetcode/binary-search.md)
     - [Binary Search](./dev/leetcode/binary-search.md)
 
 ---
@@ -49,7 +49,7 @@
     - [Thread Safety](./book/java-concurrency-in-practice/thread_safety.md)
     - [Sharing Object](./book/java-concurrency-in-practice/sharing_object.md)
 
-- [The Rust Programming Language](./book/the-rust-programming-language/the-rust-programming-language.md)
+- [The Rust Programming Language](./book/the-rust-programming-language/cargo.md)
     - [Cargo](./book/the-rust-programming-language/cargo.md)
     - [Common Programming Concept](book/the-rust-programming-language/common-programming-concept.md)
     - [Rust Memory Model](book/the-rust-programming-language/rust-memory-model.md)
@@ -64,3 +64,4 @@
 - [Grate Content](great-content.md)
 
 ---
+
