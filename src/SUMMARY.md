@@ -1,8 +1,6 @@
 # Summary
 
-[Max FOO](./maxfoo/maxfoo.md)
-
-- [TODO](todos.md)
+[Max FOO](dev/java/virtual-thread.md)
 
 ---
 
@@ -12,20 +10,20 @@
 
 # DEV
 
-- [JAVA](./dev/java/virtual-thread.md)
+- [JAVA](dev/java/virtual-thread.md)
     - [Virtual Thread](dev/java/virtual-thread.md)
-    - [Concurrency](./dev/java/java-concurrency.md)
+    - [Concurrency](dev/java/java-concurrency.md)
     - [Tips and Tricks](dev/java/tips_and_tricks.md)
 
-- [Data Structure](./dev/data-structure/bloom-filter.md)
+- [Data Structure](dev/data-structure/bloom-filter.md)
     - [Bloom Filter](dev/data-structure/bloom-filter.md)
 
-- [Distributed Systems](./dev/distributed-systems/distributed-system.md)
-    - [CSE138](./dev/distributed-systems/cse138/distributed-system-what-and-why.md)
+- [Distributed Systems](dev/distributed-systems/distributed-system.md)
+    - [CSE138](dev/distributed-systems/cse138/distributed-system-what-and-why.md)
         - [Distributed System What and Why](dev/distributed-systems/cse138/distributed-system-what-and-why.md)
 
-- [LeetCode](./dev/leetcode/binary-search.md)
-    - [Binary Search](./dev/leetcode/binary-search.md)
+- [LeetCode](dev/leetcode/binary-search.md)
+    - [Binary Search](dev/leetcode/binary-search.md)
 
 ---
 
@@ -33,7 +31,7 @@
 
 [//]: # ()
 
-[//]: # (- [Linux]&#40;./ops/linux/linux.md&#41;)
+[//]: # (- [Linux]&#40;ops/linux/linux.md&#41;)
 
 ---
 
@@ -41,16 +39,16 @@
 
 [//]: # (- [Programming Concurrency on the JVM]&#40;empty.md&#41;)
 
-[//]: # (    - [Overview]&#40;./book/programming-concurrency-on-the-jvm/overview.md&#41;)
+[//]: # (    - [Overview]&#40;book/programming-concurrency-on-the-jvm/overview.md&#41;)
 
-[//]: # (    - [Strategies For Concurrency]&#40;./book/programming-concurrency-on-the-jvm/strategies-for-concurrency.md&#41;)
+[//]: # (    - [Strategies For Concurrency]&#40;book/programming-concurrency-on-the-jvm/strategies-for-concurrency.md&#41;)
 
-- [Java Concurrency In Practice](./book/java-concurrency-in-practice/java-concurrency-in-practice.md)
-    - [Thread Safety](./book/java-concurrency-in-practice/thread_safety.md)
-    - [Sharing Object](./book/java-concurrency-in-practice/sharing_object.md)
+- [Java Concurrency In Practice](book/java-concurrency-in-practice/java-concurrency-in-practice.md)
+    - [Thread Safety](book/java-concurrency-in-practice/thread_safety.md)
+    - [Sharing Object](book/java-concurrency-in-practice/sharing_object.md)
 
-- [The Rust Programming Language](./book/the-rust-programming-language/cargo.md)
-    - [Cargo](./book/the-rust-programming-language/cargo.md)
+- [The Rust Programming Language](book/the-rust-programming-language/cargo.md)
+    - [Cargo](book/the-rust-programming-language/cargo.md)
     - [Common Programming Concept](book/the-rust-programming-language/common-programming-concept.md)
     - [Rust Memory Model](book/the-rust-programming-language/rust-memory-model.md)
     - [Ownership](book/the-rust-programming-language/ownership/ownership.md)
