@@ -72,8 +72,9 @@ public record CustomerIdAndName(String id, String name) {
     private record ArchiveTask(LocalDate from, LocalDate to, ArchiveService<DailyStats> archiveService) implements Callable<Integer> {
 
         @Override
-            public void call() {
+            public Integer call() {
                 archiveService.archive(from, to);
+                return 0;
             }
         }
 ```

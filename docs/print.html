@@ -854,8 +854,9 @@ public record CustomerIdAndName(String id, String name) {
     private record ArchiveTask(LocalDate from, LocalDate to, ArchiveService&lt;DailyStats&gt; archiveService) implements Callable&lt;Integer&gt; {
 
         @Override
-            public void call() {
+            public Integer call() {
                 archiveService.archive(from, to);
+                return 0;
             }
         }
 </code></pre>
