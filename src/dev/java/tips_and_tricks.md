@@ -1,5 +1,88 @@
 # Tips and Tricks
 
+## Singleton
+
+- one of the famous interview question is to create a thread safe singleton
+
+### Examples
+
+```java
+public class Singleton {
+
+    private Singleton() {
+    }
+
+    public static Singleton getInstance() {
+        if (instance == null) {
+            instance = new Singleton();
+        }
+        return instance;
+    }
+}
+```
+
+- Many people think the above example is wrong as it may create multiple instance when it is access by multiple threads
+- actually, it is safe to use if you can ensure it is created in startup thread and before all other threads is created, so it won't have
+      visibility problem
+
+### Other Examples
+
+```java
+final class Singleton {
+
+    private static Singleton instance = new Singleton();
+    
+    private Singleton() { }
+    
+    public static Singleton getInstance() {
+        return instance;
+    }
+}
+```
+
+- easy to implement, easy to reasoning, preferred way
+
+```java
+public class Singleton {
+    private volatile static Singleton singleton;
+
+    private Singleton() {
+    }
+
+    public static Singleton getSingleton() {
+        if (singleton == null) {
+            synchronized (Singleton.class) {
+                if (singleton == null) {
+                    singleton = new Singleton();
+                }
+            }
+        }
+        return singleton;
+    }
+}
+```
+
+- poor performance as volatile is used, and hard to reasoning
+
+```java
+public class Singleton {
+    private Singleton() {
+    }
+
+    private static class SingletonHolder {
+        private static final Singleton INSTANCE = new Singleton();
+    }
+
+    public static Singleton getInstance() {
+        return SingletonHolder.INSTANCE;
+    }
+}
+```
+
+- complicated inner class, hard to implement and reasoning
+
+___
+
 ## Record
 
 - handy way to create **_immutable_** class
@@ -35,9 +118,9 @@ public record CustomerIdAndName(String id, String name) {
     - prevent overuse, better use within a class to keep function simple
 
 ```java
-public CustomerIdAndName getCustomerIdAndName(){
-  // ...
-  return new CustomerIdAndName(id,name)
+public CustomerIdAndName getCustomerIdAndName() {
+    // ...
+    return new CustomerIdAndName(id, name)
 }
 
 public record CustomerIdAndName(String id, String name) {
@@ -49,34 +132,35 @@ public record CustomerIdAndName(String id, String name) {
 ```java
     private static class ArchiveTask implements Callable<Integer> {
 
-        private final LocalDate from;
-        
-        private final LocalDate to;
+    private final LocalDate from;
 
-        private final ArchiveService<DailyStats> archiveService;
+    private final LocalDate to;
 
-        private ArchiveTask(LocalDate from, LocalDate to, ArchiveService<DailyStats> archiveService) {
-            this.from = from;
-            this.to = to;
-            this.archiveService = archiveService;
-        }
+    private final ArchiveService<DailyStats> archiveService;
 
-        @Override
-        public Integer call() {
-            archiveService.archive(from, to);
-            return 0;
-        }
+    private ArchiveTask(LocalDate from, LocalDate to, ArchiveService<DailyStats> archiveService) {
+        this.from = from;
+        this.to = to;
+        this.archiveService = archiveService;
     }
-    
-    // much cleaner
-    private record ArchiveTask(LocalDate from, LocalDate to, ArchiveService<DailyStats> archiveService) implements Callable<Integer> {
 
-        @Override
-            public Integer call() {
-                archiveService.archive(from, to);
-                return 0;
-            }
-        }
+    @Override
+    public Integer call() {
+        archiveService.archive(from, to);
+        return 0;
+    }
+}
+
+// much cleaner
+private record ArchiveTask(LocalDate from, LocalDate to,
+                           ArchiveService<DailyStats> archiveService) implements Callable<Integer> {
+
+    @Override
+    public Integer call() {
+        archiveService.archive(from, to);
+        return 0;
+    }
+}
 ```
 
 ___
@@ -90,12 +174,15 @@ ___
 
 ```java
       List<String> list = ....
-      Set<String> set = new HashMap(list.size())
-      
-      // demo purpose only, this case better use Stream api
-      for (String s : list) {
-        set.add(s.toLowerCase());
-      }
+Set<String> set = new HashMap(list.size())
+
+// demo purpose only, this case better use Stream api
+      for(
+String s :list){
+        set.
+
+add(s.toLowerCase());
+        }
 ```
 
 - refer to [guava maps impl](https://github.com/google/guava/blob/master/guava/src/com/google/common/collect/Maps.java),
@@ -104,18 +191,18 @@ ___
 
 ```java
     public static <T, V> Map<T, V> newHashMapWithExpectedSize(int size) {
-        return new HashMap<>(capacity(size));
-    }
+    return new HashMap<>(capacity(size));
+}
 
-    private static int capacity(int size) {
-        int capacity;
-        if (size < 3) {
-            capacity = size + 1;
-        } else {
-            capacity = (int) ((float) size / 0.75f + 1);
-        }
-        return capacity;
+private static int capacity(int size) {
+    int capacity;
+    if (size < 3) {
+        capacity = size + 1;
+    } else {
+        capacity = (int) ((float) size / 0.75f + 1);
     }
+    return capacity;
+}
 ```
 
 ___

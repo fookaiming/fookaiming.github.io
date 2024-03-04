@@ -784,6 +784,82 @@ Allocation is cheaper than you might think, and immutable objects offer addition
 reduced need for locking or defensive copies and reduced impact on generational garbage collection.</p>
 <p>group multiple mutable variable to one immutable varible</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="tips-and-tricks"><a class="header" href="#tips-and-tricks">Tips and Tricks</a></h1>
+<h2 id="singleton"><a class="header" href="#singleton">Singleton</a></h2>
+<ul>
+<li>one of the famous interview question is to create a thread safe singleton</li>
+</ul>
+<h3 id="examples"><a class="header" href="#examples">Examples</a></h3>
+<pre><code class="language-java">public class Singleton {
+
+    private Singleton() {
+    }
+
+    public static Singleton getInstance() {
+        if (instance == null) {
+            instance = new Singleton();
+        }
+        return instance;
+    }
+}
+</code></pre>
+<ul>
+<li>Many people think the above example is wrong as it may create multiple instance when it is access by multiple threads</li>
+<li>actually, it is safe to use if you can ensure it is created in startup thread and before all other threads is created, so it won't have
+visibility problem</li>
+</ul>
+<h3 id="other-examples"><a class="header" href="#other-examples">Other Examples</a></h3>
+<pre><code class="language-java">final class Singleton {
+
+    private static Singleton instance = new Singleton();
+    
+    private Singleton() { }
+    
+    public static Singleton getInstance() {
+        return instance;
+    }
+}
+</code></pre>
+<ul>
+<li>easy to implement, easy to reasoning, preferred way</li>
+</ul>
+<pre><code class="language-java">public class Singleton {
+    private volatile static Singleton singleton;
+
+    private Singleton() {
+    }
+
+    public static Singleton getSingleton() {
+        if (singleton == null) {
+            synchronized (Singleton.class) {
+                if (singleton == null) {
+                    singleton = new Singleton();
+                }
+            }
+        }
+        return singleton;
+    }
+}
+</code></pre>
+<ul>
+<li>poor performance as volatile is used, and hard to reasoning</li>
+</ul>
+<pre><code class="language-java">public class Singleton {
+    private Singleton() {
+    }
+
+    private static class SingletonHolder {
+        private static final Singleton INSTANCE = new Singleton();
+    }
+
+    public static Singleton getInstance() {
+        return SingletonHolder.INSTANCE;
+    }
+}
+</code></pre>
+<ul>
+<li>complicated inner class, hard to implement and reasoning</li>
+</ul>
+<hr />
 <h2 id="record"><a class="header" href="#record">Record</a></h2>
 <ul>
 <li>handy way to create <strong><em>immutable</em></strong> class</li>
@@ -818,9 +894,9 @@ public record CustomerIdAndName(String id, String name) {
 </ul>
 </li>
 </ul>
-<pre><code class="language-java">public CustomerIdAndName getCustomerIdAndName(){
-  // ...
-  return new CustomerIdAndName(id,name)
+<pre><code class="language-java">public CustomerIdAndName getCustomerIdAndName() {
+    // ...
+    return new CustomerIdAndName(id, name)
 }
 
 public record CustomerIdAndName(String id, String name) {
@@ -831,34 +907,35 @@ public record CustomerIdAndName(String id, String name) {
 </ul>
 <pre><code class="language-java">    private static class ArchiveTask implements Callable&lt;Integer&gt; {
 
-        private final LocalDate from;
-        
-        private final LocalDate to;
+    private final LocalDate from;
 
-        private final ArchiveService&lt;DailyStats&gt; archiveService;
+    private final LocalDate to;
 
-        private ArchiveTask(LocalDate from, LocalDate to, ArchiveService&lt;DailyStats&gt; archiveService) {
-            this.from = from;
-            this.to = to;
-            this.archiveService = archiveService;
-        }
+    private final ArchiveService&lt;DailyStats&gt; archiveService;
 
-        @Override
-        public Integer call() {
-            archiveService.archive(from, to);
-            return 0;
-        }
+    private ArchiveTask(LocalDate from, LocalDate to, ArchiveService&lt;DailyStats&gt; archiveService) {
+        this.from = from;
+        this.to = to;
+        this.archiveService = archiveService;
     }
-    
-    // much cleaner
-    private record ArchiveTask(LocalDate from, LocalDate to, ArchiveService&lt;DailyStats&gt; archiveService) implements Callable&lt;Integer&gt; {
 
-        @Override
-            public Integer call() {
-                archiveService.archive(from, to);
-                return 0;
-            }
-        }
+    @Override
+    public Integer call() {
+        archiveService.archive(from, to);
+        return 0;
+    }
+}
+
+// much cleaner
+private record ArchiveTask(LocalDate from, LocalDate to,
+                           ArchiveService&lt;DailyStats&gt; archiveService) implements Callable&lt;Integer&gt; {
+
+    @Override
+    public Integer call() {
+        archiveService.archive(from, to);
+        return 0;
+    }
+}
 </code></pre>
 <hr />
 <h2 id="collection"><a class="header" href="#collection">Collection</a></h2>
@@ -868,12 +945,15 @@ public record CustomerIdAndName(String id, String name) {
 <li>for large data set, setting exact size induce risk of hash collision and resize may occur frequently</li>
 </ul>
 <pre><code class="language-java">      List&lt;String&gt; list = ....
-      Set&lt;String&gt; set = new HashMap(list.size())
-      
-      // demo purpose only, this case better use Stream api
-      for (String s : list) {
-        set.add(s.toLowerCase());
-      }
+Set&lt;String&gt; set = new HashMap(list.size())
+
+// demo purpose only, this case better use Stream api
+      for(
+String s :list){
+        set.
+
+add(s.toLowerCase());
+        }
 </code></pre>
 <ul>
 <li>refer to <a href="https://github.com/google/guava/blob/master/guava/src/com/google/common/collect/Maps.java">guava maps impl</a>,
@@ -881,18 +961,18 @@ init capacity with load factor
 0.75</li>
 </ul>
 <pre><code class="language-java">    public static &lt;T, V&gt; Map&lt;T, V&gt; newHashMapWithExpectedSize(int size) {
-        return new HashMap&lt;&gt;(capacity(size));
-    }
+    return new HashMap&lt;&gt;(capacity(size));
+}
 
-    private static int capacity(int size) {
-        int capacity;
-        if (size &lt; 3) {
-            capacity = size + 1;
-        } else {
-            capacity = (int) ((float) size / 0.75f + 1);
-        }
-        return capacity;
+private static int capacity(int size) {
+    int capacity;
+    if (size &lt; 3) {
+        capacity = size + 1;
+    } else {
+        capacity = (int) ((float) size / 0.75f + 1);
     }
+    return capacity;
+}
 </code></pre>
 <hr />
 <h2 id="iteration"><a class="header" href="#iteration">Iteration</a></h2>
