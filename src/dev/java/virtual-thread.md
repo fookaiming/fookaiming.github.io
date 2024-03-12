@@ -65,6 +65,12 @@
 
 ## Migration
 
+- limit carrier thread
+    - two ways to limit the carrier thread
+        1. Limit the number of carrier threads by setting the system property jdk.virtualThreadScheduler.parallelism=
+        2. Limit the maximum number of pool size by setting the system property
+           jdk.virtualThreadScheduler.maxPoolSize=
+
 - migration is cheap, usually, one to few lines of code change, eg: changing thread pool to virtual thread factory
     - migrate task to virtual thread, not pool
 - most lib and framework have stated their migration to support to virtual thread eg: spring, tomcat
@@ -80,6 +86,7 @@
         - [the migration of virtual thread have actually contributed but not merged](https://bugs.mysql.com/bug.php?id=110512)
     - the mysql jdbc is designed to be thread safe, but the modern application usage of jdbc are thread confined
     - [A lock free implementation of mysql jdbc](https://github.com/neowu/mysql-connector-j)
+- okio (todo hanging problem)
 
 ## Best practise
 

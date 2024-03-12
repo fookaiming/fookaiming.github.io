@@ -267,13 +267,29 @@ executing other tasks</p>
 </ul>
 <h2 id="migration"><a class="header" href="#migration">Migration</a></h2>
 <ul>
-<li>migration is cheap, usually, one to few lines of code change, eg: changing thread pool to virtual thread factory
+<li>
+<p>limit carrier thread</p>
+<ul>
+<li>two ways to limit the carrier thread
+<ol>
+<li>Limit the number of carrier threads by setting the system property jdk.virtualThreadScheduler.parallelism=</li>
+<li>Limit the maximum number of pool size by setting the system property
+jdk.virtualThreadScheduler.maxPoolSize=</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>migration is cheap, usually, one to few lines of code change, eg: changing thread pool to virtual thread factory</p>
 <ul>
 <li>migrate task to virtual thread, not pool</li>
 </ul>
 </li>
-<li>most lib and framework have stated their migration to support to virtual thread eg: spring, tomcat</li>
-<li>thread local
+<li>
+<p>most lib and framework have stated their migration to support to virtual thread eg: spring, tomcat</p>
+</li>
+<li>
+<p>thread local</p>
 <ul>
 <li>don't cache expensive object in thread local
 <ul>
@@ -297,6 +313,7 @@ DateTimeFormatter</li>
 <li><a href="https://github.com/neowu/mysql-connector-j">A lock free implementation of mysql jdbc</a></li>
 </ul>
 </li>
+<li>okio (todo hanging problem)</li>
 </ul>
 <h2 id="best-practise"><a class="header" href="#best-practise">Best practise</a></h2>
 <ul>
